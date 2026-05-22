@@ -1,0 +1,134 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 2rem 4rem;
+}
+
+.heroImg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 45%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  z-index: 2;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.9) 50%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.9) 50%);
+  opacity: 0.72;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 62% 65% at 38% 50%,
+    rgba(26, 15, 8, 0.55) 0%,
+    rgba(26, 15, 8, 0.25) 55%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(to bottom, transparent 0%, #1a0f08 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 1.2rem;
+}
+
+.h1 {
+  font-size: clamp(3.2rem, 8vw, 7rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: 0.04em;
+  color: var(--cream);
+  margin-bottom: 0.3em;
+}
+
+.h1 em {
+  font-style: italic;
+  color: var(--amber-light);
+}
+
+.tagline {
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.scrollIndicator span {
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--amber), transparent);
+  animation: drip 1.8s ease-in-out infinite;
+}
+
+/* ── EXPLORE ── */
+.explore {
+  text-align: center;
+  padding: 7rem 2rem 8rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.exploreText {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 300;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 3rem;
+  letter-spacing: 0.03em;
+  line-height: 1.8;
+}
+
+.btnRow {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 700px) {
+  .btnRow {
+    flex-direction: column;
+    align-items: center;
+  }
+}

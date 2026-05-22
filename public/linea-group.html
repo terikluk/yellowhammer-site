@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linea Group — Architecture &amp; Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white:      #FFFFFF;
+      --black:      #0D0D0D;
+      --gold:       #C49A22;
+      --gold-light: #D4AE45;
+      --gold-dim:   rgba(196, 154, 34, 0.14);
+      --off-white:  #F5F5F5;
+      --gray-ui:    #E0E0E0;
+      --gray-text:  #555555;
+      --gray-mid:   #888888;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: var(--white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 4rem;
+      height: 88px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    nav.scrolled {
+      border-bottom-color: var(--gray-ui);
+      box-shadow: 0 1px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-logo img { height: 70px; width: auto; display: block; }
+
+    nav ul { list-style: none; display: flex; gap: 3rem; align-items: center; }
+
+    nav ul a {
+      color: var(--black);
+      text-decoration: none;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: var(--gold); }
+
+    .nav-cta {
+      border: 1px solid var(--black) !important;
+      padding: 0.6em 1.6em;
+      letter-spacing: 0.18em !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--black) !important;
+      color: var(--white) !important;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background-image: url('Linea_Hero.png');
+      background-size: cover;
+      background-position: center 30%;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 4rem 9rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.88) 0%,
+        rgba(0, 0, 0, 0.45) 55%,
+        rgba(0, 0, 0, 0.2) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 980px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2.2rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7.5vw, 7.5rem);
+      font-weight: 700;
+      line-height: 1.0;
+      color: var(--white);
+      letter-spacing: -0.03em;
+    }
+
+    @keyframes rule-shimmer {
+      0%   { background-position: -100% center; }
+      100% { background-position: 200% center; }
+    }
+
+    .hero-rule {
+      width: 72px;
+      height: 2px;
+      background: linear-gradient(to right, var(--gold), var(--gold-light), #e8c94a, var(--gold-light), var(--gold));
+      background-size: 300% 100%;
+      margin: 2.6rem 0;
+      animation: rule-shimmer 2.5s ease-in-out infinite;
+    }
+
+    .hero-sub {
+      font-size: 0.98rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 420px;
+      line-height: 1.85;
+      margin-bottom: 3rem;
+    }
+
+    .btn-gold-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      padding: 1em 2.6em;
+      border: 1px solid var(--gold);
+      transition: background 0.25s, color 0.25s, border-color 0.25s;
+    }
+
+    .btn-gold-outline:hover {
+      background: var(--gold);
+      color: var(--white);
+    }
+
+    /* ── SECTION COMMON ── */
+    .section-label {
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .section-rule {
+      width: 100%;
+      height: 1px;
+      background: var(--gray-ui);
+      margin-bottom: 5rem;
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      background: var(--white);
+      padding: 9rem 4rem;
+    }
+
+    .services-inner { max-width: 1200px; margin: 0 auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4rem;
+    }
+
+    .service {
+      border-top: 2px solid var(--gold);
+      padding-top: 2.2rem;
+    }
+
+    .service-num {
+      font-size: 3.8rem;
+      font-weight: 300;
+      color: var(--gold);
+      opacity: 0.4;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 2rem;
+    }
+
+    .service h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .service p {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--gray-text);
+      line-height: 1.95;
+    }
+
+    /* ── PROJECTS ── */
+    .projects {
+      background: var(--off-white);
+      padding: 9rem 4rem;
+    }
+
+    .projects-inner { max-width: 1200px; margin: 0 auto; }
+
+    .projects-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 5rem;
+    }
+
+    .projects-header-left {}
+
+    .projects-link {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .projects-link:hover { color: var(--gold); border-color: var(--gold); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+    }
+
+    .project-card {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .project-card::before {
+      content: attr(data-num);
+      position: absolute;
+      bottom: -0.12em;
+      right: 0.06em;
+      font-size: clamp(7rem, 17vw, 15rem);
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.04);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      pointer-events: none;
+      z-index: 2;
+      transition: color 0.5s;
+    }
+
+    .project-card:hover::before { color: rgba(196, 154, 34, 0.09); }
+
+    .project-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .project-card:hover .project-bg { transform: scale(1.04); }
+
+    .project-bg img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(0.6) brightness(0.5);
+      transition: filter 0.5s;
+    }
+
+    .project-card:hover .project-bg img { filter: grayscale(0.2) brightness(0.45); }
+
+    .project-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2.8rem;
+      z-index: 3;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+    }
+
+    .project-gold-bar {
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 1.5rem;
+      transition: width 0.4s ease;
+    }
+
+    .project-card:hover .project-gold-bar { width: 40px; }
+
+    .project-type {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-name {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.35rem;
+    }
+
+    .project-location {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.45);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── PHILOSOPHY ── */
+    .philosophy {
+      background: var(--black);
+      padding: 11rem 4rem;
+      text-align: center;
+    }
+
+    .philosophy-inner { max-width: 860px; margin: 0 auto; }
+
+    .philosophy-mark {
+      font-size: 5.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 0.7;
+      margin-bottom: 2.8rem;
+      display: block;
+      opacity: 0.85;
+    }
+
+    .philosophy-quote {
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.55;
+      letter-spacing: -0.01em;
+    }
+
+    .philosophy-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      margin: 3.5rem auto;
+    }
+
+    .philosophy-cite {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ── TEAM ── */
+    .team {
+      background: var(--white);
+      padding: 9rem 4rem;
+    }
+
+    .team-inner { max-width: 1200px; margin: 0 auto; }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5rem;
+      margin-top: 5rem;
+    }
+
+    .team-photo {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: #1c1c1c;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .team-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: grayscale(0.15) contrast(1.02);
+    }
+
+    .team-photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .team-photo-placeholder svg { opacity: 0.1; }
+
+    .team-photo::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .team-name {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+    }
+
+    .team-title {
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+
+    .team-bio {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--gray-text);
+      line-height: 1.95;
+    }
+
+    /* ── CONTACT CTA ── */
+    .contact-cta {
+      background: var(--black);
+      padding: 10rem 4rem;
+      text-align: center;
+    }
+
+    .contact-cta-inner { max-width: 720px; margin: 0 auto; }
+
+    .contact-cta .section-label { margin-bottom: 2.5rem; }
+
+    .contact-cta h2 {
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-cta-sub {
+      font-size: 0.97rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.85;
+      margin-bottom: 3.5rem;
+    }
+
+    .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      padding: 1.1em 2.8em;
+      border: 1px solid var(--gold);
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .btn-gold:hover { background: transparent; color: var(--gold); }
+
+    .btn-white-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      padding: 1.1em 2.8em;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: border-color 0.25s, color 0.25s;
+    }
+
+    .btn-white-outline:hover { border-color: var(--white); }
+
+    .contact-info {
+      margin-top: 5rem;
+      display: flex;
+      justify-content: center;
+      gap: 6rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-info-item { text-align: center; }
+
+    .contact-info-label {
+      font-size: 0.63rem;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info-value {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.7;
+    }
+
+    .contact-info-value a {
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-info-value a:hover { color: var(--gold); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 2.5rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    footer p {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.25);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-links { display: flex; gap: 2.5rem; }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1000px) {
+      nav { padding: 0 2.5rem; }
+      .hero { padding: 0 2.5rem 7rem; }
+      .services, .projects, .team { padding: 7rem 2.5rem; }
+      .philosophy, .contact-cta { padding: 8rem 2.5rem; }
+      .services-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .team-grid { grid-template-columns: 1fr; gap: 4rem; }
+      .projects-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 0 1.5rem; height: 72px; }
+      nav ul { gap: 1.4rem; }
+      .nav-cta { display: none; }
+      .hero { padding: 0 1.5rem 6rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .contact-info { gap: 3rem; }
+      footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="linea-group.html" class="nav-logo">
+      <img src="Linea_Group.png" alt="Linea Group Architecture" />
+    </a>
+    <ul>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#team">Studio</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Start a Project</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Architecture &nbsp;&bull;&nbsp; Interior Planning &nbsp;&bull;&nbsp; Commercial Design</p>
+      <h1>We Build What<br />Others Only<br />Imagine.</h1>
+      <div class="hero-rule"></div>
+      <p class="hero-sub">From private residences to landmark cultural institutions — Linea Group designs spaces that endure.</p>
+      <a href="#projects" class="btn-gold-outline">View Our Work</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services">
+    <div class="services-inner">
+      <p class="section-label">Our Disciplines</p>
+      <div class="section-rule"></div>
+      <div class="services-grid">
+
+        <div class="service">
+          <div class="service-num">01</div>
+          <h3>Residential Design</h3>
+          <p>We design homes that are deeply personal — shaped by the way you actually live. From bespoke single-family residences to elevated multi-unit developments, every project begins and ends with the people inside it.</p>
+        </div>
+
+        <div class="service">
+          <div class="service-num">02</div>
+          <h3>Commercial Architecture</h3>
+          <p>Workplaces, cultural centers, hospitality spaces, and institutions. We bring the same exacting craft to commercial commissions that we apply to our most intimate residential work — spaces built to leave a mark.</p>
+        </div>
+
+        <div class="service">
+          <div class="service-num">03</div>
+          <h3>Interior Planning</h3>
+          <p>Architecture does not stop at the wall. Our interior planning practice integrates spatial logic, materiality, and light to create interiors that are as considered as the structures that hold them.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <div class="projects-inner">
+      <div class="projects-header">
+        <div class="projects-header-left">
+          <p class="section-label">Featured Projects</p>
+        </div>
+        <a href="#contact" class="projects-link">View All Work &rarr;</a>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card project-card--01" data-num="01">
+          <div class="project-bg"><img src="Chicago_Residential.png" alt="The Meridian, Chicago" /></div>
+          <div class="project-card-content">
+            <div class="project-gold-bar"></div>
+            <p class="project-type">Residential</p>
+            <h3 class="project-name">The Meridian</h3>
+            <p class="project-location">Chicago, IL &nbsp;&mdash;&nbsp; 2023</p>
+          </div>
+        </div>
+
+        <div class="project-card project-card--02" data-num="02">
+          <div class="project-bg"><img src="Sedona_Residential.png" alt="Villa Solaris, Sedona" /></div>
+          <div class="project-card-content">
+            <div class="project-gold-bar"></div>
+            <p class="project-type">Residential</p>
+            <h3 class="project-name">Villa Solaris</h3>
+            <p class="project-location">Sedona, AZ &nbsp;&mdash;&nbsp; 2022</p>
+          </div>
+        </div>
+
+        <div class="project-card project-card--03" data-num="03">
+          <div class="project-bg"><img src="Cultural_Center_New_York.png" alt="Harwick Cultural Center, New York" /></div>
+          <div class="project-card-content">
+            <div class="project-gold-bar"></div>
+            <p class="project-type">Commercial</p>
+            <h3 class="project-name">Harwick Cultural Center</h3>
+            <p class="project-location">New York, NY &nbsp;&mdash;&nbsp; 2024</p>
+          </div>
+        </div>
+
+        <div class="project-card project-card--04" data-num="04">
+          <div class="project-bg"><img src="Water_Front_Miami.png" alt="Azure Waterfront, Miami" /></div>
+          <div class="project-card-content">
+            <div class="project-gold-bar"></div>
+            <p class="project-type">Mixed-Use</p>
+            <h3 class="project-name">Azure Waterfront</h3>
+            <p class="project-location">Miami, FL &nbsp;&mdash;&nbsp; 2023</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="philosophy">
+    <div class="philosophy-inner">
+      <span class="philosophy-mark">&ldquo;</span>
+      <p class="philosophy-quote">We design not for the moment of completion, but for the decades that follow. Every line is a decision. Every decision is a responsibility.</p>
+      <div class="philosophy-rule"></div>
+      <p class="philosophy-cite">The Linea Group Studio Philosophy</p>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team" class="team">
+    <div class="team-inner">
+      <p class="section-label">The Studio</p>
+      <div class="section-rule"></div>
+
+      <div class="team-grid">
+
+        <div class="team-member">
+          <div class="team-photo">
+            <img src="Marco.png" alt="Marco Linea, Founding Principal" />
+          </div>
+          <h3 class="team-name">Marco Linea</h3>
+          <p class="team-title">Founding Principal</p>
+          <p class="team-bio">With over two decades of practice across three continents, Marco brings an uncompromising eye for proportion, material, and light to every commission. A graduate of the Architectural Association in London, he founded Linea Group with the conviction that architecture should outlast its moment.</p>
+        </div>
+
+        <div class="team-member">
+          <div class="team-photo">
+            <img src="Elena.png" alt="Elena Voss, Design Director" />
+          </div>
+          <h3 class="team-name">Elena Voss</h3>
+          <p class="team-title">Design Director</p>
+          <p class="team-bio">Elena leads the studio's interior planning and residential practice, translating architectural intention into the lived experience of a space. Trained at ETH Zürich and the Pratt Institute, she has earned a reputation for interiors that feel inevitable — as though they could not have been any other way.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section id="contact" class="contact-cta">
+    <div class="contact-cta-inner">
+      <p class="section-label">Start a Project</p>
+      <h2>Let's Create Something Remarkable.</h2>
+      <p class="contact-cta-sub">Whether you are at the earliest stage of an idea or ready to break ground, we welcome the conversation. Every great building begins with a single question.</p>
+      <div class="btn-group">
+        <a href="mailto:studio@linea-group.com" class="btn-gold">Begin a Conversation</a>
+        <a href="#projects" class="btn-white-outline">View Our Portfolio</a>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <p class="contact-info-label">Studio</p>
+          <p class="contact-info-value">123 Straight Line Rd<br />The Woodlands, TX</p>
+        </div>
+        <div class="contact-info-item">
+          <p class="contact-info-label">New Commissions</p>
+          <p class="contact-info-value"><a href="mailto:studio@linea-group.com">studio@linea-group.com</a></p>
+        </div>
+        <div class="contact-info-item">
+          <p class="contact-info-label">Phone</p>
+          <p class="contact-info-value"><a href="tel:2561110000">(256) 111-0000</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-brand">Linea Group</span>
+    <p>&copy; 2026 Linea Group Architecture &amp; Design. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#projects">Work</a>
+      <a href="#services">Services</a>
+      <a href="#team">Studio</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+
+</body>
+</html>

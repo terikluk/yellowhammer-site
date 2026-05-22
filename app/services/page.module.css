@@ -1,0 +1,209 @@
+.serviceSection {
+  padding: 0;
+}
+
+.serviceSectionAlt {
+  background: var(--espresso-mid);
+  border-top: 1px solid var(--espresso-light);
+  border-bottom: 1px solid var(--espresso-light);
+}
+
+.serviceInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.serviceNum {
+  font-size: 5rem;
+  font-weight: 300;
+  color: rgba(200, 130, 26, 0.12);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.02em;
+}
+
+.serviceTitle {
+  font-size: clamp(1.9rem, 3.5vw, 2.9rem);
+  font-weight: 300;
+  line-height: 1.12;
+  margin-bottom: 1.8rem;
+}
+
+.serviceTitle em {
+  font-style: italic;
+  color: var(--amber-light);
+}
+
+.serviceDesc {
+  font-size: 18px;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.85;
+  margin-bottom: 2rem;
+}
+
+.serviceDescExtra {
+  font-size: 17px;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+}
+
+.inlineLink {
+  color: var(--amber-light);
+  text-decoration: none;
+}
+
+.inlineLink:hover {
+  color: var(--amber-pale);
+}
+
+.price {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.priceLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.priceAmount {
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--amber-light);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.pricePeriod {
+  font-size: 18px;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.includesLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.includesList {
+  list-style: none;
+  border-top: 1px solid var(--espresso-light);
+  margin-bottom: 2.8rem;
+}
+
+.includesList li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--espresso-light);
+  color: var(--text-muted);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.includesList li::before {
+  content: '—';
+  color: var(--amber);
+  font-size: 0.7rem;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+/* ── HOW IT WORKS ── */
+.process {
+  padding: 8rem 2rem 7rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.processLabel {
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 1.2rem;
+}
+
+.processHeading {
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: 0.03em;
+  color: var(--cream);
+  margin-bottom: 0.15em;
+}
+
+.processHeading em {
+  font-style: italic;
+  color: var(--amber-light);
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 4.5rem auto 4rem;
+  text-align: left;
+}
+
+.step {
+  border-top: 1px solid rgba(200, 130, 26, 0.3);
+  padding-top: 2rem;
+}
+
+.stepNumber {
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 1.1rem;
+}
+
+.stepTitle {
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--cream);
+  margin-bottom: 0.9rem;
+}
+
+.stepDesc {
+  font-size: 19px;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.85;
+}
+
+.processCta {
+  margin-top: 1rem;
+}
+
+@media (max-width: 800px) {
+  .serviceInner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 4rem 1.5rem;
+  }
+  .stepsGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

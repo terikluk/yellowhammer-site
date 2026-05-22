@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barrel &amp; Grain — Craft Homebrew Supply</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --walnut:       #0d1a11;
+      --walnut-mid:   #162d1c;
+      --walnut-light: #1d3d26;
+      --walnut-deep:  #080e0a;
+      --copper:       #B87333;
+      --copper-light: #d4924a;
+      --copper-pale:  #e8b87a;
+      --cream:        #F5EDD6;
+      --cream-dim:    #d6c4a0;
+      --muted:        #6b8f65;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--walnut);
+      color: var(--cream);
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background-color: var(--cream);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 3rem;
+      height: 100px;
+      box-shadow: 0 2px 14px rgba(13, 26, 17, 0.14);
+      transition: box-shadow 0.3s ease;
+    }
+
+    nav.scrolled {
+      box-shadow: 0 4px 28px rgba(13, 26, 17, 0.38);
+    }
+
+    .nav-logo {
+      display: block;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-logo img {
+      height: 90px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.6rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #3D1C02;
+      text-decoration: none;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--copper); }
+
+    .btn-nav-cta {
+      display: inline-block;
+      background-color: var(--copper);
+      color: var(--cream) !important;
+      text-decoration: none;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.7em 1.7em;
+      border-radius: 0;
+      transition: background 0.2s;
+    }
+
+    .btn-nav-cta:hover { background-color: var(--copper-light); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 10rem 2rem 6rem;
+      overflow: hidden;
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 80% at 50% 50%,
+        rgba(8, 14, 10, 0.55) 0%, rgba(8, 14, 10, 0.75) 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-fade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 28%;
+      background: linear-gradient(to bottom, transparent, var(--walnut));
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      z-index: 4;
+      position: relative;
+      z-index: 3;
+      max-width: 820px;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cream);
+      background-color: var(--copper);
+      padding: 0.22em 0.8em;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(3.4rem, 8vw, 7rem);
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 0.5em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--copper-pale);
+    }
+
+    .hero-sub {
+      font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-dim);
+      letter-spacing: 0.04em;
+      margin-bottom: 2.8rem;
+      line-height: 1.75;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--copper);
+      color: var(--cream);
+      text-decoration: none;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.95em 2.5em;
+      border-radius: 0;
+      transition: background 0.25s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--copper-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid var(--copper);
+      color: var(--copper-pale);
+      text-decoration: none;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.95em 2.5em;
+      border-radius: 0;
+      transition: background 0.25s, color 0.25s, transform 0.2s;
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(184, 115, 51, 0.12);
+      transform: translateY(-2px);
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-bar {
+      background-color: var(--walnut-mid);
+      overflow: hidden;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      border-top: 1px solid rgba(184, 115, 51, 0.22);
+      border-bottom: 1px solid rgba(184, 115, 51, 0.22);
+    }
+
+    .marquee-track {
+      display: flex;
+      white-space: nowrap;
+      animation: scroll-left 32s linear infinite;
+    }
+
+    .marquee-set {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-shrink: 0;
+    }
+
+    .marquee-text {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+      padding: 0 2rem;
+    }
+
+    .marquee-dot {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: var(--copper);
+      flex-shrink: 0;
+      margin: 0 0.4rem;
+    }
+
+    @keyframes scroll-left {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── SHARED SECTION HEADERS ── */
+    .section-eyebrow {
+      display: inline-block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cream);
+      background-color: var(--copper);
+      padding: 0.22em 0.8em;
+      margin-bottom: 1.1rem;
+    }
+
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.15;
+    }
+
+    .section-title em { font-style: italic; color: var(--copper-pale); }
+
+    @keyframes rule-shimmer {
+      0%   { background-position: -100% center; }
+      100% { background-position: 200% center; }
+    }
+
+    .copper-rule {
+      width: 44px;
+      height: 4px;
+      background: linear-gradient(to right, var(--copper), var(--copper-pale), #f0c87a, var(--copper-pale), var(--copper));
+      background-size: 300% 100%;
+      margin: 1.2rem auto 0;
+      animation: rule-shimmer 2.5s ease-in-out infinite;
+    }
+
+    .section-header { text-align: center; margin-bottom: 3.5rem; display: flex; flex-direction: column; align-items: center; }
+
+    /* ── CATEGORIES ── */
+    .categories-wrap {
+      padding: 6rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6rem;
+    }
+
+    .cat-card {
+      background-color: var(--walnut-mid);
+      border: 1px solid rgba(184, 115, 51, 0.18);
+      border-top: 3px solid var(--copper);
+      padding: 3rem 2rem 2.6rem;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+      border-color: rgba(184, 115, 51, 0.5);
+      border-top-color: var(--copper-light);
+    }
+
+    .cat-icon {
+      width: 74px;
+      height: 74px;
+      margin-bottom: 1.8rem;
+      color: var(--copper);
+    }
+
+    .cat-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.75rem;
+    }
+
+    .cat-desc {
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+      flex: 1;
+    }
+
+    .cat-link {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--copper);
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+
+    .cat-card:hover .cat-link { color: var(--copper-light); }
+
+    /* ── PRODUCTS ── */
+    .products-wrap {
+      padding: 2rem 3rem 6rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background-color: var(--walnut-mid);
+      border: 1px solid rgba(184, 115, 51, 0.14);
+      border-radius: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .product-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: linear-gradient(145deg, #1a3422 0%, #112116 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-img img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .product-img--placeholder {
+      border: 1px dashed rgba(184, 115, 51, 0.3);
+    }
+
+    .product-img-placeholder-text {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(184, 115, 51, 0.45);
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .product-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 40% 40%, rgba(184,115,51,0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      background-color: var(--copper);
+      color: var(--cream);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.28em 0.65em;
+      border-radius: 0;
+      z-index: 1;
+    }
+
+    .product-body {
+      padding: 1.4rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-stars {
+      color: var(--copper);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.45rem;
+    }
+
+    .product-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.3;
+      margin-bottom: 0.45rem;
+    }
+
+    .product-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+      padding-bottom: 1rem;
+    }
+
+    .product-price {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--copper);
+      margin-bottom: 1rem;
+    }
+
+    .price-was {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: line-through;
+      margin-left: 0.35rem;
+    }
+
+    .btn-cart {
+      display: block;
+      width: 100%;
+      background-color: var(--copper);
+      color: var(--cream);
+      border: none;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.9em 1em;
+      cursor: pointer;
+      border-radius: 0;
+      transition: background 0.2s;
+    }
+
+    .btn-cart:hover { background-color: var(--copper-light); }
+
+    /* ── TRUST SECTION ── */
+    .trust-section {
+      background-color: var(--walnut-mid);
+      border-top: 1px solid rgba(184, 115, 51, 0.2);
+      border-bottom: 1px solid rgba(184, 115, 51, 0.2);
+      padding: 5.5rem 3rem;
+    }
+
+    .trust-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-top: 3.5rem;
+    }
+
+    .trust-badge {
+      text-align: center;
+    }
+
+    .trust-icon {
+      width: 62px;
+      height: 62px;
+      margin: 0 auto 1.5rem;
+      color: var(--copper);
+    }
+
+    .trust-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.65rem;
+    }
+
+    .trust-text {
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 290px;
+      margin: 0 auto;
+    }
+
+    /* ── NEWSLETTER ── */
+    .newsletter-outer {
+      padding: 6rem 3rem;
+    }
+
+    .newsletter-inner {
+      max-width: 660px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .newsletter-sub {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 2.6rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 480px;
+      margin: 0 auto 1rem;
+    }
+
+    .newsletter-form input[type="email"] {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(184, 115, 51, 0.38);
+      border-right: none;
+      color: var(--cream);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.88rem;
+      padding: 0.9em 1.2em;
+      outline: none;
+      border-radius: 2px 0 0 2px;
+      transition: border-color 0.2s;
+    }
+
+    .newsletter-form input[type="email"]::placeholder { color: var(--muted); }
+    .newsletter-form input[type="email"]:focus { border-color: var(--copper); }
+
+    .btn-subscribe {
+      background-color: var(--copper);
+      color: var(--cream);
+      border: none;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.9em 1.9em;
+      cursor: pointer;
+      border-radius: 0 2px 2px 0;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-subscribe:hover { background-color: var(--copper-light); }
+
+    .newsletter-privacy {
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background-color: var(--walnut-deep);
+      border-top: 1px solid rgba(184, 115, 51, 0.18);
+      padding: 4.5rem 3rem 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.6fr;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+
+    .footer-brand-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.88rem;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .footer-col-title {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--copper);
+      font-weight: 700;
+      margin-bottom: 1.4rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-col ul a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.86rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul a:hover { color: var(--cream-dim); }
+
+    .footer-contact-item {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+      line-height: 1.55;
+    }
+
+    .footer-contact-item strong {
+      display: block;
+      color: var(--cream-dim);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(184, 115, 51, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.74rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-bottom a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-bottom a:hover { color: var(--cream-dim); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1000px) {
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+
+    @media (max-width: 760px) {
+      nav { padding: 0 1.4rem; }
+      .nav-links { gap: 1.2rem; }
+      .cat-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .categories-wrap,
+      .products-wrap { padding-left: 1.4rem; padding-right: 1.4rem; }
+    }
+
+    @media (max-width: 540px) {
+      .product-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 0.6rem; text-align: center; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form input[type="email"] {
+        border-right: 1px solid rgba(184, 115, 51, 0.38);
+        border-bottom: none;
+        border-radius: 2px 2px 0 0;
+      }
+      .btn-subscribe { border-radius: 0 0 2px 2px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav id="main-nav">
+    <a href="#" class="nav-logo" aria-label="Barrel &amp; Grain">
+      <img src="Grain_&_Barrel.png" alt="Barrel &amp; Grain" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Classes</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#" class="btn-nav-cta">Order Now</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="Hops.mov" type="video/mp4" />
+    </video>
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-vignette"></div>
+    <div class="hero-fade"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Craft Homebrew Supply &mdash; Huntsville, AL</p>
+      <h1>Brew Something<br /><em>Worth Talking About.</em></h1>
+      <p class="hero-sub">Premium ingredients, trusted equipment, and the know-how<br />to make every batch your best.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary">Shop Now</a>
+        <a href="#" class="btn-outline">Browse Ingredients</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── MARQUEE ── -->
+  <div class="marquee-bar" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-set">
+        <span class="marquee-text">Homebrewing Supplies</span><span class="marquee-dot"></span>
+        <span class="marquee-text">Wine Kits</span><span class="marquee-dot"></span>
+        <span class="marquee-text">Kombucha</span><span class="marquee-dot"></span>
+        <span class="marquee-text">Mead</span><span class="marquee-dot"></span>
+        <span class="marquee-text">Cider</span><span class="marquee-dot"></span>
+        <span class="marquee-text">Equipment</span><span class="marquee-dot"></span>
+        <span class="marquee-text">Classes</span><span class="marquee-dot"></span>
+        <span class="marquee-text">Yeast &amp; Nutrients</span><span class="marquee-dot"></span>
+        <span class="marquee-text">Bottles &amp; Corks</span><span class="marquee-dot"></span>
+      </div>
+      <div class="marquee-set" aria-hidden="true">
+        <span class="marquee-text">Homebrewing Supplies</span><span class="marquee-dot"></span>
+        <span class="marquee-text">Wine Kits</span><span class="marquee-dot"></span>
+        <span class="marquee-text">Kombucha</span><span class="marquee-dot"></span>
+        <span class="marquee-text">Mead</span><span class="marquee-dot"></span>
+        <span class="marquee-text">Cider</span><span class="marquee-dot"></span>
+        <span class="marquee-text">Equipment</span><span class="marquee-dot"></span>
+        <span class="marquee-text">Classes</span><span class="marquee-dot"></span>
+        <span class="marquee-text">Yeast &amp; Nutrients</span><span class="marquee-dot"></span>
+        <span class="marquee-text">Bottles &amp; Corks</span><span class="marquee-dot"></span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── CATEGORIES ── -->
+  <section class="categories-wrap">
+    <div class="section-header">
+      <span class="section-eyebrow">Browse by Category</span>
+      <h2 class="section-title">Everything You Need to <em>Brew</em></h2>
+      <div class="copper-rule"></div>
+    </div>
+    <div class="cat-grid">
+
+      <a href="#" class="cat-card">
+        <svg class="cat-icon" viewBox="0 0 74 74" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Pint glass -->
+          <path d="M 20 18 L 25 62 L 49 62 L 54 18 Z"/>
+          <!-- Foam top -->
+          <path d="M 17 18 Q 24 11 37 13 Q 50 11 57 18"/>
+          <!-- Bubbles -->
+          <circle cx="30" cy="40" r="2.2" stroke-width="1.4"/>
+          <circle cx="40" cy="30" r="1.8" stroke-width="1.4"/>
+          <circle cx="35" cy="50" r="1.6" stroke-width="1.4"/>
+          <!-- Hop leaves -->
+          <path d="M 58 28 Q 65 22 70 26 Q 67 33 60 32 Z" stroke-width="1.4"/>
+          <path d="M 58 36 Q 67 32 72 36 Q 69 43 62 40 Z" stroke-width="1.4"/>
+        </svg>
+        <p class="cat-name">Beer Brewing</p>
+        <p class="cat-desc">All-grain kits, extract kits, specialty hops, malts, and yeast for every style from crisp lagers to bold West Coast IPAs.</p>
+        <span class="cat-link">Explore Collection &rarr;</span>
+      </a>
+
+      <a href="#" class="cat-card">
+        <svg class="cat-icon" viewBox="0 0 74 74" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Wine bottle -->
+          <path d="M 31 16 L 31 26 Q 24 34 24 46 Q 24 62 37 62 Q 50 62 50 46 Q 50 34 43 26 L 43 16 Z"/>
+          <!-- Neck -->
+          <rect x="31" y="10" width="12" height="8" rx="3"/>
+          <!-- Label -->
+          <rect x="27" y="38" width="20" height="14" rx="1" stroke-width="1.4"/>
+          <!-- Liquid line -->
+          <path d="M 26 46 Q 37 43 48 46" stroke-width="1.4"/>
+        </svg>
+        <p class="cat-name">Wine Making</p>
+        <p class="cat-desc">Red, white, rosé, and fruit wine kits. Premium juice concentrates, corks, bottles, and professional finishing agents.</p>
+        <span class="cat-link">Explore Collection &rarr;</span>
+      </a>
+
+      <a href="#" class="cat-card">
+        <svg class="cat-icon" viewBox="0 0 74 74" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Carboy / glass fermenter -->
+          <path d="M 30 20 L 30 32 L 18 54 Q 16 64 37 64 Q 58 64 56 54 L 44 32 L 44 20 Z"/>
+          <line x1="25" y1="20" x2="49" y2="20"/>
+          <!-- Stopper -->
+          <rect x="31" y="12" width="12" height="9" rx="2.5"/>
+          <!-- Airlock -->
+          <line x1="37" y1="12" x2="37" y2="5"/>
+          <circle cx="37" cy="4" r="2.5"/>
+          <!-- Liquid inside -->
+          <path d="M 21 50 Q 37 47 53 50" stroke-width="1.4"/>
+        </svg>
+        <p class="cat-name">Equipment &amp; Tools</p>
+        <p class="cat-desc">Fermenters, airlocks, hydrometers, bottle cappers, kegging systems, pH meters, and cleaning and sanitizing supplies.</p>
+        <span class="cat-link">Explore Collection &rarr;</span>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- ── PRODUCTS ── -->
+  <section class="products-wrap">
+    <div class="section-header">
+      <span class="section-eyebrow">Featured Products</span>
+      <h2 class="section-title">Staff <em>Favorites</em></h2>
+      <div class="copper-rule"></div>
+    </div>
+    <div class="product-grid">
+
+      <!-- 1 -->
+      <div class="product-card">
+        <div class="product-img">
+          <span class="product-badge">Best Seller</span>
+          <img src="IPA_Kit.png" alt="Cascade Hops IPA Kit" />
+        </div>
+        <div class="product-body">
+          <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="product-name">Cascade Hops IPA Kit</p>
+          <p class="product-desc">Complete all-grain kit for a bold West Coast IPA with floral citrus finish. Makes 5 gallons.</p>
+          <div class="product-price">$34.99</div>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="product-card">
+        <div class="product-img">
+          <span class="product-badge">On Sale</span>
+          <img src="Cabernet_Kit.png" alt="Reserve Cabernet Wine Kit" />
+        </div>
+        <div class="product-body">
+          <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="product-name">Reserve Cabernet Wine Kit</p>
+          <p class="product-desc">Premium 6-gallon Old World-style kit. Rich and full-bodied with dark fruit and vanilla notes.</p>
+          <div class="product-price">$52.00 <span class="price-was">$64.99</span></div>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="Hydrometer.png" alt="Pro Digital Hydrometer" />
+        </div>
+        <div class="product-body">
+          <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+          <p class="product-name">Pro Digital Hydrometer</p>
+          <p class="product-desc">Wireless Bluetooth hydrometer with real-time gravity and temperature readings in your pocket.</p>
+          <div class="product-price">$79.95</div>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="product-card">
+        <div class="product-img">
+          <span class="product-badge">Low Stock</span>
+          <img src="Belgian_Abby.png" alt="Belgian Abbey Yeast" />
+        </div>
+        <div class="product-body">
+          <div class="product-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="product-name">Belgian Abbey Yeast</p>
+          <p class="product-desc">Dry yeast for authentic Trappist ales. Fruity esters, subtle clove notes, and reliable attenuation.</p>
+          <div class="product-price">$6.50</div>
+          <button class="btn-cart">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── TRUST ── -->
+  <section class="trust-section">
+    <div class="trust-inner">
+      <div class="section-header">
+        <span class="section-eyebrow">Why Barrel &amp; Grain</span>
+        <h2 class="section-title">Brewed on <em>Trust</em></h2>
+        <div class="copper-rule"></div>
+      </div>
+      <div class="trust-grid">
+
+        <div class="trust-badge">
+          <svg class="trust-icon" viewBox="0 0 62 62" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Leaf -->
+            <path d="M 31 54 Q 10 44 14 22 Q 31 8 50 22 Q 54 42 31 54 Z"/>
+            <path d="M 31 54 Q 31 36 17 22" stroke-width="1.5"/>
+            <path d="M 31 46 Q 24 38 18 36" stroke-width="1.2"/>
+            <path d="M 31 36 Q 38 30 42 26" stroke-width="1.2"/>
+          </svg>
+          <p class="trust-title">Premium Ingredients</p>
+          <p class="trust-text">We source only the finest malts, hops, and yeasts from trusted suppliers. Every ingredient is tested for freshness before it reaches your hands.</p>
+        </div>
+
+        <div class="trust-badge">
+          <svg class="trust-icon" viewBox="0 0 62 62" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Person + speech bubble -->
+            <circle cx="24" cy="22" r="9"/>
+            <path d="M 10 52 Q 10 38 24 38 Q 38 38 38 52"/>
+            <rect x="38" y="10" width="18" height="14" rx="3"/>
+            <path d="M 41 22 L 38 28 L 44 22" stroke-linejoin="round"/>
+            <line x1="42" y1="16" x2="52" y2="16" stroke-width="1.4"/>
+            <line x1="42" y1="20" x2="50" y2="20" stroke-width="1.4"/>
+          </svg>
+          <p class="trust-title">Expert Brewer Support</p>
+          <p class="trust-text">Our team are passionate homebrewers. Whether you're troubleshooting a stuck fermentation or planning your first batch, we're ready to help.</p>
+        </div>
+
+        <div class="trust-badge">
+          <svg class="trust-icon" viewBox="0 0 62 62" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Shield with checkmark -->
+            <path d="M 31 8 L 50 16 L 50 33 Q 50 48 31 56 Q 12 48 12 33 L 12 16 Z"/>
+            <polyline points="20,31 28,40 44,22"/>
+          </svg>
+          <p class="trust-title">Satisfaction Guaranteed</p>
+          <p class="trust-text">Not happy with your order? We'll make it right — no questions asked. We stand behind every product with a full satisfaction guarantee.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── NEWSLETTER ── -->
+  <section class="newsletter-outer">
+    <div class="newsletter-inner">
+      <div class="section-header">
+        <span class="section-eyebrow">Stay in the Loop</span>
+        <h2 class="section-title">New Kits, Classes &amp; <em>Recipes</em></h2>
+        <div class="copper-rule"></div>
+      </div>
+      <p class="newsletter-sub">Join our list for new product drops, seasonal brewing guides, class announcements, and exclusive discounts for subscribers.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email address" />
+        <button type="submit" class="btn-subscribe">Subscribe</button>
+      </form>
+      <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
+    </div>
+  </section>
+
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-grid">
+
+      <div>
+        <p class="footer-brand-name">Barrel &amp; Grain</p>
+        <p class="footer-tagline">Craft homebrew supplies for curious hands<br />and adventurous palates.</p>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-col-title">Shop</p>
+        <ul>
+          <li><a href="#">Beer Brewing</a></li>
+          <li><a href="#">Wine Making</a></li>
+          <li><a href="#">Mead &amp; Cider</a></li>
+          <li><a href="#">Kombucha</a></li>
+          <li><a href="#">Equipment</a></li>
+          <li><a href="#">Classes</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-col-title">Help</p>
+        <ul>
+          <li><a href="#">Getting Started</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-col-title">Visit Us</p>
+        <div class="footer-contact-item">
+          <strong>Address</strong>
+          1234 Grain St<br />Huntsville, AL 35801
+        </div>
+        <div class="footer-contact-item">
+          <strong>Phone</strong>
+          256-123-4567
+        </div>
+        <div class="footer-contact-item">
+          <strong>Hours</strong>
+          Mon &ndash; Sat &nbsp; 10am &ndash; 6pm<br />Sunday &nbsp; 12pm &ndash; 4pm
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Barrel &amp; Grain. All rights reserved.</span>
+      <span><a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms of Service</a></span>
+    </div>
+  </footer>
+
+
+  <script>
+    /* ── NAV scroll shadow ── */
+    window.addEventListener('scroll', function () {
+      document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    /* ── HERO CANVAS — warm drifting particles ── */
+    (function () {
+      const canvas = document.getElementById('hero-canvas');
+      const ctx = canvas.getContext('2d');
+
+      function resize() {
+        canvas.width  = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      const COUNT = 210;
+      const pool  = [];
+
+      function Particle(prewarm) {
+        this.init(prewarm);
+      }
+
+      Particle.prototype.init = function (prewarm) {
+        this.x      = Math.random() * canvas.width;
+        this.y      = prewarm ? Math.random() * canvas.height
+                              : canvas.height + 12 + Math.random() * 60;
+        this.r      = Math.random() * 3.2 + 0.6;
+        this.vy     = Math.random() * 0.38 + 0.07;
+        this.vx     = (Math.random() - 0.5) * 0.18;
+        this.wFreq  = Math.random() * 0.014 + 0.004;
+        this.wAmp   = Math.random() * 1.1 + 0.4;
+        this.wOff   = Math.random() * Math.PI * 2;
+        this.alpha  = Math.random() * 0.62 + 0.22;
+        this.hue    = 24 + Math.random() * 28;
+        this.sat    = 78 + Math.random() * 18;
+        this.lit    = 56 + Math.random() * 20;
+        this.life   = prewarm ? Math.floor(Math.random() * 320) : 0;
+        this.maxLife= Math.floor(Math.random() * 380 + 140);
+      };
+
+      Particle.prototype.step = function () {
+        this.life++;
+        this.y -= this.vy;
+        this.x += this.vx + Math.sin(this.life * this.wFreq + this.wOff) * this.wAmp * 0.08;
+
+        var p  = this.life / this.maxLife;
+        var fade = p < 0.15  ? p / 0.15
+                 : p > 0.72  ? (1 - (p - 0.72) / 0.28)
+                 : 1;
+        this.curAlpha = this.alpha * Math.max(0, fade);
+
+        if (this.y < -8 || this.life >= this.maxLife) this.init(false);
+      };
+
+      Particle.prototype.draw = function () {
+        if (this.curAlpha <= 0) return;
+        ctx.save();
+        ctx.globalAlpha = this.curAlpha;
+        ctx.shadowColor = 'hsl(' + this.hue + ', 90%, 65%)';
+        ctx.shadowBlur  = this.r * 6;
+        ctx.fillStyle   = 'hsl(' + this.hue + ', ' + this.sat + '%, ' + this.lit + '%)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      };
+
+      for (var i = 0; i < COUNT; i++) pool.push(new Particle(true));
+
+      function loop() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (var i = 0; i < pool.length; i++) {
+          pool[i].step();
+          pool[i].draw();
+        }
+        requestAnimationFrame(loop);
+      }
+      loop();
+    })();
+  </script>
+
+</body>
+</html>
