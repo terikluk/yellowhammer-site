@@ -26,7 +26,7 @@ export default function Nav() {
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <Link href="/" className={styles.logoLink} aria-label="Yellowhammer Studios">
-        <img src="/bird.png" alt="Yellowhammer Studios" className={styles.logo} />
+        <img src="/bird.png" alt="" className={styles.logo} />
       </Link>
       <ul className={styles.list}>
         {navLinks.map(({ href, label }) => (

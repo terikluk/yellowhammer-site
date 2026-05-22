@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Hero from '@/components/Hero'
 import styles from './page.module.css'
+import { submitQuestionnaire } from './actions'
 
 export const metadata: Metadata = { title: 'Start Your Project' }
 
@@ -20,13 +21,7 @@ export default function Questionnaire() {
           better we can serve you.
         </p>
 
-        <form
-          name="questionnaire"
-          method="post"
-          action="/thankyou"
-          data-netlify="true"
-        >
-          <input type="hidden" name="form-name" value="questionnaire" />
+        <form action={submitQuestionnaire}>
 
           {/* SECTION 1 */}
           <div className={styles.qSection}>
@@ -36,11 +31,11 @@ export default function Questionnaire() {
             <div className={styles.formRow}>
               <div className={styles.formGroup}>
                 <label htmlFor="business-name">Business Name</label>
-                <input type="text" id="business-name" name="business-name" />
+                <input type="text" id="business-name" name="business-name" required />
               </div>
               <div className={styles.formGroup}>
                 <label htmlFor="your-name">Your Name &amp; Role</label>
-                <input type="text" id="your-name" name="your-name" />
+                <input type="text" id="your-name" name="your-name" required />
               </div>
             </div>
 

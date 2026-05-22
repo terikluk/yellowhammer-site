@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Hero from '@/components/Hero'
 import styles from './page.module.css'
+import { submitContact } from './actions'
 
 export const metadata: Metadata = { title: 'Contact' }
 
@@ -29,19 +30,11 @@ export default function Contact() {
               attention.
             </p>
 
-            <form
-              className={styles.form}
-              name="contact"
-              method="post"
-              action="/thankyou"
-              data-netlify="true"
-            >
-              <input type="hidden" name="form-name" value="contact" />
-
+            <form className={styles.form} action={submitContact}>
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
                   <label htmlFor="name">Full Name</label>
-                  <input type="text" id="name" name="name" autoComplete="name" />
+                  <input type="text" id="name" name="name" autoComplete="name" required />
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="business">Business Name</label>
@@ -52,7 +45,7 @@ export default function Contact() {
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
                   <label htmlFor="email">Email Address</label>
-                  <input type="email" id="email" name="email" autoComplete="email" />
+                  <input type="email" id="email" name="email" autoComplete="email" required />
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="phone">
@@ -82,6 +75,7 @@ export default function Contact() {
                   name="message"
                   rows={5}
                   placeholder="Tell us about your project..."
+                  required
                 />
               </div>
 

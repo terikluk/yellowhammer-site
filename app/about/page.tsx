@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import Hero from '@/components/Hero'
 import styles from './page.module.css'
@@ -26,9 +27,11 @@ export default function About() {
 
           <div className={styles.teamGrid}>
             <div className={styles.profile}>
-              <img
+              <Image
                 src="/Theresa Kluk.jpeg"
                 alt="Theresa Kluk"
+                width={200}
+                height={200}
                 className={styles.photo}
               />
               <p className={styles.name}>Theresa Kluk</p>
@@ -48,9 +51,11 @@ export default function About() {
             </div>
 
             <div className={styles.profile}>
-              <img
+              <Image
                 src="/Claire2.png"
                 alt="Claire Wilson"
+                width={200}
+                height={200}
                 className={styles.photo}
                 style={{ objectPosition: 'center top' }}
               />

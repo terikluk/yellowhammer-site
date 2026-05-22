@@ -13,3 +13,4 @@ tsconfig.tsbuildinfo
 # OS / Editor
 .DS_Store
 .claude/
+.vercel
