@@ -45,10 +45,10 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom,
-    #1a0f08 0%,
+    rgba(26, 15, 8, 0.8) 0%,
     transparent 18%,
     transparent 65%,
-    #1a0f08 100%
+    rgba(26, 15, 8, 0.8) 100%
   );
   z-index: 3;
   pointer-events: none;
