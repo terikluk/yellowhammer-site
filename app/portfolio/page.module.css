@@ -273,6 +273,8 @@
     align-items: start;
   }
   .logoImgWrap {
+    aspect-ratio: auto;
+    height: calc((100vw - 4rem - 0.6rem) / 2);
     padding: 12%;
   }
   .portHeader {
