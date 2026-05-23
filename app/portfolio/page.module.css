@@ -259,11 +259,19 @@
 }
 
 @media (max-width: 700px) {
+  .previewFrame iframe {
+    transform: scale(0.255);
+  }
+
   .socialGrid {
     grid-template-columns: repeat(2, 1fr);
   }
   .logoGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+  .logoImgWrap {
+    padding: 12%;
   }
   .portHeader {
     flex-direction: column;
