@@ -21,14 +21,11 @@ export default function ThankYou() {
             <br />
             <em>Received.</em>
           </h1>
-          <div className="amber-rule" />
           <p className={styles.tagline}>
             Thank you for reaching out. We&rsquo;ll be in touch within 48
             hours.
           </p>
-        </div>
-        <div className={styles.scrollIndicator} aria-hidden="true">
-          <span />
+          <div className="amber-rule" />
         </div>
       </section>
 
