@@ -15,7 +15,7 @@ export async function submitContact(formData: FormData) {
       const resend = new Resend(process.env.RESEND_API_KEY)
       await resend.emails.send({
         from: 'Yellowhammer Studios <onboarding@resend.dev>',
-        to: 'tkluk@yellowhammerstudios.com',
+        to: 'terikluk@gmail.com',
         replyTo: email,
         subject: `New Contact: ${name}${projectType ? ` — ${projectType}` : ''}`,
         html: `

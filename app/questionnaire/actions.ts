@@ -19,7 +19,7 @@ export async function submitQuestionnaire(formData: FormData) {
 
       await resend.emails.send({
         from: 'Yellowhammer Studios <onboarding@resend.dev>',
-        to: 'tkluk@yellowhammerstudios.com',
+        to: 'terikluk@gmail.com',
         subject: `New Questionnaire: ${fields['business-name'] || fields['your-name'] || 'Submission'}`,
         html: `
           <h2 style="font-family:sans-serif">New Brand Questionnaire</h2>
