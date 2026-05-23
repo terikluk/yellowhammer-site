@@ -143,6 +143,18 @@
   color: var(--espresso);
 }
 
+.submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.formError {
+  font-size: 0.85rem;
+  color: #e07a5f;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
 /* ── INFO COL ── */
 .infoCol {
   padding-top: 5.8rem;

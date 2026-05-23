@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Hero from '@/components/Hero'
 import styles from './page.module.css'
-import { submitContact } from './actions'
+import ContactForm from './ContactForm'
 
 export const metadata: Metadata = { title: 'Contact' }
 
@@ -30,59 +30,7 @@ export default function Contact() {
               attention.
             </p>
 
-            <form className={styles.form} action={submitContact}>
-              <div className={styles.formRow}>
-                <div className={styles.formGroup}>
-                  <label htmlFor="name">Full Name</label>
-                  <input type="text" id="name" name="name" autoComplete="name" required />
-                </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="business">Business Name</label>
-                  <input type="text" id="business" name="business" autoComplete="organization" />
-                </div>
-              </div>
-
-              <div className={styles.formRow}>
-                <div className={styles.formGroup}>
-                  <label htmlFor="email">Email Address</label>
-                  <input type="email" id="email" name="email" autoComplete="email" required />
-                </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="phone">
-                    Phone Number{' '}
-                    <span className={styles.optional}>(optional)</span>
-                  </label>
-                  <input type="tel" id="phone" name="phone" autoComplete="tel" />
-                </div>
-              </div>
-
-              <div className={styles.formGroup}>
-                <label htmlFor="project-type">Project Type</label>
-                <select id="project-type" name="project-type" defaultValue="">
-                  <option value="" disabled />
-                  <option value="logo-brand">Logo &amp; Brand Identity</option>
-                  <option value="website">Website Design &amp; Development</option>
-                  <option value="social">Social Media Design</option>
-                  <option value="maintenance">Website Maintenance</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div className={styles.formGroup}>
-                <label htmlFor="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  placeholder="Tell us about your project..."
-                  required
-                />
-              </div>
-
-              <button type="submit" className={styles.submit}>
-                Send Message
-              </button>
-            </form>
+            <ContactForm />
           </div>
 
           <div className={styles.infoCol}>
