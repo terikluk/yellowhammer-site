@@ -129,8 +129,16 @@
 @media (max-width: 700px) {
   .hero {
     min-height: auto;
-    padding: 9.5rem 1.5rem 4rem;
+    padding: 9.5rem 1.5rem 2rem;
     justify-content: flex-start;
+  }
+
+  .heroContent :global(.amber-rule) {
+    display: none;
+  }
+
+  .tagline {
+    margin-top: 0.8rem;
   }
 
   .heroImg {
@@ -143,7 +151,7 @@
   }
 
   .explore {
-    padding: 3rem 1.5rem 4rem;
+    padding: 1.5rem 1.5rem 4rem;
   }
 
   .btnRow {
