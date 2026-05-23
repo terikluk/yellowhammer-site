@@ -10,16 +10,21 @@
   padding: 6rem 2rem 4rem;
 }
 
+@keyframes hero-spin {
+  from { transform: translateY(-50%) rotate(0deg); }
+  to   { transform: translateY(-50%) rotate(360deg); }
+}
+
 .agateImg {
   position: absolute;
   right: -400px;
-  top: 35%;
+  top: 40%;
   width: 1100px;
   height: 1100px;
   object-fit: contain;
   z-index: 1;
   pointer-events: none;
-  animation: hero-spin 360s linear infinite;
+  animation: hero-spin 120s linear infinite;
 }
 
 .hero::after {
