@@ -43,11 +43,13 @@
 .hero::before {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 35%;
-  background: linear-gradient(to bottom, transparent 0%, #1a0f08 100%);
+  inset: 0;
+  background: linear-gradient(to bottom,
+    #1a0f08 0%,
+    transparent 18%,
+    transparent 65%,
+    #1a0f08 100%
+  );
   z-index: 3;
   pointer-events: none;
 }
