@@ -24,6 +24,7 @@
   object-fit: contain;
   z-index: 1;
   pointer-events: none;
+  opacity: 0.55;
   animation: hero-spin 480s linear infinite;
 }
 
