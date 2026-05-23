@@ -126,6 +126,10 @@
     margin-bottom: 1.5rem;
   }
 
+  .scrollIndicator {
+    display: none;
+  }
+
   .agateImg {
     top: 42%;
     width: 560px;
