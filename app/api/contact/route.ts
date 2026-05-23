@@ -23,8 +23,8 @@ export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY)
 
   const { error: sendError } = await resend.emails.send({
-    from: 'Yellowhammer Studios <onboarding@resend.dev>',
-    to: 'terikluk@gmail.com',
+    from: 'Yellowhammer Studios <hello@send.yellowhammerstudios.com>',
+    to: ['tkluk@yellowhammerstudios.com', 'terikluk@gmail.com'],
     replyTo: email,
     subject: `New Contact: ${escapeHtml(name)}${projectType ? ` — ${escapeHtml(projectType)}` : ''}`,
     html: `
