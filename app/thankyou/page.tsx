@@ -34,7 +34,6 @@ export default function ThankYou() {
 
       <section id="explore">
         <div className={styles.explore}>
-          <div className="amber-rule" />
           <p className={styles.exploreText}>
             In the meantime, feel free to explore our work.
           </p>

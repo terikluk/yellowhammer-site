@@ -104,7 +104,7 @@
 /* ── EXPLORE ── */
 .explore {
   text-align: center;
-  padding: 7rem 2rem 8rem;
+  padding: 3rem 2rem 6rem;
   max-width: 640px;
   margin: 0 auto;
 }
@@ -131,10 +131,6 @@
     min-height: auto;
     padding: 9.5rem 1.5rem 2rem;
     justify-content: flex-start;
-  }
-
-  .heroContent :global(.amber-rule) {
-    display: none;
   }
 
   .tagline {
