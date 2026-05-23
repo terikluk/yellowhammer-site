@@ -82,6 +82,12 @@ body {
   );
 }
 
+@media (max-width: 700px) {
+  body {
+    font-size: 17px;
+  }
+}
+
 /* ── SHARED KEYFRAMES ── */
 @keyframes rule-shimmer {
   0%   { background-position: -100% center; }

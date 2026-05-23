@@ -106,3 +106,15 @@
   background: linear-gradient(to bottom, var(--amber), transparent);
   animation: drip 1.8s ease-in-out infinite;
 }
+
+@media (max-width: 700px) {
+  .hero {
+    padding: 7rem 1.5rem 4rem;
+  }
+
+  .agateImg {
+    width: 560px;
+    height: 560px;
+    right: -160px;
+  }
+}

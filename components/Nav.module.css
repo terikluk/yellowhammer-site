@@ -51,11 +51,108 @@
   color: var(--amber-light);
 }
 
+/* ── Hamburger button ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 200;
+}
+
+.bar {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--cream);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.barTopOpen {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.barMidOpen {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.barBotOpen {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile overlay menu ── */
+.mobileMenu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background-color: var(--espresso);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobileMenuOpen {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobileList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.8rem;
+}
+
+.mobileLink {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 1.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 300;
+  transition: color 0.25s;
+}
+
+.mobileLink:hover,
+.mobileLinkActive {
+  color: var(--amber-light);
+}
+
 @media (max-width: 700px) {
   .nav {
     padding: 1.2rem 1.5rem;
   }
+
   .list {
-    gap: 1.4rem;
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+
+  /* Keep nav bar visible above the overlay */
+  .nav {
+    z-index: 100;
+  }
+
+  .menuActive {
+    background-color: var(--espresso);
+    border-bottom-color: rgba(200, 130, 26, 0.4);
   }
 }
