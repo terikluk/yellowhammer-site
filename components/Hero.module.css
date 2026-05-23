@@ -18,13 +18,13 @@
 .agateImg {
   position: absolute;
   right: -400px;
-  top: 40%;
+  top: 50%;
   width: 1100px;
   height: 1100px;
   object-fit: contain;
   z-index: 1;
   pointer-events: none;
-  animation: hero-spin 120s linear infinite;
+  animation: hero-spin 480s linear infinite;
 }
 
 .hero::after {
