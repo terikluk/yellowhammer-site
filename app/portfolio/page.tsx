@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Hero from '@/components/Hero'
+import ScaledIframe from './ScaledIframe'
 import styles from './page.module.css'
 
 export const metadata: Metadata = { title: 'Portfolio' }
@@ -92,14 +93,11 @@ export default function Portfolio() {
                   rel="noopener noreferrer"
                 >
                   <div className={styles.imgWrap}>
-                    <div className={`${styles.previewFrame} ${p.iframeClass}`}>
-                      <iframe
-                        src={`/${p.slug}.html`}
-                        scrolling="no"
-                        tabIndex={-1}
-                        title={p.iframeTitle}
-                      />
-                    </div>
+                    <ScaledIframe
+                      src={`/${p.slug}.html`}
+                      title={p.iframeTitle}
+                      iframeHeight={p.iframeClass ? 900 : 720}
+                    />
                   </div>
                 </a>
                 <div className={styles.meta}>
