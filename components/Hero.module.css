@@ -115,11 +115,11 @@
   animation: drip 1.8s ease-in-out infinite;
 }
 
-@media (min-width: 701px) and (max-width: 1024px) {
+@media (min-width: 701px) and (max-width: 1280px) {
   .agateImg {
-    width: 620px;
-    height: 620px;
-    right: -500px;
+    width: 600px;
+    height: 600px;
+    right: -520px;
   }
 }
 
