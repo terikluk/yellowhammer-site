@@ -251,8 +251,9 @@
 
 /* ── RESPONSIVE ── */
 @media (min-width: 901px) and (max-width: 1280px) {
-  .previewFrame iframe {
-    transform: scale(0.36);
+  /* darken background so any gap between iframe and container is invisible */
+  .imgWrap {
+    background: var(--espresso);
   }
   .logoGrid {
     grid-template-columns: repeat(3, 1fr);
@@ -261,6 +262,20 @@
   .logoImgWrap {
     aspect-ratio: auto;
     height: calc((min(100vw, 1200px) - 4rem - 2rem) / 3);
+  }
+}
+
+/* narrower landscape tablets (~1024px): scale fills column width exactly */
+@media (min-width: 901px) and (max-width: 1060px) {
+  .previewFrame iframe {
+    transform: scale(0.36);
+  }
+}
+
+/* wider landscape tablets (~1180px): scale fills column width exactly */
+@media (min-width: 1061px) and (max-width: 1280px) {
+  .previewFrame iframe {
+    transform: scale(0.43);
   }
 }
 
