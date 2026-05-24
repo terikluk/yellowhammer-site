@@ -96,7 +96,6 @@ export default function Portfolio() {
                     <ScaledIframe
                       src={`/${p.slug}.html`}
                       title={p.iframeTitle}
-                      iframeHeight={p.iframeClass ? 900 : 720}
                     />
                   </div>
                 </a>
