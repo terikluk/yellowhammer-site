@@ -254,11 +254,26 @@
   .previewFrame iframe {
     transform: scale(0.36);
   }
+  .logoGrid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+  .logoImgWrap {
+    aspect-ratio: auto;
+    height: calc((min(100vw, 1200px) - 4rem - 2rem) / 3);
+  }
 }
 
 @media (min-width: 701px) and (max-width: 900px) {
   .previewFrame iframe {
     transform: scale(0.55);
+  }
+  .logoGrid {
+    align-items: start;
+  }
+  .logoImgWrap {
+    aspect-ratio: auto;
+    height: calc((100vw - 4rem - 2rem) / 3);
   }
 }
 
