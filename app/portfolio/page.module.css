@@ -81,11 +81,78 @@
 /* ── IFRAME PREVIEW ── */
 /* Scale is applied dynamically by ScaledIframe.tsx */
 
-/* ── WEB GRID ── */
+/* ── WEB GRID (legacy, unused) ── */
 .webGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.8rem;
+}
+
+/* ── CAROUSEL ── */
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.carouselTrack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+}
+
+.carouselControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.arrowBtn {
+  background: none;
+  border: 1px solid var(--amber);
+  color: var(--amber-light);
+  font-size: 1.1rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.arrowBtn:hover:not(:disabled) {
+  background: var(--amber);
+  color: var(--espresso);
+}
+
+.arrowBtn:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.dots {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  background: var(--espresso-light);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dotActive {
+  background: var(--amber);
+  transform: scale(1.4);
 }
 
 /* ── SOCIAL GRID ── */
@@ -272,6 +339,9 @@
 
 @media (max-width: 900px) {
   .webGrid {
+    grid-template-columns: 1fr;
+  }
+  .carouselTrack {
     grid-template-columns: 1fr;
   }
   .logoGrid {

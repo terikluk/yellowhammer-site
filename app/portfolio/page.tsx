@@ -1,10 +1,14 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Hero from '@/components/Hero'
-import ScaledIframe from './ScaledIframe'
 import styles from './page.module.css'
+import WebsiteCarousel from './WebsiteCarousel'
 
-export const metadata: Metadata = { title: 'Portfolio' }
+export const metadata: Metadata = {
+  title: 'Portfolio',
+  description:
+    'See our portfolio of website designs, social media graphics, and brand marks for clients across Alabama and Texas.',
+}
 
 const websiteProjects = [
   {
@@ -81,41 +85,9 @@ export default function Portfolio() {
                 <em>Design</em>
               </h2>
             </div>
-            <span className={styles.portCount}>4 Projects</span>
+            <span className={styles.portCount}>{websiteProjects.length} Projects</span>
           </div>
-          <div className={styles.webGrid}>
-            {websiteProjects.map((p) => (
-              <div key={p.slug} className={styles.card}>
-                <a
-                  href={`/${p.slug}.html`}
-                  className={styles.imgLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div className={styles.imgWrap}>
-                    <ScaledIframe
-                      src={`/${p.slug}.html`}
-                      title={p.iframeTitle}
-                      iframeHeight={p.slug === 'linea-group' ? 900 : 720}
-                    />
-                  </div>
-                </a>
-                <div className={styles.meta}>
-                  <span className={styles.cat}>Website Design</span>
-                  <h3 className={styles.cardTitle}>{p.title}</h3>
-                  <p className={styles.cardDesc}>{p.desc}</p>
-                  <a
-                    href={`/${p.slug}.html`}
-                    className={styles.portLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Site &rarr;
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
+          <WebsiteCarousel projects={websiteProjects} />
         </div>
       </section>
 
