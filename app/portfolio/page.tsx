@@ -12,6 +12,14 @@ export const metadata: Metadata = {
 
 const websiteProjects = [
   {
+    slug: 'restoration-church',
+    title: 'Restore Church Huntsville',
+    desc: 'Community church website — Huntsville, AL',
+    iframeTitle: 'Restore Church Huntsville website preview',
+    iframeClass: '',
+    liveUrl: 'https://restorationchurchcom.vercel.app',
+  },
+  {
     slug: 'sailors-chiropractic',
     title: 'Sailors Chiropractic',
     desc: 'Chiropractic clinic website — Huntsville, AL',
@@ -38,14 +46,6 @@ const websiteProjects = [
     desc: 'Architecture & design firm — The Woodlands, TX',
     iframeTitle: 'Linea Group website preview',
     iframeClass: styles.iframeLinea,
-  },
-  {
-    slug: 'restoration-church',
-    title: 'Restore Church Huntsville',
-    desc: 'Community church website — Huntsville, AL',
-    iframeTitle: 'Restore Church Huntsville website preview',
-    iframeClass: '',
-    liveUrl: 'https://restorationchurchcom.vercel.app',
   },
 ]
 
