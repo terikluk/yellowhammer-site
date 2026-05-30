@@ -10,6 +10,7 @@ type Project = {
   desc: string
   iframeTitle: string
   iframeClass: string
+  liveUrl?: string
 }
 
 export default function WebsiteCarousel({ projects }: { projects: Project[] }) {
@@ -55,7 +56,7 @@ export default function WebsiteCarousel({ projects }: { projects: Project[] }) {
               <h3 className={styles.cardTitle}>{p.title}</h3>
               <p className={styles.cardDesc}>{p.desc}</p>
               <a
-                href={`/${p.slug}.html`}
+                href={p.liveUrl ?? `/${p.slug}.html`}
                 className={styles.portLink}
                 target="_blank"
                 rel="noopener noreferrer"

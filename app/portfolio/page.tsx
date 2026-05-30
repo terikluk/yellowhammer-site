@@ -45,6 +45,7 @@ const websiteProjects = [
     desc: 'Community church website — Huntsville, AL',
     iframeTitle: 'Restore Church Huntsville website preview',
     iframeClass: '',
+    liveUrl: 'https://restorationchurchcom.vercel.app',
   },
 ]
 
