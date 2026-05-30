@@ -39,6 +39,13 @@ const websiteProjects = [
     iframeTitle: 'Linea Group website preview',
     iframeClass: styles.iframeLinea,
   },
+  {
+    slug: 'restoration-church',
+    title: 'Restore Church Huntsville',
+    desc: 'Community church website — Huntsville, AL',
+    iframeTitle: 'Restore Church Huntsville website preview',
+    iframeClass: '',
+  },
 ]
 
 const socialProjects = [
