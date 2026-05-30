@@ -45,7 +45,7 @@ export default function WebsiteCarousel({ projects }: { projects: Project[] }) {
             >
               <div className={styles.imgWrap}>
                 <ScaledIframe
-                  src={`/${p.slug}.html`}
+                  src={p.liveUrl ?? `/${p.slug}.html`}
                   title={p.iframeTitle}
                   iframeHeight={p.slug === 'linea-group' ? 900 : 720}
                 />
