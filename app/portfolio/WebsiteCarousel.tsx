@@ -38,14 +38,14 @@ export default function WebsiteCarousel({ projects }: { projects: Project[] }) {
         {visible.map((p) => (
           <div key={p.slug} className={styles.card}>
             <a
-              href={`/${p.slug}.html`}
+              href={p.liveUrl ?? `/${p.slug}.html`}
               className={styles.imgLink}
               target="_blank"
               rel="noopener noreferrer"
             >
               <div className={styles.imgWrap}>
                 <ScaledIframe
-                  src={`/${p.slug}.html`}
+                  src={p.liveUrl ?? `/${p.slug}.html`}
                   title={p.iframeTitle}
                   iframeHeight={p.slug === 'linea-group' ? 900 : 720}
                 />
