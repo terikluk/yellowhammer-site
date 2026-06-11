@@ -3,7 +3,11 @@ import Link from 'next/link'
 import Hero from '@/components/Hero'
 import styles from './page.module.css'
 
-export const metadata: Metadata = { title: 'Services' }
+export const metadata: Metadata = {
+  title: 'Services',
+  description:
+    'Website design, social media management, and brand identity services from Yellowhammer Studios — Huntsville, AL.',
+}
 
 const services = [
   {
@@ -34,7 +38,7 @@ const services = [
       'Custom-coded or platform-built — your choice',
       'Mobile responsive design',
       'Domain and hosting setup',
-      'One round of revisions',
+      'Two rounds of revisions',
     ],
     alt: true,
   },
