@@ -7,7 +7,7 @@ export const contentType = 'image/png'
 
 export default async function OgImage() {
   const fontData = await fetch(
-    new URL('./fonts/CormorantGaramond-Light.ttf', import.meta.url)
+    'https://yellowhammerstudios.com/fonts/CormorantGaramond-Light.ttf'
   ).then((res) => res.arrayBuffer())
 
   return new ImageResponse(
@@ -18,6 +18,7 @@ export default async function OgImage() {
           width: '100%',
           height: '100%',
           display: 'flex',
+
           alignItems: 'center',
           justifyContent: 'space-between',
           padding: '0 100px',
