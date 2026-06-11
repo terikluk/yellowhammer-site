@@ -6,9 +6,12 @@ export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
 export default async function OgImage() {
-  const fontData = await fetch(
-    'https://yellowhammerstudios.com/fonts/CormorantGaramond-Light.ttf'
-  ).then((res) => res.arrayBuffer())
+  const css = await fetch(
+    'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300',
+    { headers: { 'User-Agent': 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)' } }
+  ).then((r) => r.text())
+  const fontUrl = css.match(/src: url\((.+?)\)/)?.[1] ?? ''
+  const fontData = await fetch(fontUrl).then((r) => r.arrayBuffer())
 
   return new ImageResponse(
     (
