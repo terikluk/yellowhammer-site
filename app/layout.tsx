@@ -11,9 +11,7 @@ const cormorant = Cormorant_Garamond({
   style: ['normal', 'italic'],
 })
 
-const siteUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : 'http://localhost:3000'
+const siteUrl = 'https://yellowhammerstudios.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -22,7 +20,15 @@ export const metadata: Metadata = {
     template: '%s — Yellowhammer Studios',
   },
   description:
-    'A creative practice devoted to craft, precision, and the quiet power of work made well.',
+    'Yellowhammer Studios is a creative studio in Huntsville, AL specializing in website design, social media, and brand identity — made with craft and intention.',
+  keywords: [
+    'website design Huntsville AL',
+    'branding Huntsville Alabama',
+    'social media design',
+    'logo design Huntsville',
+    'creative studio Alabama',
+    'Yellowhammer Studios',
+  ],
   icons: {
     icon: '/Favicon.jpg',
     apple: '/Favicon.jpg',
@@ -32,14 +38,16 @@ export const metadata: Metadata = {
     siteName: 'Yellowhammer Studios',
     title: 'Yellowhammer Studios',
     description:
-      'A creative practice devoted to craft, precision, and the quiet power of work made well.',
+      'A creative studio in Huntsville, AL specializing in website design, social media, and brand identity.',
     url: siteUrl,
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Yellowhammer Studios' }],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'Yellowhammer Studios',
     description:
-      'A creative practice devoted to craft, precision, and the quiet power of work made well.',
+      'A creative studio in Huntsville, AL specializing in website design, social media, and brand identity.',
+    images: ['/og-image.png'],
   },
 }
 
