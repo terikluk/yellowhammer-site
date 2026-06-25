@@ -83,6 +83,71 @@
   line-height: 1.8;
 }
 
+/* ── REVIEWS ── */
+.reviewsSection {
+  background: var(--espresso);
+  border-top: 1px solid var(--espresso-light);
+  border-bottom: 1px solid var(--espresso-light);
+}
+
+.reviewsInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 7rem 2rem;
+}
+
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.reviewCard {
+  background: var(--espresso-mid);
+  border: 1px solid var(--espresso-light);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.reviewStars {
+  color: var(--amber);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.reviewQuote {
+  font-size: 17px;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.85;
+  font-style: italic;
+  flex: 1;
+}
+
+.reviewMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--espresso-light);
+}
+
+.reviewName {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--cream);
+  letter-spacing: 0.05em;
+}
+
+.reviewSource {
+  font-size: 13px;
+  color: var(--amber);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 /* ── CONTACT CTA ── */
 .contactSection {
   text-align: center;
@@ -113,5 +178,9 @@
   .twoCol {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  .reviewsGrid {
+    grid-template-columns: 1fr;
   }
 }
