@@ -28,6 +28,13 @@ const websiteProjects = [
     liveUrl: 'https://2angrybakers.com',
   },
   {
+    slug: 'dusty-rose-salon',
+    title: 'Dusty Rose Salon & Spa',
+    desc: 'Boutique salon & spa website',
+    iframeTitle: 'Dusty Rose Salon & Spa website preview',
+    iframeClass: '',
+  },
+  {
     slug: 'sailors-chiropractic',
     title: 'Sailors Chiropractic',
     desc: 'Chiropractic clinic website — Huntsville, AL',
