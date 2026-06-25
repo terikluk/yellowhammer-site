@@ -33,6 +33,7 @@ const websiteProjects = [
     desc: 'Boutique salon & spa website',
     iframeTitle: 'Dusty Rose Salon & Spa website preview',
     iframeClass: '',
+    liveUrl: 'https://aspensalonandspacom.vercel.app',
   },
   {
     slug: 'sailors-chiropractic',
