@@ -20,6 +20,14 @@ const websiteProjects = [
     liveUrl: 'https://restorationchurchcom.vercel.app',
   },
   {
+    slug: 'two-angry-bakers',
+    title: 'Two Angry Bakers',
+    desc: 'Artisan bakery website — Huntsville, AL',
+    iframeTitle: 'Two Angry Bakers website preview',
+    iframeClass: '',
+    liveUrl: 'https://2angrybakers.com',
+  },
+  {
     slug: 'sailors-chiropractic',
     title: 'Sailors Chiropractic',
     desc: 'Chiropractic clinic website — Huntsville, AL',
