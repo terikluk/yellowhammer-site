@@ -145,8 +145,8 @@ export default function Portfolio() {
                 <div className={styles.meta}>
                   <span className={styles.cat}>Social Media</span>
                   <h3 className={styles.cardTitle}>{p.title}</h3>
-                  <span className={p.type === 'client' ? styles.badgeClient : styles.badgeConcept}>
-                    {p.type === 'client' ? 'Client Project' : p.type === 'inhouse' ? 'In-House' : 'Concept Project'}
+                  <span className={styles.badgeConcept}>
+                    {p.type === 'inhouse' ? 'In-House' : 'Concept Project'}
                   </span>
                 </div>
               </div>
