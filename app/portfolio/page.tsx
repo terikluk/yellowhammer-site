@@ -73,7 +73,7 @@ const websiteProjects = [
 ]
 
 const socialProjects = [
-  { src: '/Yellowhammer_Social_Media.png', alt: 'Yellowhammer Studios social media', title: 'Yellowhammer Studios', type: 'client' as const },
+  { src: '/Yellowhammer_Social_Media.png', alt: 'Yellowhammer Studios social media', title: 'Yellowhammer Studios', type: 'inhouse' as const },
   { src: '/Barrel_&_Grain_Social_Media.png', alt: 'Barrel & Grain social media', title: 'Barrel & Grain', type: 'concept' as const },
   { src: "/Sugga's_Social_Media.png", alt: "Suga's Bakery social media", title: "Suga's Bakery", type: 'concept' as const },
   { src: '/Linea_Social_Media.png', alt: 'Linea Group social media', title: 'Linea Group', type: 'concept' as const },
@@ -146,7 +146,7 @@ export default function Portfolio() {
                   <span className={styles.cat}>Social Media</span>
                   <h3 className={styles.cardTitle}>{p.title}</h3>
                   <span className={p.type === 'client' ? styles.badgeClient : styles.badgeConcept}>
-                    {p.type === 'client' ? 'Client Project' : 'Concept Project'}
+                    {p.type === 'client' ? 'Client Project' : p.type === 'inhouse' ? 'In-House' : 'Concept Project'}
                   </span>
                 </div>
               </div>
