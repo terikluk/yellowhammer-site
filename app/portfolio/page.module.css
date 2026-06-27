@@ -257,6 +257,39 @@
   color: var(--espresso);
 }
 
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.cardFooter .portLink {
+  margin-top: 0;
+}
+
+.badgeClient {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid var(--amber);
+  padding: 0.3em 0.8em;
+  white-space: nowrap;
+}
+
+.badgeConcept {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--espresso-light);
+  padding: 0.3em 0.8em;
+  white-space: nowrap;
+}
+
 /* ── CTA ── */
 .cta {
   text-align: center;

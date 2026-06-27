@@ -11,6 +11,7 @@ type Project = {
   iframeTitle: string
   iframeClass: string
   liveUrl?: string
+  type?: 'client' | 'concept'
 }
 
 export default function WebsiteCarousel({ projects }: { projects: Project[] }) {
@@ -55,14 +56,19 @@ export default function WebsiteCarousel({ projects }: { projects: Project[] }) {
               <span className={styles.cat}>Website Design</span>
               <h3 className={styles.cardTitle}>{p.title}</h3>
               <p className={styles.cardDesc}>{p.desc}</p>
-              <a
-                href={p.liveUrl ?? `/${p.slug}.html`}
-                className={styles.portLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Site &rarr;
-              </a>
+              <div className={styles.cardFooter}>
+                <a
+                  href={p.liveUrl ?? `/${p.slug}.html`}
+                  className={styles.portLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Site &rarr;
+                </a>
+                <span className={p.type === 'client' ? styles.badgeClient : styles.badgeConcept}>
+                  {p.type === 'client' ? 'Client Project' : 'Concept Project'}
+                </span>
+              </div>
             </div>
           </div>
         ))}

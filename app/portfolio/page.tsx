@@ -12,20 +12,22 @@ export const metadata: Metadata = {
 
 const websiteProjects = [
   {
-    slug: 'restoration-church',
-    title: 'Restore Church Huntsville',
-    desc: 'Community church website — Huntsville, AL',
-    iframeTitle: 'Restore Church Huntsville website preview',
-    iframeClass: '',
-    liveUrl: 'https://restorationchurchcom.vercel.app',
-  },
-  {
     slug: 'two-angry-bakers',
     title: 'Two Angry Bakers',
     desc: 'Artisan bakery website — Huntsville, AL',
     iframeTitle: 'Two Angry Bakers website preview',
     iframeClass: '',
     liveUrl: 'https://2angrybakers.com',
+    type: 'client' as const,
+  },
+  {
+    slug: 'restoration-church',
+    title: 'Restore Church Huntsville',
+    desc: 'Community church website — Huntsville, AL',
+    iframeTitle: 'Restore Church Huntsville website preview',
+    iframeClass: '',
+    liveUrl: 'https://restorationchurchcom.vercel.app',
+    type: 'concept' as const,
   },
   {
     slug: 'dusty-rose-salon',
@@ -34,6 +36,7 @@ const websiteProjects = [
     iframeTitle: 'Dusty Rose Salon & Spa website preview',
     iframeClass: '',
     liveUrl: 'https://aspensalonandspacom.vercel.app',
+    type: 'concept' as const,
   },
   {
     slug: 'sailors-chiropractic',
@@ -41,6 +44,7 @@ const websiteProjects = [
     desc: 'Chiropractic clinic website — Huntsville, AL',
     iframeTitle: 'Sailors Chiropractic website preview',
     iframeClass: '',
+    type: 'concept' as const,
   },
   {
     slug: 'barrel-grain',
@@ -48,6 +52,7 @@ const websiteProjects = [
     desc: 'Craft homebrew supply store — Huntsville, AL',
     iframeTitle: 'Barrel & Grain website preview',
     iframeClass: '',
+    type: 'concept' as const,
   },
   {
     slug: 'sugas-bakery',
@@ -55,6 +60,7 @@ const websiteProjects = [
     desc: "Custom cake & treat shop — Montgomery, TX",
     iframeTitle: "Suga's Bakery website preview",
     iframeClass: '',
+    type: 'concept' as const,
   },
   {
     slug: 'linea-group',
@@ -62,6 +68,7 @@ const websiteProjects = [
     desc: 'Architecture & design firm — The Woodlands, TX',
     iframeTitle: 'Linea Group website preview',
     iframeClass: styles.iframeLinea,
+    type: 'concept' as const,
   },
 ]
 
