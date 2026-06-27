@@ -74,6 +74,7 @@ const websiteProjects = [
 
 const socialProjects = [
   { src: '/Yellowhammer_Social_Media.png', alt: 'Yellowhammer Studios social media', title: 'Yellowhammer Studios', type: 'inhouse' as const },
+  { src: '/Two_Angry_Bakers_Social.png', alt: 'Two Angry Bakers social media', title: 'Two Angry Bakers', type: 'concept' as const },
   { src: '/Barrel_&_Grain_Social_Media.png', alt: 'Barrel & Grain social media', title: 'Barrel & Grain', type: 'concept' as const },
   { src: "/Sugga's_Social_Media.png", alt: "Suga's Bakery social media", title: "Suga's Bakery", type: 'concept' as const },
   { src: '/Linea_Social_Media.png', alt: 'Linea Group social media', title: 'Linea Group', type: 'concept' as const },
@@ -134,7 +135,7 @@ export default function Portfolio() {
                 <em>Media</em>
               </h2>
             </div>
-            <span className={styles.portCount}>6 Projects</span>
+            <span className={styles.portCount}>7 Projects</span>
           </div>
           <div className={styles.socialGrid}>
             {socialProjects.map((p) => (
