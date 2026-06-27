@@ -73,12 +73,12 @@ const websiteProjects = [
 ]
 
 const socialProjects = [
-  { src: '/Yellowhammer_Social_Media.png', alt: 'Yellowhammer Studios social media', title: 'Yellowhammer Studios' },
-  { src: '/Barrel_&_Grain_Social_Media.png', alt: 'Barrel & Grain social media', title: 'Barrel & Grain' },
-  { src: "/Sugga's_Social_Media.png", alt: "Suga's Bakery social media", title: "Suga's Bakery" },
-  { src: '/Linea_Social_Media.png', alt: 'Linea Group social media', title: 'Linea Group' },
-  { src: '/Wags_Social.png', alt: 'Wags Pet Boutique social media', title: 'Wags Pet Boutique' },
-  { src: '/Rocket_City_Social_Media.png', alt: 'Rocket City social media', title: 'Rocket City' },
+  { src: '/Yellowhammer_Social_Media.png', alt: 'Yellowhammer Studios social media', title: 'Yellowhammer Studios', type: 'client' as const },
+  { src: '/Barrel_&_Grain_Social_Media.png', alt: 'Barrel & Grain social media', title: 'Barrel & Grain', type: 'concept' as const },
+  { src: "/Sugga's_Social_Media.png", alt: "Suga's Bakery social media", title: "Suga's Bakery", type: 'concept' as const },
+  { src: '/Linea_Social_Media.png', alt: 'Linea Group social media', title: 'Linea Group', type: 'concept' as const },
+  { src: '/Wags_Social.png', alt: 'Wags Pet Boutique social media', title: 'Wags Pet Boutique', type: 'concept' as const },
+  { src: '/Rocket_City_Social_Media.png', alt: 'Rocket City Roots social media', title: 'Rocket City Roots', type: 'concept' as const },
 ]
 
 const logoProjects = [
@@ -145,6 +145,9 @@ export default function Portfolio() {
                 <div className={styles.meta}>
                   <span className={styles.cat}>Social Media</span>
                   <h3 className={styles.cardTitle}>{p.title}</h3>
+                  <span className={p.type === 'client' ? styles.badgeClient : styles.badgeConcept}>
+                    {p.type === 'client' ? 'Client Project' : 'Concept Project'}
+                  </span>
                 </div>
               </div>
             ))}
