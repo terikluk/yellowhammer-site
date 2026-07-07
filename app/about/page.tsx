@@ -4,7 +4,11 @@ import Link from 'next/link'
 import Hero from '@/components/Hero'
 import styles from './page.module.css'
 
-export const metadata: Metadata = { title: 'About' }
+export const metadata: Metadata = {
+  title: 'About',
+  description:
+    'Meet the team behind Yellowhammer Studios — a creative practice in Huntsville, Alabama devoted to intentional, craft-driven design.',
+}
 
 export default function About() {
   return (

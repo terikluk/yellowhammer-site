@@ -3,6 +3,9 @@ import Link from 'next/link'
 import Hero from '@/components/Hero'
 import styles from './page.module.css'
 import WebsiteCarousel from './WebsiteCarousel'
+import ApparelCarousel from './ApparelCarousel'
+import SocialCarousel from './SocialCarousel'
+import LogoCarousel from './LogoCarousel'
 
 export const metadata: Metadata = {
   title: 'Portfolio',
@@ -14,7 +17,7 @@ const websiteProjects = [
   {
     slug: 'two-angry-bakers',
     title: 'Two Angry Bakers',
-    desc: 'Artisan bakery website — Huntsville, AL',
+    desc: 'Cake pop bakery — Tomball, TX',
     iframeTitle: 'Two Angry Bakers website preview',
     iframeClass: '',
     liveUrl: 'https://2angrybakers.com',
@@ -32,7 +35,7 @@ const websiteProjects = [
   {
     slug: 'dusty-rose-salon',
     title: 'Dusty Rose Salon & Spa',
-    desc: 'Boutique salon & spa website',
+    desc: 'Boutique salon & spa — Franklin, TN',
     iframeTitle: 'Dusty Rose Salon & Spa website preview',
     iframeClass: '',
     liveUrl: 'https://aspensalonandspacom.vercel.app',
@@ -44,22 +47,34 @@ const websiteProjects = [
     desc: 'Chiropractic clinic website — Huntsville, AL',
     iframeTitle: 'Sailors Chiropractic website preview',
     iframeClass: '',
+    liveUrl: 'https://sailors-chiropractic.vercel.app',
+    type: 'concept' as const,
+  },
+  {
+    slug: 'shuttle-sips',
+    title: 'Shuttle Sips',
+    desc: 'Dirty soda shop — Houston, TX',
+    iframeTitle: 'Shuttle Sips website preview',
+    iframeClass: '',
+    liveUrl: 'https://shuttlesipscom.vercel.app',
     type: 'concept' as const,
   },
   {
     slug: 'barrel-grain',
     title: 'Barrel & Grain',
-    desc: 'Craft homebrew supply store — Huntsville, AL',
+    desc: 'Craft homebrew supply store — Hot Springs, AR',
     iframeTitle: 'Barrel & Grain website preview',
     iframeClass: '',
+    liveUrl: 'https://barrel-grain.vercel.app',
     type: 'concept' as const,
   },
   {
-    slug: 'sugas-bakery',
-    title: "Suga's Bakery",
-    desc: "Custom cake & treat shop — Montgomery, TX",
-    iframeTitle: "Suga's Bakery website preview",
+    slug: 'bennett-group',
+    title: 'The Bennett Group',
+    desc: 'Office furniture & workplace design — Kansas City, MO',
+    iframeTitle: 'The Bennett Group website preview',
     iframeClass: '',
+    liveUrl: 'https://thebennettgroupcom.vercel.app',
     type: 'concept' as const,
   },
   {
@@ -68,6 +83,16 @@ const websiteProjects = [
     desc: 'Architecture & design firm — The Woodlands, TX',
     iframeTitle: 'Linea Group website preview',
     iframeClass: styles.iframeLinea,
+    liveUrl: 'https://linea-group.vercel.app',
+    type: 'concept' as const,
+  },
+  {
+    slug: 'smoky-mountain-adventures',
+    title: 'Smoky Mountain River Adventures',
+    desc: 'Tube, kayak & canoe rentals — Townsend, TN',
+    iframeTitle: 'Smoky Mountain River Adventures website preview',
+    iframeClass: '',
+    liveUrl: 'https://smoky-mountain-adventures.vercel.app',
     type: 'concept' as const,
   },
 ]
@@ -80,17 +105,43 @@ const socialProjects = [
   { src: '/Linea_Social_Media.png', alt: 'Linea Group social media', title: 'Linea Group', type: 'concept' as const },
   { src: '/Wags_Social.png', alt: 'Wags Pet Boutique social media', title: 'Wags Pet Boutique', type: 'concept' as const },
   { src: '/Rocket_City_Social_Media.png', alt: 'Rocket City Roots social media', title: 'Rocket City Roots', type: 'concept' as const },
+  { src: '/Guard_Dog_Social.png', alt: 'Guard Dog Home Defense social media', title: 'Guard Dog Home Defense', type: 'concept' as const },
+  { src: '/Wavescape_Social.png', alt: 'Wavescape social media', title: 'Wavescape', type: 'concept' as const },
+]
+
+const apparelProjects = [
+  { src: '/WT_Selah.jpg', alt: 'Selah — music note and script', title: 'Selah' },
+  { src: '/WT_Not_Today_Satan.jpg', alt: 'Not Today Satan — snake design', title: 'Not Today Satan' },
+  { src: '/WT_Raven.jpg', alt: 'Raven — Luke 12:24 raven with coffee', title: 'Raven' },
+  { src: '/WT_Feeding_Retro.jpg', alt: 'Feeding of the 5000 — retro badge John 6:9', title: 'Feeding of the 5,000' },
+  { src: '/WT_Angel_Visit.jpg', alt: 'Be Not Afraid — angel ophanim design', title: 'Be Not Afraid' },
+  { src: '/WT_Better_Idea.jpg', alt: 'Big Fish — Jonah in the whale', title: 'Big Fish' },
+  { src: '/WT_Holy_Guacamole.jpg', alt: 'Holy Guacamole t-shirt design', title: 'Holy Guacamole' },
+  { src: '/WT_Alpha_Omega.jpg', alt: 'Alpha and Omega — Jesus cross typography', title: 'Alpha & Omega' },
+  { src: '/WT_Faith_Over_Fear.jpg', alt: 'Faith Over Fear — distressed block lettering', title: 'Faith Over Fear' },
+  { src: '/WT_Fruit_Spirit.jpg', alt: 'Fruit of the Spirit — Galatians 5:22-23 olive branch', title: 'Fruit of the Spirit' },
+  { src: '/WT_Sweet_Words.jpg', alt: 'Sweet Words — Proverbs 16:24 bee design', title: 'Sweet Words' },
+  { src: '/WT_Shepherd.jpg', alt: 'The Good Shepherd — Psalm 23:1', title: 'The Good Shepherd' },
+  { src: '/WT_Samson.jpg', alt: 'Samson — Judges 15:15 comic style', title: 'Samson' },
+  { src: '/WT_Leave_99.jpg', alt: 'Leave the 99 — Luke 15:4-7 lost sheep', title: 'Leave the 99' },
+  { src: '/WT_Word_Alive.jpg', alt: 'The Word is Alive — tree growing from Bible', title: 'The Word is Alive' },
+  { src: '/WT_Flowers.jpg', alt: 'Flowers in the Field — Matthew 6:28', title: 'Flowers in the Field' },
+  { src: '/WT_El_Roi.jpg', alt: 'El Roi — desert landscape badge', title: 'El Roi' },
 ]
 
 const logoProjects = [
-  { src: '/Linea_Group.png', alt: 'Linea Group logo', title: 'Linea Group', extraPad: false },
-  { src: "/Suga's.png", alt: "Suga's Bakery logo", title: "Suga's Bakery", extraPad: true },
-  { src: '/Grain_&_Barrel.png', alt: 'Barrel & Grain logo', title: 'Barrel & Grain', extraPad: false },
-  { src: '/sailors-logo.svg', alt: 'Sailors Chiropractic logo', title: 'Sailors Chiropractic', extraPad: true },
-  { src: '/Green_Top_Juice.png', alt: 'Green Top Juice logo', title: 'Green Top Juice', extraPad: false },
-  { src: '/Rizzario_Manufacturing_Company.png', alt: 'Rizzario Manufacturing Company logo', title: 'Rizzario', extraPad: true },
-  { src: '/Wags_Pet_Boutique.png', alt: 'Wags Pet Boutique logo', title: 'Wags Pet Boutique', extraPad: false },
-  { src: '/Blue_Shield_Home_Repair.png', alt: 'Blue Shield Home Repair logo', title: 'Blue Shield Home Repair', extraPad: false },
+  { src: '/Two_Angry_Bakers_Logo.png', alt: 'Two Angry Bakers logo', title: 'Two Angry Bakers', extraPad: false, type: 'client' as const },
+  { src: '/Wholly_Tees_Logo.png', alt: 'Wholly Tees logo', title: 'Wholly Tees', extraPad: true, type: 'inhouse' as const },
+  { src: '/Linea_Group.png', alt: 'Linea Group logo', title: 'Linea Group', extraPad: false, type: 'concept' as const },
+  { src: "/Suga's.png", alt: "Suga's Bakery logo", title: "Suga's Bakery", extraPad: true, type: 'concept' as const },
+  { src: '/Grain_&_Barrel.png', alt: 'Barrel & Grain logo', title: 'Barrel & Grain', extraPad: false, type: 'concept' as const },
+  { src: '/sailors-logo.svg', alt: 'Sailors Chiropractic logo', title: 'Sailors Chiropractic', extraPad: true, type: 'concept' as const },
+  { src: '/Green_Top_Juice.png', alt: 'Green Top Juice logo', title: 'Green Top Juice', extraPad: false, type: 'concept' as const },
+  { src: '/Rizzario_Manufacturing_Company.png', alt: 'Rizzario Manufacturing Company logo', title: 'Rizzario', extraPad: true, type: 'concept' as const },
+  { src: '/Wags_Pet_Boutique.png', alt: 'Wags Pet Boutique logo', title: 'Wags Pet Boutique', extraPad: false, type: 'concept' as const },
+  { src: '/Blue_Shield_Home_Repair.png', alt: 'Blue Shield Home Repair logo', title: 'Blue Shield Home Repair', extraPad: false, type: 'concept' as const },
+  { src: '/guard_dog.png', alt: 'Guard Dog Home Defense logo', title: 'Guard Dog Home Defense', extraPad: true, type: 'concept' as const },
+  { src: '/wavescape.png', alt: 'Wavescape logo', title: 'Wavescape', extraPad: true, type: 'concept' as const },
 ]
 
 export default function Portfolio() {
@@ -135,24 +186,9 @@ export default function Portfolio() {
                 <em>Media</em>
               </h2>
             </div>
-            <span className={styles.portCount}>7 Projects</span>
+            <span className={styles.portCount}>9 Projects</span>
           </div>
-          <div className={styles.socialGrid}>
-            {socialProjects.map((p) => (
-              <div key={p.title} className={styles.card}>
-                <div className={styles.squareImgWrap}>
-                  <img src={p.src} alt={p.alt} className={styles.fillImg} />
-                </div>
-                <div className={styles.meta}>
-                  <span className={styles.cat}>Social Media</span>
-                  <h3 className={styles.cardTitle}>{p.title}</h3>
-                  <span className={p.type === 'client' ? styles.badgeClient : styles.badgeConcept}>
-                    {p.type === 'client' ? 'Client Project' : p.type === 'inhouse' ? 'In-House' : 'Concept Project'}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+          <SocialCarousel items={socialProjects} />
           <div style={{ textAlign: 'center', padding: '3rem 0 1rem' }}>
             <Link href="/contact" className="btn">
               Let&rsquo;s Talk
@@ -173,24 +209,30 @@ export default function Portfolio() {
                 <em>Marks</em>
               </h2>
             </div>
-            <span className={styles.portCount}>8 Marks</span>
+            <span className={styles.portCount}>12 Marks</span>
           </div>
-          <div className={styles.logoGrid}>
-            {logoProjects.map((p) => (
-              <div key={p.title} className={styles.logoCard}>
-                <div
-                  className={styles.logoImgWrap}
-                  style={p.extraPad ? { padding: '8%' } : undefined}
-                >
-                  <img src={p.src} alt={p.alt} className={styles.logoImg} />
-                </div>
-                <div className={`${styles.meta} ${styles.logoMeta}`}>
-                  <span className={styles.cat}>Brand Mark</span>
-                  <h3 className={styles.cardTitle}>{p.title}</h3>
-                </div>
-              </div>
-            ))}
+          <LogoCarousel items={logoProjects} />
+        </div>
+      </section>
+
+      {/* APPAREL */}
+      <section id="apparel" className={`${styles.portSection} ${styles.portSectionAlt}`}>
+        <div className={styles.portInner}>
+          <div className={styles.portHeader}>
+            <div>
+              <p className="section-label">Apparel</p>
+              <h2 className={styles.portH2}>
+                T-Shirt
+                <br />
+                <em>Design</em>
+              </h2>
+            </div>
+            <span className={styles.portCount}>{apparelProjects.length} Designs</span>
           </div>
+          <ApparelCarousel items={apparelProjects} />
+          <p className={styles.apparelNote}>
+            Designs for <em>Wholly Tees</em> — a faith-inspired apparel brand in the works.
+          </p>
         </div>
       </section>
 

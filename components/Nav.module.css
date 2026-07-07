@@ -168,3 +168,43 @@
     border-bottom-color: rgba(200, 130, 26, 0.4);
   }
 }
+
+/* Phone landscape — wider than 700px but short (phones ≤500px tall, tablets ≥768px) */
+@media (orientation: landscape) and (max-height: 500px) {
+  .nav {
+    padding: 0.6rem 1.5rem;
+  }
+
+  .logo {
+    height: 44px;
+  }
+
+  .list {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: flex;
+    overflow-y: auto;
+    justify-content: flex-start;
+    padding-top: 4rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .mobileList {
+    gap: 1.2rem;
+  }
+
+  .mobileLink {
+    font-size: 1.1rem;
+  }
+
+  .menuActive {
+    background-color: var(--espresso);
+    border-bottom-color: rgba(200, 130, 26, 0.4);
+  }
+}

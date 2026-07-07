@@ -38,20 +38,20 @@ export default function WebsiteCarousel({ projects }: { projects: Project[] }) {
       <div className={styles.carouselTrack}>
         {visible.map((p) => (
           <div key={p.slug} className={styles.card}>
-            <a
-              href={p.liveUrl ?? `/${p.slug}.html`}
-              className={styles.imgLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className={styles.imgWrap}>
-                <ScaledIframe
-                  src={p.liveUrl ?? `/${p.slug}.html`}
-                  title={p.iframeTitle}
-                  iframeHeight={p.slug === 'linea-group' ? 900 : 720}
-                />
-              </div>
-            </a>
+            <div className={styles.imgWrap}>
+              <ScaledIframe
+                src={p.liveUrl ?? `/${p.slug}.html`}
+                title={p.iframeTitle}
+                iframeHeight={p.slug === 'linea-group' ? 900 : 720}
+              />
+              <a
+                href={p.liveUrl ?? `/${p.slug}.html`}
+                className={styles.iframeOverlay}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open ${p.title} website`}
+              />
+            </div>
             <div className={styles.meta}>
               <span className={styles.cat}>Website Design</span>
               <h3 className={styles.cardTitle}>{p.title}</h3>

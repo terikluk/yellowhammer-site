@@ -3,7 +3,11 @@ import Hero from '@/components/Hero'
 import styles from './page.module.css'
 import ContactForm from './ContactForm'
 
-export const metadata: Metadata = { title: 'Contact' }
+export const metadata: Metadata = {
+  title: 'Contact',
+  description:
+    'Start a project with Yellowhammer Studios. We take on a small number of clients each year and give each one our full attention.',
+}
 
 export default function Contact() {
   return (
