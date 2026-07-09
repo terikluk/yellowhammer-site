@@ -17,6 +17,12 @@
   border-bottom-color: rgba(200, 130, 26, 0.4);
 }
 
+.nav.scrolledLight {
+  background-color: var(--paper);
+  border-bottom-color: rgba(200, 130, 26, 0.3);
+  box-shadow: 0 2px 24px rgba(43, 26, 13, 0.08);
+}
+
 .logoLink {
   display: block;
   text-decoration: none;
@@ -49,6 +55,23 @@
 .link:hover,
 .link[aria-current='page'] {
   color: var(--amber-light);
+}
+
+.onLight .logo {
+  filter: drop-shadow(0 2px 6px rgba(43, 26, 13, 0.2));
+}
+
+.linkOnLight {
+  color: var(--ink);
+}
+
+.linkOnLight:hover,
+.linkOnLight[aria-current='page'] {
+  color: var(--amber);
+}
+
+.barOnLight {
+  background: var(--ink);
 }
 
 /* ── Hamburger button ── */

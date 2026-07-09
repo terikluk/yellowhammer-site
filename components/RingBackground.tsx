@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { usePathname } from 'next/navigation'
 
 type Ring = [number, string, string, number, number, number]
 
@@ -12,6 +13,9 @@ const DEFAULT_RINGS: Ring[] = [
 ]
 
 export default function RingBackground({ rings = DEFAULT_RINGS }: { rings?: Ring[] }) {
+  const pathname = usePathname()
+  if (pathname === '/') return null
+
   return (
     <div
       aria-hidden="true"

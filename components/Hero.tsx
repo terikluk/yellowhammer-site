@@ -7,9 +7,39 @@ interface HeroProps {
   h1Em: string
   tagline?: string
   cta?: { href: string; label: string }
+  theme?: 'dark' | 'light'
 }
 
-export default function Hero({ eyebrow, h1Line1, h1Em, tagline, cta }: HeroProps) {
+export default function Hero({ eyebrow, h1Line1, h1Em, tagline, cta, theme = 'dark' }: HeroProps) {
+  if (theme === 'light') {
+    return (
+      <section className={styles.heroLight}>
+        <img
+          className={styles.heroLightImage}
+          src="/yellowhammer_hero.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <div className={styles.heroLightGradient} aria-hidden="true" />
+        <div className={styles.heroLightFade} aria-hidden="true" />
+        <div className={styles.heroLightContent}>
+          <p className={styles.eyebrowLight}>{eyebrow}</p>
+          <h1 className={styles.h1Light}>
+            {h1Line1}
+            <br />
+            <em>{h1Em}</em>
+          </h1>
+          {tagline && <p className={styles.taglineLight}>{tagline}</p>}
+          {cta && (
+            <Link href={cta.href} className={styles.btnLight}>
+              {cta.label}
+            </Link>
+          )}
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section className={styles.hero}>
       <img

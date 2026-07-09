@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Hero from '@/components/Hero'
+import WaveDivider from '@/components/WaveDivider'
+import Reveal from '@/components/Reveal'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -13,6 +15,7 @@ export default function Home() {
   return (
     <>
       <Hero
+        theme="light"
         eyebrow="Est. in the pursuit of craft"
         h1Line1="Yellowhammer"
         h1Em="Studios"
@@ -20,66 +23,60 @@ export default function Home() {
         cta={{ href: '/about', label: 'Discover the Studio' }}
       />
 
-      <div className="section-divider" />
-
-      <section id="studio">
-        <div className={styles.section}>
-          <div className={styles.twoCol}>
-            <div>
-              <p className="section-label">The Studio</p>
-              <h2 className={styles.h2}>
-                Made with
-                <br />
-                <em>intention</em>
-              </h2>
+      <section id="studio" className={styles.practiceSection}>
+        {/* placeholder background — swap for real photography */}
+        <div className={styles.practiceBg} aria-hidden="true" />
+        <div className={styles.practiceCard}>
+          <div className={styles.practiceAccent}>
+            <span>The Studio</span>
+          </div>
+          <div className={styles.practiceLight}>
+            <h2 className={styles.h2}>
+              Made with
+              <br />
+              <em>intention</em>
+            </h2>
+            <p className={styles.body}>
+              Yellowhammer Studios is a creative practice devoted to craft,
+              precision, and the quiet power of work made well. We bring
+              together design, narrative, and material intelligence — building
+              things that last because they were built to mean something.
+            </p>
+          </div>
+          <div className={styles.practiceDark}>
+            <p className={styles.practiceDarkLabel}>What We Do</p>
+            <div className={styles.servicesScroll}>
+              {[
+                {
+                  title: 'Brand Identity',
+                  body: 'Logos, palettes, and typography systems.',
+                },
+                {
+                  title: 'Website Design & Development',
+                  body: 'Custom-coded sites, built to last.',
+                },
+                {
+                  title: 'Social Media Design',
+                  body: 'Content for Instagram, TikTok, and LinkedIn.',
+                },
+                {
+                  title: 'Website Maintenance',
+                  body: 'Ongoing updates, starting at $125/month.',
+                },
+              ].map(({ title, body }) => (
+                <div key={title} className={styles.serviceChip}>
+                  <h3 className={styles.serviceChipTitle}>{title}</h3>
+                  <p className={styles.serviceChipBody}>{body}</p>
+                </div>
+              ))}
             </div>
-            <div>
-              <p className={styles.body}>
-                Yellowhammer Studios is a creative practice devoted to craft,
-                precision, and the quiet power of work made well. We bring
-                together design, narrative, and material intelligence — building
-                things that last because they were built to mean something.
-              </p>
-            </div>
+            <Link href="/services" className={styles.practiceCta}>
+              See All Services →
+            </Link>
           </div>
         </div>
-      </section>
-
-      <section
-        id="services"
-        className={styles.servicesSection}
-      >
-        <div className={styles.servicesSectionInner}>
-          <p className="section-label">What We Do</p>
-          <h2 className={styles.h2} style={{ marginBottom: '3rem' }}>
-            Areas of <em>practice</em>
-          </h2>
-        </div>
-        <div className={styles.servicesGrid}>
-          {[
-            {
-              title: 'Brand Identity',
-              body: 'Custom logos, color palettes, typography systems, and brand guidelines that give your business a cohesive visual identity.',
-            },
-            {
-              title: 'Website Design & Development',
-              body: 'Custom-coded websites built for clarity and impact, plus ongoing maintenance and updates.',
-            },
-            {
-              title: 'Social Media Design',
-              body: 'Organic content design for Instagram, TikTok, LinkedIn, and Facebook to keep your brand consistent and engaging.',
-            },
-            {
-              title: 'Website Maintenance',
-              body: 'Minor updates, content changes, domain and hosting management. Cancel anytime with 30 days notice. Starting at $125/month.',
-            },
-          ].map(({ title, body }) => (
-            <div key={title} className={styles.serviceCard}>
-              <div className={styles.cardIcon} />
-              <h3 className={styles.cardTitle}>{title}</h3>
-              <p className={styles.cardBody}>{body}</p>
-            </div>
-          ))}
+        <div className={styles.practiceWave}>
+          <WaveDivider fill="var(--paper)" />
         </div>
       </section>
 
@@ -103,21 +100,36 @@ export default function Home() {
                 name: 'Taylor P.',
                 quote: 'They really took the time to understand the brand and brought everything to life exactly how we pictured it — honestly even better. Communication was top-notch the whole way through, and any changes we wanted were handled quickly without any hassle. 10/10 experience.',
               },
-            ].map(({ name, quote }) => (
-              <div key={name} className={styles.reviewCard}>
+            ].map(({ name, quote }, i) => (
+              <Reveal key={name} className={styles.reviewCard} delay={i * 120}>
                 <div className={styles.reviewStars}>★★★★★</div>
                 <p className={styles.reviewQuote}>&ldquo;{quote}&rdquo;</p>
                 <div className={styles.reviewMeta}>
                   <span className={styles.reviewName}>{name}</span>
                   <span className={styles.reviewSource}>Google Review</span>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="contact">
+      <section className={styles.collageSection}>
+        <div className={styles.collagePanel}>
+          <h2 className={styles.collageH2}>
+            Think bold. <em>Build intentional.</em>
+          </h2>
+          <p className={styles.collageBody}>
+            See the brand identities, websites, and campaigns we&rsquo;ve
+            brought to life for studios and small businesses alike.
+          </p>
+          <Link href="/portfolio" className={styles.btnAmber}>
+            View the Portfolio
+          </Link>
+        </div>
+      </section>
+
+      <section id="contact" className={styles.contactWrap}>
         <div className={styles.contactSection}>
           <p className="section-label">Get in Touch</p>
           <h2 className={styles.contactH2}>
@@ -129,9 +141,12 @@ export default function Home() {
             We work with a select number of clients each year. If your project
             calls for craft and intention, we&rsquo;d like to hear from you.
           </p>
-          <Link href="/contact" className="btn">
+          <Link href="/contact" className={styles.btnAmber}>
             Let&rsquo;s Talk
           </Link>
+        </div>
+        <div className={styles.contactWave}>
+          <WaveDivider fill="var(--espresso)" />
         </div>
       </section>
     </>

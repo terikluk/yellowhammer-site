@@ -145,3 +145,143 @@
     right: -440px;
   }
 }
+
+/* ── LIGHT HERO (homepage refresh) ── */
+.heroLight {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 8rem 3rem 6rem;
+  background: var(--paper);
+}
+
+.heroLightImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  z-index: 0;
+}
+
+.heroLightGradient {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(100deg, rgba(251, 246, 236, 0.99) 0%, rgba(251, 246, 236, 0.88) 25%, rgba(251, 246, 236, 0) 60%);
+}
+
+.heroLightFade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 260px;
+  z-index: 1;
+  background: linear-gradient(to bottom, transparent, var(--amber-pale) 92%);
+  pointer-events: none;
+}
+
+.heroLightContent {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.eyebrowLight {
+  font-size: 0.92rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 1.4rem;
+  font-weight: 600;
+  animation: heroFadeUp 0.7s ease-out 0.1s both;
+}
+
+.h1Light {
+  font-size: clamp(3.6rem, 7.6vw, 6.8rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin-bottom: 0.5em;
+  animation: heroFadeUp 0.7s ease-out 0.25s both;
+}
+
+.h1Light em {
+  font-style: italic;
+  color: var(--amber);
+}
+
+.taglineLight {
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin-bottom: 2.6rem;
+  max-width: 520px;
+  animation: heroFadeUp 0.7s ease-out 0.4s both;
+}
+
+.btnLight {
+  display: inline-block;
+  background: var(--amber);
+  color: var(--paper);
+  text-decoration: none;
+  font-family: inherit;
+  animation: heroFadeUp 0.7s ease-out 0.55s both;
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 1em 2.6em;
+  border-radius: 2px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btnLight:hover {
+  background: var(--gold-deep);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eyebrowLight,
+  .h1Light,
+  .taglineLight,
+  .btnLight {
+    animation: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .heroLight {
+    padding: 9rem 1.5rem 5rem;
+    min-height: 85vh;
+  }
+
+  .heroLightImage {
+    object-position: 62% 20%;
+  }
+
+  .heroLightGradient {
+    background: linear-gradient(180deg, rgba(251, 246, 236, 0.88) 0%, rgba(251, 246, 236, 0.6) 45%, rgba(200, 130, 26, 0.35) 100%);
+  }
+
+  .heroLightContent {
+    max-width: 82%;
+  }
+}

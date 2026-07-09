@@ -17,12 +17,16 @@ export default function Nav() {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const isHome = pathname === '/'
+  const lightText = isHome
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 80)
+    const threshold = 80
+    const handleScroll = () => setScrolled(window.scrollY > threshold)
+    handleScroll()
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [pathname])
 
   // Close menu on route change
   useEffect(() => {
@@ -37,7 +41,7 @@ export default function Nav() {
 
   return (
     <>
-      <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''} ${menuOpen ? styles.menuActive : ''}`}>
+      <nav className={`${styles.nav} ${scrolled ? (isHome ? styles.scrolledLight : styles.scrolled) : ''} ${menuOpen ? styles.menuActive : ''} ${lightText ? styles.onLight : ''}`}>
         <Link href="/" className={styles.logoLink} aria-label="Yellowhammer Studios">
           <img src="/bird.png" alt="" className={styles.logo} />
         </Link>
@@ -48,7 +52,7 @@ export default function Nav() {
             <li key={href}>
               <Link
                 href={href}
-                className={styles.link}
+                className={`${styles.link} ${lightText ? styles.linkOnLight : ''}`}
                 aria-current={pathname === href ? 'page' : undefined}
               >
                 {label}
@@ -64,9 +68,9 @@ export default function Nav() {
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
         >
-          <span className={`${styles.bar} ${menuOpen ? styles.barTopOpen : ''}`} />
-          <span className={`${styles.bar} ${menuOpen ? styles.barMidOpen : ''}`} />
-          <span className={`${styles.bar} ${menuOpen ? styles.barBotOpen : ''}`} />
+          <span className={`${styles.bar} ${menuOpen ? styles.barTopOpen : ''} ${lightText && !menuOpen ? styles.barOnLight : ''}`} />
+          <span className={`${styles.bar} ${menuOpen ? styles.barMidOpen : ''} ${lightText && !menuOpen ? styles.barOnLight : ''}`} />
+          <span className={`${styles.bar} ${menuOpen ? styles.barBotOpen : ''} ${lightText && !menuOpen ? styles.barOnLight : ''}`} />
         </button>
       </nav>
 
