@@ -13,7 +13,7 @@ const DEFAULT_RINGS: Ring[] = [
 ]
 
 // Pages using the bright/paper theme don't use this dark-theme decorative element.
-const LIGHT_PAGES = ['/', '/portfolio']
+const LIGHT_PAGES = ['/', '/portfolio', '/services', '/about']
 
 export default function RingBackground({ rings = DEFAULT_RINGS }: { rings?: Ring[] }) {
   const pathname = usePathname()

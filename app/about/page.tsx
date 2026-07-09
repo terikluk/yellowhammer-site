@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import Hero from '@/components/Hero'
+import WaveDivider from '@/components/WaveDivider'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -13,12 +13,32 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <>
-      <Hero
-        eyebrow="The Studio"
-        h1Line1="The Studio Behind"
-        h1Em="the Work"
-        tagline="Two designers. Two cities. One vision."
-      />
+      <section className={styles.aboutHero}>
+        <div className={styles.aboutHeroInner}>
+          <div className={styles.aboutHeroText}>
+            <p className="section-label">The Studio</p>
+            <h1 className={styles.aboutHeroH1}>
+              The Studio Behind
+              <br />
+              <em>the Work</em>
+            </h1>
+            <p className={styles.aboutHeroTagline}>
+              Two designers. Two cities. One vision.
+            </p>
+          </div>
+          <div className={styles.aboutHeroImageWrap}>
+            <img
+              src="/about_hero_bird.png"
+              alt=""
+              aria-hidden="true"
+              className={styles.aboutHeroImage}
+            />
+          </div>
+        </div>
+        <div className={styles.sectionWave}>
+          <WaveDivider fill="var(--espresso-mid)" />
+        </div>
+      </section>
 
       <section className={styles.teamWrap}>
         <div className={styles.teamInner}>
@@ -83,9 +103,12 @@ export default function About() {
             </Link>
           </div>
         </div>
+        <div className={styles.sectionWave}>
+          <WaveDivider fill="var(--paper)" />
+        </div>
       </section>
 
-      <section>
+      <section className={styles.closingSection}>
         <div className={styles.closing}>
           <div className="amber-rule" />
           <p className={styles.closingLine}>

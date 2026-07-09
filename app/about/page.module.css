@@ -1,7 +1,117 @@
+/* ── HERO (gradient + framed bird photo, matches Portfolio/Services) ── */
+@keyframes aboutFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.aboutHero {
+  position: relative;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 9rem 2rem 7.5rem;
+  background: linear-gradient(125deg, var(--paper) 0%, var(--amber-pale) 26%, var(--amber-light) 64%, var(--gold-deep) 115%);
+}
+
+.aboutHeroInner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.aboutHeroText {
+  max-width: 580px;
+}
+
+.aboutHeroText :global(.section-label) {
+  animation: aboutFadeUp 0.7s ease-out 0.1s both;
+}
+
+.aboutHeroH1 {
+  font-size: clamp(3rem, 6.2vw, 5.4rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--ink);
+  margin: 1rem 0 1.2rem;
+  animation: aboutFadeUp 0.7s ease-out 0.22s both;
+}
+
+.aboutHeroH1 em {
+  font-style: italic;
+  color: var(--amber);
+}
+
+.aboutHeroTagline {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-style: italic;
+  color: var(--ink-muted);
+  max-width: 460px;
+  animation: aboutFadeUp 0.7s ease-out 0.36s both;
+}
+
+.aboutHeroImageWrap {
+  display: flex;
+  justify-content: center;
+  animation: aboutFadeUp 0.8s ease-out 0.3s both;
+}
+
+.aboutHeroImage {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 15%;
+  border-radius: 10px;
+  border: 6px solid var(--paper);
+  box-shadow: 0 30px 70px -18px rgba(43, 26, 13, 0.5);
+}
+
+.sectionWave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 3;
+  line-height: 0;
+}
+
+@media (max-width: 900px) {
+  .aboutHeroInner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .aboutHeroImageWrap {
+    order: -1;
+  }
+  .aboutHeroImage {
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 700px) {
+  .aboutHero {
+    padding: 8rem 1.5rem 4rem;
+    min-height: auto;
+  }
+}
+
 .teamWrap {
+  position: relative;
+  overflow: hidden;
   background: var(--espresso-mid);
-  border-top: 1px solid var(--espresso-light);
-  border-bottom: 1px solid var(--espresso-light);
 }
 
 .teamInner {
@@ -69,6 +179,10 @@
   text-align: left;
 }
 
+.closingSection {
+  background: var(--paper);
+}
+
 .closing {
   text-align: center;
   padding: 6rem 2rem 7rem;
@@ -80,7 +194,7 @@
   font-size: clamp(1.3rem, 2.5vw, 1.9rem);
   font-weight: 300;
   font-style: italic;
-  color: var(--cream);
+  color: var(--ink);
   letter-spacing: 0.03em;
   line-height: 1.5;
 }
