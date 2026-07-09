@@ -98,7 +98,6 @@ export default function About() {
 
       <section className={styles.closingSection}>
         <div className={styles.closing}>
-          <div className="amber-rule" />
           <p className={styles.closingLine}>
             Crafting Modern Heritage — with purpose, precision, and faith.
           </p>
