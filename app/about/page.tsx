@@ -43,7 +43,7 @@ export default function About() {
                   src="/Theresa Kluk.jpeg"
                   alt="Theresa Kluk"
                   width={340}
-                  height={340}
+                  height={453}
                   className={styles.photo}
                 />
               </div>
@@ -69,7 +69,7 @@ export default function About() {
                   src="/Claire2.png"
                   alt="Claire Wilson"
                   width={340}
-                  height={340}
+                  height={453}
                   className={styles.photo}
                   style={{ objectPosition: 'center top' }}
                 />
