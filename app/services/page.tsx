@@ -169,7 +169,6 @@ export default function Services() {
           <br />
           <em>works.</em>
         </h2>
-        <div className="amber-rule" style={{ marginTop: '1.8rem' } as React.CSSProperties} />
         <div className={styles.stepsGrid}>
           {[
             {
