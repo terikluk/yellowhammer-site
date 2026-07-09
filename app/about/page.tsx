@@ -15,28 +15,15 @@ export default function About() {
     <>
       <section className={styles.aboutHero}>
         <div className={styles.aboutHeroInner}>
-          <div className={styles.aboutHeroText}>
-            <p className="section-label">The Studio</p>
-            <h1 className={styles.aboutHeroH1}>
-              The Studio Behind
-              <br />
-              <em>the Work</em>
-            </h1>
-            <p className={styles.aboutHeroTagline}>
-              Two designers. Two cities. One vision.
-            </p>
-          </div>
-          <div className={styles.aboutHeroImageWrap}>
-            <img
-              src="/about_hero_bird.png"
-              alt=""
-              aria-hidden="true"
-              className={styles.aboutHeroImage}
-            />
-          </div>
-        </div>
-        <div className={styles.sectionWave}>
-          <WaveDivider fill="var(--espresso-mid)" />
+          <p className="section-label">The Studio</p>
+          <h1 className={styles.aboutHeroH1}>
+            The Studio Behind
+            <br />
+            <em>the Work</em>
+          </h1>
+          <p className={styles.aboutHeroTagline}>
+            Two designers. Two cities. One vision.
+          </p>
         </div>
       </section>
 
@@ -51,13 +38,15 @@ export default function About() {
 
           <div className={styles.teamGrid}>
             <div className={styles.profile}>
-              <Image
-                src="/Theresa Kluk.jpeg"
-                alt="Theresa Kluk"
-                width={200}
-                height={200}
-                className={styles.photo}
-              />
+              <div className={styles.photoFrame}>
+                <Image
+                  src="/Theresa Kluk.jpeg"
+                  alt="Theresa Kluk"
+                  width={340}
+                  height={340}
+                  className={styles.photo}
+                />
+              </div>
               <p className={styles.name}>Theresa Kluk</p>
               <p className={styles.title}>Creative Director</p>
               <p className={styles.bio}>
@@ -75,14 +64,16 @@ export default function About() {
             </div>
 
             <div className={styles.profile}>
-              <Image
-                src="/Claire2.png"
-                alt="Claire Wilson"
-                width={200}
-                height={200}
-                className={styles.photo}
-                style={{ objectPosition: 'center top' }}
-              />
+              <div className={styles.photoFrame}>
+                <Image
+                  src="/Claire2.png"
+                  alt="Claire Wilson"
+                  width={340}
+                  height={340}
+                  className={styles.photo}
+                  style={{ objectPosition: 'center top' }}
+                />
+              </div>
               <p className={styles.name}>Claire Wilson</p>
               <p className={styles.title}>Designer</p>
               <p className={styles.bio}>
@@ -103,9 +94,6 @@ export default function About() {
             </Link>
           </div>
         </div>
-        <div className={styles.sectionWave}>
-          <WaveDivider fill="var(--paper)" />
-        </div>
       </section>
 
       <section className={styles.closingSection}>
@@ -114,6 +102,9 @@ export default function About() {
           <p className={styles.closingLine}>
             Crafting Modern Heritage — with purpose, precision, and faith.
           </p>
+        </div>
+        <div className={styles.sectionWave}>
+          <WaveDivider fill="var(--espresso)" />
         </div>
       </section>
     </>
