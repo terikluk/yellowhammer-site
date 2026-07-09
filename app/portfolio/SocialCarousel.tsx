@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Reveal from '@/components/Reveal'
 import styles from './page.module.css'
 
 type SocialItem = {
@@ -31,10 +32,12 @@ export default function SocialCarousel({ items }: { items: SocialItem[] }) {
   return (
     <div className={styles.carousel}>
       <div className={styles.socialGrid}>
-        {visible.map((p) => (
-          <div key={p.src} className={styles.card}>
-            <div className={styles.squareImgWrap}>
-              <img src={p.src} alt={p.alt} className={styles.fillImg} />
+        {visible.map((p, i) => (
+          <Reveal key={p.src} className={styles.card} delay={i * 120}>
+            <div className={styles.squareFrame}>
+              <div className={styles.squareImgWrap}>
+                <img src={p.src} alt={p.alt} className={styles.fillImg} />
+              </div>
             </div>
             <div className={styles.meta}>
               <span className={styles.cat}>Social Media</span>
@@ -43,7 +46,7 @@ export default function SocialCarousel({ items }: { items: SocialItem[] }) {
                 {p.type === 'client' ? 'Client Project' : p.type === 'inhouse' ? 'In-House' : 'Concept Project'}
               </span>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
 

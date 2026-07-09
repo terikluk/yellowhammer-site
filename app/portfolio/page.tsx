@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Hero from '@/components/Hero'
+import HeroCarousel from '@/components/HeroCarousel'
+import WaveDivider from '@/components/WaveDivider'
 import styles from './page.module.css'
 import WebsiteCarousel from './WebsiteCarousel'
 import ApparelCarousel from './ApparelCarousel'
@@ -109,24 +110,15 @@ const socialProjects = [
   { src: '/Wavescape_Social.png', alt: 'Wavescape social media', title: 'Wavescape', type: 'concept' as const },
 ]
 
-const apparelProjects = [
+const apparelHighlights = [
   { src: '/WT_Selah.jpg', alt: 'Selah — music note and script', title: 'Selah' },
   { src: '/WT_Not_Today_Satan.jpg', alt: 'Not Today Satan — snake design', title: 'Not Today Satan' },
   { src: '/WT_Raven.jpg', alt: 'Raven — Luke 12:24 raven with coffee', title: 'Raven' },
   { src: '/WT_Feeding_Retro.jpg', alt: 'Feeding of the 5000 — retro badge John 6:9', title: 'Feeding of the 5,000' },
-  { src: '/WT_Angel_Visit.jpg', alt: 'Be Not Afraid — angel ophanim design', title: 'Be Not Afraid' },
-  { src: '/WT_Better_Idea.jpg', alt: 'Big Fish — Jonah in the whale', title: 'Big Fish' },
-  { src: '/WT_Holy_Guacamole.jpg', alt: 'Holy Guacamole t-shirt design', title: 'Holy Guacamole' },
-  { src: '/WT_Alpha_Omega.jpg', alt: 'Alpha and Omega — Jesus cross typography', title: 'Alpha & Omega' },
   { src: '/WT_Faith_Over_Fear.jpg', alt: 'Faith Over Fear — distressed block lettering', title: 'Faith Over Fear' },
   { src: '/WT_Fruit_Spirit.jpg', alt: 'Fruit of the Spirit — Galatians 5:22-23 olive branch', title: 'Fruit of the Spirit' },
-  { src: '/WT_Sweet_Words.jpg', alt: 'Sweet Words — Proverbs 16:24 bee design', title: 'Sweet Words' },
   { src: '/WT_Shepherd.jpg', alt: 'The Good Shepherd — Psalm 23:1', title: 'The Good Shepherd' },
-  { src: '/WT_Samson.jpg', alt: 'Samson — Judges 15:15 comic style', title: 'Samson' },
-  { src: '/WT_Leave_99.jpg', alt: 'Leave the 99 — Luke 15:4-7 lost sheep', title: 'Leave the 99' },
-  { src: '/WT_Word_Alive.jpg', alt: 'The Word is Alive — tree growing from Bible', title: 'The Word is Alive' },
-  { src: '/WT_Flowers.jpg', alt: 'Flowers in the Field — Matthew 6:28', title: 'Flowers in the Field' },
-  { src: '/WT_El_Roi.jpg', alt: 'El Roi — desert landscape badge', title: 'El Roi' },
+  { src: '/WT_Alpha_Omega.jpg', alt: 'Alpha and Omega — Jesus cross typography', title: 'Alpha & Omega' },
 ]
 
 const logoProjects = [
@@ -147,14 +139,28 @@ const logoProjects = [
 export default function Portfolio() {
   return (
     <>
-      <Hero
-        eyebrow="Selected Work"
-        h1Line1="The"
-        h1Em="Portfolio"
-        tagline="Websites, social media, and brand marks — made with intention."
-      />
-
-      <div className="section-divider" />
+      <section className={styles.portHero}>
+        <div className={styles.portHeroInner}>
+          <div className={styles.portHeroText}>
+            <p className="section-label">Selected Work</p>
+            <h1 className={styles.portHeroH1}>
+              The
+              <br />
+              <em>Portfolio</em>
+            </h1>
+            <p className={styles.portHeroTagline}>
+              Websites, social media, and brand marks — made with intention.
+            </p>
+          </div>
+          <HeroCarousel
+            items={[
+              { src: '/Rocket_City_Social_Media.png', caption: 'Rocket City Roots' },
+              { src: '/Guard_Dog_Social.png', caption: 'Guard Dog Home Defense' },
+              { src: '/Two_Angry_Bakers_Social.png', caption: 'Two Angry Bakers' },
+            ]}
+          />
+        </div>
+      </section>
 
       {/* WEBSITES */}
       <section id="websites" className={styles.portSection}>
@@ -167,15 +173,19 @@ export default function Portfolio() {
                 <br />
                 <em>Design</em>
               </h2>
+              <div className={styles.portH2Rule} />
             </div>
             <span className={styles.portCount}>{websiteProjects.length} Projects</span>
           </div>
           <WebsiteCarousel projects={websiteProjects} />
         </div>
+        <div className={styles.sectionWave}>
+          <WaveDivider fill="var(--ink)" />
+        </div>
       </section>
 
       {/* SOCIAL MEDIA */}
-      <section id="social" className={`${styles.portSection} ${styles.portSectionAlt}`}>
+      <section id="social" className={`${styles.portSection} ${styles.portSectionDark}`}>
         <div className={styles.portInner}>
           <div className={styles.portHeader}>
             <div>
@@ -185,6 +195,7 @@ export default function Portfolio() {
                 <br />
                 <em>Media</em>
               </h2>
+              <div className={styles.portH2Rule} />
             </div>
             <span className={styles.portCount}>9 Projects</span>
           </div>
@@ -197,8 +208,8 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* LOGOS */}
-      <section id="logos" className={styles.portSection}>
+      {/* BRAND IDENTITY (logos + apparel) */}
+      <section id="logos" className={`${styles.portSection} ${styles.portSectionAlt}`}>
         <div className={styles.portInner}>
           <div className={styles.portHeader}>
             <div>
@@ -206,53 +217,43 @@ export default function Portfolio() {
               <h2 className={styles.portH2}>
                 Brand
                 <br />
-                <em>Marks</em>
+                <em>Identity</em>
               </h2>
+              <div className={styles.portH2Rule} />
             </div>
-            <span className={styles.portCount}>12 Marks</span>
+            <span className={styles.portCount}>{logoProjects.length} Marks</span>
           </div>
           <LogoCarousel items={logoProjects} />
-        </div>
-      </section>
 
-      {/* APPAREL */}
-      <section id="apparel" className={`${styles.portSection} ${styles.portSectionAlt}`}>
-        <div className={styles.portInner}>
-          <div className={styles.portHeader}>
-            <div>
-              <p className="section-label">Apparel</p>
-              <h2 className={styles.portH2}>
-                T-Shirt
-                <br />
-                <em>Design</em>
-              </h2>
-            </div>
-            <span className={styles.portCount}>{apparelProjects.length} Designs</span>
+          <div className={styles.identitySub}>
+            <p className={styles.identitySubLabel}>
+              Carried through to product — apparel for <em>Wholly Tees</em>
+            </p>
           </div>
-          <ApparelCarousel items={apparelProjects} />
-          <p className={styles.apparelNote}>
-            Designs for <em>Wholly Tees</em> — a faith-inspired apparel brand in the works.
-          </p>
+          <ApparelCarousel items={apparelHighlights} />
         </div>
       </section>
-
-      <div className="section-divider" />
 
       {/* CTA */}
-      <div className={styles.cta}>
-        <p className="section-label">Start a Project</p>
-        <h2 className={styles.ctaH2}>
-          Ready to add your
-          <br />
-          <em>project here?</em>
-        </h2>
-        <p className={styles.ctaBody}>
-          We take on a small number of projects each year and give each one our
-          full attention.
-        </p>
-        <Link href="/contact" className="btn">
-          Let&rsquo;s Talk
-        </Link>
+      <div className={styles.ctaWrap}>
+        <div className={styles.cta}>
+          <p className="section-label">Start a Project</p>
+          <h2 className={styles.ctaH2}>
+            Ready to add your
+            <br />
+            <em>project here?</em>
+          </h2>
+          <p className={styles.ctaBody}>
+            We take on a small number of projects each year and give each one our
+            full attention.
+          </p>
+          <Link href="/contact" className="btn">
+            Let&rsquo;s Talk
+          </Link>
+        </div>
+        <div className={styles.ctaWave}>
+          <WaveDivider fill="var(--espresso)" />
+        </div>
       </div>
     </>
   )

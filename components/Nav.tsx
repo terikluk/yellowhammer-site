@@ -13,12 +13,16 @@ const navLinks = [
   { href: '/contact', label: 'Contact' },
 ]
 
+// Pages using the bright/paper theme — nav should read dark-on-light there
+// instead of the site-wide dark-espresso/cream-text default.
+const LIGHT_PAGES = ['/', '/portfolio', '/services']
+
 export default function Nav() {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const isHome = pathname === '/'
-  const lightText = isHome
+  const isLightPage = LIGHT_PAGES.includes(pathname)
+  const lightText = isLightPage
 
   useEffect(() => {
     const threshold = 80
@@ -41,7 +45,7 @@ export default function Nav() {
 
   return (
     <>
-      <nav className={`${styles.nav} ${scrolled ? (isHome ? styles.scrolledLight : styles.scrolled) : ''} ${menuOpen ? styles.menuActive : ''} ${lightText ? styles.onLight : ''}`}>
+      <nav className={`${styles.nav} ${scrolled ? (isLightPage ? styles.scrolledLight : styles.scrolled) : ''} ${menuOpen ? styles.menuActive : ''} ${lightText ? styles.onLight : ''}`}>
         <Link href="/" className={styles.logoLink} aria-label="Yellowhammer Studios">
           <img src="/bird.png" alt="" className={styles.logo} />
         </Link>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Hero from '@/components/Hero'
+import HeroCarousel from '@/components/HeroCarousel'
+import WaveDivider from '@/components/WaveDivider'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -78,25 +79,43 @@ const services = [
 export default function Services() {
   return (
     <>
-      <Hero
-        eyebrow="Services & Pricing"
-        h1Line1="Our"
-        h1Em="Services"
-        tagline="Transparent pricing. Custom craft. No templates."
-      />
+      <section className={styles.svcHero}>
+        <div className={styles.svcHeroInner}>
+          <div className={styles.svcHeroText}>
+            <p className="section-label">Services & Pricing</p>
+            <h1 className={styles.svcHeroH1}>
+              Our
+              <br />
+              <em>Services</em>
+            </h1>
+            <p className={styles.svcHeroTagline}>
+              Transparent pricing. Custom craft. No templates.
+            </p>
+          </div>
+          <HeroCarousel
+            items={[
+              { src: '/process-code.jpg', caption: 'Clean, custom-coded websites' },
+              { src: '/process-canva.jpg', caption: 'Brand identities, built from scratch' },
+              { src: '/Wags_Social.png', caption: 'Social content that stops the scroll' },
+            ]}
+          />
+        </div>
+      </section>
 
-      <div className="section-divider" />
-
-      {services.map((s) => (
+      {services.map((s, i) => {
+        const nextIsAlt = i < services.length - 1 ? services[i + 1].alt : false
+        return (
         <section
           key={s.num}
           id={s.label.toLowerCase().replace(/\s+/g, '-')}
           className={`${styles.serviceSection} ${s.alt ? styles.serviceSectionAlt : ''}`}
         >
-          <div className={styles.serviceInner}>
+          <div className={styles.serviceCard}>
+            <div className={styles.serviceAccent}>
+              <span>{s.label}</span>
+            </div>
             <div className={styles.serviceLeft}>
               <p className={styles.serviceNum}>{s.num}</p>
-              <p className="section-label">{s.label}</p>
               <h2 className={styles.serviceTitle}>
                 {s.title}
                 <br />
@@ -133,12 +152,18 @@ export default function Services() {
               </Link>
             </div>
           </div>
+          <div className={styles.sectionWave}>
+            <WaveDivider fill={nextIsAlt ? 'var(--ink)' : 'var(--paper)'} />
+          </div>
         </section>
-      ))}
+        )
+      })}
 
       {/* HOW IT WORKS */}
       <section className={styles.process}>
-        <p className={styles.processLabel}>The Process</p>
+        <p className="section-label" style={{ textAlign: 'center' } as React.CSSProperties}>
+          The Process
+        </p>
         <h2 className={styles.processHeading}>
           How it
           <br />
@@ -170,12 +195,41 @@ export default function Services() {
             </div>
           ))}
         </div>
-        <div className={styles.processCta}>
-          <Link href="/contact" className="btn">
-            Start Your Project
-          </Link>
+        <div className={styles.processWave}>
+          <WaveDivider fill="var(--paper)" />
         </div>
       </section>
+
+      {/* FINAL CTA */}
+      <div className={styles.ctaWrap}>
+        <img
+          src="/yellowhammer_2_cta.png"
+          alt=""
+          aria-hidden="true"
+          className={styles.ctaBgImg}
+        />
+        <div className={styles.ctaGradient} aria-hidden="true" />
+        <div className={styles.ctaInner}>
+          <div className={styles.ctaText}>
+            <p className="section-label">Start a Project</p>
+            <h2 className={styles.ctaH2}>
+              Ready to work
+              <br />
+              <em>together?</em>
+            </h2>
+            <p className={styles.ctaBody}>
+              We take on a small number of projects each year and give each
+              one our full attention.
+            </p>
+            <Link href="/contact" className="btn">
+              Start Your Project
+            </Link>
+          </div>
+        </div>
+        <div className={styles.sectionWave}>
+          <WaveDivider fill="var(--espresso)" />
+        </div>
+      </div>
     </>
   )
 }

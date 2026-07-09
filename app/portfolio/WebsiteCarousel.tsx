@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import ScaledIframe from './ScaledIframe'
+import Reveal from '@/components/Reveal'
 import styles from './page.module.css'
 
 type Project = {
@@ -36,21 +37,23 @@ export default function WebsiteCarousel({ projects }: { projects: Project[] }) {
   return (
     <div className={styles.carousel}>
       <div className={styles.carouselTrack}>
-        {visible.map((p) => (
-          <div key={p.slug} className={styles.card}>
-            <div className={styles.imgWrap}>
-              <ScaledIframe
-                src={p.liveUrl ?? `/${p.slug}.html`}
-                title={p.iframeTitle}
-                iframeHeight={p.slug === 'linea-group' ? 900 : 720}
-              />
-              <a
-                href={p.liveUrl ?? `/${p.slug}.html`}
-                className={styles.iframeOverlay}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Open ${p.title} website`}
-              />
+        {visible.map((p, i) => (
+          <Reveal key={p.slug} className={styles.card} delay={i * 120}>
+            <div className={styles.imgFrame}>
+              <div className={styles.imgWrap}>
+                <ScaledIframe
+                  src={p.liveUrl ?? `/${p.slug}.html`}
+                  title={p.iframeTitle}
+                  iframeHeight={p.slug === 'linea-group' ? 900 : 720}
+                />
+                <a
+                  href={p.liveUrl ?? `/${p.slug}.html`}
+                  className={styles.iframeOverlay}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${p.title} website`}
+                />
+              </div>
             </div>
             <div className={styles.meta}>
               <span className={styles.cat}>Website Design</span>
@@ -70,7 +73,7 @@ export default function WebsiteCarousel({ projects }: { projects: Project[] }) {
                 </span>
               </div>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
 

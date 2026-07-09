@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Reveal from '@/components/Reveal'
 import styles from './page.module.css'
 
 type LogoItem = {
@@ -32,8 +33,8 @@ export default function LogoCarousel({ items }: { items: LogoItem[] }) {
   return (
     <div className={styles.carousel}>
       <div className={styles.logoGrid}>
-        {visible.map((p) => (
-          <div key={p.src} className={styles.logoCard}>
+        {visible.map((p, i) => (
+          <Reveal key={p.src} className={styles.logoCard} delay={i * 90}>
             <div
               className={styles.logoImgWrap}
               style={p.extraPad ? { padding: '8%' } : undefined}
@@ -47,7 +48,7 @@ export default function LogoCarousel({ items }: { items: LogoItem[] }) {
                 {p.type === 'client' ? 'Client Project' : p.type === 'inhouse' ? 'In-House' : 'Concept Project'}
               </span>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
 

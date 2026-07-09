@@ -1,8 +1,19 @@
+'use client'
+
+import { usePathname } from 'next/navigation'
 import styles from './Footer.module.css'
 
+// Pages whose final section ends in a WaveDivider flowing into the
+// footer's own dark background — the border-top would just double
+// that transition, so it's dropped there.
+const WAVE_PAGES = ['/', '/portfolio', '/services']
+
 export default function Footer() {
+  const pathname = usePathname()
+  const noBorder = WAVE_PAGES.includes(pathname)
+
   return (
-    <footer className={styles.footer}>
+    <footer className={`${styles.footer} ${noBorder ? styles.noBorder : ''}`}>
       <span>&copy; 2026 Yellowhammer Studios</span>
       <span className={styles.center}>Craft &amp; intention &mdash; always.</span>
       <div className={styles.right}>

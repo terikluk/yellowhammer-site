@@ -1,11 +1,116 @@
+/* ── HERO (image collage) ── */
+@keyframes portFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.portHero {
+  position: relative;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 9rem 2rem 7.5rem;
+  background: linear-gradient(125deg, var(--paper) 0%, var(--amber-pale) 26%, var(--amber-light) 64%, var(--gold-deep) 115%);
+}
+
+.portHeroText :global(.section-label) {
+  animation: portFadeUp 0.7s ease-out 0.1s both;
+}
+
+.portHeroInner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.portHeroText {
+  max-width: 580px;
+}
+
+.portHeroH1 {
+  font-size: clamp(3.4rem, 7vw, 6.2rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--ink);
+  margin: 1rem 0 1.2rem;
+  animation: portFadeUp 0.7s ease-out 0.22s both;
+}
+
+.portHeroH1 em {
+  font-style: italic;
+  color: var(--amber);
+}
+
+.portHeroTagline {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-style: italic;
+  color: var(--ink-muted);
+  max-width: 460px;
+  animation: portFadeUp 0.7s ease-out 0.36s both;
+}
+
 .portSection {
+  position: relative;
   padding: 6rem 0 7rem;
+  background: var(--paper);
+}
+
+.sectionWave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 3;
+  line-height: 0;
 }
 
 .portSection.portSectionAlt {
-  background: var(--espresso-mid);
-  border-top: 1px solid var(--espresso-light);
-  border-bottom: 1px solid var(--espresso-light);
+  background: linear-gradient(115deg, var(--amber-wash) 0%, var(--amber-pale) 130%);
+  border-top: 1px solid rgba(200, 130, 26, 0.18);
+}
+
+/* ── DARK BAND (mirrors homepage's --ink / --espresso sections, for rhythm) ── */
+.portSection.portSectionDark {
+  background: linear-gradient(160deg, var(--ink) 0%, var(--espresso-mid) 100%);
+}
+
+.portSectionDark .portH2 {
+  color: var(--cream);
+}
+
+.portSectionDark .portH2 em {
+  color: var(--amber-pale);
+}
+
+.portSectionDark .portCount {
+  color: var(--amber-pale);
+  opacity: 0.75;
+}
+
+.portSectionDark .cardTitle {
+  color: var(--cream);
+}
+
+.portSectionDark .badgeConcept {
+  color: var(--amber-pale);
+  border-color: rgba(245, 234, 216, 0.3);
+}
+
+.portSectionDark .dot {
+  background: rgba(245, 234, 216, 0.25);
 }
 
 .portInner {
@@ -26,17 +131,27 @@
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   font-weight: 300;
   line-height: 1.15;
+  color: var(--ink);
 }
 
 .portH2 em {
   font-style: italic;
-  color: var(--amber-light);
+  color: var(--amber);
+}
+
+.portH2Rule {
+  width: 60px;
+  height: 2px;
+  margin-top: 1rem;
+  background: linear-gradient(to right, var(--amber), var(--amber-pale), var(--amber));
+  background-size: 300% 100%;
+  animation: rule-shimmer 2.8s ease-in-out infinite;
 }
 
 .portCount {
   font-size: 0.72rem;
   letter-spacing: 0.25em;
-  color: var(--text-muted);
+  color: var(--ink-muted);
   text-transform: uppercase;
   white-space: nowrap;
   padding-bottom: 0.4rem;
@@ -48,18 +163,25 @@
   flex-direction: column;
 }
 
+.imgFrame {
+  padding: 8px;
+  background: var(--paper);
+  border-radius: 10px;
+  box-shadow: 0 20px 45px -22px rgba(43, 26, 13, 0.5);
+  transition: box-shadow 0.35s, transform 0.35s;
+}
+
+.imgFrame:hover {
+  box-shadow: 0 28px 60px -20px rgba(43, 26, 13, 0.55);
+  transform: translateY(-4px);
+}
+
 .imgWrap {
   position: relative;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: var(--espresso-light);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0);
-  transition: box-shadow 0.35s, transform 0.35s;
-}
-
-.imgWrap:hover {
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
-  transform: translateY(-3px);
+  background: var(--amber-wash);
+  border-radius: 5px;
 }
 
 .iframeOverlay {
@@ -103,7 +225,7 @@
 .arrowBtn {
   background: none;
   border: 1px solid var(--amber);
-  color: var(--amber-light);
+  color: var(--amber);
   font-size: 1.1rem;
   width: 2.4rem;
   height: 2.4rem;
@@ -136,7 +258,7 @@
   height: 6px;
   border-radius: 50%;
   border: none;
-  background: var(--espresso-light);
+  background: rgba(43, 26, 13, 0.2);
   cursor: pointer;
   padding: 0;
   transition: background 0.2s, transform 0.2s;
@@ -154,11 +276,25 @@
   gap: 1.2rem;
 }
 
+.squareFrame {
+  padding: 8px;
+  background: var(--paper);
+  border-radius: 10px;
+  box-shadow: 0 20px 45px -22px rgba(43, 26, 13, 0.5);
+  transition: box-shadow 0.35s, transform 0.35s;
+}
+
+.squareFrame:hover {
+  box-shadow: 0 28px 60px -20px rgba(43, 26, 13, 0.55);
+  transform: translateY(-4px);
+}
+
 .squareImgWrap {
   position: relative;
   aspect-ratio: 1;
   overflow: hidden;
-  background: var(--espresso-light);
+  background: var(--amber-wash);
+  border-radius: 5px;
 }
 
 .fillImg {
@@ -180,9 +316,17 @@
   aspect-ratio: 5 / 6;
   overflow: hidden;
   background: #ffffff;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 20px 45px -22px rgba(43, 26, 13, 0.5);
+  transition: box-shadow 0.35s, transform 0.35s;
+}
+
+.apparelImgWrap:hover {
+  box-shadow: 0 28px 60px -20px rgba(43, 26, 13, 0.55);
+  transform: translateY(-4px);
 }
 
 .apparelImg {
@@ -191,16 +335,31 @@
   object-fit: contain;
 }
 
-.apparelNote {
-  text-align: center;
-  font-size: 15px;
-  color: var(--text-muted);
-  font-style: italic;
-  margin-top: 2.5rem;
+.identitySub {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 4rem 0 2.5rem;
 }
 
-.apparelNote em {
-  color: var(--amber-light);
+.identitySub::before,
+.identitySub::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(200, 130, 26, 0.3);
+}
+
+.identitySubLabel {
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.identitySubLabel em {
+  color: var(--amber);
   font-style: italic;
 }
 
@@ -221,27 +380,23 @@
   aspect-ratio: 1;
   padding: 16%;
   background: #ffffff;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  outline: 3px solid transparent;
-  transition: outline-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 20px 45px -22px rgba(43, 26, 13, 0.5);
+  transition: box-shadow 0.35s, transform 0.35s;
 }
 
-.logoCard:hover .logoImgWrap {
-  outline-color: #7a4e2d;
-  box-shadow: 0 0 0 6px rgba(122, 78, 45, 0.15);
+.logoImgWrap:hover {
+  box-shadow: 0 28px 60px -20px rgba(43, 26, 13, 0.55);
+  transform: translateY(-4px);
 }
 
 .logoImg {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.logoCard:hover .logoImg {
-  transform: scale(1.1);
 }
 
 /* ── META ── */
@@ -255,26 +410,26 @@
 
 .cat {
   display: block;
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--amber);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.4rem;
 }
 
 .cardTitle {
-  font-size: 1.05rem;
-  font-weight: 400;
-  color: var(--cream);
-  letter-spacing: 0.02em;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.01em;
 }
 
 .cardDesc {
-  font-size: 18px;
-  color: var(--text-muted);
-  font-weight: 300;
-  margin-top: 0.3rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  color: var(--ink-muted);
+  font-weight: 400;
+  margin-top: 0.4rem;
+  line-height: 1.7;
 }
 
 .portLink {
@@ -283,7 +438,7 @@
   font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--amber-light);
+  color: var(--amber);
   text-decoration: none;
   border: 1px solid var(--amber);
   padding: 0.5em 1.2em;
@@ -320,14 +475,46 @@
   font-size: 0.62rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--text-muted);
-  border: 1px solid var(--espresso-light);
+  color: var(--ink-muted);
+  border: 1px solid rgba(43, 26, 13, 0.2);
   padding: 0.3em 0.8em;
   white-space: nowrap;
 }
 
-/* ── CTA ── */
+.portSection :global(.btn) {
+  color: var(--amber);
+}
+
+.portSection :global(.btn:hover) {
+  color: var(--paper);
+}
+
+/* ── CTA (paper, for the same contrast the homepage gets against the dark footer) ── */
+.ctaWrap {
+  position: relative;
+  background: var(--paper);
+}
+
+.ctaWrap :global(.btn) {
+  color: var(--amber);
+}
+
+.ctaWrap :global(.btn:hover) {
+  color: var(--paper);
+}
+
+.ctaWave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 3;
+  line-height: 0;
+}
+
 .cta {
+  position: relative;
+  z-index: 2;
   text-align: center;
   padding: 6rem 2rem 8rem;
   max-width: 640px;
@@ -338,15 +525,16 @@
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   font-weight: 300;
   margin-bottom: 1rem;
+  color: var(--ink);
 }
 
 .ctaH2 em {
   font-style: italic;
-  color: var(--amber-light);
+  color: var(--amber);
 }
 
 .ctaBody {
-  color: var(--text-muted);
+  color: var(--ink-muted);
   font-size: 1rem;
   font-style: italic;
   margin-bottom: 2.5rem;
@@ -367,9 +555,9 @@
 }
 
 @media (min-width: 901px) and (max-width: 1280px) {
-  /* darken background so any gap between iframe and container is invisible */
+  /* match background so any gap between iframe and container is invisible */
   .imgWrap {
-    background: var(--espresso);
+    background: var(--amber-wash);
   }
   .logoGrid {
     grid-template-columns: repeat(3, 1fr);
@@ -382,9 +570,9 @@
 }
 
 @media (min-width: 701px) and (max-width: 900px) {
-  /* darken background so any gap is invisible in portrait */
+  /* match background so any gap is invisible in portrait */
   .imgWrap {
-    background: var(--espresso);
+    background: var(--amber-wash);
   }
   .logoGrid {
     align-items: start;
@@ -404,6 +592,11 @@
   }
   .logoGrid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .portHeroInner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 }
 
@@ -433,5 +626,10 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+  }
+
+  .portHero {
+    padding: 8rem 1.5rem 4rem;
+    min-height: auto;
   }
 }

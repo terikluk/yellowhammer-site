@@ -10,6 +10,10 @@
   color: var(--text-muted);
 }
 
+.noBorder {
+  border-top-color: transparent;
+}
+
 .center {
   position: absolute;
   left: 50%;

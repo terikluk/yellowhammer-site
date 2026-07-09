@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Reveal from '@/components/Reveal'
 import styles from './page.module.css'
 
 type ApparelItem = {
@@ -30,8 +31,8 @@ export default function ApparelCarousel({ items }: { items: ApparelItem[] }) {
   return (
     <div className={styles.carousel}>
       <div className={styles.apparelTrack}>
-        {visible.map((item) => (
-          <div key={item.src} className={styles.card}>
+        {visible.map((item, i) => (
+          <Reveal key={item.src} className={styles.card} delay={i * 90}>
             <div className={styles.apparelImgWrap}>
               <img src={item.src} alt={item.alt} className={styles.apparelImg} />
             </div>
@@ -39,7 +40,7 @@ export default function ApparelCarousel({ items }: { items: ApparelItem[] }) {
               <span className={styles.cat}>Apparel Design</span>
               <h3 className={styles.cardTitle}>{item.title}</h3>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
 

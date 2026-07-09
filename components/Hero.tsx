@@ -8,15 +8,17 @@ interface HeroProps {
   tagline?: string
   cta?: { href: string; label: string }
   theme?: 'dark' | 'light'
+  image?: string
+  compact?: boolean
 }
 
-export default function Hero({ eyebrow, h1Line1, h1Em, tagline, cta, theme = 'dark' }: HeroProps) {
+export default function Hero({ eyebrow, h1Line1, h1Em, tagline, cta, theme = 'dark', image = '/yellowhammer_hero.png', compact = false }: HeroProps) {
   if (theme === 'light') {
     return (
-      <section className={styles.heroLight}>
+      <section className={`${styles.heroLight} ${compact ? styles.heroLightCompact : ''}`}>
         <img
           className={styles.heroLightImage}
-          src="/yellowhammer_hero.png"
+          src={image}
           alt=""
           aria-hidden="true"
         />

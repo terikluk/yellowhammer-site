@@ -157,6 +157,29 @@
   background: var(--paper);
 }
 
+/* Matches the portfolio hero's dimensions, for pages that shouldn't be full-viewport tall */
+.heroLightCompact {
+  min-height: 620px;
+  padding: 9rem 2rem 7.5rem;
+}
+
+/* Full-bleed cover has too little vertical room to crop at this height —
+   the bird's head ends up clipped and pinned under the nav. Show the whole
+   bird instead: contain bounds it within both axes, so it can't blow up
+   at taller/narrower aspect ratios (e.g. mobile) the way a fixed height would. */
+.heroLightCompact .heroLightImage {
+  top: 110px;
+  left: auto;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  height: auto;
+  object-fit: contain;
+  object-position: bottom right;
+  -webkit-mask-image: radial-gradient(ellipse 80% 85% at 60% 60%, black 45%, transparent 96%);
+  mask-image: radial-gradient(ellipse 80% 85% at 60% 60%, black 45%, transparent 96%);
+}
+
 .heroLightImage {
   position: absolute;
   inset: 0;
