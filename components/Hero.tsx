@@ -9,19 +9,33 @@ interface HeroProps {
   cta?: { href: string; label: string }
   theme?: 'dark' | 'light'
   image?: string
+  video?: string
   compact?: boolean
 }
 
-export default function Hero({ eyebrow, h1Line1, h1Em, tagline, cta, theme = 'dark', image = '/yellowhammer_hero.png', compact = false }: HeroProps) {
+export default function Hero({ eyebrow, h1Line1, h1Em, tagline, cta, theme = 'dark', image = '/yellowhammer_hero.png', video, compact = false }: HeroProps) {
   if (theme === 'light') {
     return (
       <section className={`${styles.heroLight} ${compact ? styles.heroLightCompact : ''}`}>
-        <img
-          className={styles.heroLightImage}
-          src={image}
-          alt=""
-          aria-hidden="true"
-        />
+        {video ? (
+          <video
+            className={styles.heroLightImage}
+            src={video}
+            poster={image}
+            autoPlay
+            muted
+            loop
+            playsInline
+            aria-hidden="true"
+          />
+        ) : (
+          <img
+            className={styles.heroLightImage}
+            src={image}
+            alt=""
+            aria-hidden="true"
+          />
+        )}
         <div className={styles.heroLightGradient} aria-hidden="true" />
         <div className={styles.heroLightFade} aria-hidden="true" />
         <div className={styles.heroLightContent}>
