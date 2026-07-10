@@ -201,13 +201,6 @@ export default function Services() {
 
       {/* FINAL CTA */}
       <div className={styles.ctaWrap}>
-        <img
-          src="/yellowhammer_2_cta.png"
-          alt=""
-          aria-hidden="true"
-          className={styles.ctaBgImg}
-        />
-        <div className={styles.ctaGradient} aria-hidden="true" />
         <div className={styles.ctaInner}>
           <div className={styles.ctaText}>
             <p className="section-label">Start a Project</p>

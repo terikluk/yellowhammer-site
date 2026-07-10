@@ -339,24 +339,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: var(--paper);
-}
-
-.ctaBgImg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 72% 66%;
-  z-index: 0;
-}
-
-.ctaGradient {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(100deg, rgba(251, 246, 236, 0.99) 0%, rgba(251, 246, 236, 0.88) 25%, rgba(251, 246, 236, 0) 60%);
+  background: linear-gradient(125deg, var(--paper) 0%, var(--amber-pale) 26%, var(--amber-light) 64%, var(--gold-deep) 115%);
 }
 
 .ctaWrap :global(.btn) {
@@ -374,10 +357,12 @@
   margin: 0 auto;
   padding: 6rem 2rem 9rem;
   width: 100%;
+  text-align: center;
 }
 
 .ctaText {
-  max-width: 460px;
+  max-width: 560px;
+  margin: 0 auto;
 }
 
 .ctaH2 {
@@ -428,9 +413,6 @@
   }
   .ctaInner {
     padding: 4rem 1.5rem 6rem;
-  }
-  .ctaGradient {
-    background: linear-gradient(180deg, rgba(251, 246, 236, 0.92) 0%, rgba(251, 246, 236, 0.75) 45%, rgba(251, 246, 236, 0.15) 100%);
   }
   .ctaText {
     max-width: 100%;
