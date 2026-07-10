@@ -21,6 +21,8 @@ export default function Home() {
         h1Em="Studios"
         tagline="Where creative vision meets deliberate making."
         cta={{ href: '/about', label: 'Discover the Studio' }}
+        image="/yellowhammer_still.png"
+        video="/yellowhammer_landing.mp4"
       />
 
       <section id="studio" className={styles.practiceSection}>
