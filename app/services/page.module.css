@@ -339,7 +339,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(180deg, var(--paper) 0%, var(--amber-pale) 30%, var(--amber-light) 68%, var(--gold-deep) 100%);
+  background: linear-gradient(180deg, var(--paper) 0%, var(--amber-wash) 40%, var(--amber-pale) 75%, var(--amber-light) 100%);
 }
 
 .ctaWrap :global(.btn) {
