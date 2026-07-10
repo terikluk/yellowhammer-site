@@ -11,6 +11,15 @@
   background: var(--paper);
 }
 
+.sectionWave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 3;
+  line-height: 0;
+}
+
 .contactHeroImg {
   position: absolute;
   inset: 0;
@@ -33,7 +42,7 @@
 
 .cardOuter {
   background: linear-gradient(135deg, var(--amber-light) 0%, var(--gold-deep) 100%);
-  padding: 14px 0 0 14px;
+  padding: 22px 8px 8px 22px;
   max-height: 100%;
   box-shadow: 0 40px 80px -30px rgba(43, 26, 13, 0.45);
 }
@@ -240,7 +249,7 @@
     overflow-y: visible;
   }
   .cardOuter {
-    padding: 10px 0 0 10px;
+    padding: 16px 6px 6px 16px;
   }
   .formRow {
     grid-template-columns: 1fr;

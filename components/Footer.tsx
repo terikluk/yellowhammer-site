@@ -6,7 +6,7 @@ import styles from './Footer.module.css'
 // Pages whose final section ends in a WaveDivider flowing into the
 // footer's own dark background — the border-top would just double
 // that transition, so it's dropped there.
-const WAVE_PAGES = ['/', '/portfolio', '/services', '/about']
+const WAVE_PAGES = ['/', '/portfolio', '/services', '/about', '/contact']
 
 export default function Footer() {
   const pathname = usePathname()

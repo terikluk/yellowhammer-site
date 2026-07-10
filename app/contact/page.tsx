@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import styles from './page.module.css'
 import ContactForm from './ContactForm'
+import WaveDivider from '@/components/WaveDivider'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -45,6 +46,9 @@ export default function Contact() {
             </div>
           </div>
         </div>
+      </div>
+      <div className={styles.sectionWave}>
+        <WaveDivider fill="var(--espresso)" />
       </div>
     </section>
   )
