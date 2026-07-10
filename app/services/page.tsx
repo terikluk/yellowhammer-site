@@ -93,6 +93,9 @@ export default function Services() {
             ]}
           />
         </div>
+        <div className={styles.sectionWave}>
+          <WaveDivider fill="var(--paper)" />
+        </div>
       </section>
 
       <section className={styles.pricingSection}>
