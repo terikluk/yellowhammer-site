@@ -115,12 +115,22 @@
   color: var(--amber);
 }
 
+.teamCardWrap {
+  position: relative;
+}
+
 .teamCardAccent {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  box-sizing: border-box;
+  transform: translate(-28px, -28px);
   background: linear-gradient(135deg, var(--amber-light) 0%, var(--gold-deep) 100%);
-  padding: 32px 0 0 32px;
 }
 
 .teamCard {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: stretch;
   background: var(--paper);
@@ -209,7 +219,7 @@
 
 @media (max-width: 800px) {
   .teamCardAccent {
-    padding: 18px 0 0 18px;
+    transform: translate(-16px, -16px);
   }
 
   .teamCard {

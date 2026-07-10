@@ -42,7 +42,8 @@ export default function About() {
             <em>the craft</em>
           </h2>
 
-          <div className={styles.teamCardAccent}>
+          <div className={styles.teamCardWrap}>
+            <div className={styles.teamCardAccent} />
             <div className={styles.teamCard}>
               <div className={styles.teamCardText}>
                 <div className={styles.profileBlock}>
