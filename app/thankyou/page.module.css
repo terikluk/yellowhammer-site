@@ -1,17 +1,55 @@
-/* ── EXPLORE ── */
-.explore {
+/* ── HERO (gradient, text-only) ── */
+.thankHero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 9rem 2rem 8rem;
+  background: linear-gradient(125deg, var(--paper) 0%, var(--amber-pale) 26%, var(--amber-light) 64%, var(--gold-deep) 115%);
+}
+
+.thankInner {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
   text-align: center;
-  padding: 5rem 2rem 8rem;
-  max-width: 640px;
+}
+
+.thankH1 {
+  font-size: clamp(2.6rem, 5.5vw, 4.6rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--ink);
+  margin: 1rem 0 1.2rem;
+}
+
+.thankH1 em {
+  font-style: italic;
+  color: var(--espresso);
+}
+
+.thankInner :global(.section-label) {
+  color: var(--espresso);
+  opacity: 0.55;
+}
+
+.thankTagline {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-style: italic;
+  color: var(--ink-muted);
+  max-width: 480px;
   margin: 0 auto;
 }
 
 .exploreText {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: 1rem;
   font-weight: 300;
-  color: var(--text-muted);
+  color: var(--ink-muted);
   font-style: italic;
-  margin-bottom: 3rem;
+  margin: 3rem auto 2.2rem;
   letter-spacing: 0.03em;
   line-height: 1.8;
 }
@@ -23,9 +61,28 @@
   flex-wrap: wrap;
 }
 
+.thankHero :global(.btn) {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.thankHero :global(.btn:hover) {
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.sectionWave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 3;
+  line-height: 0;
+}
+
 @media (max-width: 700px) {
-  .explore {
-    padding: 3rem 1.5rem 5rem;
+  .thankHero {
+    padding: 7rem 1.25rem 6rem;
   }
 
   .btnRow {
