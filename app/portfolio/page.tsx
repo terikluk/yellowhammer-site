@@ -167,7 +167,7 @@ export default function Portfolio() {
       <section id="websites" className={styles.portSection}>
         <div className={styles.portInner}>
           <div className={styles.portHeader}>
-            <Reveal variant="text">
+            <div>
               <p className="section-label">Digital</p>
               <h2 className={styles.portH2}>
                 Website
@@ -175,7 +175,7 @@ export default function Portfolio() {
                 <em>Design</em>
               </h2>
               <div className={styles.portH2Rule} />
-            </Reveal>
+            </div>
             <span className={styles.portCount}>{websiteProjects.length} Projects</span>
           </div>
           <WebsiteCarousel projects={websiteProjects} />
@@ -189,7 +189,7 @@ export default function Portfolio() {
       <section id="social" className={`${styles.portSection} ${styles.portSectionDark}`}>
         <div className={styles.portInner}>
           <div className={styles.portHeader}>
-            <Reveal variant="text">
+            <div>
               <p className="section-label">Social</p>
               <h2 className={styles.portH2}>
                 Social
@@ -197,7 +197,7 @@ export default function Portfolio() {
                 <em>Media</em>
               </h2>
               <div className={styles.portH2Rule} />
-            </Reveal>
+            </div>
             <span className={styles.portCount}>9 Projects</span>
           </div>
           <SocialCarousel items={socialProjects} />
@@ -213,7 +213,7 @@ export default function Portfolio() {
       <section id="logos" className={`${styles.portSection} ${styles.portSectionAlt}`}>
         <div className={styles.portInner}>
           <div className={styles.portHeader}>
-            <Reveal variant="text">
+            <div>
               <p className="section-label">Identity</p>
               <h2 className={styles.portH2}>
                 Brand
@@ -221,7 +221,7 @@ export default function Portfolio() {
                 <em>Identity</em>
               </h2>
               <div className={styles.portH2Rule} />
-            </Reveal>
+            </div>
             <span className={styles.portCount}>{logoProjects.length} Marks</span>
           </div>
           <LogoCarousel items={logoProjects} />
