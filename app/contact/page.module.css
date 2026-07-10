@@ -38,7 +38,7 @@
   width: 760px;
   max-width: 92vw;
   margin-left: 4vw;
-  margin-top: 12rem;
+  margin-top: 11.3rem;
 }
 
 .amberPanel {
@@ -104,8 +104,8 @@
 
 .formGroup label {
   display: block;
-  font-size: 0.62rem;
-  letter-spacing: 0.24em;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ink-muted);
   margin-bottom: 0.4rem;
@@ -129,7 +129,7 @@
   padding: 0.4em 0 0.5em;
   color: var(--ink);
   font-family: inherit;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 300;
   outline: none;
   transition: border-bottom-color 0.25s;
@@ -218,8 +218,8 @@
 }
 
 .infoLabel {
-  font-size: 0.6rem;
-  letter-spacing: 0.24em;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--amber);
   margin-bottom: 0.3rem;
@@ -227,7 +227,7 @@
 
 .infoBlock p,
 .infoBlock a {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--ink-muted);
   font-weight: 300;
   text-decoration: none;
