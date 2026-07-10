@@ -19,30 +19,30 @@ export default function Contact() {
         className={styles.contactHeroImg}
       />
       <div className={styles.contactCardWrap}>
-        <div className={styles.cardOuter}>
-          <div className={styles.card}>
-            <p className="section-label">Get in Touch</p>
-            <h1 className={styles.contactHeading}>
-              Let&rsquo;s Build <em>Something</em>
-            </h1>
+        <div className={styles.amberPanel}>
+          <p className={styles.eyebrowLight}>Get in Touch</p>
+          <h1 className={styles.contactHeading}>
+            Let&rsquo;s Build <em>Something</em>
+          </h1>
+        </div>
 
-            <ContactForm />
+        <div className={styles.card}>
+          <ContactForm />
 
-            <div className={styles.infoRow}>
-              <div className={styles.infoBlock}>
-                <p className={styles.infoLabel}>Email</p>
-                <a href="mailto:tkluk@yellowhammerstudios.com">
-                  tkluk@yellowhammerstudios.com
-                </a>
-              </div>
-              <div className={styles.infoBlock}>
-                <p className={styles.infoLabel}>Phone</p>
-                <a href="tel:8324250224">832-425-0224</a>
-              </div>
-              <div className={styles.infoBlock}>
-                <p className={styles.infoLabel}>Location</p>
-                <p>Huntsville, AL</p>
-              </div>
+          <div className={styles.infoRow}>
+            <div className={styles.infoBlock}>
+              <p className={styles.infoLabel}>Email</p>
+              <a href="mailto:tkluk@yellowhammerstudios.com">
+                tkluk@yellowhammerstudios.com
+              </a>
+            </div>
+            <div className={styles.infoBlock}>
+              <p className={styles.infoLabel}>Phone</p>
+              <a href="tel:8324250224">832-425-0224</a>
+            </div>
+            <div className={styles.infoBlock}>
+              <p className={styles.infoLabel}>Location</p>
+              <p>Huntsville, AL</p>
             </div>
           </div>
         </div>

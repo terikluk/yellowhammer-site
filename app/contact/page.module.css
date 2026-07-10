@@ -33,24 +33,34 @@
 .contactCardWrap {
   position: relative;
   z-index: 1;
-  max-width: 560px;
+  width: 640px;
+  max-width: 90vw;
   margin-left: 4vw;
-  height: 100%;
-  display: flex;
-  align-items: center;
 }
 
-.cardOuter {
+.amberPanel {
   background: linear-gradient(135deg, var(--amber-light) 0%, var(--gold-deep) 100%);
-  padding: 22px 8px 8px 22px;
-  max-height: 100%;
-  box-shadow: 0 40px 80px -30px rgba(43, 26, 13, 0.45);
+  padding: 2rem 2.6rem 4.6rem;
+}
+
+.eyebrowLight {
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.9;
+  margin-bottom: 0.6rem;
 }
 
 .card {
+  position: relative;
+  z-index: 2;
   background: var(--paper);
-  padding: 2.2rem 2.6rem;
-  max-height: 100%;
+  width: calc(100% - 64px);
+  margin: -64px auto 0;
+  padding: 1.8rem 2.4rem 2rem;
+  box-shadow: 0 40px 80px -30px rgba(43, 26, 13, 0.45);
+  max-height: calc(100vh - 220px);
   overflow-y: auto;
 }
 
@@ -58,13 +68,12 @@
   font-size: clamp(1.7rem, 2.6vw, 2.2rem);
   font-weight: 600;
   line-height: 1.15;
-  color: var(--ink);
-  margin-bottom: 1.4rem;
+  color: #fff;
 }
 
 .contactHeading em {
   font-style: italic;
-  color: var(--amber);
+  color: var(--espresso);
 }
 
 /* ── FORM (light card) ── */
@@ -226,7 +235,8 @@
 @media (max-width: 900px) {
   .contactCardWrap {
     margin-left: 0;
-    max-width: 100%;
+    width: 100%;
+    max-width: 480px;
   }
 }
 
@@ -240,16 +250,15 @@
   .contactHeroImg {
     object-position: 70% center;
   }
-  .contactCardWrap {
-    height: auto;
+  .amberPanel {
+    padding: 1.6rem 1.5rem 2.6rem;
   }
   .card {
-    padding: 1.8rem 1.5rem;
+    width: calc(100% - 32px);
+    margin-top: -48px;
+    padding: 1.6rem 1.5rem 1.8rem;
     max-height: none;
     overflow-y: visible;
-  }
-  .cardOuter {
-    padding: 16px 6px 6px 16px;
   }
   .formRow {
     grid-template-columns: 1fr;
