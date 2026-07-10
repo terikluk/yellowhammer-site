@@ -14,13 +14,13 @@ export default function About() {
   return (
     <>
       <section className={styles.aboutHero}>
+        <div className={styles.aboutHeroGradient} aria-hidden="true" />
         <img
           src="/yellowhammer_about.png"
           alt=""
           aria-hidden="true"
           className={styles.aboutHeroBgImg}
         />
-        <div className={styles.aboutHeroGradient} aria-hidden="true" />
         <div className={styles.aboutHeroInner}>
           <p className="section-label">The Studio</p>
           <h1 className={styles.aboutHeroH1}>

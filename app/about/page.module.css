@@ -34,9 +34,14 @@
 
 .aboutHeroGradient {
   position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(100deg, rgba(251, 246, 236, 0.99) 0%, rgba(251, 246, 236, 0.85) 30%, rgba(251, 246, 236, 0) 55%);
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  width: 46vw;
+  max-width: 760px;
+  height: 88%;
+  background: radial-gradient(circle at center, rgba(240, 200, 120, 0.55) 0%, rgba(240, 200, 120, 0.28) 45%, rgba(240, 200, 120, 0) 72%);
+  pointer-events: none;
 }
 
 .aboutHeroInner {
@@ -93,6 +98,15 @@
     transform: translate(50%, -50%);
     max-width: 80vw;
     height: 60%;
+  }
+
+  .aboutHeroGradient {
+    right: 50%;
+    top: 45%;
+    transform: translate(50%, -50%);
+    width: 90vw;
+    height: 60vw;
+    max-width: none;
   }
 }
 
