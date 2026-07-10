@@ -27,7 +27,7 @@
   height: 100%;
   object-fit: cover;
   object-position: 98% center;
-  transform: scale(1.15);
+  transform: scale(1.035);
   transform-origin: -19% 50%;
   z-index: 0;
 }
