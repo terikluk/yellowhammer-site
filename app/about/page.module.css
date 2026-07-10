@@ -15,27 +15,48 @@
   min-height: 744px;
   display: flex;
   align-items: center;
+  overflow: hidden;
   padding: 9rem 2rem 7.5rem;
-  background: linear-gradient(125deg, var(--paper) 0%, var(--amber-pale) 26%, var(--amber-light) 64%, var(--gold-deep) 115%);
+  background: var(--paper);
+}
+
+.aboutHeroImageWrap {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  width: 38%;
+  height: 78%;
+  z-index: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px -30px rgba(43, 26, 13, 0.4);
+}
+
+.aboutHeroBgImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.aboutHeroGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(251, 246, 236, 0.95) 0%, rgba(251, 246, 236, 0) 40%);
 }
 
 .aboutHeroInner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 3rem;
-  align-items: center;
 }
 
-.aboutHeroText {
-  max-width: 580px;
-}
-
-.aboutHeroText :global(.section-label) {
+.aboutHeroInner :global(.section-label) {
   animation: aboutFadeUp 0.7s ease-out 0.1s both;
 }
 
@@ -61,23 +82,6 @@
   animation: aboutFadeUp 0.7s ease-out 0.36s both;
 }
 
-.aboutHeroImageWrap {
-  display: flex;
-  justify-content: center;
-  animation: aboutFadeUp 0.8s ease-out 0.3s both;
-}
-
-.aboutHeroImage {
-  width: 100%;
-  max-width: 340px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: center 15%;
-  border-radius: 10px;
-  border: 6px solid var(--paper);
-  box-shadow: 0 30px 70px -18px rgba(43, 26, 13, 0.5);
-}
-
 .sectionWave {
   position: absolute;
   left: 0;
@@ -87,23 +91,14 @@
   line-height: 0;
 }
 
-@media (max-width: 900px) {
-  .aboutHeroInner {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-  .aboutHeroImageWrap {
-    order: -1;
-  }
-  .aboutHeroImage {
-    max-width: 260px;
-  }
-}
-
 @media (max-width: 700px) {
   .aboutHero {
     padding: 8rem 1.5rem 4rem;
     min-height: auto;
+  }
+
+  .aboutHeroImageWrap {
+    display: none;
   }
 }
 
