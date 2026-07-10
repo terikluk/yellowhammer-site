@@ -14,13 +14,15 @@ export default function About() {
   return (
     <>
       <section className={styles.aboutHero}>
-        <img
-          src="/yellowhammer_hero.png"
-          alt=""
-          aria-hidden="true"
-          className={styles.aboutHeroBgImg}
-        />
-        <div className={styles.aboutHeroGradient} aria-hidden="true" />
+        <div className={styles.aboutHeroImageWrap}>
+          <img
+            src="/yellowhammer_hero.png"
+            alt=""
+            aria-hidden="true"
+            className={styles.aboutHeroBgImg}
+          />
+          <div className={styles.aboutHeroGradient} aria-hidden="true" />
+        </div>
         <div className={styles.aboutHeroInner}>
           <p className="section-label">The Studio</p>
           <h1 className={styles.aboutHeroH1}>
