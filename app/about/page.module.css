@@ -42,6 +42,9 @@
 
 .aboutHeroInner :global(.section-label) {
   animation: aboutFadeUp 0.7s ease-out 0.1s both;
+  color: var(--espresso);
+  opacity: 0.62;
+  font-weight: 600;
 }
 
 .aboutHeroH1 {
