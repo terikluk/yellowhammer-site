@@ -20,19 +20,6 @@
   background: var(--paper);
 }
 
-.aboutHeroImageWrap {
-  position: absolute;
-  top: 50%;
-  right: 5%;
-  transform: translateY(-50%);
-  width: 38%;
-  height: 78%;
-  z-index: 0;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 40px 80px -30px rgba(43, 26, 13, 0.4);
-}
-
 .aboutHeroBgImg {
   position: absolute;
   inset: 0;
@@ -40,12 +27,14 @@
   height: 100%;
   object-fit: cover;
   object-position: center 20%;
+  z-index: 0;
 }
 
 .aboutHeroGradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(251, 246, 236, 0.95) 0%, rgba(251, 246, 236, 0) 40%);
+  z-index: 1;
+  background: linear-gradient(100deg, rgba(251, 246, 236, 0.99) 0%, rgba(251, 246, 236, 0.88) 25%, rgba(251, 246, 236, 0) 60%);
 }
 
 .aboutHeroInner {
@@ -97,8 +86,12 @@
     min-height: auto;
   }
 
-  .aboutHeroImageWrap {
-    display: none;
+  .aboutHeroBgImg {
+    object-position: 65% 20%;
+  }
+
+  .aboutHeroGradient {
+    background: linear-gradient(180deg, rgba(251, 246, 236, 0.92) 0%, rgba(251, 246, 236, 0.75) 45%, rgba(251, 246, 236, 0.15) 100%);
   }
 }
 
