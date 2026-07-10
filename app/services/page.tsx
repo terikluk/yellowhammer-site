@@ -115,7 +115,7 @@ export default function Services() {
             <div className={styles.serviceAccent}>
               <span>{s.label}</span>
             </div>
-            <Reveal variant="text" className={styles.serviceLeft}>
+            <div className={styles.serviceLeft}>
               <p className={styles.serviceNum}>{s.num}</p>
               <h2 className={styles.serviceTitle}>
                 {s.title}
@@ -140,7 +140,7 @@ export default function Services() {
                   )}
                 </span>
               </div>
-            </Reveal>
+            </div>
             <div className={styles.serviceRight}>
               <p className={styles.includesLabel}>What&rsquo;s included</p>
               <ul className={styles.includesList}>

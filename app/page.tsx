@@ -32,7 +32,7 @@ export default function Home() {
           <div className={styles.practiceAccent}>
             <span>The Studio</span>
           </div>
-          <Reveal variant="text" className={styles.practiceLight}>
+          <div className={styles.practiceLight}>
             <h2 className={styles.h2}>
               Made with
               <br />
@@ -44,7 +44,7 @@ export default function Home() {
               together design, narrative, and material intelligence — building
               things that last because they were built to mean something.
             </p>
-          </Reveal>
+          </div>
           <div className={styles.practiceDark}>
             <p className={styles.practiceDarkLabel}>What We Do</p>
             <div className={styles.servicesScroll}>

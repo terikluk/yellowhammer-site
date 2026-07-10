@@ -45,7 +45,7 @@ export default function About() {
             </h2>
           </Reveal>
 
-          <Reveal className={styles.teamCardWrap}>
+          <div className={styles.teamCardWrap}>
             <div className={styles.teamCardAccent} />
             <div className={styles.teamCard}>
               <div className={styles.teamCardText}>
@@ -84,7 +84,7 @@ export default function About() {
                 />
               </div>
             </div>
-          </Reveal>
+          </div>
 
           <div style={{ textAlign: 'center', marginTop: '4rem' }}>
             <Link href="/contact" className="btn">
