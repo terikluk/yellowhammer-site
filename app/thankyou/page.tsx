@@ -9,25 +9,29 @@ export default function ThankYou() {
   return (
     <section className={styles.thankHero}>
       <div className={styles.thankInner}>
-        <p className="section-label">Yellowhammer Studios</p>
-        <h1 className={styles.thankH1}>
+        <p className="section-label fade-up-in" style={{ animationDelay: '0.1s' }}>
+          Yellowhammer Studios
+        </p>
+        <h1 className={`${styles.thankH1} fade-up-in`} style={{ animationDelay: '0.22s' }}>
           Message
           <br />
           <em>Received.</em>
         </h1>
-        <p className={styles.thankTagline}>
+        <p className={`${styles.thankTagline} fade-up-in`} style={{ animationDelay: '0.36s' }}>
           Thank you for reaching out. We&rsquo;ll be in touch within 48 hours.
         </p>
-        <p className={styles.exploreText}>
+        <p className={`${styles.exploreText} fade-up-in`} style={{ animationDelay: '0.5s' }}>
           In the meantime, feel free to explore our work.
         </p>
-        <div className={styles.btnRow}>
-          <Link href="/portfolio" className="btn">
-            View Our Work
-          </Link>
-          <Link href="/services" className="btn">
-            Our Services
-          </Link>
+        <div className="fade-up-in" style={{ animationDelay: '0.62s' }}>
+          <div className={styles.btnRow}>
+            <Link href="/portfolio" className="btn">
+              View Our Work
+            </Link>
+            <Link href="/services" className="btn">
+              Our Services
+            </Link>
+          </div>
         </div>
       </div>
       <div className={styles.sectionWave}>

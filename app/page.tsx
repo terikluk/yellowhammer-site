@@ -32,7 +32,7 @@ export default function Home() {
           <div className={styles.practiceAccent}>
             <span>The Studio</span>
           </div>
-          <div className={styles.practiceLight}>
+          <Reveal variant="text" className={styles.practiceLight}>
             <h2 className={styles.h2}>
               Made with
               <br />
@@ -44,7 +44,7 @@ export default function Home() {
               together design, narrative, and material intelligence — building
               things that last because they were built to mean something.
             </p>
-          </div>
+          </Reveal>
           <div className={styles.practiceDark}>
             <p className={styles.practiceDarkLabel}>What We Do</p>
             <div className={styles.servicesScroll}>
@@ -84,10 +84,12 @@ export default function Home() {
 
       <section id="reviews" className={styles.reviewsSection}>
         <div className={styles.reviewsInner}>
-          <p className="section-label">Client Love</p>
-          <h2 className={styles.h2} style={{ marginBottom: '3rem' }}>
-            What people are <em>saying</em>
-          </h2>
+          <Reveal variant="text">
+            <p className="section-label">Client Love</p>
+            <h2 className={styles.h2} style={{ marginBottom: '3rem' }}>
+              What people are <em>saying</em>
+            </h2>
+          </Reveal>
           <div className={styles.reviewsGrid}>
             {[
               {
@@ -117,7 +119,7 @@ export default function Home() {
       </section>
 
       <section className={styles.collageSection}>
-        <div className={styles.collagePanel}>
+        <Reveal variant="text" className={styles.collagePanel}>
           <h2 className={styles.collageH2}>
             Think bold. <em>Build intentional.</em>
           </h2>
@@ -128,11 +130,11 @@ export default function Home() {
           <Link href="/portfolio" className={styles.btnAmber}>
             View the Portfolio
           </Link>
-        </div>
+        </Reveal>
       </section>
 
       <section id="contact" className={styles.contactWrap}>
-        <div className={styles.contactSection}>
+        <Reveal variant="text" className={styles.contactSection}>
           <p className="section-label">Get in Touch</p>
           <h2 className={styles.contactH2}>
             Let&rsquo;s make
@@ -146,7 +148,7 @@ export default function Home() {
           <Link href="/contact" className={styles.btnAmber}>
             Let&rsquo;s Talk
           </Link>
-        </div>
+        </Reveal>
         <div className={styles.contactWave}>
           <WaveDivider fill="var(--espresso)" />
         </div>

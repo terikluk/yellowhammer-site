@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import HeroCarousel from '@/components/HeroCarousel'
 import WaveDivider from '@/components/WaveDivider'
+import Reveal from '@/components/Reveal'
 import styles from './page.module.css'
 import WebsiteCarousel from './WebsiteCarousel'
 import ApparelCarousel from './ApparelCarousel'
@@ -166,7 +167,7 @@ export default function Portfolio() {
       <section id="websites" className={styles.portSection}>
         <div className={styles.portInner}>
           <div className={styles.portHeader}>
-            <div>
+            <Reveal variant="text">
               <p className="section-label">Digital</p>
               <h2 className={styles.portH2}>
                 Website
@@ -174,7 +175,7 @@ export default function Portfolio() {
                 <em>Design</em>
               </h2>
               <div className={styles.portH2Rule} />
-            </div>
+            </Reveal>
             <span className={styles.portCount}>{websiteProjects.length} Projects</span>
           </div>
           <WebsiteCarousel projects={websiteProjects} />
@@ -188,7 +189,7 @@ export default function Portfolio() {
       <section id="social" className={`${styles.portSection} ${styles.portSectionDark}`}>
         <div className={styles.portInner}>
           <div className={styles.portHeader}>
-            <div>
+            <Reveal variant="text">
               <p className="section-label">Social</p>
               <h2 className={styles.portH2}>
                 Social
@@ -196,7 +197,7 @@ export default function Portfolio() {
                 <em>Media</em>
               </h2>
               <div className={styles.portH2Rule} />
-            </div>
+            </Reveal>
             <span className={styles.portCount}>9 Projects</span>
           </div>
           <SocialCarousel items={socialProjects} />
@@ -212,7 +213,7 @@ export default function Portfolio() {
       <section id="logos" className={`${styles.portSection} ${styles.portSectionAlt}`}>
         <div className={styles.portInner}>
           <div className={styles.portHeader}>
-            <div>
+            <Reveal variant="text">
               <p className="section-label">Identity</p>
               <h2 className={styles.portH2}>
                 Brand
@@ -220,7 +221,7 @@ export default function Portfolio() {
                 <em>Identity</em>
               </h2>
               <div className={styles.portH2Rule} />
-            </div>
+            </Reveal>
             <span className={styles.portCount}>{logoProjects.length} Marks</span>
           </div>
           <LogoCarousel items={logoProjects} />
@@ -236,7 +237,7 @@ export default function Portfolio() {
 
       {/* CTA */}
       <div className={styles.ctaWrap}>
-        <div className={styles.cta}>
+        <Reveal variant="text" className={styles.cta}>
           <p className="section-label">Start a Project</p>
           <h2 className={styles.ctaH2}>
             Ready to add your
@@ -250,7 +251,7 @@ export default function Portfolio() {
           <Link href="/contact" className="btn">
             Let&rsquo;s Talk
           </Link>
-        </div>
+        </Reveal>
         <div className={styles.ctaWave}>
           <WaveDivider fill="var(--espresso)" />
         </div>

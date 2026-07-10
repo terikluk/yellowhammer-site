@@ -21,13 +21,15 @@ export default function Contact() {
       <div className={styles.contactHeroFade} aria-hidden="true" />
       <div className={styles.contactCardWrap}>
         <div className={styles.amberPanel}>
-          <p className={styles.eyebrowLight}>Get in Touch</p>
-          <h1 className={styles.contactHeading}>
+          <p className={`${styles.eyebrowLight} fade-up-in`} style={{ animationDelay: '0.1s' }}>
+            Get in Touch
+          </p>
+          <h1 className={`${styles.contactHeading} fade-up-in`} style={{ animationDelay: '0.22s' }}>
             Let&rsquo;s Build <em>Something</em>
           </h1>
         </div>
 
-        <div className={styles.card}>
+        <div className={`${styles.card} fade-up-in`} style={{ animationDelay: '0.34s' }}>
           <ContactForm />
 
           <div className={styles.infoRow}>

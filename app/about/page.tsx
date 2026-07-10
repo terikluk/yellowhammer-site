@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import WaveDivider from '@/components/WaveDivider'
+import Reveal from '@/components/Reveal'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -35,14 +36,16 @@ export default function About() {
 
       <section className={styles.teamWrap}>
         <div className={styles.teamInner}>
-          <p className="section-label">Meet the Team</p>
-          <h2 className={styles.h2}>
-            The people behind
-            <br />
-            <em>the craft</em>
-          </h2>
+          <Reveal variant="text">
+            <p className="section-label">Meet the Team</p>
+            <h2 className={styles.h2}>
+              The people behind
+              <br />
+              <em>the craft</em>
+            </h2>
+          </Reveal>
 
-          <div className={styles.teamCardWrap}>
+          <Reveal className={styles.teamCardWrap}>
             <div className={styles.teamCardAccent} />
             <div className={styles.teamCard}>
               <div className={styles.teamCardText}>
@@ -81,7 +84,7 @@ export default function About() {
                 />
               </div>
             </div>
-          </div>
+          </Reveal>
 
           <div style={{ textAlign: 'center', marginTop: '4rem' }}>
             <Link href="/contact" className="btn">
@@ -92,11 +95,11 @@ export default function About() {
       </section>
 
       <section className={styles.closingSection}>
-        <div className={styles.closing}>
+        <Reveal variant="text" className={styles.closing}>
           <p className={styles.closingLine}>
             Crafting Modern Heritage — with purpose, precision, and faith.
           </p>
-        </div>
+        </Reveal>
         <div className={styles.sectionWave}>
           <WaveDivider fill="var(--espresso)" />
         </div>

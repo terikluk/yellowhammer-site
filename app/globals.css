@@ -117,11 +117,46 @@ body {
   transform: scale(1);
 }
 
+/* Scroll-reveal utility for text — fade + gentle rise, no scale */
+.reveal-text-hidden {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-text-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal-hidden {
+  .reveal-hidden,
+  .reveal-text-hidden {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/* On-load fade-up for hero text (not scroll-triggered — used above the fold) */
+@keyframes fade-up-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up-in {
+  animation: fade-up-in 0.7s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up-in {
+    animation: none;
   }
 }
 

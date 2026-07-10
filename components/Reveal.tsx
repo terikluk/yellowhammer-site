@@ -6,9 +6,10 @@ interface RevealProps {
   children: React.ReactNode
   className?: string
   delay?: number
+  variant?: 'scale' | 'text'
 }
 
-export default function Reveal({ children, className = '', delay = 0 }: RevealProps) {
+export default function Reveal({ children, className = '', delay = 0, variant = 'scale' }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
@@ -28,10 +29,13 @@ export default function Reveal({ children, className = '', delay = 0 }: RevealPr
     return () => observer.disconnect()
   }, [])
 
+  const hiddenClass = variant === 'text' ? 'reveal-text-hidden' : 'reveal-hidden'
+  const visibleClass = variant === 'text' ? 'reveal-text-visible' : 'reveal-visible'
+
   return (
     <div
       ref={ref}
-      className={`${className} ${visible ? 'reveal-visible' : 'reveal-hidden'}`}
+      className={`${className} ${visible ? visibleClass : hiddenClass}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}

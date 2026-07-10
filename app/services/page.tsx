@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import HeroCarousel from '@/components/HeroCarousel'
 import WaveDivider from '@/components/WaveDivider'
+import Reveal from '@/components/Reveal'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -114,7 +115,7 @@ export default function Services() {
             <div className={styles.serviceAccent}>
               <span>{s.label}</span>
             </div>
-            <div className={styles.serviceLeft}>
+            <Reveal variant="text" className={styles.serviceLeft}>
               <p className={styles.serviceNum}>{s.num}</p>
               <h2 className={styles.serviceTitle}>
                 {s.title}
@@ -139,7 +140,7 @@ export default function Services() {
                   )}
                 </span>
               </div>
-            </div>
+            </Reveal>
             <div className={styles.serviceRight}>
               <p className={styles.includesLabel}>What&rsquo;s included</p>
               <ul className={styles.includesList}>
@@ -161,14 +162,16 @@ export default function Services() {
 
       {/* HOW IT WORKS */}
       <section className={styles.process}>
-        <p className="section-label" style={{ textAlign: 'center' } as React.CSSProperties}>
-          The Process
-        </p>
-        <h2 className={styles.processHeading}>
-          How it
-          <br />
-          <em>works.</em>
-        </h2>
+        <Reveal variant="text">
+          <p className="section-label" style={{ textAlign: 'center' } as React.CSSProperties}>
+            The Process
+          </p>
+          <h2 className={styles.processHeading}>
+            How it
+            <br />
+            <em>works.</em>
+          </h2>
+        </Reveal>
         <div className={styles.stepsGrid}>
           {[
             {
@@ -186,12 +189,12 @@ export default function Services() {
               title: 'We Get to Work',
               body: 'Once we understand your brand, we build with intention and keep you involved every step of the way.',
             },
-          ].map((step) => (
-            <div key={step.n} className={styles.step}>
+          ].map((step, i) => (
+            <Reveal key={step.n} variant="text" delay={i * 120} className={styles.step}>
               <p className={styles.stepNumber}>{step.n}</p>
               <h3 className={styles.stepTitle}>{step.title}</h3>
               <p className={styles.stepDesc}>{step.body}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
         <div className={styles.processWave}>
@@ -202,7 +205,7 @@ export default function Services() {
       {/* FINAL CTA */}
       <div className={styles.ctaWrap}>
         <div className={styles.ctaInner}>
-          <div className={styles.ctaText}>
+          <Reveal variant="text" className={styles.ctaText}>
             <p className="section-label">Start a Project</p>
             <h2 className={styles.ctaH2}>
               Ready to work
@@ -216,7 +219,7 @@ export default function Services() {
             <Link href="/contact" className="btn">
               Start Your Project
             </Link>
-          </div>
+          </Reveal>
         </div>
         <div className={styles.sectionWave}>
           <WaveDivider fill="var(--espresso)" />
