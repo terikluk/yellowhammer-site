@@ -20,6 +20,7 @@ export default function About() {
           aria-hidden="true"
           className={styles.aboutHeroBgImg}
         />
+        <div className={styles.aboutHeroGradient} aria-hidden="true" />
         <div className={styles.aboutHeroInner}>
           <p className="section-label">The Studio</p>
           <h1 className={styles.aboutHeroH1}>
