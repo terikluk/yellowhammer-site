@@ -23,9 +23,9 @@
 .aboutHeroImageWrap {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 8vw;
   bottom: 0;
-  width: clamp(600px, 46vw, 880px);
+  width: clamp(570px, 43.7vw, 836px);
   overflow: hidden;
   z-index: 0;
 }
