@@ -1,12 +1,11 @@
 /* ── HERO (full-bleed photo + floating card) ── */
 .contactHero {
   position: relative;
-  height: 100vh;
-  min-height: 700px;
+  min-height: 100vh;
   display: flex;
   align-items: flex-start;
   overflow: hidden;
-  padding: 6.5rem 3rem 2rem;
+  padding: 6.5rem 3rem 9rem;
   background: var(--paper);
 }
 
@@ -21,13 +20,25 @@
 
 .contactHeroImg {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
   object-position: 98% 85%;
   transform: scale(1.035);
   transform-origin: -19% 50%;
+  z-index: 0;
+}
+
+.contactHeroFade {
+  position: absolute;
+  top: calc(100vh - 160px);
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(to bottom, transparent 0%, var(--paper) 100%);
   z-index: 0;
 }
 
@@ -37,7 +48,7 @@
   width: 760px;
   max-width: 92vw;
   margin-left: 4vw;
-  margin-top: 9.3rem;
+  margin-top: 11.3rem;
 }
 
 .amberPanel {

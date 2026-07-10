@@ -18,6 +18,7 @@ export default function Contact() {
         aria-hidden="true"
         className={styles.contactHeroImg}
       />
+      <div className={styles.contactHeroFade} aria-hidden="true" />
       <div className={styles.contactCardWrap}>
         <div className={styles.amberPanel}>
           <p className={styles.eyebrowLight}>Get in Touch</p>
