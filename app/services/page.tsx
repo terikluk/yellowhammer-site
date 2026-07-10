@@ -15,65 +15,57 @@ const services = [
   {
     num: '01',
     label: 'Brand Identity',
-    title: 'Logo & Brand',
-    titleEm: 'Identity',
-    desc: 'A strong mark is the foundation of everything else. We build identities that carry weight — from the initial concept through a complete, ready-to-use brand system.',
+    title: 'Logo & Brand Identity',
+    desc: 'A strong mark is the foundation of everything else — from concept to a complete, ready-to-use brand system.',
     price: '$750',
     period: '',
     includes: [
-      'Custom logo design, up to 3 concepts',
+      'Logo design, up to 3 concepts',
       'Color palette',
       'Typography system',
       'Brand guidelines',
     ],
-    alt: false,
   },
   {
     num: '02',
     label: 'Digital',
-    title: 'Website Design\n& ',
-    titleEm: 'Development',
-    desc: 'Websites built for performance and longevity. Custom-coded or platform-built — designed to fit your brand, not a template.',
+    title: 'Website Design & Development',
+    desc: 'Custom-coded or platform-built websites, designed to fit your brand — not a template.',
     price: '$1,500',
     period: '',
     includes: [
-      'Custom-coded or platform-built — your choice',
+      'Custom-coded or platform-built',
       'Mobile responsive design',
       'Domain and hosting setup',
       'Two rounds of revisions',
     ],
-    alt: true,
   },
   {
     num: '03',
     label: 'Social Media',
-    title: 'Social Media',
-    titleEm: 'Design',
-    desc: 'Consistent, elevated content that looks like it belongs together. We design your feed so you can focus on what you do best. Organic only — no paid ads.',
+    title: 'Social Media Design',
+    desc: 'Consistent, elevated content that looks like it belongs together. Organic only — no paid ads.',
     price: '$300',
     period: '/month',
     includes: [
-      'Organic content design for Instagram, TikTok, LinkedIn, and Facebook',
-      'No paid ads',
-      'Cancel anytime with 30 days notice',
+      'Instagram, TikTok, LinkedIn & Facebook',
+      'Organic content, no paid ads',
+      'Cancel anytime, 30 days notice',
     ],
-    alt: false,
   },
   {
     num: '04',
     label: 'Ongoing Support',
-    title: 'Website',
-    titleEm: 'Maintenance',
-    desc: "Keep your site current, secure, and working properly without lifting a finger. We handle the small stuff so you don't have to think about it.",
+    title: 'Website Maintenance',
+    desc: 'Keep your site current, secure, and working properly without lifting a finger.',
     descExtra: true,
     price: '$125',
     period: '/month',
     includes: [
       'Minor updates and content changes',
       'Domain and hosting management',
-      'Cancel anytime with 30 days notice',
+      'Cancel anytime, 30 days notice',
     ],
-    alt: true,
   },
 ]
 
@@ -103,62 +95,42 @@ export default function Services() {
         </div>
       </section>
 
-      {services.map((s, i) => {
-        const nextIsAlt = i < services.length - 1 ? services[i + 1].alt : false
-        return (
-        <section
-          key={s.num}
-          id={s.label.toLowerCase().replace(/\s+/g, '-')}
-          className={`${styles.serviceSection} ${s.alt ? styles.serviceSectionAlt : ''}`}
-        >
-          <div className={styles.serviceCard}>
-            <div className={styles.serviceAccent}>
-              <span>{s.label}</span>
-            </div>
-            <div className={styles.serviceLeft}>
-              <p className={styles.serviceNum}>{s.num}</p>
-              <h2 className={styles.serviceTitle}>
-                {s.title}
-                <br />
-                <em>{s.titleEm}</em>
-              </h2>
-              <p className={styles.serviceDesc}>{s.desc}</p>
-              {s.descExtra && (
-                <p className={styles.serviceDescExtra}>
-                  Already have a website?{' '}
-                  <Link href="/contact" className={styles.inlineLink}>
-                    Ask about maintenance and refresh packages.
-                  </Link>
-                </p>
-              )}
-              <div className={styles.price}>
-                <span className={styles.priceLabel}>Starting at</span>
-                <span className={styles.priceAmount}>
-                  {s.price}
-                  {s.period && (
-                    <span className={styles.pricePeriod}>{s.period}</span>
-                  )}
-                </span>
+      <section className={styles.pricingSection}>
+        <div className={styles.pricingGrid}>
+          {services.map((s) => (
+            <div key={s.num} id={s.label.toLowerCase().replace(/\s+/g, '-')} className={styles.pricingCard}>
+              <div className={styles.pricingAccent}>
+                <span className={styles.pricingNum}>{s.num}</span>
+                <span className={styles.pricingLabel}>{s.label}</span>
+              </div>
+              <div className={styles.pricingBody}>
+                <h2 className={styles.pricingTitle}>{s.title}</h2>
+                <div className={styles.priceRow}>
+                  <span className={styles.priceAmount}>{s.price}</span>
+                  {s.period && <span className={styles.pricePeriod}>{s.period}</span>}
+                </div>
+                <p className={styles.pricingDesc}>{s.desc}</p>
+                {s.descExtra && (
+                  <p className={styles.pricingNote}>
+                    Already have a website?{' '}
+                    <Link href="/contact" className={styles.inlineLink}>
+                      Ask about refresh packages.
+                    </Link>
+                  </p>
+                )}
+                <ul className={styles.pricingIncludes}>
+                  {s.includes.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+                <Link href="/contact" className={`btn ${styles.pricingCta}`}>
+                  Let&rsquo;s Talk
+                </Link>
               </div>
             </div>
-            <div className={styles.serviceRight}>
-              <p className={styles.includesLabel}>What&rsquo;s included</p>
-              <ul className={styles.includesList}>
-                {s.includes.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              <Link href="/contact" className="btn">
-                Let&rsquo;s Talk
-              </Link>
-            </div>
-          </div>
-          <div className={styles.sectionWave}>
-            <WaveDivider fill={nextIsAlt ? 'var(--ink)' : 'var(--paper)'} />
-          </div>
-        </section>
-        )
-      })}
+          ))}
+        </div>
+      </section>
 
       {/* HOW IT WORKS */}
       <section className={styles.process}>
