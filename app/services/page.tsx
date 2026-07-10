@@ -195,7 +195,7 @@ export default function Services() {
           ))}
         </div>
         <div className={styles.processWave}>
-          <WaveDivider fill="var(--paper)" />
+          <WaveDivider fill="var(--amber-wash)" />
         </div>
       </section>
 

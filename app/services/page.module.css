@@ -339,7 +339,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: var(--paper);
+  background: var(--amber-wash);
 }
 
 .ctaWrap :global(.btn) {
