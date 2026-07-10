@@ -34,11 +34,11 @@
 
 .contactHeroFade {
   position: absolute;
-  top: calc(100vh - 160px);
+  top: calc(100vh - 180px);
   left: 0;
   right: 0;
-  height: 160px;
-  background: linear-gradient(to bottom, transparent 0%, var(--paper) 100%);
+  height: 210px;
+  background: linear-gradient(to bottom, transparent 0%, var(--paper) 85%);
   z-index: 0;
 }
 
