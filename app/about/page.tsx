@@ -14,7 +14,6 @@ export default function About() {
   return (
     <>
       <section className={styles.aboutHero}>
-        <div className={styles.aboutHeroGradient} aria-hidden="true" />
         <img
           src="/yellowhammer_about.png"
           alt=""

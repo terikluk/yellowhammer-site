@@ -17,7 +17,7 @@
   align-items: center;
   overflow: hidden;
   padding: 9rem 2rem 7.5rem;
-  background: var(--paper);
+  background: linear-gradient(125deg, var(--paper) 0%, var(--amber-pale) 26%, var(--amber-light) 64%, var(--gold-deep) 115%);
 }
 
 .aboutHeroBgImg {
@@ -30,18 +30,6 @@
   max-width: 52vw;
   object-fit: contain;
   z-index: 0;
-}
-
-.aboutHeroGradient {
-  position: absolute;
-  top: 50%;
-  right: 2%;
-  transform: translateY(-50%);
-  width: 46vw;
-  max-width: 760px;
-  height: 88%;
-  background: radial-gradient(circle at center, rgba(240, 200, 120, 0.55) 0%, rgba(240, 200, 120, 0.28) 45%, rgba(240, 200, 120, 0) 72%);
-  pointer-events: none;
 }
 
 .aboutHeroInner {
@@ -98,15 +86,6 @@
     transform: translate(50%, -50%);
     max-width: 80vw;
     height: 60%;
-  }
-
-  .aboutHeroGradient {
-    right: 50%;
-    top: 45%;
-    transform: translate(50%, -50%);
-    width: 90vw;
-    height: 60vw;
-    max-width: none;
   }
 }
 
