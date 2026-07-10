@@ -38,6 +38,7 @@ export default function Hero({ eyebrow, h1Line1, h1Em, tagline, cta, theme = 'da
         )}
         <div className={styles.heroLightGradient} aria-hidden="true" />
         <div className={styles.heroLightFade} aria-hidden="true" />
+        <div className={styles.heroLightNavScrim} aria-hidden="true" />
         <div className={styles.heroLightContent}>
           <p className={styles.eyebrowLight}>{eyebrow}</p>
           <h1 className={styles.h1Light}>
