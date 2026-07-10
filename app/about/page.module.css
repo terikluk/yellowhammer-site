@@ -117,15 +117,13 @@
 
 .teamCardAccent {
   background: linear-gradient(135deg, var(--amber-light) 0%, var(--gold-deep) 100%);
-  border-radius: 10px;
-  padding: 14px 0 0 14px;
+  padding: 32px 0 0 32px;
 }
 
 .teamCard {
   display: flex;
   align-items: stretch;
   background: var(--paper);
-  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 30px 60px -20px rgba(43, 26, 13, 0.35);
 }
@@ -210,6 +208,10 @@
 }
 
 @media (max-width: 800px) {
+  .teamCardAccent {
+    padding: 18px 0 0 18px;
+  }
+
   .teamCard {
     flex-direction: column;
   }
