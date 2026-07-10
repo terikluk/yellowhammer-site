@@ -55,7 +55,8 @@
 
 .aboutHeroH1 em {
   font-style: italic;
-  color: var(--amber);
+  color: var(--cream);
+  text-shadow: 0 2px 16px rgba(43, 26, 13, 0.3);
 }
 
 .aboutHeroTagline {
