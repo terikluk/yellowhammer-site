@@ -39,8 +39,13 @@
 }
 
 .amberPanel {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  box-sizing: border-box;
+  transform: translate(-26px, -150px);
   background: linear-gradient(135deg, var(--amber-light) 0%, var(--gold-deep) 100%);
-  padding: 2rem 2.6rem 4.6rem;
+  padding: 2rem 2.6rem 0;
 }
 
 .eyebrowLight {
@@ -54,10 +59,10 @@
 
 .card {
   position: relative;
-  z-index: 2;
+  z-index: 1;
+  box-sizing: border-box;
   background: var(--paper);
-  width: calc(100% - 64px);
-  margin: -64px auto 0;
+  width: 100%;
   padding: 1.8rem 2.4rem 2rem;
   box-shadow: 0 40px 80px -30px rgba(43, 26, 13, 0.45);
   max-height: calc(100vh - 220px);
@@ -242,7 +247,7 @@
 
 @media (max-width: 700px) {
   .contactHero {
-    padding: 7rem 1.25rem 3rem;
+    padding: 10.5rem 1.25rem 3rem;
     height: auto;
     min-height: 100vh;
     max-height: none;
@@ -251,11 +256,16 @@
     object-position: 70% center;
   }
   .amberPanel {
-    padding: 1.6rem 1.5rem 2.6rem;
+    transform: translate(-14px, -92px);
+    padding: 1rem 1.5rem 0;
+  }
+  .contactHeading {
+    font-size: 1.4rem;
+  }
+  .eyebrowLight {
+    margin-bottom: 0.3rem;
   }
   .card {
-    width: calc(100% - 32px);
-    margin-top: -48px;
     padding: 1.6rem 1.5rem 1.8rem;
     max-height: none;
     overflow-y: visible;
