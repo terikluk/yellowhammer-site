@@ -92,6 +92,45 @@
   }
 }
 
+/* ── STORY ── */
+.storySection {
+  padding: 6.5rem 2rem;
+  background: var(--paper);
+}
+
+.storyInner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.storyLead {
+  font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.5;
+  font-weight: 300;
+  margin-bottom: 2.2rem;
+}
+
+.storyBody {
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  line-height: 1.85;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.storyBody:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .storySection {
+    padding: 4rem 1.5rem;
+  }
+}
+
 /* ── TEAM (light, matches the paper sections elsewhere) ── */
 .teamWrap {
   position: relative;

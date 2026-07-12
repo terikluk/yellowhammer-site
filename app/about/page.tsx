@@ -34,6 +34,61 @@ export default function About() {
         </div>
       </section>
 
+      <section className={styles.storySection}>
+        <div className={styles.storyInner}>
+          <Reveal variant="text">
+            <p className="section-label">Our Story</p>
+            <p className={styles.storyLead}>
+              Every business has a story, and we believe your website and
+              brand should tell it well.
+            </p>
+            <p className={styles.storyBody}>
+              Yellowhammer Studios is a mother-daughter creative team serving
+              businesses from Huntsville, Alabama, and Montgomery, Texas.
+              Together, we create websites, branding, and marketing materials
+              that help businesses make a strong first impression and build
+              lasting trust with their customers.
+            </p>
+            <p className={styles.storyBody}>
+              As wives, mothers, and Christians, our faith shapes the way we
+              approach our work. We believe in treating people with honesty,
+              serving with excellence, and building relationships that last
+              long after a project is complete. Those values influence every
+              decision we make, from the first conversation to the final
+              launch.
+            </p>
+            <p className={styles.storyBody}>
+              We genuinely enjoy the creative process. Whether we&rsquo;re
+              designing a website, refining a brand, or perfecting the
+              smallest design detail, we believe thoughtful work makes a
+              difference. We aren&rsquo;t interested in rushing projects or
+              delivering something that simply checks a box. Our goal is to
+              create work that reflects the quality and character of the
+              businesses we serve.
+            </p>
+            <p className={styles.storyBody}>
+              We know that for many business owners, a website or logo
+              isn&rsquo;t just another project. It&rsquo;s something
+              you&rsquo;ve invested your time, money, and heart into.
+              That&rsquo;s why we take the time to listen, communicate
+              clearly, and build solutions that are both beautiful and
+              practical.
+            </p>
+            <p className={styles.storyBody}>
+              While technology continues to change, our approach remains the
+              same: create work with care, treat people well, and stand
+              behind what we build.
+            </p>
+            <p className={styles.storyBody}>
+              Whether you&rsquo;re launching a new business, refreshing your
+              brand, or looking for someone to provide ongoing support,
+              we&rsquo;d be honored to help you build something you&rsquo;re
+              proud to share.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       <section className={styles.teamWrap}>
         <div className={styles.teamInner}>
           <Reveal variant="text">
