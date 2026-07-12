@@ -41,8 +41,8 @@ export default function Home() {
             <p className={styles.body}>
               Every business has a story worth telling. Whether you&rsquo;re
               starting from scratch or refreshing your brand, we create
-              websites, branding, and marketing materials that help your
-              business earn trust from the very first impression.
+              websites, branding, and marketing materials that help you earn
+              trust from the very first impression.
             </p>
           </div>
           <div className={styles.practiceDark}>
