@@ -247,6 +247,11 @@
   color: var(--ink);
   letter-spacing: 0.03em;
   line-height: 1.5;
+  margin-bottom: 2.2rem;
+}
+
+.closingCta {
+  display: inline-block;
 }
 
 @media (max-width: 800px) {

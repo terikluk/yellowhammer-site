@@ -205,6 +205,9 @@ export default function About() {
             We&rsquo;d love the opportunity to learn about your business and
             help you build something you&rsquo;re proud to share.
           </p>
+          <Link href="/contact" className={`btn ${styles.closingCta}`}>
+            Let&rsquo;s Talk
+          </Link>
         </Reveal>
         <div className={styles.sectionWave}>
           <WaveDivider fill="var(--espresso)" />
