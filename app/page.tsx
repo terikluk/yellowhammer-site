@@ -19,7 +19,7 @@ export default function Home() {
         eyebrow="Designed with purpose"
         h1Line1="Yellowhammer"
         h1Em="Studios"
-        tagline="Your vision. Thoughtfully designed. Beautifully built."
+        tagline="Helping your business make the right first impression."
         cta={{ href: '/services', label: 'Our Services' }}
         image="/yellowhammer_still.png"
         video="/yellowhammer_landing.mp4"
