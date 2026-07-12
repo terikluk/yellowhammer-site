@@ -248,7 +248,7 @@
 .collagePanel {
   position: relative;
   z-index: 2;
-  max-width: 620px;
+  max-width: 900px;
 }
 
 .collageH2 {
@@ -270,6 +270,28 @@
   line-height: 1.8;
   margin-bottom: 2rem;
   opacity: 0.9;
+}
+
+.previewGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.previewCard {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 6px;
+  transition: transform 0.35s, box-shadow 0.35s;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.previewCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 55px -20px rgba(0, 0, 0, 0.55);
 }
 
 /* ── CONTACT CTA (plain paper section) ── */
@@ -374,6 +396,11 @@
   .collagePanel {
     margin: 0 1.25rem;
     padding: 2.2rem 1.8rem;
+  }
+
+  .previewGrid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
   .collageBird {

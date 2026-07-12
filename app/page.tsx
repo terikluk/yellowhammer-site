@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Hero from '@/components/Hero'
 import WaveDivider from '@/components/WaveDivider'
 import Reveal from '@/components/Reveal'
+import ScaledIframe from './portfolio/ScaledIframe'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -120,14 +121,41 @@ export default function Home() {
       <section className={styles.collageSection}>
         <Reveal variant="text" className={styles.collagePanel}>
           <h2 className={styles.collageH2}>
-            Think bold. <em>Build intentional.</em>
+            See the work behind <em>the words</em>.
           </h2>
           <p className={styles.collageBody}>
-            See the brand identities, websites, and campaigns we&rsquo;ve
-            brought to life for studios and small businesses alike.
+            From new businesses finding their footing to established
+            companies ready for a refresh, every project is designed around
+            the people behind it.
           </p>
+          <div className={styles.previewGrid}>
+            <a
+              href="https://2angrybakers.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.previewCard}
+              aria-label="Open Two Angry Bakers website"
+            >
+              <ScaledIframe
+                src="https://2angrybakers.com"
+                title="Two Angry Bakers website preview"
+              />
+            </a>
+            <a
+              href="https://smoky-mountain-adventures.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.previewCard}
+              aria-label="Open Smoky Mountain River Adventures website"
+            >
+              <ScaledIframe
+                src="https://smoky-mountain-adventures.vercel.app"
+                title="Smoky Mountain River Adventures website preview"
+              />
+            </a>
+          </div>
           <Link href="/portfolio" className={styles.btnAmber}>
-            View the Portfolio
+            View Our Portfolio
           </Link>
         </Reveal>
       </section>
