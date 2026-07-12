@@ -39,10 +39,9 @@ export default function Home() {
               <em>Has a Story</em>
             </h2>
             <p className={styles.body}>
-              Every business has a story worth telling. Whether you&rsquo;re
-              starting from scratch or refreshing your brand, we create
-              websites, branding, and marketing materials that help you earn
-              trust from the very first impression.
+              Every business has a story worth telling. We create websites,
+              branding, and creative content that help you earn trust from
+              the very first impression.
             </p>
           </div>
           <div className={styles.practiceDark}>
