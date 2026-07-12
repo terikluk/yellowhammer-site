@@ -20,7 +20,7 @@ export default function Home() {
         h1Line1="Yellowhammer"
         h1Em="Studios"
         tagline="Websites, branding, and creative support for growing businesses."
-        cta={{ href: '/about', label: 'Discover the Studio' }}
+        cta={{ href: '/services', label: 'Our Services' }}
         image="/yellowhammer_still.png"
         video="/yellowhammer_landing.mp4"
       />
