@@ -19,7 +19,7 @@ export default function Home() {
         eyebrow="Est. in the pursuit of craft"
         h1Line1="Yellowhammer"
         h1Em="Studios"
-        tagline="Building brands that leave a lasting impression."
+        tagline="Websites, branding, and creative support for growing businesses."
         cta={{ href: '/about', label: 'Discover the Studio' }}
         image="/yellowhammer_still.png"
         video="/yellowhammer_landing.mp4"
