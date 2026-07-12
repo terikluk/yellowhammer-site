@@ -34,6 +34,88 @@ export default function About() {
         </div>
       </section>
 
+      <section className={styles.teamWrap}>
+        <div className={styles.teamInner}>
+          <Reveal variant="text">
+            <p className="section-label">Meet the Team</p>
+            <h2 className={styles.h2}>
+              The Faces Behind
+              <br />
+              <em>Yellowhammer Studios</em>
+            </h2>
+          </Reveal>
+
+          <div className={styles.teamGrid}>
+            <div className={styles.profile}>
+              <div className={styles.photoWrap}>
+                <div className={styles.photoAccent} />
+                <div className={styles.photoFrame}>
+                  <Image
+                    src="/Theresa Kluk.jpeg"
+                    alt="Theresa Kluk"
+                    width={480}
+                    height={600}
+                    className={styles.photo}
+                  />
+                </div>
+              </div>
+              <p className={styles.name}>Theresa Kluk</p>
+              <p className={styles.title}>Creative Director</p>
+              <p className={styles.bio}>
+                Based in Huntsville, Alabama, Theresa brings a love for
+                thoughtful design, photography, and building websites that
+                are as functional as they are beautiful. She enjoys refining
+                every detail until it feels just right, believing that great
+                design isn&rsquo;t about being flashy, it&rsquo;s about
+                helping businesses earn trust and tell their story well.
+              </p>
+              <p className={styles.bio}>
+                As a wife, mother, and Christian, Theresa approaches every
+                project with integrity, patience, and genuine care for the
+                people behind the business.
+              </p>
+            </div>
+
+            <div className={styles.profile}>
+              <div className={styles.photoWrap}>
+                <div className={styles.photoAccent} />
+                <div className={styles.photoFrame}>
+                  <Image
+                    src="/Claire2.png"
+                    alt="Claire Wilson"
+                    width={480}
+                    height={600}
+                    className={styles.photo}
+                    style={{ objectPosition: 'center top' }}
+                  />
+                </div>
+              </div>
+              <p className={styles.name}>Claire Wilson</p>
+              <p className={styles.title}>Designer</p>
+              <p className={styles.bio}>
+                Based in Montgomery, Texas, Claire has a natural eye for
+                visual storytelling and a talent for creating brands that
+                feel welcoming, polished, and authentic. Whether she&rsquo;s
+                designing graphics, developing content, or collaborating on
+                websites, she brings creativity, warmth, and fresh
+                perspective to every project.
+              </p>
+              <p className={styles.bio}>
+                As a wife, mother, and Christian, Claire believes the best
+                work is built through honesty, collaboration, and a heart to
+                serve others well.
+              </p>
+            </div>
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '4rem' }}>
+            <Link href="/contact" className="btn">
+              Let&rsquo;s Talk
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className={styles.storySection}>
         <div className={styles.storyInner}>
           <Reveal variant="text">
@@ -86,81 +168,6 @@ export default function About() {
               proud to share.
             </p>
           </Reveal>
-        </div>
-      </section>
-
-      <section className={styles.teamWrap}>
-        <div className={styles.teamInner}>
-          <Reveal variant="text">
-            <p className="section-label">Meet the Team</p>
-            <h2 className={styles.h2}>
-              The Faces Behind
-              <br />
-              <em>Yellowhammer Studios</em>
-            </h2>
-          </Reveal>
-
-          <div className={styles.teamCardWrap}>
-            <div className={styles.teamCardAccent} />
-            <div className={styles.teamCard}>
-              <div className={styles.teamCardText}>
-                <div className={styles.profileBlock}>
-                  <p className={styles.name}>Theresa Kluk</p>
-                  <p className={styles.title}>Creative Director</p>
-                  <p className={styles.bio}>
-                    Based in Huntsville, Alabama, Theresa brings a love for
-                    thoughtful design, photography, and building websites that
-                    are as functional as they are beautiful. She enjoys
-                    refining every detail until it feels just right, believing
-                    that great design isn&rsquo;t about being flashy, it&rsquo;s
-                    about helping businesses earn trust and tell their story
-                    well.
-                  </p>
-                  <p className={styles.bio}>
-                    As a wife, mother, and Christian, Theresa approaches every
-                    project with integrity, patience, and genuine care for the
-                    people behind the business.
-                  </p>
-                </div>
-
-                <div className={styles.profileDivider} />
-
-                <div className={styles.profileBlock}>
-                  <p className={styles.name}>Claire Wilson</p>
-                  <p className={styles.title}>Designer</p>
-                  <p className={styles.bio}>
-                    Based in Montgomery, Texas, Claire has a natural eye for
-                    visual storytelling and a talent for creating brands that
-                    feel welcoming, polished, and authentic. Whether
-                    she&rsquo;s designing graphics, developing content, or
-                    collaborating on websites, she brings creativity, warmth,
-                    and fresh perspective to every project.
-                  </p>
-                  <p className={styles.bio}>
-                    As a wife, mother, and Christian, Claire believes the best
-                    work is built through honesty, collaboration, and a heart
-                    to serve others well.
-                  </p>
-                </div>
-              </div>
-
-              <div className={styles.teamCardPhoto}>
-                <Image
-                  src="/teri_claire.png"
-                  alt="Theresa Kluk and Claire Wilson"
-                  width={600}
-                  height={500}
-                  className={styles.teamPhoto}
-                />
-              </div>
-            </div>
-          </div>
-
-          <div style={{ textAlign: 'center', marginTop: '4rem' }}>
-            <Link href="/contact" className="btn">
-              Let&rsquo;s Talk
-            </Link>
-          </div>
         </div>
       </section>
 

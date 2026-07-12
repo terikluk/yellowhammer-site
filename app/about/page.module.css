@@ -157,57 +157,42 @@
   color: var(--amber);
 }
 
-.teamCardWrap {
-  position: relative;
+.teamGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
 }
 
-.teamCardAccent {
+.profile {
+  text-align: left;
+}
+
+.photoWrap {
+  position: relative;
+  margin-bottom: 1.8rem;
+}
+
+.photoAccent {
   position: absolute;
   inset: 0;
   z-index: 0;
   box-sizing: border-box;
-  transform: translate(-28px, -28px);
+  transform: translate(-18px, -18px);
   background: linear-gradient(135deg, var(--amber-light) 0%, var(--gold-deep) 100%);
 }
 
-.teamCard {
+.photoFrame {
   position: relative;
   z-index: 1;
-  display: flex;
-  align-items: stretch;
-  background: var(--paper);
   overflow: hidden;
   box-shadow: 0 30px 60px -20px rgba(43, 26, 13, 0.35);
 }
 
-.teamCardText {
-  flex: 1 1 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2.2rem;
-  padding: 3.5rem;
-  text-align: left;
-}
-
-.profileBlock {
-  text-align: left;
-}
-
-.profileDivider {
-  height: 1px;
-  background: rgba(200, 130, 26, 0.2);
-}
-
-.teamCardPhoto {
-  flex: 1 1 50%;
-  position: relative;
-  min-height: 420px;
-}
-
-.teamPhoto {
+.photo {
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   display: block;
 }
@@ -265,21 +250,12 @@
 }
 
 @media (max-width: 800px) {
-  .teamCardAccent {
-    transform: translate(-16px, -16px);
+  .teamGrid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
   }
 
-  .teamCard {
-    flex-direction: column;
-  }
-
-  .teamCardPhoto {
-    min-height: 320px;
-    order: -1;
-  }
-
-  .teamCardText {
-    padding: 2.2rem;
-    gap: 1.8rem;
+  .photoAccent {
+    transform: translate(-14px, -14px);
   }
 }
