@@ -55,15 +55,15 @@ export default function Home() {
                 },
                 {
                   title: 'Website Design & Development',
-                  body: 'Custom-coded sites, built to last.',
+                  body: 'Professional websites that build trust from the very first click.',
                 },
                 {
                   title: 'Social Media Design',
-                  body: 'Content for Instagram, TikTok, and LinkedIn.',
+                  body: 'Graphics and content that keep your brand consistent.',
                 },
                 {
                   title: 'Website Maintenance',
-                  body: 'Ongoing updates, starting at $125/month.',
+                  body: 'Keep your website secure, updated, and running smoothly.',
                 },
               ].map(({ title, body }) => (
                 <div key={title} className={styles.serviceChip}>
