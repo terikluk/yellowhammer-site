@@ -124,9 +124,8 @@ export default function Home() {
             See the work behind <em>the words</em>.
           </h2>
           <p className={styles.collageBody}>
-            From new businesses finding their footing to established
-            companies ready for a refresh, every project is designed around
-            the people behind it.
+            Every business is different. That&rsquo;s why every website and
+            brand we create is built around the people behind it.
           </p>
           <div className={styles.previewGrid}>
             <a
@@ -155,7 +154,7 @@ export default function Home() {
             </a>
           </div>
           <Link href="/portfolio" className={styles.btnAmber}>
-            View Our Portfolio
+            Explore Our Portfolio
           </Link>
         </Reveal>
       </section>
