@@ -294,6 +294,33 @@
   box-shadow: 0 28px 55px -20px rgba(0, 0, 0, 0.55);
 }
 
+.previewItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.previewCaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.9rem;
+  text-align: left;
+}
+
+.previewCaptionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cream);
+}
+
+.previewCaptionMeta {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber-pale);
+  opacity: 0.75;
+}
+
 /* ── CONTACT CTA (plain paper section) ── */
 .contactWrap {
   position: relative;

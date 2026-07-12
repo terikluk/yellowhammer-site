@@ -128,30 +128,42 @@ export default function Home() {
             brand we create is built around the people behind it.
           </p>
           <div className={styles.previewGrid}>
-            <a
-              href="https://2angrybakers.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.previewCard}
-              aria-label="Open Two Angry Bakers website"
-            >
-              <ScaledIframe
-                src="https://2angrybakers.com"
-                title="Two Angry Bakers website preview"
-              />
-            </a>
-            <a
-              href="https://smoky-mountain-adventures.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.previewCard}
-              aria-label="Open Smoky Mountain River Adventures website"
-            >
-              <ScaledIframe
-                src="https://smoky-mountain-adventures.vercel.app"
-                title="Smoky Mountain River Adventures website preview"
-              />
-            </a>
+            <div className={styles.previewItem}>
+              <a
+                href="https://2angrybakers.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.previewCard}
+                aria-label="Open Two Angry Bakers website"
+              >
+                <ScaledIframe
+                  src="https://2angrybakers.com"
+                  title="Two Angry Bakers website preview"
+                />
+              </a>
+              <p className={styles.previewCaption}>
+                <span className={styles.previewCaptionTitle}>2 Angry Bakers</span>
+                <span className={styles.previewCaptionMeta}>Brand Identity • Website</span>
+              </p>
+            </div>
+            <div className={styles.previewItem}>
+              <a
+                href="https://smoky-mountain-adventures.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.previewCard}
+                aria-label="Open Smoky Mountain River Adventures website"
+              >
+                <ScaledIframe
+                  src="https://smoky-mountain-adventures.vercel.app"
+                  title="Smoky Mountain River Adventures website preview"
+                />
+              </a>
+              <p className={styles.previewCaption}>
+                <span className={styles.previewCaptionTitle}>Smoky Mountain Gear</span>
+                <span className={styles.previewCaptionMeta}>Website • Booking Experience</span>
+              </p>
+            </div>
           </div>
           <Link href="/portfolio" className={styles.btnAmber}>
             Explore Our Portfolio
