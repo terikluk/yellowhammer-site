@@ -60,7 +60,7 @@ export default function About() {
                 </div>
               </div>
               <p className={styles.name}>Theresa Kluk</p>
-              <p className={styles.title}>Creative Director</p>
+              <p className={styles.title}>Founder &amp; Creative Director</p>
               <p className={styles.bio}>
                 Based in Huntsville, Alabama, Theresa brings a love for
                 thoughtful design, photography, and building websites that
@@ -91,7 +91,7 @@ export default function About() {
                 </div>
               </div>
               <p className={styles.name}>Claire Wilson</p>
-              <p className={styles.title}>Designer</p>
+              <p className={styles.title}>Designer &amp; Creative Partner</p>
               <p className={styles.bio}>
                 Based in Montgomery, Texas, Claire has a natural eye for
                 visual storytelling and a talent for creating brands that
