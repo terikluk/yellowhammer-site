@@ -29,7 +29,7 @@ export default function About() {
             <em>the Work</em>
           </h1>
           <p className={styles.aboutHeroTagline}>
-            Two designers. Two cities. One vision.
+            Thoughtful design, built by family.
           </p>
         </div>
       </section>
@@ -94,9 +94,9 @@ export default function About() {
           <Reveal variant="text">
             <p className="section-label">Meet the Team</p>
             <h2 className={styles.h2}>
-              The people behind
+              The Faces Behind
               <br />
-              <em>the craft</em>
+              <em>Yellowhammer Studios</em>
             </h2>
           </Reveal>
 
@@ -108,10 +108,18 @@ export default function About() {
                   <p className={styles.name}>Theresa Kluk</p>
                   <p className={styles.title}>Creative Director</p>
                   <p className={styles.bio}>
-                    Based in Huntsville, Alabama, Theresa brings a background in
-                    photography, ministry, and brand design to every project.
-                    She believes every detail matters — and works with the
-                    integrity and care to prove it.
+                    Based in Huntsville, Alabama, Theresa brings a love for
+                    thoughtful design, photography, and building websites that
+                    are as functional as they are beautiful. She enjoys
+                    refining every detail until it feels just right, believing
+                    that great design isn&rsquo;t about being flashy, it&rsquo;s
+                    about helping businesses earn trust and tell their story
+                    well.
+                  </p>
+                  <p className={styles.bio}>
+                    As a wife, mother, and Christian, Theresa approaches every
+                    project with integrity, patience, and genuine care for the
+                    people behind the business.
                   </p>
                 </div>
 
@@ -121,10 +129,17 @@ export default function About() {
                   <p className={styles.name}>Claire Wilson</p>
                   <p className={styles.title}>Designer</p>
                   <p className={styles.bio}>
-                    Based in Montgomery, Texas, Claire brings a sharp eye and an
-                    instinct for content that connects. Guided by her faith,
-                    she approaches every project with intention, creativity,
-                    and a natural sense of visual rhythm.
+                    Based in Montgomery, Texas, Claire has a natural eye for
+                    visual storytelling and a talent for creating brands that
+                    feel welcoming, polished, and authentic. Whether
+                    she&rsquo;s designing graphics, developing content, or
+                    collaborating on websites, she brings creativity, warmth,
+                    and fresh perspective to every project.
+                  </p>
+                  <p className={styles.bio}>
+                    As a wife, mother, and Christian, Claire believes the best
+                    work is built through honesty, collaboration, and a heart
+                    to serve others well.
                   </p>
                 </div>
               </div>
@@ -149,10 +164,39 @@ export default function About() {
         </div>
       </section>
 
+      <section className={styles.storySection}>
+        <div className={styles.storyInner}>
+          <Reveal variant="text">
+            <p className="section-label">Better Together</p>
+            <p className={styles.storyLead}>
+              Yellowhammer Studios is built on more than a shared love of
+              design. It&rsquo;s built on family.
+            </p>
+            <p className={styles.storyBody}>
+              Working from Huntsville, Alabama, and Montgomery, Texas, we
+              combine different strengths, ideas, and experiences to serve
+              businesses with the same care we&rsquo;d want for our own.
+            </p>
+            <p className={styles.storyBody}>
+              Some projects begin with Theresa&rsquo;s eye for structure and
+              strategy. Others begin with Claire&rsquo;s creativity and
+              visual storytelling. Every project is shaped by both of us
+              before it&rsquo;s complete.
+            </p>
+            <p className={styles.storyBody}>
+              No matter where our clients are located, they&rsquo;ll always
+              work with real people who care deeply about the details and
+              about building something that lasts.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       <section className={styles.closingSection}>
         <Reveal variant="text" className={styles.closing}>
           <p className={styles.closingLine}>
-            Crafting Modern Heritage — with purpose, precision, and faith.
+            We&rsquo;d love the opportunity to learn about your business and
+            help you build something you&rsquo;re proud to share.
           </p>
         </Reveal>
         <div className={styles.sectionWave}>
