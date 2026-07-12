@@ -180,8 +180,9 @@ export default function Home() {
             <em>something together</em>
           </h2>
           <p className={styles.contactBody}>
-            We work with a select number of clients each year. If your project
-            calls for craft and intention, we&rsquo;d like to hear from you.
+            Whether you&rsquo;re launching something new, refreshing your
+            brand, or simply looking for a creative partner you can count on,
+            we&rsquo;d love to hear your story and help bring it to life.
           </p>
           <Link href="/contact" className={styles.btnAmber}>
             Let&rsquo;s Talk
