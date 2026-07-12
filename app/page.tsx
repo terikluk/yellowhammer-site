@@ -34,15 +34,15 @@ export default function Home() {
           </div>
           <div className={styles.practiceLight}>
             <h2 className={styles.h2}>
-              Made with
+              Every Business
               <br />
-              <em>intention</em>
+              <em>Has a Story</em>
             </h2>
             <p className={styles.body}>
-              Yellowhammer Studios is a creative practice devoted to craft,
-              precision, and the quiet power of work made well. We bring
-              together design, narrative, and material intelligence — building
-              things that last because they were built to mean something.
+              Every business has a story worth telling. Whether you&rsquo;re
+              starting from scratch or refreshing your brand, we create
+              websites, branding, and marketing materials that help your
+              business earn trust from the very first impression.
             </p>
           </div>
           <div className={styles.practiceDark}>
