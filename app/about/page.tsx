@@ -31,6 +31,13 @@ export default function About() {
           <p className={styles.aboutHeroTagline}>
             Thoughtful design, built by family.
           </p>
+          <p className={styles.aboutHeroIntro}>
+            Yellowhammer Studios is a mother-daughter creative team serving
+            businesses from Huntsville, Alabama, and Montgomery, Texas. We
+            create websites, branding, and marketing materials with one goal
+            in mind: helping businesses build trust through thoughtful
+            design.
+          </p>
         </div>
       </section>
 
@@ -41,13 +48,6 @@ export default function About() {
             <p className={styles.storyLead}>
               Every business has a story, and we believe your website and
               brand should tell it well.
-            </p>
-            <p className={styles.storyBody}>
-              Yellowhammer Studios is a mother-daughter creative team serving
-              businesses from Huntsville, Alabama, and Montgomery, Texas.
-              Together, we create websites, branding, and marketing materials
-              that help businesses make a strong first impression and build
-              lasting trust with their customers.
             </p>
             <p className={styles.storyBody}>
               As wives, mothers, and Christians, our faith shapes the way we
@@ -176,12 +176,10 @@ export default function About() {
               <p className={styles.name}>Claire Wilson</p>
               <p className={styles.title}>Designer &amp; Creative Partner</p>
               <p className={styles.bio}>
-                Based in Montgomery, Texas, Claire has a natural eye for
-                visual storytelling and a talent for creating brands that
-                feel welcoming, polished, and authentic. Whether she&rsquo;s
-                designing graphics, developing content, or collaborating on
-                websites, she brings creativity, warmth, and fresh
-                perspective to every project.
+                Based in Montgomery, Texas, Claire loves creating brands that
+                feel welcoming and genuine. Her creativity and thoughtful
+                approach help businesses communicate who they are in a way
+                that feels natural and authentic.
               </p>
               <p className={styles.bio}>
                 As a wife, mother, and Christian, Claire believes the best
