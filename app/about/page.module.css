@@ -22,12 +22,12 @@
 
 .aboutHeroBgImg {
   position: absolute;
-  right: 6vw;
-  top: 38%;
+  right: 0;
+  top: 50%;
   transform: translateY(-50%);
-  height: 86.7%;
+  height: 102%;
   width: auto;
-  max-width: 44.2vw;
+  max-width: 52vw;
   object-fit: contain;
   z-index: 0;
 }
