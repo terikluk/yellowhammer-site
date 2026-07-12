@@ -51,7 +51,7 @@ export default function Home() {
               {[
                 {
                   title: 'Brand Identity',
-                  body: 'Logos, palettes, and typography systems.',
+                  body: 'A memorable brand people recognize and trust.',
                 },
                 {
                   title: 'Website Design & Development',
@@ -59,11 +59,11 @@ export default function Home() {
                 },
                 {
                   title: 'Social Media Design',
-                  body: 'Graphics and content that keep your brand consistent.',
+                  body: 'Consistent, professional content that keeps your business top of mind.',
                 },
                 {
                   title: 'Website Maintenance',
-                  body: 'Keep your website secure, updated, and running smoothly.',
+                  body: 'Peace of mind knowing your website is always secure and running smoothly.',
                 },
               ].map(({ title, body }) => (
                 <div key={title} className={styles.serviceChip}>
@@ -86,7 +86,7 @@ export default function Home() {
         <div className={styles.reviewsInner}>
           <Reveal variant="text">
             <p className="section-label">Client Love</p>
-            <h2 className={styles.h2} style={{ marginBottom: '3rem' }}>
+            <h2 className={styles.h2} style={{ marginBottom: '2.5rem' }}>
               What people are <em>saying</em>
             </h2>
           </Reveal>
