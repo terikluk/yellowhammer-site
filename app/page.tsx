@@ -96,7 +96,7 @@ export default function Home() {
                 quote: 'Took my vision and turned it into a beautiful, easy to use website that perfectly represents my business. Every detail was thoughtfully done, and very quick to make any adjustments I requested. It\'s everything I wanted and more.',
               },
               {
-                name: 'A&Z',
+                name: 'Ali T.',
                 quote: 'They truly listened to my vision and transformed it into a beautiful, functional website that exceeded my expectations. The final website is not only visually stunning but also easy to navigate. I\'ve already received so many compliments on it!',
               },
               {
