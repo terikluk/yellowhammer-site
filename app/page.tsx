@@ -19,7 +19,7 @@ export default function Home() {
         eyebrow="Websites • Branding • Creative Support"
         h1Line1="Yellowhammer"
         h1Em="Studios"
-        tagline="Helping your business make the right first impression."
+        tagline="Helping your business make the best first impression."
         cta={{ href: '/services', label: 'Our Services' }}
         image="/yellowhammer_still.png"
         video="/yellowhammer_landing.mp4"
