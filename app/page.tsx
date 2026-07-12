@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <Hero
         theme="light"
-        eyebrow="Designed with purpose"
+        eyebrow="Websites • Branding • Creative Support"
         h1Line1="Yellowhammer"
         h1Em="Studios"
         tagline="Helping your business make the right first impression."
