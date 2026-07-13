@@ -176,7 +176,6 @@ export default function Portfolio() {
               </h2>
               <div className={styles.portH2Rule} />
             </div>
-            <span className={styles.portCount}>{websiteProjects.length} Projects</span>
           </div>
           <WebsiteCarousel projects={websiteProjects} />
         </div>
