@@ -79,16 +79,16 @@ const services = [
 
 const whyUs = [
   {
-    title: 'Crafted with Intention',
-    body: 'Every project is custom designed to reflect your business.',
+    title: 'Understanding First',
+    body: 'Before any design begins, we take time to learn your business, your goals, and the people you serve.',
   },
   {
-    title: 'Built to Last',
-    body: 'Modern websites designed for long-term growth.',
+    title: 'Nothing Off the Shelf',
+    body: 'Every website, brand, and piece of content is created specifically for you — never templated, never reused.',
   },
   {
-    title: 'A Creative Partner',
-    body: 'We stay with our clients long after launch.',
+    title: 'Growing With You',
+    body: 'We’re here long after launch, staying on as a creative partner as your business changes and grows.',
   },
 ]
 
@@ -159,14 +159,16 @@ export default function Services() {
         </div>
       </section>
 
-      {/* WHY YELLOWHAMMER */}
+      {/* WORKING TOGETHER */}
       <section className={styles.whySection}>
         <Reveal variant="text">
           <p className="section-label" style={{ textAlign: 'center' } as React.CSSProperties}>
-            Why Yellowhammer
+            Working Together
           </p>
           <h2 className={styles.whyHeading}>
-            Why <em>Yellowhammer?</em>
+            What It&rsquo;s Like to
+            <br />
+            <em>Work Together</em>
           </h2>
         </Reveal>
         <div className={styles.whyGrid}>
