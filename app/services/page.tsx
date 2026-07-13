@@ -149,7 +149,7 @@ export default function Services() {
             items={[
               { src: '/process-code.jpg', caption: 'Clean, custom-coded websites' },
               { src: '/process-canva.jpg', caption: 'Brand identities, built from scratch' },
-              { src: '/Wags_Social.png', caption: 'Social content that stops the scroll' },
+              { src: '/Linea_Social_Media.png', caption: 'Social content that stops the scroll' },
             ]}
           />
         </div>
