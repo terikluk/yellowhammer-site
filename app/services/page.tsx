@@ -15,12 +15,13 @@ const services = [
   {
     num: '01',
     label: 'Digital',
-    title: 'Website Design & Development',
-    desc: 'Custom websites designed from the ground up for your business. No templates, no page builders — every website is custom-built for performance, clarity, and long-term growth.',
+    title: 'Website Design',
+    desc: 'Custom websites built specifically for your business, designed to help you look credible, earn trust, and grow with confidence. No templates, no page builders.',
     price: '$2,200',
     period: '',
     startingAt: true,
     featured: true,
+    cta: 'Start My Website',
     includes: [
       'Custom Design',
       'Responsive Development',
@@ -38,6 +39,7 @@ const services = [
     price: '$950',
     period: '',
     startingAt: true,
+    cta: 'Build My Brand',
     includes: [
       'Logo Design',
       'Color Palette',
@@ -52,8 +54,9 @@ const services = [
     title: 'Website Care Plan',
     desc: 'We handle the technical side so you can focus on running your business.',
     price: '$150',
-    period: '/month',
+    period: '/mo',
     startingAt: true,
+    cta: 'Protect My Website',
     includes: [
       'Content Updates',
       'Security Monitoring',
@@ -69,6 +72,7 @@ const services = [
     price: 'Custom',
     period: '',
     startingAt: false,
+    cta: 'Grow My Audience',
     includes: [
       'Instagram, TikTok, LinkedIn & Facebook',
       'Organic content, no paid ads',
@@ -201,13 +205,13 @@ export default function Services() {
                   <div className={styles.pricingMain}>
                     <h2 className={styles.pricingTitle}>{s.title}</h2>
                     <div className={styles.priceRow}>
-                      {s.startingAt && <span className={styles.priceStarting}>Starting at</span>}
+                      {s.startingAt && <span className={styles.priceStarting}>From</span>}
                       <span className={styles.priceAmount}>{s.price}</span>
                       {s.period && <span className={styles.pricePeriod}>{s.period}</span>}
                     </div>
                     <p className={styles.pricingDesc}>{s.desc}</p>
                     <Link href="/contact" className={`btn ${styles.pricingCta}`}>
-                      Let&rsquo;s Talk
+                      {s.cta}
                     </Link>
                   </div>
                   <div>
@@ -223,7 +227,7 @@ export default function Services() {
                 <div className={styles.pricingBody}>
                   <h2 className={styles.pricingTitle}>{s.title}</h2>
                   <div className={styles.priceRow}>
-                    {s.startingAt && <span className={styles.priceStarting}>Starting at</span>}
+                    {s.startingAt && <span className={styles.priceStarting}>From</span>}
                     <span className={styles.priceAmount}>{s.price}</span>
                     {s.period && <span className={styles.pricePeriod}>{s.period}</span>}
                   </div>
@@ -235,7 +239,7 @@ export default function Services() {
                     ))}
                   </ul>
                   <Link href="/contact" className={`btn ${styles.pricingCta}`}>
-                    Let&rsquo;s Talk
+                    {s.cta}
                   </Link>
                 </div>
               )}
