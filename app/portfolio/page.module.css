@@ -167,7 +167,7 @@
 }
 
 .imgFrame {
-  padding: 8px;
+  padding: 5px;
   background: var(--paper);
   border-radius: 10px;
   box-shadow: 0 20px 45px -22px rgba(43, 26, 13, 0.5);
@@ -280,7 +280,7 @@
 }
 
 .squareFrame {
-  padding: 8px;
+  padding: 5px;
   background: var(--paper);
   border-radius: 10px;
   box-shadow: 0 20px 45px -22px rgba(43, 26, 13, 0.5);
@@ -381,7 +381,7 @@
 
 .logoImgWrap {
   aspect-ratio: 1;
-  padding: 16%;
+  padding: 11%;
   background: #ffffff;
   border-radius: 8px;
   display: flex;
@@ -623,7 +623,7 @@
   .logoImgWrap {
     aspect-ratio: auto;
     height: calc((100vw - 4rem - 0.6rem) / 2);
-    padding: 12%;
+    padding: 8%;
   }
   .portHeader {
     flex-direction: column;

@@ -136,10 +136,12 @@ export default function Home() {
                 className={styles.previewCard}
                 aria-label="Open Two Angry Bakers website"
               >
-                <ScaledIframe
-                  src="https://2angrybakers.com"
-                  title="Two Angry Bakers website preview"
-                />
+                <div className={styles.previewImgWrap}>
+                  <ScaledIframe
+                    src="https://2angrybakers.com"
+                    title="Two Angry Bakers website preview"
+                  />
+                </div>
               </a>
               <p className={styles.previewCaption}>
                 <span className={styles.previewCaptionTitle}>2 Angry Bakers</span>
@@ -154,10 +156,12 @@ export default function Home() {
                 className={styles.previewCard}
                 aria-label="Open Smoky Mountain River Adventures website"
               >
-                <ScaledIframe
-                  src="https://smoky-mountain-adventures.vercel.app"
-                  title="Smoky Mountain River Adventures website preview"
-                />
+                <div className={styles.previewImgWrap}>
+                  <ScaledIframe
+                    src="https://smoky-mountain-adventures.vercel.app"
+                    title="Smoky Mountain River Adventures website preview"
+                  />
+                </div>
               </a>
               <p className={styles.previewCaption}>
                 <span className={styles.previewCaptionTitle}>Smoky Mountain Gear</span>
