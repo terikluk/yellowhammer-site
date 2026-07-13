@@ -193,11 +193,10 @@ export default function Portfolio() {
               <h2 className={styles.portH2}>
                 Social
                 <br />
-                <em>Media</em>
+                <em>Content</em>
               </h2>
               <div className={styles.portH2Rule} />
             </div>
-            <span className={styles.portCount}>9 Projects</span>
           </div>
           <SocialCarousel items={socialProjects} />
           <div style={{ textAlign: 'center', padding: '3rem 0 1rem' }}>
