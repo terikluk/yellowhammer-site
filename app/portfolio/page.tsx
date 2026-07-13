@@ -223,8 +223,8 @@ export default function Portfolio() {
             <em>project here?</em>
           </h2>
           <p className={styles.ctaBody}>
-            We take on a small number of projects each year and give each one our
-            full attention.
+            Every project is thoughtfully crafted to reflect your business,
+            your story, and the people you serve.
           </p>
           <Link href="/contact" className="btn">
             Let&rsquo;s Talk

@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <footer className={`${styles.footer} ${noBorder ? styles.noBorder : ''}`}>
       <span>&copy; 2026 Yellowhammer Studios</span>
-      <span className={styles.center}>Craft &amp; intention &mdash; always.</span>
+      <span className={styles.center}>Craft &amp; Intention. Always.</span>
       <div className={styles.right}>
         <div className={styles.social}>
           <a
