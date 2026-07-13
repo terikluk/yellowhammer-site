@@ -23,6 +23,7 @@
   object-fit: cover;
   border-radius: 10px;
   border: 6px solid var(--paper);
+  background: var(--paper);
   transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.7s ease, box-shadow 0.7s ease;
 }
 
