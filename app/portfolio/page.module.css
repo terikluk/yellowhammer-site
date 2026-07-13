@@ -370,7 +370,7 @@
 }
 
 .cardDesc {
-  font-size: 1rem;
+  font-size: 1.0625rem;
   color: var(--ink-muted);
   font-weight: 400;
   margin-top: 0.4rem;
@@ -469,6 +469,7 @@
 .ctaH2 {
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   font-weight: 300;
+  line-height: 1.15;
   margin-bottom: 1rem;
   color: var(--ink);
 }

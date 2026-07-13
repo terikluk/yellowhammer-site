@@ -45,7 +45,7 @@
 }
 
 .exploreText {
-  font-size: 1rem;
+  font-size: 1.0625rem;
   font-weight: 300;
   color: var(--ink-muted);
   font-style: italic;

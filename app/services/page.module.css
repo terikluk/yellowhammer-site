@@ -109,6 +109,7 @@
 .whyHeading {
   font-size: clamp(2.4rem, 4.5vw, 3.6rem);
   font-weight: 300;
+  line-height: 1.15;
   color: var(--cream);
 }
 
@@ -119,7 +120,7 @@
 
 .whyList {
   max-width: 1100px;
-  margin: 4rem auto 0;
+  margin: 2.25rem auto 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: start;
@@ -138,7 +139,7 @@
   bottom: -0.75rem;
   left: 0;
   width: 1px;
-  background: rgba(240, 200, 120, 0.25);
+  background: rgba(240, 200, 120, 0.2);
 }
 
 .whyItemTitle {
@@ -150,7 +151,7 @@
 }
 
 .whyItemBody {
-  font-size: 1.05rem;
+  font-size: 1.0625rem;
   color: var(--amber-pale);
   font-weight: 300;
   line-height: 1.8;
@@ -272,7 +273,7 @@
 }
 
 .pricingDesc {
-  font-size: 1rem;
+  font-size: 1.0625rem;
   color: var(--ink-muted);
   font-weight: 300;
   line-height: 1.6;
@@ -618,6 +619,7 @@
 .ctaH2 {
   font-size: clamp(2rem, 3.8vw, 3rem);
   font-weight: 300;
+  line-height: 1.15;
   margin-bottom: 1.1rem;
   color: var(--ink);
 }

@@ -225,7 +225,7 @@
 }
 
 .bio {
-  font-size: 1rem;
+  font-size: 1.0625rem;
   color: var(--ink-muted);
   font-weight: 300;
   line-height: 1.75;
