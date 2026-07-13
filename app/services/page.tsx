@@ -148,9 +148,9 @@ export default function Services() {
           </div>
           <HeroCarousel
             items={[
-              { src: '/process-code.jpg', caption: 'Clean, custom-coded websites' },
-              { src: '/process-canva.jpg', caption: 'Brand identities, built from scratch' },
-              { src: '/Linea_Social_Media.png', caption: 'Social content that stops the scroll' },
+              { src: '/restore-church-preview.jpg', caption: 'Restore Church Huntsville' },
+              { src: '/Linea_Group.png', caption: 'Linea Group' },
+              { src: '/Yellowhammer_Social_Media.png', caption: 'Bird of the Week' },
             ]}
           />
         </div>
