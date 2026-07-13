@@ -150,7 +150,7 @@ export default function Portfolio() {
               <em>Portfolio</em>
             </h1>
             <p className={styles.portHeroTagline}>
-              Websites, social media, and brand marks — made with intention.
+              Websites, social media, and brand marks — crafted with intention.
             </p>
           </div>
           <HeroCarousel
