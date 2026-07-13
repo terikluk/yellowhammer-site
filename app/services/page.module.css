@@ -123,20 +123,12 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: start;
-  text-align: left;
+  text-align: center;
 }
 
 .whyItem {
   position: relative;
   padding: 0 2.5rem;
-}
-
-.whyItem:first-child {
-  padding-left: 0;
-}
-
-.whyItem:last-child {
-  padding-right: 0;
 }
 
 .whyItem:not(:first-child)::before {
