@@ -42,7 +42,7 @@ export default function LogoCarousel({ items }: { items: LogoItem[] }) {
               <img src={p.src} alt={p.alt} className={styles.logoImg} />
             </div>
             <div className={`${styles.meta} ${styles.logoMeta}`}>
-              <span className={styles.cat}>Brand Mark</span>
+              <span className={styles.cat}>Logo Design</span>
               <h3 className={styles.cardTitle}>{p.title}</h3>
               <span className={p.type === 'client' ? styles.badgeClient : styles.badgeConcept}>
                 {p.type === 'client' ? 'Client Project' : p.type === 'inhouse' ? 'In-House' : 'Concept Project'}
