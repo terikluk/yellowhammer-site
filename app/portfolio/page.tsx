@@ -124,16 +124,16 @@ const apparelHighlights = [
 
 const logoProjects = [
   { src: '/Two_Angry_Bakers_Logo.png', alt: 'Two Angry Bakers logo', title: 'Two Angry Bakers', extraPad: false, type: 'client' as const },
-  { src: '/Wholly_Tees_Logo.png', alt: 'Wholly Tees logo', title: 'Wholly Tees', extraPad: true, type: 'inhouse' as const },
-  { src: '/Linea_Group.png', alt: 'Linea Group logo', title: 'Linea Group', extraPad: false, type: 'concept' as const },
-  { src: "/Suga's.png", alt: "Suga's Bakery logo", title: "Suga's Bakery", extraPad: true, type: 'concept' as const },
-  { src: '/Grain_&_Barrel.png', alt: 'Barrel & Grain logo', title: 'Barrel & Grain', extraPad: false, type: 'concept' as const },
-  { src: '/sailors-logo.svg', alt: 'Sailors Chiropractic logo', title: 'Sailors Chiropractic', extraPad: true, type: 'concept' as const },
-  { src: '/Green_Top_Juice.png', alt: 'Green Top Juice logo', title: 'Green Top Juice', extraPad: false, type: 'concept' as const },
-  { src: '/Rizzario_Manufacturing_Company.png', alt: 'Rizzario Manufacturing Company logo', title: 'Rizzario', extraPad: true, type: 'concept' as const },
-  { src: '/Wags_Pet_Boutique.png', alt: 'Wags Pet Boutique logo', title: 'Wags Pet Boutique', extraPad: false, type: 'concept' as const },
   { src: '/Blue_Shield_Home_Repair.png', alt: 'Blue Shield Home Repair logo', title: 'Blue Shield Home Repair', extraPad: false, type: 'concept' as const },
+  { src: '/Grain_&_Barrel.png', alt: 'Barrel & Grain logo', title: 'Barrel & Grain', extraPad: false, type: 'concept' as const },
+  { src: '/Wholly_Tees_Logo.png', alt: 'Wholly Tees logo', title: 'Wholly Tees', extraPad: true, type: 'inhouse' as const },
   { src: '/guard_dog.png', alt: 'Guard Dog Home Defense logo', title: 'Guard Dog Home Defense', extraPad: true, type: 'concept' as const },
+  { src: '/Rizzario_Manufacturing_Company.png', alt: 'Rizzario Manufacturing Company logo', title: 'Rizzario', extraPad: true, type: 'concept' as const },
+  { src: "/Suga's.png", alt: "Suga's Bakery logo", title: "Suga's Bakery", extraPad: true, type: 'concept' as const },
+  { src: '/Green_Top_Juice.png', alt: 'Green Top Juice logo', title: 'Green Top Juice', extraPad: false, type: 'concept' as const },
+  { src: '/Linea_Group.png', alt: 'Linea Group logo', title: 'Linea Group', extraPad: false, type: 'concept' as const },
+  { src: '/Wags_Pet_Boutique.png', alt: 'Wags Pet Boutique logo', title: 'Wags Pet Boutique', extraPad: false, type: 'concept' as const },
+  { src: '/sailors-logo.svg', alt: 'Sailors Chiropractic logo', title: 'Sailors Chiropractic', extraPad: true, type: 'concept' as const },
   { src: '/wavescape.png', alt: 'Wavescape logo', title: 'Wavescape', extraPad: true, type: 'concept' as const },
 ]
 
