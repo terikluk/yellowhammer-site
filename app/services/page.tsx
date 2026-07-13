@@ -242,6 +242,9 @@ export default function Services() {
             </div>
           ))}
         </div>
+        <div className={styles.pricingWave}>
+          <WaveDivider fill="var(--ink)" />
+        </div>
       </section>
 
       {/* HOW IT WORKS */}
@@ -280,6 +283,9 @@ export default function Services() {
               <p className={styles.stepDesc}>{step.body}</p>
             </Reveal>
           ))}
+        </div>
+        <div className={styles.processWave}>
+          <WaveDivider fill="var(--paper)" />
         </div>
       </section>
 

@@ -178,8 +178,18 @@
 
 /* ── PRICING GRID (four vertical cards, replaces the alternating full-bleed sections) ── */
 .pricingSection {
+  position: relative;
   padding: 5rem 2rem 6rem;
   background: var(--paper);
+}
+
+.pricingWave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 3;
+  line-height: 0;
 }
 
 .pricingGrid {
@@ -341,7 +351,7 @@
 }
 
 .pricingCardFeatured .pricingAccent {
-  flex: 0 0 120px;
+  flex: 0 0 90px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -410,7 +420,7 @@
   padding: 8rem 2rem 6rem;
   text-align: center;
   position: relative;
-  background: var(--paper);
+  background: linear-gradient(160deg, var(--ink) 0%, var(--espresso-mid) 100%);
 }
 
 .processWave {
@@ -427,13 +437,13 @@
   font-weight: 300;
   line-height: 1.08;
   letter-spacing: 0.03em;
-  color: var(--ink);
+  color: var(--cream);
   margin-bottom: 0.15em;
 }
 
 .processHeading em {
   font-style: italic;
-  color: var(--amber);
+  color: var(--amber-pale);
 }
 
 .stepsGrid {
@@ -446,7 +456,7 @@
 }
 
 .step {
-  border-top: 1px solid rgba(200, 130, 26, 0.3);
+  border-top: 1px solid rgba(240, 200, 120, 0.25);
   padding-top: 2rem;
 }
 
@@ -462,15 +472,16 @@
   font-size: clamp(1.3rem, 2vw, 1.7rem);
   font-weight: 300;
   line-height: 1.2;
-  color: var(--ink);
+  color: var(--cream);
   margin-bottom: 0.9rem;
 }
 
 .stepDesc {
   font-size: 19px;
-  color: var(--ink-muted);
+  color: var(--amber-pale);
   font-weight: 300;
   line-height: 1.85;
+  opacity: 0.9;
 }
 
 /* ── FAQ ── */
