@@ -66,7 +66,7 @@ export default function WebsiteCarousel({ projects }: { projects: Project[] }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View Site &rarr;
+                  View Project &rarr;
                 </a>
                 <span className={p.type === 'client' ? styles.badgeClient : styles.badgeConcept}>
                   {p.type === 'client' ? 'Client Project' : 'Concept Project'}
