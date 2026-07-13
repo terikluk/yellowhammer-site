@@ -308,64 +308,6 @@
   object-fit: cover;
 }
 
-/* ── APPAREL CAROUSEL ── */
-.apparelTrack {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-}
-
-.apparelImgWrap {
-  aspect-ratio: 5 / 6;
-  overflow: hidden;
-  background: #ffffff;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 20px 45px -22px rgba(43, 26, 13, 0.5);
-  transition: box-shadow 0.35s, transform 0.35s;
-}
-
-.apparelImgWrap:hover {
-  box-shadow: 0 28px 60px -20px rgba(43, 26, 13, 0.55);
-  transform: translateY(-4px);
-}
-
-.apparelImg {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.identitySub {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  margin: 4rem 0 2.5rem;
-}
-
-.identitySub::before,
-.identitySub::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: rgba(200, 130, 26, 0.3);
-}
-
-.identitySubLabel {
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
-  color: var(--ink-muted);
-  font-style: italic;
-  white-space: nowrap;
-}
-
-.identitySubLabel em {
-  color: var(--amber);
-  font-style: italic;
-}
-
 /* ── LOGO GRID ── */
 .logoGrid {
   display: grid;
@@ -612,9 +554,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .apparelTrack {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .logoGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.6rem;

@@ -5,7 +5,6 @@ import WaveDivider from '@/components/WaveDivider'
 import Reveal from '@/components/Reveal'
 import styles from './page.module.css'
 import WebsiteCarousel from './WebsiteCarousel'
-import ApparelCarousel from './ApparelCarousel'
 import SocialCarousel from './SocialCarousel'
 import LogoCarousel from './LogoCarousel'
 
@@ -111,17 +110,6 @@ const socialProjects = [
   { src: '/Wavescape_Social.png', alt: 'Wavescape social media', title: 'Wavescape', type: 'concept' as const },
 ]
 
-const apparelHighlights = [
-  { src: '/WT_Selah.jpg', alt: 'Selah — music note and script', title: 'Selah' },
-  { src: '/WT_Not_Today_Satan.jpg', alt: 'Not Today Satan — snake design', title: 'Not Today Satan' },
-  { src: '/WT_Raven.jpg', alt: 'Raven — Luke 12:24 raven with coffee', title: 'Raven' },
-  { src: '/WT_Feeding_Retro.jpg', alt: 'Feeding of the 5000 — retro badge John 6:9', title: 'Feeding of the 5,000' },
-  { src: '/WT_Faith_Over_Fear.jpg', alt: 'Faith Over Fear — distressed block lettering', title: 'Faith Over Fear' },
-  { src: '/WT_Fruit_Spirit.jpg', alt: 'Fruit of the Spirit — Galatians 5:22-23 olive branch', title: 'Fruit of the Spirit' },
-  { src: '/WT_Shepherd.jpg', alt: 'The Good Shepherd — Psalm 23:1', title: 'The Good Shepherd' },
-  { src: '/WT_Alpha_Omega.jpg', alt: 'Alpha and Omega — Jesus cross typography', title: 'Alpha & Omega' },
-]
-
 const logoProjects = [
   { src: '/Two_Angry_Bakers_Logo.png', alt: 'Two Angry Bakers logo', title: 'Two Angry Bakers', extraPad: false, type: 'client' as const },
   { src: '/Blue_Shield_Home_Repair.png', alt: 'Blue Shield Home Repair logo', title: 'Blue Shield Home Repair', extraPad: false, type: 'concept' as const },
@@ -222,13 +210,6 @@ export default function Portfolio() {
             </div>
           </div>
           <LogoCarousel items={logoProjects} />
-
-          <div className={styles.identitySub}>
-            <p className={styles.identitySubLabel}>
-              Carried through to product — apparel for <em>Wholly Tees</em>
-            </p>
-          </div>
-          <ApparelCarousel items={apparelHighlights} />
         </div>
       </section>
 
