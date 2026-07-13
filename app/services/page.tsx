@@ -166,9 +166,9 @@ export default function Services() {
             Working Together
           </p>
           <h2 className={styles.whyHeading}>
-            What It&rsquo;s Like to
+            Our
             <br />
-            <em>Work Together</em>
+            <em>Approach</em>
           </h2>
         </Reveal>
         <div className={styles.whyList}>
