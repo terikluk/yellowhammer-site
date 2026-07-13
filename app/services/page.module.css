@@ -117,48 +117,44 @@
   color: var(--amber-pale);
 }
 
-.whyGrid {
-  max-width: 1100px;
+.whyList {
+  max-width: 820px;
   margin: 4rem auto 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  display: flex;
+  flex-direction: column;
   text-align: left;
 }
 
-.whyCard {
-  background: var(--amber-wash);
-  border: 1px solid rgba(200, 130, 26, 0.2);
-  border-radius: 6px;
-  padding: 2.4rem 2rem;
-  transition: transform 0.3s, box-shadow 0.3s;
+.whyItem {
+  border-top: 1px solid rgba(240, 200, 120, 0.25);
+  padding: 2rem 0;
 }
 
-.whyCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px -22px rgba(200, 130, 26, 0.35);
+.whyItem:last-child {
+  border-bottom: 1px solid rgba(240, 200, 120, 0.25);
 }
 
-.whyCardTitle {
-  font-size: 1.3rem;
+.whyItemTitle {
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
   font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 0.8rem;
+  color: var(--cream);
+  margin-bottom: 0.7rem;
 }
 
-.whyCardBody {
+.whyItemBody {
   font-size: 1.05rem;
-  color: var(--ink-muted);
+  color: var(--amber-pale);
   font-weight: 300;
-  line-height: 1.7;
+  line-height: 1.8;
+  max-width: 680px;
+  opacity: 0.9;
 }
 
 @media (max-width: 800px) {
   .whySection {
     padding: 4rem 1.25rem;
   }
-  .whyGrid {
-    grid-template-columns: 1fr;
+  .whyList {
     margin-top: 3rem;
   }
 }

@@ -171,11 +171,11 @@ export default function Services() {
             <em>Work Together</em>
           </h2>
         </Reveal>
-        <div className={styles.whyGrid}>
+        <div className={styles.whyList}>
           {whyUs.map((w, i) => (
-            <Reveal key={w.title} delay={i * 120} className={styles.whyCard}>
-              <h3 className={styles.whyCardTitle}>{w.title}</h3>
-              <p className={styles.whyCardBody}>{w.body}</p>
+            <Reveal key={w.title} variant="text" delay={i * 120} className={styles.whyItem}>
+              <h3 className={styles.whyItemTitle}>{w.title}</h3>
+              <p className={styles.whyItemBody}>{w.body}</p>
             </Reveal>
           ))}
         </div>
