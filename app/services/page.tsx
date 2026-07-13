@@ -140,9 +140,10 @@ export default function Services() {
               <em>&amp; Pricing</em>
             </h1>
             <p className={styles.svcHeroTagline}>
-              Every project is thoughtfully crafted to reflect your business,
-              your story, and the people you serve. Transparent pricing. No
-              surprises.
+              Every project begins with understanding your business. From
+              brand identity to custom websites, everything we create is
+              designed with purpose, crafted with care, and priced
+              transparently.
             </p>
           </div>
           <HeroCarousel
