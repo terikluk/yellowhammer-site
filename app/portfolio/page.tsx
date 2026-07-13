@@ -220,7 +220,6 @@ export default function Portfolio() {
               </h2>
               <div className={styles.portH2Rule} />
             </div>
-            <span className={styles.portCount}>{logoProjects.length} Marks</span>
           </div>
           <LogoCarousel items={logoProjects} />
 
