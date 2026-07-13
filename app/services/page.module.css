@@ -89,6 +89,80 @@
   line-height: 0;
 }
 
+/* ── WHY YELLOWHAMMER ── */
+.whySection {
+  position: relative;
+  padding: 6rem 2rem;
+  text-align: center;
+  background: linear-gradient(160deg, var(--ink) 0%, var(--espresso-mid) 100%);
+}
+
+.whySectionWave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 3;
+  line-height: 0;
+}
+
+.whyHeading {
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 300;
+  color: var(--cream);
+}
+
+.whyHeading em {
+  font-style: italic;
+  color: var(--amber-pale);
+}
+
+.whyGrid {
+  max-width: 1100px;
+  margin: 4rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  text-align: left;
+}
+
+.whyCard {
+  background: var(--amber-wash);
+  border: 1px solid rgba(200, 130, 26, 0.2);
+  border-radius: 6px;
+  padding: 2.4rem 2rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.whyCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -22px rgba(200, 130, 26, 0.35);
+}
+
+.whyCardTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+}
+
+.whyCardBody {
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+  .whySection {
+    padding: 4rem 1.25rem;
+  }
+  .whyGrid {
+    grid-template-columns: 1fr;
+    margin-top: 3rem;
+  }
+}
+
 /* ── PRICING GRID (four vertical cards, replaces the alternating full-bleed sections) ── */
 .pricingSection {
   padding: 5rem 2rem 6rem;
@@ -206,6 +280,15 @@
 
 .inlineLink:hover {
   color: var(--gold-deep);
+}
+
+.includesLabel {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-weight: 600;
+  margin-bottom: 0.7rem;
 }
 
 .pricingIncludes {

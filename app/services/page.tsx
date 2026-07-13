@@ -77,10 +77,33 @@ const services = [
   },
 ]
 
+const whyUs = [
+  {
+    title: 'Crafted with Intention',
+    body: 'Every project is custom designed to reflect your business.',
+  },
+  {
+    title: 'Built to Last',
+    body: 'Modern websites designed for long-term growth.',
+  },
+  {
+    title: 'A Creative Partner',
+    body: 'We stay with our clients long after launch.',
+  },
+]
+
 const faqs = [
   {
     q: 'Do you use WordPress?',
     a: 'No — Yellowhammer builds modern, custom websites using current technologies for better performance, flexibility, and long-term reliability.',
+  },
+  {
+    q: 'What platform do you build on?',
+    a: 'Every project is custom-built using modern web technologies selected for your business. That allows us to create websites that are fast, flexible, and built to grow with you.',
+  },
+  {
+    q: 'Can you redesign my existing website?',
+    a: 'Absolutely. Whether you need a complete redesign or improvements to an existing site, we’ll recommend the best approach based on your goals.',
   },
   {
     q: 'Can I update my website myself?',
@@ -131,6 +154,29 @@ export default function Services() {
           />
         </div>
         <div className={styles.sectionWave}>
+          <WaveDivider fill="var(--ink)" />
+        </div>
+      </section>
+
+      {/* WHY YELLOWHAMMER */}
+      <section className={styles.whySection}>
+        <Reveal variant="text">
+          <p className="section-label" style={{ textAlign: 'center' } as React.CSSProperties}>
+            Why Yellowhammer
+          </p>
+          <h2 className={styles.whyHeading}>
+            Why <em>Yellowhammer?</em>
+          </h2>
+        </Reveal>
+        <div className={styles.whyGrid}>
+          {whyUs.map((w, i) => (
+            <Reveal key={w.title} delay={i * 120} className={styles.whyCard}>
+              <h3 className={styles.whyCardTitle}>{w.title}</h3>
+              <p className={styles.whyCardBody}>{w.body}</p>
+            </Reveal>
+          ))}
+        </div>
+        <div className={styles.whySectionWave}>
           <WaveDivider fill="var(--paper)" />
         </div>
       </section>
@@ -161,11 +207,14 @@ export default function Services() {
                       Let&rsquo;s Talk
                     </Link>
                   </div>
-                  <ul className={styles.pricingIncludes}>
-                    {s.includes.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
+                  <div>
+                    <p className={styles.includesLabel}>What&rsquo;s Included</p>
+                    <ul className={styles.pricingIncludes}>
+                      {s.includes.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               ) : (
                 <div className={styles.pricingBody}>
@@ -176,6 +225,7 @@ export default function Services() {
                     {s.period && <span className={styles.pricePeriod}>{s.period}</span>}
                   </div>
                   <p className={styles.pricingDesc}>{s.desc}</p>
+                  <p className={styles.includesLabel}>What&rsquo;s Included</p>
                   <ul className={styles.pricingIncludes}>
                     {s.includes.map((item) => (
                       <li key={item}>{item}</li>
