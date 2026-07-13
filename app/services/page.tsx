@@ -148,9 +148,9 @@ export default function Services() {
           </div>
           <HeroCarousel
             items={[
-              { src: '/restore-church-preview.jpg', caption: 'Restore Church Huntsville' },
-              { src: '/Linea_Group.png', caption: 'Linea Group' },
-              { src: '/Yellowhammer_Social_Media.png', caption: 'Bird of the Week' },
+              { src: '/restore-church-preview.jpg', caption: 'Website Design for Restore Church' },
+              { src: '/Linea_Group.png', caption: 'Brand Identity for Linea Group' },
+              { src: '/Yellowhammer_Social_Media.png', caption: 'Social Content for the Bird of the Week' },
             ]}
           />
         </div>
