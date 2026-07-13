@@ -6,7 +6,7 @@ import Reveal from '@/components/Reveal'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
-  title: 'Services',
+  title: 'Services & Pricing',
   description:
     'Website design, social media management, and brand identity services from Yellowhammer Studios — Huntsville, AL.',
 }
@@ -14,58 +14,93 @@ export const metadata: Metadata = {
 const services = [
   {
     num: '01',
-    label: 'Brand Identity',
-    title: 'Logo & Brand Identity',
-    desc: 'A strong mark is the foundation of everything else — from concept to a complete, ready-to-use brand system.',
-    price: '$750',
+    label: 'Digital',
+    title: 'Website Design & Development',
+    desc: 'Custom websites designed from the ground up for your business. No templates, no page builders — every website is custom-built for performance, clarity, and long-term growth.',
+    price: '$2,200',
     period: '',
+    startingAt: true,
+    featured: true,
     includes: [
-      'Logo design, up to 3 concepts',
-      'Color palette',
-      'Typography system',
-      'Brand guidelines',
+      'Custom Design',
+      'Responsive Development',
+      'Contact Forms',
+      'Basic SEO',
+      'Analytics',
+      'Launch Support',
     ],
   },
   {
     num: '02',
-    label: 'Digital',
-    title: 'Website Design & Development',
-    desc: 'Custom-coded or platform-built websites, designed to fit your brand — not a template.',
-    price: '$1,500',
+    label: 'Identity',
+    title: 'Brand Identity',
+    desc: 'A thoughtful visual foundation for businesses that want to be remembered.',
+    price: '$950',
     period: '',
+    startingAt: true,
     includes: [
-      'Custom-coded or platform-built',
-      'Mobile responsive design',
-      'Domain and hosting setup',
-      'Two rounds of revisions',
+      'Logo Design',
+      'Color Palette',
+      'Typography',
+      'Brand Guidelines',
+      'Final Asset Package',
     ],
   },
   {
     num: '03',
-    label: 'Social Media',
-    title: 'Social Media Design',
-    desc: 'Consistent, elevated content that looks like it belongs together. Organic only — no paid ads.',
-    price: '$300',
+    label: 'Website Care',
+    title: 'Website Care Plan',
+    desc: 'We handle the technical side so you can focus on running your business.',
+    price: '$150',
     period: '/month',
+    startingAt: true,
+    includes: [
+      'Content Updates',
+      'Security Monitoring',
+      'Hosting Management',
+      'Priority Support',
+    ],
+  },
+  {
+    num: '04',
+    label: 'Social',
+    title: 'Social Content',
+    desc: 'Beautiful, branded content designed to keep your business visible and consistent across digital platforms.',
+    price: 'Custom',
+    period: '',
+    startingAt: false,
     includes: [
       'Instagram, TikTok, LinkedIn & Facebook',
       'Organic content, no paid ads',
       'Cancel anytime, 30 days notice',
     ],
   },
+]
+
+const faqs = [
   {
-    num: '04',
-    label: 'Ongoing Support',
-    title: 'Website Maintenance',
-    desc: 'Keep your site current, secure, and working properly without lifting a finger.',
-    descExtra: true,
-    price: '$125',
-    period: '/month',
-    includes: [
-      'Minor updates and content changes',
-      'Domain and hosting management',
-      'Cancel anytime, 30 days notice',
-    ],
+    q: 'Do you use WordPress?',
+    a: 'No — Yellowhammer builds modern, custom websites using current technologies for better performance, flexibility, and long-term reliability.',
+  },
+  {
+    q: 'Can I update my website myself?',
+    a: 'Some websites may include simple editing capabilities depending on the project, but many clients prefer the Website Care Plan so we can manage updates for them.',
+  },
+  {
+    q: 'Do I own my website?',
+    a: 'Yes. Once your project is paid in full, you own the finished website and all approved design assets created specifically for your project.',
+  },
+  {
+    q: 'Do you offer payment plans?',
+    a: 'Yes — flexible payment options are available to help make your project more accessible.',
+  },
+  {
+    q: 'How long does a project take?',
+    a: 'It depends on scope, but Brand Identity projects typically take 2–3 weeks, and websites typically take 4–8 weeks.',
+  },
+  {
+    q: 'What happens after launch?',
+    a: 'Many clients continue with our Website Care Plan, so we can handle updates, maintenance, and ongoing support after your site goes live.',
   },
 ]
 
@@ -77,12 +112,14 @@ export default function Services() {
           <div className={styles.svcHeroText}>
             <p className="section-label">Services & Pricing</p>
             <h1 className={styles.svcHeroH1}>
-              Our
+              Services
               <br />
-              <em>Services</em>
+              <em>&amp; Pricing</em>
             </h1>
             <p className={styles.svcHeroTagline}>
-              Transparent pricing. Custom craft. No templates.
+              Every project is thoughtfully crafted to reflect your business,
+              your story, and the people you serve. Transparent pricing. No
+              surprises.
             </p>
           </div>
           <HeroCarousel
@@ -101,35 +138,54 @@ export default function Services() {
       <section className={styles.pricingSection}>
         <div className={styles.pricingGrid}>
           {services.map((s) => (
-            <div key={s.num} id={s.label.toLowerCase().replace(/\s+/g, '-')} className={styles.pricingCard}>
+            <div
+              key={s.num}
+              id={s.label.toLowerCase().replace(/\s+/g, '-')}
+              className={`${styles.pricingCard} ${s.featured ? styles.pricingCardFeatured : ''}`}
+            >
               <div className={styles.pricingAccent}>
                 <span className={styles.pricingNum}>{s.num}</span>
                 <span className={styles.pricingLabel}>{s.label}</span>
               </div>
-              <div className={styles.pricingBody}>
-                <h2 className={styles.pricingTitle}>{s.title}</h2>
-                <div className={styles.priceRow}>
-                  <span className={styles.priceAmount}>{s.price}</span>
-                  {s.period && <span className={styles.pricePeriod}>{s.period}</span>}
-                </div>
-                <p className={styles.pricingDesc}>{s.desc}</p>
-                {s.descExtra && (
-                  <p className={styles.pricingNote}>
-                    Already have a website?{' '}
-                    <Link href="/contact" className={styles.inlineLink}>
-                      Ask about refresh packages.
+              {s.featured ? (
+                <div className={styles.pricingBody}>
+                  <div className={styles.pricingMain}>
+                    <h2 className={styles.pricingTitle}>{s.title}</h2>
+                    <div className={styles.priceRow}>
+                      {s.startingAt && <span className={styles.priceStarting}>Starting at</span>}
+                      <span className={styles.priceAmount}>{s.price}</span>
+                      {s.period && <span className={styles.pricePeriod}>{s.period}</span>}
+                    </div>
+                    <p className={styles.pricingDesc}>{s.desc}</p>
+                    <Link href="/contact" className={`btn ${styles.pricingCta}`}>
+                      Let&rsquo;s Talk
                     </Link>
-                  </p>
-                )}
-                <ul className={styles.pricingIncludes}>
-                  {s.includes.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-                <Link href="/contact" className={`btn ${styles.pricingCta}`}>
-                  Let&rsquo;s Talk
-                </Link>
-              </div>
+                  </div>
+                  <ul className={styles.pricingIncludes}>
+                    {s.includes.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                <div className={styles.pricingBody}>
+                  <h2 className={styles.pricingTitle}>{s.title}</h2>
+                  <div className={styles.priceRow}>
+                    {s.startingAt && <span className={styles.priceStarting}>Starting at</span>}
+                    <span className={styles.priceAmount}>{s.price}</span>
+                    {s.period && <span className={styles.pricePeriod}>{s.period}</span>}
+                  </div>
+                  <p className={styles.pricingDesc}>{s.desc}</p>
+                  <ul className={styles.pricingIncludes}>
+                    {s.includes.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                  <Link href="/contact" className={`btn ${styles.pricingCta}`}>
+                    Let&rsquo;s Talk
+                  </Link>
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -172,9 +228,51 @@ export default function Services() {
             </Reveal>
           ))}
         </div>
-        <div className={styles.processWave}>
+      </section>
+
+      {/* FAQ */}
+      <section className={styles.faq}>
+        <Reveal variant="text">
+          <p className="section-label" style={{ textAlign: 'center' } as React.CSSProperties}>
+            Questions
+          </p>
+          <h2 className={styles.faqHeading}>
+            Frequently Asked
+            <br />
+            <em>Questions</em>
+          </h2>
+        </Reveal>
+        <div className={styles.faqList}>
+          {faqs.map((f, i) => (
+            <Reveal key={f.q} variant="text" delay={i * 80} className={styles.faqItem}>
+              <h3 className={styles.faqQuestion}>{f.q}</h3>
+              <p className={styles.faqAnswer}>{f.a}</p>
+            </Reveal>
+          ))}
+        </div>
+        <div className={styles.faqWave}>
           <WaveDivider fill="var(--amber-wash)" />
         </div>
+      </section>
+
+      {/* RIGHT FIT */}
+      <section className={styles.rightFit}>
+        <Reveal variant="text" className={styles.rightFitInner}>
+          <p className="section-label" style={{ textAlign: 'center' } as React.CSSProperties}>
+            Is This You?
+          </p>
+          <h2 className={styles.rightFitH2}>
+            Is Yellowhammer the
+            <br />
+            <em>Right Fit?</em>
+          </h2>
+          <p className={styles.rightFitBody}>
+            Yellowhammer Studios works best with businesses that value
+            thoughtful design, clear communication, and long-term
+            relationships. We intentionally take on a limited number of
+            projects each year so every client receives our full attention.
+          </p>
+        </Reveal>
       </section>
 
       {/* FINAL CTA */}
@@ -188,11 +286,11 @@ export default function Services() {
               <em>together?</em>
             </h2>
             <p className={styles.ctaBody}>
-              We take on a small number of projects each year and give each
-              one our full attention.
+              Every project is thoughtfully crafted to reflect your business,
+              your story, and the people you serve.
             </p>
             <Link href="/contact" className="btn">
-              Start Your Project
+              Let&rsquo;s Talk
             </Link>
           </Reveal>
         </div>
