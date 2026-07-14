@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import styles from './page.module.css'
 
@@ -16,6 +16,25 @@ export default function ContactForm() {
   const router = useRouter()
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([])
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
+  function toggleType(value: string) {
+    setSelectedTypes((prev) =>
+      prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
+    )
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -25,9 +44,6 @@ export default function ContactForm() {
     const form = e.currentTarget
     const get = (name: string) =>
       (form.elements.namedItem(name) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement)?.value ?? ''
-    const checkedProjectTypes = Array.from(
-      form.querySelectorAll<HTMLInputElement>('input[name="project-type"]:checked')
-    ).map((el) => el.value)
 
     try {
       const res = await fetch('/api/contact', {
@@ -38,7 +54,9 @@ export default function ContactForm() {
           business: get('business'),
           email: get('email'),
           phone: get('phone'),
-          projectType: checkedProjectTypes.join(', '),
+          projectType: selectedTypes
+            .map((v) => projectTypes.find((t) => t.value === v)?.label)
+            .join(', '),
           message: get('message'),
         }),
       })
@@ -83,13 +101,39 @@ export default function ContactForm() {
           Project Type{' '}
           <span className={styles.optional}>(select any that apply)</span>
         </label>
-        <div className={styles.checkboxGroup}>
-          {projectTypes.map(({ value, label }) => (
-            <label key={value} className={styles.checkboxBox}>
-              <input type="checkbox" name="project-type" value={value} />
-              <span>{label}</span>
-            </label>
-          ))}
+        <div className={styles.dropdownWrap} ref={dropdownRef}>
+          <button
+            type="button"
+            className={styles.dropdownTrigger}
+            onClick={() => setDropdownOpen((o) => !o)}
+            aria-expanded={dropdownOpen}
+          >
+            <span className={selectedTypes.length ? '' : styles.dropdownPlaceholder}>
+              {selectedTypes.length
+                ? projectTypes
+                    .filter((t) => selectedTypes.includes(t.value))
+                    .map((t) => t.label)
+                    .join(', ')
+                : 'Select project type(s)'}
+            </span>
+            <span className={`${styles.dropdownArrow} ${dropdownOpen ? styles.dropdownArrowOpen : ''}`}>
+              ▾
+            </span>
+          </button>
+          {dropdownOpen && (
+            <div className={styles.dropdownPanel}>
+              {projectTypes.map(({ value, label }) => (
+                <label key={value} className={styles.dropdownOption}>
+                  <input
+                    type="checkbox"
+                    checked={selectedTypes.includes(value)}
+                    onChange={() => toggleType(value)}
+                  />
+                  <span>{label}</span>
+                </label>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 

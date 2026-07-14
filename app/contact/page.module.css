@@ -17,7 +17,7 @@
 
 .contactHeroImg {
   position: absolute;
-  top: 1430px;
+  top: 1560px;
   left: -3%;
   width: 30%;
   height: auto;
@@ -90,7 +90,6 @@
   z-index: 0;
   transform: translate(-18px, -18px);
   background: linear-gradient(135deg, var(--amber-light) 0%, var(--gold-deep) 100%);
-  border-radius: 8px;
 }
 
 .card {
@@ -101,7 +100,6 @@
   border: 1px solid rgba(200, 130, 26, 0.2);
   width: 100%;
   padding: 2.4rem 2.6rem 2.6rem;
-  border-radius: 8px;
   box-shadow: 0 30px 65px -32px rgba(43, 26, 13, 0.35);
 }
 
@@ -139,35 +137,85 @@
   text-transform: none;
 }
 
-.checkboxGroup {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
+.dropdownWrap {
+  position: relative;
 }
 
-.checkboxBox {
-  display: inline-flex;
+.dropdownTrigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(200, 130, 26, 0.35);
+  padding: 0.4em 0 0.5em;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 300;
+  text-align: left;
+  cursor: pointer;
+  transition: border-bottom-color 0.25s;
+}
+
+.dropdownTrigger:focus {
+  outline: none;
+  border-bottom-color: var(--amber);
+}
+
+.dropdownPlaceholder {
+  color: var(--ink-muted);
+  opacity: 0.6;
+}
+
+.dropdownArrow {
+  flex-shrink: 0;
+  color: var(--amber);
+  transition: transform 0.2s;
+}
+
+.dropdownArrowOpen {
+  transform: rotate(180deg);
+}
+
+.dropdownPanel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: var(--paper);
+  border: 1px solid rgba(200, 130, 26, 0.3);
+  border-radius: 6px;
+  box-shadow: 0 16px 36px -14px rgba(43, 26, 13, 0.35);
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.dropdownOption {
+  display: flex;
   align-items: center;
   gap: 0.6em;
-  border: 1px solid rgba(200, 130, 26, 0.35);
+  padding: 0.55em 0.6em;
   border-radius: 4px;
-  padding: 0.6em 1em;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 300;
   letter-spacing: normal;
   text-transform: none;
   color: var(--ink-muted);
   cursor: pointer;
-  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  transition: background 0.15s;
 }
 
-.checkboxBox:has(input:checked) {
-  border-color: var(--amber);
+.dropdownOption:hover {
   background: var(--amber-wash);
-  color: var(--ink);
 }
 
-.formGroup .checkboxBox input {
+.formGroup .dropdownOption input {
   width: auto;
   height: auto;
   appearance: auto;
@@ -322,7 +370,7 @@
     padding: 9.5rem 1.25rem 0;
   }
   .contactHeroImg {
-    top: 1820px;
+    top: 1980px;
     left: -10%;
     width: 68%;
     opacity: 0.45;
