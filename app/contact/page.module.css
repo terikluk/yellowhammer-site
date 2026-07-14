@@ -24,6 +24,7 @@
   max-height: 70vh;
   object-fit: contain;
   opacity: 0.55;
+  transform: scaleX(-1);
   -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 50%, transparent 100%);
   mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 50%, transparent 100%);
   z-index: 0;
@@ -226,7 +227,7 @@
 .infoRow {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem 2.2rem;
   margin-top: 1.4rem;
   padding-top: 1.2rem;
@@ -236,18 +237,6 @@
 .infoBlock {
   min-width: 0;
   text-align: center;
-}
-
-.infoBlock:nth-child(1) {
-  text-align: left;
-}
-
-.infoBlock:nth-child(2) {
-  text-align: center;
-}
-
-.infoBlock:nth-child(3) {
-  text-align: left;
 }
 
 .infoLabel {
