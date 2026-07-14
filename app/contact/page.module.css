@@ -17,7 +17,7 @@
 
 .contactHeroImg {
   position: absolute;
-  top: 1560px;
+  top: 1530px;
   left: -3%;
   width: 30%;
   height: auto;
@@ -196,11 +196,12 @@
   gap: 0.15rem;
 }
 
-.dropdownOption {
+.formGroup .dropdownOption {
   display: flex;
   align-items: center;
-  gap: 0.6em;
+  gap: 0.75rem;
   padding: 0.55em 0.6em;
+  margin-bottom: 0;
   border-radius: 4px;
   font-size: 0.9rem;
   font-weight: 300;
@@ -211,13 +212,15 @@
   transition: background 0.15s;
 }
 
-.dropdownOption:hover {
+.formGroup .dropdownOption:hover {
   background: var(--amber-wash);
 }
 
 .formGroup .dropdownOption input {
-  width: auto;
-  height: auto;
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  margin: 0;
   appearance: auto;
   -webkit-appearance: auto;
   border: none;
