@@ -2,7 +2,7 @@
 .contactPage {
   position: relative;
   padding: 11.5rem 2rem 0;
-  background: var(--paper);
+  background: var(--white);
   overflow: hidden;
 }
 
