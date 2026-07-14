@@ -37,10 +37,10 @@ export default async function Contact({
   return (
     <section className={styles.contactPage}>
       <img
-        src="/yellowhammer_3.png"
+        src="/rise.png"
         alt=""
         aria-hidden="true"
-        className={styles.contactHeroImg}
+        className={styles.contactAccentBird}
       />
 
       <div className={styles.introBlock}>
