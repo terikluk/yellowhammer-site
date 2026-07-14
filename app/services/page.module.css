@@ -417,7 +417,7 @@
 
 /* ── HOW IT WORKS ── */
 .process {
-  padding: 8rem 2rem 6rem;
+  padding: calc(6rem + 60px) 2rem calc(6rem + 120px);
   text-align: center;
   position: relative;
   background: linear-gradient(160deg, var(--ink) 0%, var(--espresso-mid) 100%);
@@ -449,15 +449,25 @@
 .stepsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  max-width: 1000px;
-  margin: 4.5rem auto 0;
-  text-align: left;
+  align-items: start;
+  max-width: 1100px;
+  margin: 2.25rem auto 0;
+  text-align: center;
 }
 
 .step {
-  border-top: 1px solid rgba(240, 200, 120, 0.25);
-  padding-top: 2rem;
+  position: relative;
+  padding: 0 2.5rem;
+}
+
+.step:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  top: -0.75rem;
+  bottom: -0.75rem;
+  left: 0;
+  width: 1px;
+  background: rgba(240, 200, 120, 0.2);
 }
 
 .stepNumber {
@@ -474,6 +484,7 @@
   line-height: 1.2;
   color: var(--cream);
   margin-bottom: 0.9rem;
+  text-wrap: balance;
 }
 
 .stepDesc {
@@ -482,6 +493,7 @@
   font-weight: 300;
   line-height: 1.85;
   opacity: 0.9;
+  text-wrap: balance;
 }
 
 /* ── FAQ ── */
@@ -660,7 +672,13 @@
   }
   .stepsGrid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
+  }
+  .step {
+    padding: 0;
+  }
+  .step::before {
+    display: none;
   }
   .ctaWrap {
     min-height: 520px;
