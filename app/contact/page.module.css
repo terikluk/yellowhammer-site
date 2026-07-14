@@ -239,7 +239,7 @@
 }
 
 .infoBlock:nth-child(1) {
-  text-align: right;
+  text-align: left;
 }
 
 .infoBlock:nth-child(2) {
