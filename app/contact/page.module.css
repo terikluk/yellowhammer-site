@@ -17,8 +17,8 @@
 
 .contactHeroImg {
   position: absolute;
-  top: 950px;
-  left: -19%;
+  top: 1420px;
+  left: -14%;
   width: 27%;
   height: auto;
   max-height: 70vh;
@@ -226,7 +226,7 @@
 .infoRow {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem 2.2rem;
   margin-top: 1.4rem;
   padding-top: 1.2rem;
@@ -236,6 +236,18 @@
 .infoBlock {
   min-width: 0;
   text-align: center;
+}
+
+.infoBlock:nth-child(1) {
+  text-align: right;
+}
+
+.infoBlock:nth-child(2) {
+  text-align: center;
+}
+
+.infoBlock:nth-child(3) {
+  text-align: left;
 }
 
 .infoLabel {
@@ -320,8 +332,8 @@
     padding: 9.5rem 1.25rem 0;
   }
   .contactHeroImg {
-    top: 1040px;
-    left: -30%;
+    top: 2080px;
+    left: -22%;
     width: 65%;
     opacity: 0.3;
   }
