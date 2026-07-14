@@ -17,7 +17,7 @@
 
 .contactHeroImg {
   position: absolute;
-  top: 600px;
+  top: 950px;
   left: -10%;
   width: 27%;
   height: auto;
@@ -302,7 +302,7 @@
     padding: 8rem 1.25rem 0;
   }
   .contactHeroImg {
-    top: 430px;
+    top: 1040px;
     left: -30%;
     width: 65%;
     opacity: 0.3;
