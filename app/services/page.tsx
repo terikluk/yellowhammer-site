@@ -3,6 +3,7 @@ import Link from 'next/link'
 import HeroCarousel from '@/components/HeroCarousel'
 import WaveDivider from '@/components/WaveDivider'
 import Reveal from '@/components/Reveal'
+import FaqAccordionItem from '@/components/FaqAccordionItem'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -144,28 +145,60 @@ const faqs = [
     a: 'No — Yellowhammer builds modern, custom websites using current technologies for better performance, flexibility, and long-term reliability.',
   },
   {
+    q: 'Do you work with businesses outside Huntsville and Montgomery?',
+    a: 'Not at all — we work with businesses anywhere in the U.S. Since our whole process is designed around flexible communication (email, text, phone, video call), it works just as smoothly whether you’re local or across the country.',
+  },
+  {
     q: 'What platform do you build on?',
-    a: 'Every project is custom-built using modern web technologies selected for your business. That allows us to create websites that are fast, flexible, and built to grow with you.',
+    a: 'We build every website with Next.js and host it on Vercel — a modern combination that keeps pages loading fast and your site reliably online.',
+  },
+  {
+    q: 'Will my website show up on Google?',
+    a: 'Yes — every website includes foundational SEO (fast loading speed, mobile optimization, proper structure, and metadata) to help search engines find and rank your site. For a more aggressive SEO strategy, that’s something we can build out separately.',
   },
   {
     q: 'Can you redesign my existing website?',
-    a: 'Absolutely. Whether you need a complete redesign or improvements to an existing site, we’ll recommend the best approach based on your goals.',
+    a: 'Yes. Rather than working within your current platform — Squarespace, WordPress, Wix, or otherwise — we rebuild your site from scratch on our own custom platform for better performance and long-term flexibility.',
   },
   {
     q: 'Can I update my website myself?',
-    a: 'Some websites may include simple editing capabilities depending on the project, but many clients prefer the Website Care Plan so we can manage updates for them.',
+    a: 'Some websites may include simple editing capabilities depending on the project, but most clients prefer the Website Care Plan so we can handle updates and maintenance for them. If you’d rather not continue with Care, we’re happy to hand everything off — hosting, domain, and site files — so you’re fully set up on your own.',
   },
   {
     q: 'Do I own my website?',
     a: 'Yes. Once your project is paid in full, you own the finished website and all approved design assets created specifically for your project.',
   },
   {
+    q: 'Who owns the hosting and other accounts my site uses?',
+    a: 'Whenever possible, we set up hosting and supporting services — like your contact form’s email delivery — under your own accounts, not ours, so you retain full ownership and control regardless of whether you continue with Care.',
+  },
+  {
     q: 'Do you offer payment plans?',
     a: 'Yes — flexible payment options are available to help make your project more accessible.',
   },
   {
+    q: 'How do you get paid?',
+    a: 'We send a secure invoice through Wave for each payment, with the option to pay by bank transfer or card — whichever works best for you.',
+  },
+  {
+    q: 'What do you need from clients to get started?',
+    a: 'It depends on the project — if you already have a logo, we’ll need those files; if we’re creating your brand from scratch, that’s already covered. Beyond that, we mainly just need any personal photos you’d like featured (like a team or about photo) — everything else, including color and style preferences, we’ll cover together in our project questionnaire.',
+  },
+  {
+    q: 'Will you write my website’s content, or do I need to provide it?',
+    a: 'Either works. We can write your website’s content from scratch, or if you already have text you’d like to use, we’ll edit and polish it to fit the site.',
+  },
+  {
     q: 'How long does a project take?',
-    a: 'It depends on scope, but Brand Identity projects typically take 2–3 weeks, and websites typically take 4–8 weeks.',
+    a: 'Turnaround depends on our current workload and the project’s scope, but Brand Identity can move as quickly as 1 week, and websites as quickly as 2 weeks.',
+  },
+  {
+    q: 'How do we communicate during a project?',
+    a: 'Whatever’s most comfortable for you — email, text, phone, or video call. For edits and revisions, the more detailed your feedback, the better; specific notes help us capture exactly what you’re picturing.',
+  },
+  {
+    q: 'How many rounds of revisions do I get?',
+    a: 'We don’t put a hard cap on revisions — our goal is getting it just right for you, not rushing through a set number of rounds. If a request grows into a new direction or added scope, we’ll simply talk it through together before moving forward.',
   },
   {
     q: 'What happens after launch?',
@@ -393,11 +426,16 @@ export default function Services() {
         <div className={styles.faqList}>
           {faqs.map((f, i) => (
             <Reveal key={f.q} variant="text" delay={i * 80} className={styles.faqItem}>
-              <h3 className={styles.faqQuestion}>{f.q}</h3>
-              <p className={styles.faqAnswer}>{f.a}</p>
+              <FaqAccordionItem question={f.q} answer={f.a} />
             </Reveal>
           ))}
         </div>
+        <Reveal variant="text" className={styles.faqClosing}>
+          <p className={styles.faqClosingText}>Didn&rsquo;t see your question?</p>
+          <Link href="/contact" className="btn">
+            Send Us a Message
+          </Link>
+        </Reveal>
         <div className={styles.faqWave}>
           <WaveDivider fill="var(--amber-wash)" />
         </div>
