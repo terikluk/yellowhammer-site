@@ -139,6 +139,46 @@
   text-transform: none;
 }
 
+.checkboxGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.checkboxBox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  border: 1px solid rgba(200, 130, 26, 0.35);
+  border-radius: 4px;
+  padding: 0.6em 1em;
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+.checkboxBox:has(input:checked) {
+  border-color: var(--amber);
+  background: var(--amber-wash);
+  color: var(--ink);
+}
+
+.formGroup .checkboxBox input {
+  width: auto;
+  height: auto;
+  appearance: auto;
+  -webkit-appearance: auto;
+  border: none;
+  background: none;
+  padding: 0;
+  accent-color: var(--amber);
+  cursor: pointer;
+}
+
 .formGroup input,
 .formGroup textarea,
 .formGroup select {

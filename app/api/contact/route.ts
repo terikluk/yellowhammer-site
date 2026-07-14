@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
 
   const { name, business, email, phone, projectType, message } = await req.json()
 
-  if (!name || !email || !message) {
+  if (!name || !email) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
   }
 
@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
         <tr><td style="padding:4px 12px 4px 0;color:#888"><strong>Project Type</strong></td><td>${escapeHtml(projectType || '—')}</td></tr>
       </table>
       <hr style="margin:20px 0;border:none;border-top:1px solid #eee" />
-      <p style="font-family:sans-serif;font-size:15px;color:#444">${escapeHtml(message).replace(/\n/g, '<br>')}</p>
+      <p style="font-family:sans-serif;font-size:15px;color:#444">${message ? escapeHtml(message).replace(/\n/g, '<br>') : '<em>No message provided.</em>'}</p>
     `,
   })
 

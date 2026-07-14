@@ -4,6 +4,14 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import styles from './page.module.css'
 
+const projectTypes = [
+  { value: 'logo-brand', label: 'Brand Identity' },
+  { value: 'website', label: 'Website Design' },
+  { value: 'social', label: 'Social Content' },
+  { value: 'maintenance', label: 'Website Care Plan' },
+  { value: 'other', label: 'Other' },
+]
+
 export default function ContactForm() {
   const router = useRouter()
   const [submitting, setSubmitting] = useState(false)
@@ -17,6 +25,9 @@ export default function ContactForm() {
     const form = e.currentTarget
     const get = (name: string) =>
       (form.elements.namedItem(name) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement)?.value ?? ''
+    const checkedProjectTypes = Array.from(
+      form.querySelectorAll<HTMLInputElement>('input[name="project-type"]:checked')
+    ).map((el) => el.value)
 
     try {
       const res = await fetch('/api/contact', {
@@ -27,7 +38,7 @@ export default function ContactForm() {
           business: get('business'),
           email: get('email'),
           phone: get('phone'),
-          projectType: get('project-type'),
+          projectType: checkedProjectTypes.join(', '),
           message: get('message'),
         }),
       })
@@ -68,25 +79,30 @@ export default function ContactForm() {
       </div>
 
       <div className={styles.formGroup}>
-        <label htmlFor="project-type">Project Type</label>
-        <select id="project-type" name="project-type" defaultValue="">
-          <option value="" disabled />
-          <option value="logo-brand">Brand Identity</option>
-          <option value="website">Website Design</option>
-          <option value="social">Social Content</option>
-          <option value="maintenance">Website Care Plan</option>
-          <option value="other">Other</option>
-        </select>
+        <label>
+          Project Type{' '}
+          <span className={styles.optional}>(select any that apply)</span>
+        </label>
+        <div className={styles.checkboxGroup}>
+          {projectTypes.map(({ value, label }) => (
+            <label key={value} className={styles.checkboxBox}>
+              <input type="checkbox" name="project-type" value={value} />
+              <span>{label}</span>
+            </label>
+          ))}
+        </div>
       </div>
 
       <div className={styles.formGroup}>
-        <label htmlFor="message">Message</label>
+        <label htmlFor="message">
+          Message{' '}
+          <span className={styles.optional}>(optional)</span>
+        </label>
         <textarea
           id="message"
           name="message"
           rows={5}
           placeholder="Tell us about your project..."
-          required
         />
       </div>
 
