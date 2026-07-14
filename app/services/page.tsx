@@ -223,7 +223,7 @@ export default function Services() {
           ))}
         </div>
         <div className={styles.whySectionWave}>
-          <WaveDivider fill="var(--paper)" />
+          <WaveDivider fill="var(--cream)" />
         </div>
       </section>
 
