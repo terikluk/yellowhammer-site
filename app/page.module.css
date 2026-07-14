@@ -86,7 +86,7 @@
   padding: 3.5rem 3.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .practiceLight .h2 {
