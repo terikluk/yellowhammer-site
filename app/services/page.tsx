@@ -17,16 +17,16 @@ const packages = [
     title: 'Nest',
     tagline: 'Perfect for new or small businesses that need a professional online presence.',
     price: '$2,200',
-    plus: null,
+    bestFor: ['New businesses', 'Solo entrepreneurs', 'Local service providers'],
+    plus: 'What’s Included',
     includes: [
-      'Up to 5 custom pages',
+      'Up to 5 pages',
       'Responsive design',
       'Contact form',
       'Basic SEO',
       'Google Analytics',
       'Launch support',
     ],
-    next: 'Need more pages or room to grow? Rise might be the better fit.',
     cta: 'Choose Nest',
   },
   {
@@ -34,17 +34,17 @@ const packages = [
     title: 'Rise',
     tagline: 'Designed for growing businesses that need more room to expand.',
     price: '$2,800',
-    plus: 'Everything in Nest, plus:',
+    bestFor: ['Growing companies', 'Businesses needing more content', 'Companies expanding online'],
+    plus: 'Everything in Nest, plus',
     featured: true,
     includes: [
       'Up to 10 pages',
       'Blog',
       'Testimonials',
       'FAQ section',
-      'Advanced layouts',
-      'Additional design customization',
+      'Additional custom layouts',
+      'More design customization',
     ],
-    next: 'Ready for bookings or online sales? Flight unlocks advanced functionality.',
     cta: 'Choose Rise',
   },
   {
@@ -52,16 +52,16 @@ const packages = [
     title: 'Flight',
     tagline: 'Our most complete website package for businesses ready to scale.',
     price: '$3,400',
-    plus: 'Everything in Rise, plus:',
+    bestFor: ['Established businesses', 'Larger websites', 'Companies needing advanced functionality'],
+    plus: 'Everything in Rise, plus',
     includes: [
       'Up to 20 pages',
       'Booking or scheduling',
       'Small e-commerce',
       'Advanced integrations',
       'More complex functionality',
-      'Priority support during launch',
+      'Priority launch support',
     ],
-    next: null,
     cta: 'Choose Flight',
   },
 ]
@@ -228,8 +228,7 @@ export default function Services() {
         <Reveal variant="text" className={styles.packagesIntro}>
           <p className="section-label">Website Design</p>
           <p className={styles.packagesSubtext}>
-            Three starting points, built around real differences in scope —
-            not arbitrary pricing.
+            Three starting points, built around real differences in scope.
           </p>
         </Reveal>
         <div className={styles.packagesGrid}>
@@ -239,19 +238,29 @@ export default function Services() {
               delay={i * 120}
               className={`${styles.packageCard} ${p.featured ? styles.packageCardFeatured : ''}`}
             >
+              {p.featured && <p className={styles.packageKicker}>Most Popular</p>}
               <h3 className={styles.packageTitle}>{p.title}</h3>
               <p className={styles.packagePrice}>{p.price}</p>
               <p className={styles.packageTagline}>{p.tagline}</p>
-              {p.plus && <p className={styles.packagePlus}>{p.plus}</p>}
-              <ul className={styles.packageIncludes}>
-                {p.includes.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+              <div>
+                <p className={styles.packageBestForLabel}>Best For</p>
+                <ul className={styles.packageBestFor}>
+                  {p.bestFor.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className={styles.packageDivider}>
+                <p className={styles.packagePlus}>{p.plus}</p>
+                <ul className={styles.packageIncludes}>
+                  {p.includes.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
               <Link href="/contact" className={`btn ${styles.packageCta}`}>
                 {p.cta}
               </Link>
-              {p.next && <p className={styles.packageNext}>{p.next}</p>}
             </Reveal>
           ))}
         </div>
