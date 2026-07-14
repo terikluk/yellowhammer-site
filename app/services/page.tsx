@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 const packages = [
   {
     key: 'nest',
+    image: '/nest.png',
     title: 'Nest',
     tagline: 'Perfect for new or small businesses that need a professional online presence.',
     price: '$2,200',
@@ -31,6 +32,7 @@ const packages = [
   },
   {
     key: 'rise',
+    image: '/rise.png',
     title: 'Rise',
     tagline: 'Designed for growing businesses that need more room to expand.',
     price: '$2,800',
@@ -49,6 +51,7 @@ const packages = [
   },
   {
     key: 'flight',
+    image: '/flight.png',
     title: 'Flight',
     tagline: 'Our most complete website package for businesses ready to scale.',
     price: '$3,400',
@@ -242,6 +245,7 @@ export default function Services() {
               className={`${styles.packageCard} ${p.featured ? styles.packageCardFeatured : ''}`}
             >
               {p.featured && <p className={styles.packageKicker}>Most Popular</p>}
+              <img src={p.image} alt="" className={styles.packageImage} />
               <div className={styles.packageHeader}>
                 <h3 className={styles.packageTitle}>{p.title}</h3>
                 <p className={styles.packagePrice}>{p.price}</p>
