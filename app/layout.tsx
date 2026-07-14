@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     'Yellowhammer Studios',
   ],
   icons: {
-    icon: '/Favicon.jpg',
-    apple: '/Favicon.jpg',
+    icon: '/bird.png',
+    apple: '/bird.png',
   },
   openGraph: {
     type: 'website',
