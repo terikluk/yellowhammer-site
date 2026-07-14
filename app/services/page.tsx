@@ -426,11 +426,20 @@ export default function Services() {
           </h2>
         </Reveal>
         <div className={styles.faqList}>
-          {faqs.map((f, i) => (
-            <Reveal key={f.q} variant="text" delay={i * 80} className={styles.faqItem}>
-              <FaqAccordionItem question={f.q} answer={f.a} />
-            </Reveal>
-          ))}
+          <div className={styles.faqColumn}>
+            {faqs.slice(0, 8).map((f, i) => (
+              <Reveal key={f.q} variant="text" delay={i * 80} className={styles.faqItem}>
+                <FaqAccordionItem question={f.q} answer={f.a} />
+              </Reveal>
+            ))}
+          </div>
+          <div className={styles.faqColumn}>
+            {faqs.slice(8).map((f, i) => (
+              <Reveal key={f.q} variant="text" delay={i * 80} className={styles.faqItem}>
+                <FaqAccordionItem question={f.q} answer={f.a} />
+              </Reveal>
+            ))}
+          </div>
         </div>
         <Reveal variant="text" className={styles.faqClosing}>
           <p className={styles.faqClosingText}>Didn&rsquo;t see your question?</p>

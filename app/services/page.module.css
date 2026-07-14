@@ -679,11 +679,17 @@
 }
 
 .faqList {
-  max-width: 820px;
+  max-width: 1100px;
   margin: 4rem auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 3rem;
+  text-align: left;
+}
+
+.faqColumn {
   display: flex;
   flex-direction: column;
-  text-align: left;
 }
 
 .faqItem {
@@ -897,6 +903,10 @@
   }
   .ctaText {
     max-width: 100%;
+  }
+  .faqList {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 }
 
