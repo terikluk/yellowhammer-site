@@ -237,7 +237,9 @@ export default function Services() {
             Choose the website that fits your business today.
           </p>
           <p className={styles.packagesSubtext}>
-            Three thoughtfully crafted packages. Every one custom designed.
+            Every website is custom designed. The difference between each
+            package is the amount of content, functionality, and ongoing
+            support included.
           </p>
         </Reveal>
         <div className={styles.packagesGrid}>
@@ -287,10 +289,15 @@ export default function Services() {
             updates, and fine-tuning naturally happen. We don&rsquo;t
             disappear the day your site goes live.
           </p>
+          <p className={styles.careNoteText}>
+            Not sure which package fits? We&rsquo;ll help you choose. If
+            your needs change during planning, we&rsquo;ll adjust before
+            any work begins.
+          </p>
         </Reveal>
 
         <Reveal variant="text" className={styles.servicesIntro}>
-          <p className="section-label">More Ways We Can Help</p>
+          <p className="section-label">Continue Building Your Brand</p>
         </Reveal>
         <div className={styles.pricingGrid}>
           {services.map((s) => (

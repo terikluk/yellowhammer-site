@@ -19,7 +19,7 @@
 }
 
 .thankH1 {
-  font-size: clamp(2.6rem, 5.5vw, 4.6rem);
+  font-size: clamp(3.4rem, 7vw, 6.2rem);
   font-weight: 600;
   line-height: 1.05;
   color: var(--ink);
@@ -37,7 +37,7 @@
 }
 
 .thankTagline {
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
   font-style: italic;
   color: var(--ink-muted);
   max-width: 480px;
@@ -45,7 +45,7 @@
 }
 
 .exploreText {
-  font-size: 1.0625rem;
+  font-size: 1.375rem;
   font-weight: 300;
   color: var(--ink-muted);
   font-style: italic;
