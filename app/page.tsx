@@ -44,6 +44,9 @@ export default function Home() {
               branding, and creative content that help you earn trust from
               the very first impression.
             </p>
+            <Link href="/about" className={styles.practiceLightCta}>
+              Read Our Story →
+            </Link>
           </div>
           <div className={styles.practiceDark}>
             <p className={styles.practiceDarkLabel}>What We Do</p>

@@ -157,6 +157,26 @@
   color: var(--cream);
 }
 
+.practiceLightCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 2.2rem;
+  color: var(--amber);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: gap 0.25s, color 0.25s;
+}
+
+.practiceLightCta:hover {
+  gap: 0.9rem;
+  color: var(--gold-deep);
+}
+
 /* ── REVIEWS ── */
 .reviewsSection {
   background: var(--paper);
