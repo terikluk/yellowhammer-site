@@ -105,6 +105,7 @@ const services = [
       'Website Health Monitoring',
       'Hosting Management',
       'Priority Support',
+      'Cancel anytime, 30 days notice',
     ],
   },
   {
