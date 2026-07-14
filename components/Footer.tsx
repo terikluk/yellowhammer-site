@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import styles from './Footer.module.css'
 
@@ -8,15 +9,36 @@ import styles from './Footer.module.css'
 // that transition, so it's dropped there.
 const WAVE_PAGES = ['/', '/portfolio', '/services', '/about', '/contact', '/thankyou']
 
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/services', label: 'Services' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+]
+
 export default function Footer() {
   const pathname = usePathname()
   const noBorder = WAVE_PAGES.includes(pathname)
 
   return (
     <footer className={`${styles.footer} ${noBorder ? styles.noBorder : ''}`}>
-      <span>&copy; 2026 Yellowhammer Studios</span>
-      <span className={styles.center}>Craft &amp; Intention. Always.</span>
-      <div className={styles.right}>
+      <nav className={styles.footerNav} aria-label="Footer">
+        {navLinks.map(({ href, label }) => (
+          <Link
+            key={href}
+            href={href}
+            className={styles.footerNavLink}
+            aria-current={pathname === href ? 'page' : undefined}
+          >
+            {label}
+          </Link>
+        ))}
+      </nav>
+      <div className={styles.footerBottom}>
+        <span>&copy; 2026 Yellowhammer Studios</span>
+        <span className={styles.center}>Craft &amp; Intention. Always.</span>
+        <div className={styles.right}>
         <div className={styles.social}>
           <a
             href="https://www.linkedin.com/in/yellowhammer-studios"
@@ -53,6 +75,7 @@ export default function Footer() {
           </a>
         </div>
         <a href="#" className={styles.backTop}>Back to top</a>
+      </div>
       </div>
     </footer>
   )
