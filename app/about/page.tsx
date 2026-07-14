@@ -90,9 +90,12 @@ export default function About() {
             </p>
           </Reveal>
         </div>
+        <div className={styles.storyWave}>
+          <WaveDivider fill="var(--ink)" />
+        </div>
       </section>
 
-      <section className={styles.storySection}>
+      <section className={`${styles.storySection} ${styles.storySectionDark}`}>
         <div className={styles.storyInner}>
           <Reveal variant="text">
             <p className="section-label">Better Together</p>
@@ -117,6 +120,9 @@ export default function About() {
               about building something that lasts.
             </p>
           </Reveal>
+        </div>
+        <div className={styles.storyWave}>
+          <WaveDivider fill="var(--paper)" />
         </div>
       </section>
 
