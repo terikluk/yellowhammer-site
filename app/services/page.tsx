@@ -99,7 +99,7 @@ const services = [
     price: '$150',
     period: '/mo',
     startingAt: true,
-    cta: 'Protect My Website',
+    cta: 'Maintain My Website',
     includes: [
       'Content Updates',
       'Website Health Monitoring',
@@ -234,9 +234,6 @@ export default function Services() {
               { src: '/Yellowhammer_Social_Media.png', caption: 'Social Content' },
             ]}
           />
-        </div>
-        <div className={styles.sectionWave}>
-          <WaveDivider fill="var(--ink)" />
         </div>
       </section>
 
