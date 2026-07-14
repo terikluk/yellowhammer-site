@@ -123,6 +123,7 @@
 }
 
 .storySectionDark {
+  padding: calc(6.5rem + 60px) 2rem calc(6.5rem + 119px);
   background: linear-gradient(160deg, var(--ink) 0%, var(--espresso-mid) 100%);
 }
 
