@@ -223,45 +223,6 @@
   font-style: italic;
 }
 
-/* ── INFO ROW (inside card, below form) ── */
-.infoRow {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem 2.2rem;
-  margin-top: 1.4rem;
-  padding-top: 1.2rem;
-  border-top: 1px solid rgba(200, 130, 26, 0.2);
-}
-
-.infoBlock {
-  min-width: 0;
-  text-align: center;
-}
-
-.infoLabel {
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--amber);
-  margin-bottom: 0.3rem;
-}
-
-.infoBlock p,
-.infoBlock a {
-  font-size: 0.95rem;
-  color: var(--ink-muted);
-  font-weight: 300;
-  text-decoration: none;
-  display: block;
-  line-height: 1.5;
-  transition: color 0.2s;
-}
-
-.infoBlock a:hover {
-  color: var(--amber);
-}
-
 /* ── WHAT HAPPENS NEXT ── */
 .nextStepsBlock {
   position: relative;
@@ -334,10 +295,6 @@
   }
   .formRow {
     grid-template-columns: 1fr;
-  }
-  .infoRow {
-    flex-direction: column;
-    gap: 0.9rem;
   }
   .nextStepsGrid {
     grid-template-columns: 1fr;

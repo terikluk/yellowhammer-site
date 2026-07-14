@@ -54,22 +54,6 @@ export default function Contact() {
           <div className={styles.cardAccent} aria-hidden="true" />
           <div className={styles.card}>
             <ContactForm />
-            <div className={styles.infoRow}>
-              <div className={styles.infoBlock}>
-                <p className={styles.infoLabel}>Email</p>
-                <a href="mailto:tkluk@yellowhammerstudios.com">
-                  tkluk@yellowhammerstudios.com
-                </a>
-              </div>
-              <div className={styles.infoBlock}>
-                <p className={styles.infoLabel}>Phone</p>
-                <a href="tel:8324250224">832-425-0224</a>
-              </div>
-              <div className={styles.infoBlock}>
-                <p className={styles.infoLabel}>Location</p>
-                <p>Huntsville, AL</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

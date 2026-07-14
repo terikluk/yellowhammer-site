@@ -23,26 +23,28 @@ export default function Footer() {
 
   return (
     <footer className={`${styles.footer} ${noBorder ? styles.noBorder : ''}`}>
-      <nav className={styles.footerNav} aria-label="Footer">
-        {navLinks.map(({ href, label }) => (
-          <Link
-            key={href}
-            href={href}
-            className={styles.footerNavLink}
-            aria-current={pathname === href ? 'page' : undefined}
-          >
-            {label}
-          </Link>
-        ))}
-      </nav>
-      <div className={styles.footerContact}>
-        <a href="mailto:tkluk@yellowhammerstudios.com" className={styles.footerContactLink}>
-          tkluk@yellowhammerstudios.com
-        </a>
-        <a href="tel:8324250224" className={styles.footerContactLink}>
-          832-425-0224
-        </a>
-        <span className={styles.footerContactLink}>Huntsville, AL</span>
+      <div className={styles.footerColumns}>
+        <nav className={styles.footerNav} aria-label="Footer">
+          {navLinks.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={styles.footerNavLink}
+              aria-current={pathname === href ? 'page' : undefined}
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
+        <div className={styles.footerContact}>
+          <a href="mailto:tkluk@yellowhammerstudios.com" className={styles.footerContactLink}>
+            tkluk@yellowhammerstudios.com
+          </a>
+          <a href="tel:8324250224" className={styles.footerContactLink}>
+            832-425-0224
+          </a>
+          <span className={styles.footerContactLink}>Huntsville, AL</span>
+        </div>
       </div>
       <div className={styles.footerBottom}>
         <span>&copy; 2026 Yellowhammer Studios</span>
