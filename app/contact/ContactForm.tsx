@@ -5,18 +5,20 @@ import { useRouter } from 'next/navigation'
 import styles from './page.module.css'
 
 const projectTypes = [
+  { value: 'nest', label: 'Website — Nest' },
+  { value: 'rise', label: 'Website — Rise' },
+  { value: 'flight', label: 'Website — Flight' },
   { value: 'logo-brand', label: 'Brand Identity' },
-  { value: 'website', label: 'Website Design' },
   { value: 'social', label: 'Social Content' },
   { value: 'maintenance', label: 'Website Care Plan' },
   { value: 'other', label: 'Other' },
 ]
 
-export default function ContactForm() {
+export default function ContactForm({ initialTypes = [] }: { initialTypes?: string[] }) {
   const router = useRouter()
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
-  const [selectedTypes, setSelectedTypes] = useState<string[]>([])
+  const [selectedTypes, setSelectedTypes] = useState<string[]>(initialTypes)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 

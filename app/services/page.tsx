@@ -77,6 +77,7 @@ const services = [
   {
     num: '01',
     label: 'Identity',
+    type: 'logo-brand',
     title: 'Brand Identity',
     desc: 'A thoughtful visual foundation for businesses that want to be remembered.',
     price: '$950',
@@ -94,6 +95,7 @@ const services = [
   {
     num: '02',
     label: 'Website Care',
+    type: 'maintenance',
     title: 'Website Care Plan',
     desc: 'We handle the technical side so you can focus on running your business.',
     price: '$150',
@@ -111,6 +113,7 @@ const services = [
   {
     num: '03',
     label: 'Social',
+    type: 'social',
     title: 'Social Content',
     desc: 'Beautiful, branded content designed to keep your business visible and consistent across digital platforms.',
     price: '$500',
@@ -307,7 +310,7 @@ export default function Services() {
                   ))}
                 </ul>
               </div>
-              <Link href="/contact" className={`btn ${styles.packageCta}`}>
+              <Link href={`/contact?type=${p.key}`} className={`btn ${styles.packageCta}`}>
                 {p.cta}
               </Link>
             </Reveal>
@@ -356,7 +359,7 @@ export default function Services() {
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
-                <Link href="/contact" className={`btn ${styles.pricingCta}`}>
+                <Link href={`/contact?type=${s.type}`} className={`btn ${styles.pricingCta}`}>
                   {s.cta}
                 </Link>
               </div>

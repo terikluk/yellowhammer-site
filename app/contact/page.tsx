@@ -24,7 +24,16 @@ const nextSteps = [
   },
 ]
 
-export default function Contact() {
+const validTypes = ['nest', 'rise', 'flight', 'logo-brand', 'social', 'maintenance', 'other']
+
+export default async function Contact({
+  searchParams,
+}: {
+  searchParams: Promise<{ type?: string }>
+}) {
+  const { type } = await searchParams
+  const initialTypes = type && validTypes.includes(type) ? [type] : []
+
   return (
     <section className={styles.contactPage}>
       <img
@@ -53,7 +62,7 @@ export default function Contact() {
         <div className={styles.cardWrap}>
           <div className={styles.cardAccent} aria-hidden="true" />
           <div className={styles.card}>
-            <ContactForm />
+            <ContactForm initialTypes={initialTypes} />
           </div>
         </div>
       </div>
