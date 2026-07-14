@@ -1,7 +1,7 @@
 /* ── PAGE (linear, sectioned layout) ── */
 .contactPage {
   position: relative;
-  padding: 9rem 2rem 0;
+  padding: 11.5rem 2rem 0;
   background: var(--cream);
   overflow: hidden;
 }
@@ -77,12 +77,28 @@
   padding: 4rem 0;
 }
 
+.cardWrap {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+}
+
+.cardAccent {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transform: translate(-18px, -18px);
+  background: linear-gradient(135deg, var(--amber-light) 0%, var(--gold-deep) 100%);
+  border-radius: 8px;
+}
+
 .card {
+  position: relative;
+  z-index: 1;
   box-sizing: border-box;
   background: var(--paper);
   border: 1px solid rgba(200, 130, 26, 0.2);
   width: 100%;
-  max-width: 700px;
   padding: 2.4rem 2.6rem 2.6rem;
   border-radius: 8px;
   box-shadow: 0 30px 65px -32px rgba(43, 26, 13, 0.35);
@@ -299,7 +315,7 @@
 
 @media (max-width: 700px) {
   .contactPage {
-    padding: 8rem 1.25rem 0;
+    padding: 9.5rem 1.25rem 0;
   }
   .contactHeroImg {
     top: 1040px;
