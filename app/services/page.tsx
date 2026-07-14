@@ -11,28 +11,64 @@ export const metadata: Metadata = {
     'Website design, social media management, and brand identity services from Yellowhammer Studios — Huntsville, AL.',
 }
 
+const packages = [
+  {
+    key: 'nest',
+    title: 'Nest',
+    tagline: 'Perfect for new or small businesses that need a professional online presence.',
+    price: '$2,200',
+    plus: null,
+    includes: [
+      'Up to 5 custom pages',
+      'Responsive design',
+      'Contact form',
+      'Basic SEO',
+      'Google Analytics',
+      'Launch support',
+    ],
+    next: 'Need more pages or room to grow? Rise might be the better fit.',
+    cta: 'Choose Nest',
+  },
+  {
+    key: 'rise',
+    title: 'Rise',
+    tagline: 'Designed for growing businesses that need more room to expand.',
+    price: '$2,800',
+    plus: 'Everything in Nest, plus:',
+    featured: true,
+    includes: [
+      'Up to 10 pages',
+      'Blog',
+      'Testimonials',
+      'FAQ section',
+      'Advanced layouts',
+      'Additional design customization',
+    ],
+    next: 'Ready for bookings or online sales? Flight unlocks advanced functionality.',
+    cta: 'Choose Rise',
+  },
+  {
+    key: 'flight',
+    title: 'Flight',
+    tagline: 'Our most complete website package for businesses ready to scale.',
+    price: '$3,400',
+    plus: 'Everything in Rise, plus:',
+    includes: [
+      'Up to 20 pages',
+      'Booking or scheduling',
+      'Small e-commerce',
+      'Advanced integrations',
+      'More complex functionality',
+      'Priority support during launch',
+    ],
+    next: null,
+    cta: 'Choose Flight',
+  },
+]
+
 const services = [
   {
     num: '01',
-    label: 'Digital',
-    title: 'Website Design',
-    desc: 'Custom websites built specifically for your business, designed to help you look credible, earn trust, and grow with confidence. No templates, no page builders.',
-    price: '$2,200',
-    period: '',
-    startingAt: true,
-    featured: true,
-    cta: 'Start My Website',
-    includes: [
-      'Custom Design',
-      'Responsive Development',
-      'Contact Forms',
-      'Basic SEO',
-      'Analytics',
-      'Launch Support',
-    ],
-  },
-  {
-    num: '02',
     label: 'Identity',
     title: 'Brand Identity',
     desc: 'A thoughtful visual foundation for businesses that want to be remembered.',
@@ -49,7 +85,7 @@ const services = [
     ],
   },
   {
-    num: '03',
+    num: '02',
     label: 'Website Care',
     title: 'Website Care Plan',
     desc: 'We handle the technical side so you can focus on running your business.',
@@ -65,7 +101,7 @@ const services = [
     ],
   },
   {
-    num: '04',
+    num: '03',
     label: 'Social',
     title: 'Social Content',
     desc: 'Beautiful, branded content designed to keep your business visible and consistent across digital platforms.',
@@ -189,60 +225,69 @@ export default function Services() {
       </section>
 
       <section className={styles.pricingSection}>
+        <Reveal variant="text" className={styles.packagesIntro}>
+          <p className="section-label">Website Design</p>
+          <p className={styles.packagesSubtext}>
+            Three starting points, built around real differences in scope —
+            not arbitrary pricing.
+          </p>
+        </Reveal>
+        <div className={styles.packagesGrid}>
+          {packages.map((p, i) => (
+            <Reveal
+              key={p.key}
+              delay={i * 120}
+              className={`${styles.packageCard} ${p.featured ? styles.packageCardFeatured : ''}`}
+            >
+              <h3 className={styles.packageTitle}>{p.title}</h3>
+              <p className={styles.packagePrice}>{p.price}</p>
+              <p className={styles.packageTagline}>{p.tagline}</p>
+              {p.plus && <p className={styles.packagePlus}>{p.plus}</p>}
+              <ul className={styles.packageIncludes}>
+                {p.includes.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <Link href="/contact" className={`btn ${styles.packageCta}`}>
+                {p.cta}
+              </Link>
+              {p.next && <p className={styles.packageNext}>{p.next}</p>}
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal variant="text" className={styles.servicesIntro}>
+          <p className="section-label">More Ways We Can Help</p>
+        </Reveal>
         <div className={styles.pricingGrid}>
           {services.map((s) => (
             <div
               key={s.num}
               id={s.label.toLowerCase().replace(/\s+/g, '-')}
-              className={`${styles.pricingCard} ${s.featured ? styles.pricingCardFeatured : ''}`}
+              className={styles.pricingCard}
             >
               <div className={styles.pricingAccent}>
                 <span className={styles.pricingNum}>{s.num}</span>
                 <span className={styles.pricingLabel}>{s.label}</span>
               </div>
-              {s.featured ? (
-                <div className={styles.pricingBody}>
-                  <div className={styles.pricingMain}>
-                    <h2 className={styles.pricingTitle}>{s.title}</h2>
-                    <div className={styles.priceRow}>
-                      {s.startingAt && <span className={styles.priceStarting}>From</span>}
-                      <span className={styles.priceAmount}>{s.price}</span>
-                      {s.period && <span className={styles.pricePeriod}>{s.period}</span>}
-                    </div>
-                    <p className={styles.pricingDesc}>{s.desc}</p>
-                    <Link href="/contact" className={`btn ${styles.pricingCta}`}>
-                      {s.cta}
-                    </Link>
-                  </div>
-                  <div>
-                    <p className={styles.includesLabel}>What&rsquo;s Included</p>
-                    <ul className={styles.pricingIncludes}>
-                      {s.includes.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
+              <div className={styles.pricingBody}>
+                <h2 className={styles.pricingTitle}>{s.title}</h2>
+                <div className={styles.priceRow}>
+                  {s.startingAt && <span className={styles.priceStarting}>From</span>}
+                  <span className={styles.priceAmount}>{s.price}</span>
+                  {s.period && <span className={styles.pricePeriod}>{s.period}</span>}
                 </div>
-              ) : (
-                <div className={styles.pricingBody}>
-                  <h2 className={styles.pricingTitle}>{s.title}</h2>
-                  <div className={styles.priceRow}>
-                    {s.startingAt && <span className={styles.priceStarting}>From</span>}
-                    <span className={styles.priceAmount}>{s.price}</span>
-                    {s.period && <span className={styles.pricePeriod}>{s.period}</span>}
-                  </div>
-                  <p className={styles.pricingDesc}>{s.desc}</p>
-                  <p className={styles.includesLabel}>What&rsquo;s Included</p>
-                  <ul className={styles.pricingIncludes}>
-                    {s.includes.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                  <Link href="/contact" className={`btn ${styles.pricingCta}`}>
-                    {s.cta}
-                  </Link>
-                </div>
-              )}
+                <p className={styles.pricingDesc}>{s.desc}</p>
+                <p className={styles.includesLabel}>What&rsquo;s Included</p>
+                <ul className={styles.pricingIncludes}>
+                  {s.includes.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+                <Link href="/contact" className={`btn ${styles.pricingCta}`}>
+                  {s.cta}
+                </Link>
+              </div>
             </div>
           ))}
         </div>
