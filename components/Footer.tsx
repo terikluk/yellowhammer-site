@@ -23,7 +23,8 @@ export default function Footer() {
 
   return (
     <footer className={`${styles.footer} ${noBorder ? styles.noBorder : ''}`}>
-      <div className={styles.footerMain}>
+      <div className={styles.footerColumns}>
+        <span className={styles.copyright}>&copy; 2026 Yellowhammer Studios</span>
         <nav className={styles.footerNav} aria-label="Footer">
           {navLinks.map(({ href, label }) => (
             <Link
@@ -46,9 +47,6 @@ export default function Footer() {
           </a>
           <span className={styles.footerContactLink}>Huntsville, AL</span>
         </div>
-      </div>
-      <div className={styles.footerBottom}>
-        <span>&copy; 2026 Yellowhammer Studios</span>
         <div className={styles.right}>
         <div className={styles.social}>
           <a
