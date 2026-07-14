@@ -18,15 +18,14 @@
 .contactHeroImg {
   position: absolute;
   top: 950px;
-  right: -14%;
-  width: 27%;
+  left: -3%;
+  width: 30%;
   height: auto;
   max-height: 70vh;
   object-fit: contain;
-  opacity: 0.4;
-  transform: scaleX(-1);
-  -webkit-mask-image: radial-gradient(ellipse 65% 65% at 50% 50%, black 35%, transparent 90%);
-  mask-image: radial-gradient(ellipse 65% 65% at 50% 50%, black 35%, transparent 90%);
+  opacity: 0.55;
+  -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 50%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 50%, transparent 100%);
   z-index: 0;
 }
 
@@ -334,9 +333,9 @@
   }
   .contactHeroImg {
     top: 1040px;
-    right: -22%;
-    width: 65%;
-    opacity: 0.3;
+    left: -10%;
+    width: 68%;
+    opacity: 0.45;
   }
   .introBlock {
     padding-bottom: 2.5rem;
