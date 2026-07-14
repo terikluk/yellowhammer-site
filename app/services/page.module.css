@@ -92,7 +92,7 @@
 /* ── WHY YELLOWHAMMER ── */
 .whySection {
   position: relative;
-  padding: calc(6rem + 60px) 2rem calc(6rem + 51px);
+  padding: calc(6rem + 60px) 2rem calc(6rem + 35px);
   text-align: center;
   background: linear-gradient(160deg, var(--ink) 0%, var(--espresso-mid) 100%);
 }
@@ -120,7 +120,7 @@
 
 .whyList {
   max-width: 1100px;
-  margin: 1.75rem auto 0;
+  margin: 2.75rem auto 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: start;
@@ -578,7 +578,7 @@
 
 /* ── HOW IT WORKS ── */
 .process {
-  padding: calc(6rem + 60px) 2rem calc(6rem + 135px);
+  padding: calc(6rem + 60px) 2rem calc(6rem + 119px);
   text-align: center;
   position: relative;
   background: linear-gradient(160deg, var(--ink) 0%, var(--espresso-mid) 100%);
@@ -612,7 +612,7 @@
   grid-template-columns: repeat(3, 1fr);
   align-items: start;
   max-width: 1100px;
-  margin: 1.75rem auto 0;
+  margin: 2.75rem auto 0;
   text-align: center;
 }
 
