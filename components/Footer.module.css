@@ -35,6 +35,26 @@
   color: var(--amber-light);
 }
 
+.footerContact {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  margin-bottom: 1.4rem;
+}
+
+.footerContactLink {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.footerContactLink:hover {
+  color: var(--amber-light);
+}
+
 .footerBottom {
   display: flex;
   justify-content: space-between;

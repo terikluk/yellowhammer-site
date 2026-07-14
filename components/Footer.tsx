@@ -35,6 +35,15 @@ export default function Footer() {
           </Link>
         ))}
       </nav>
+      <div className={styles.footerContact}>
+        <a href="mailto:tkluk@yellowhammerstudios.com" className={styles.footerContactLink}>
+          tkluk@yellowhammerstudios.com
+        </a>
+        <a href="tel:8324250224" className={styles.footerContactLink}>
+          832-425-0224
+        </a>
+        <span className={styles.footerContactLink}>Huntsville, AL</span>
+      </div>
       <div className={styles.footerBottom}>
         <span>&copy; 2026 Yellowhammer Studios</span>
         <span className={styles.center}>Craft &amp; Intention. Always.</span>
