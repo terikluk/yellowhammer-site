@@ -66,6 +66,9 @@ export default function About() {
               create work that reflects the quality and character of the
               businesses we serve.
             </p>
+            <p className={styles.storyPullQuote}>
+              &ldquo;We believe thoughtful work makes a difference.&rdquo;
+            </p>
             <p className={styles.storyBody}>
               We know that for many business owners, a website or logo
               isn&rsquo;t just another project. It&rsquo;s something
