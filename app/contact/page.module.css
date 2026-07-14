@@ -2,7 +2,7 @@
 .contactPage {
   position: relative;
   padding: 11.5rem 2rem 0;
-  background: var(--cream);
+  background: var(--paper);
   overflow: hidden;
 }
 
@@ -17,13 +17,14 @@
 
 .contactHeroImg {
   position: absolute;
-  top: 1420px;
-  left: -14%;
+  top: 950px;
+  right: -14%;
   width: 27%;
   height: auto;
   max-height: 70vh;
   object-fit: contain;
   opacity: 0.4;
+  transform: scaleX(-1);
   -webkit-mask-image: radial-gradient(ellipse 65% 65% at 50% 50%, black 35%, transparent 90%);
   mask-image: radial-gradient(ellipse 65% 65% at 50% 50%, black 35%, transparent 90%);
   z-index: 0;
@@ -332,8 +333,8 @@
     padding: 9.5rem 1.25rem 0;
   }
   .contactHeroImg {
-    top: 2080px;
-    left: -22%;
+    top: 1040px;
+    right: -22%;
     width: 65%;
     opacity: 0.3;
   }
