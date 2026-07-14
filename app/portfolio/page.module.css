@@ -25,6 +25,7 @@
   color: var(--espresso);
   opacity: 0.62;
   font-weight: 600;
+  font-size: 0.92rem;
 }
 
 .portHeroInner {
@@ -44,7 +45,7 @@
 }
 
 .portHeroH1 {
-  font-size: clamp(3rem, 6.2vw, 5.4rem);
+  font-size: clamp(3.6rem, 7.6vw, 6.8rem);
   font-weight: 600;
   line-height: 1.05;
   color: var(--ink);
@@ -58,7 +59,7 @@
 }
 
 .portHeroTagline {
-  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
   font-style: italic;
   color: var(--ink-muted);
   max-width: 460px;
