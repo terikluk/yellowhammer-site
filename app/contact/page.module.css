@@ -17,7 +17,7 @@
 
 .contactHeroImg {
   position: absolute;
-  top: 1360px;
+  top: 1430px;
   left: -3%;
   width: 30%;
   height: auto;
@@ -25,8 +25,8 @@
   object-fit: contain;
   opacity: 0.55;
   transform: scaleX(-1);
-  -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 50%, transparent 100%);
-  mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 50%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 100% at 50% 20%, black 35%, transparent 95%);
+  mask-image: radial-gradient(ellipse 80% 100% at 50% 20%, black 35%, transparent 95%);
   z-index: 0;
 }
 
