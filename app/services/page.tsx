@@ -437,7 +437,7 @@ export default function Services() {
           </Link>
         </Reveal>
         <div className={styles.faqWave}>
-          <WaveDivider fill="var(--amber-wash)" />
+          <WaveDivider fill="var(--ink)" />
         </div>
       </section>
 
@@ -455,10 +455,13 @@ export default function Services() {
           <p className={styles.rightFitBody}>
             Yellowhammer Studios works best with businesses that value
             thoughtful design, clear communication, and long-term
-            relationships. We intentionally take on a limited number of
-            projects each year so every client receives our full attention.
+            relationships. Every client gets our full attention, from our
+            first conversation through long after launch.
           </p>
         </Reveal>
+        <div className={styles.rightFitWave}>
+          <WaveDivider fill="var(--amber-wash)" />
+        </div>
       </section>
 
       {/* FINAL CTA */}

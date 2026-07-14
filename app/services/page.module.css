@@ -762,13 +762,19 @@
 
 /* ── RIGHT FIT ── */
 .rightFit {
-  padding: 6rem 2rem;
+  position: relative;
+  padding: 6rem 2rem 8rem;
   text-align: center;
-  background: var(--amber-wash);
+  background: linear-gradient(160deg, var(--ink) 0%, var(--espresso-mid) 100%);
 }
 
-.rightFit :global(.section-label) {
-  color: var(--gold-deep);
+.rightFitWave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 3;
+  line-height: 0;
 }
 
 .rightFitInner {
@@ -780,18 +786,18 @@
   font-size: clamp(2.1rem, 4.2vw, 3.4rem);
   font-weight: 300;
   line-height: 1.15;
-  color: var(--ink);
+  color: var(--cream);
   margin-bottom: 1.2rem;
 }
 
 .rightFitH2 em {
   font-style: italic;
-  color: var(--amber);
+  color: var(--amber-pale);
 }
 
 .rightFitBody {
   font-size: 1.15rem;
-  color: var(--ink-muted);
+  color: var(--amber-pale);
   font-weight: 300;
   line-height: 1.85;
 }
@@ -801,7 +807,7 @@
     padding: 5rem 1.25rem 4rem;
   }
   .rightFit {
-    padding: 4.5rem 1.25rem;
+    padding: 4.5rem 1.25rem 6rem;
   }
 }
 
