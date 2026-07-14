@@ -1,100 +1,89 @@
-/* ── HERO (full-bleed photo + floating card) ── */
-.contactHero {
+/* ── PAGE (linear, sectioned layout) ── */
+.contactPage {
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: flex-start;
+  padding: 9rem 2rem 0;
+  background: var(--cream);
   overflow: hidden;
-  padding: 6.5rem 3rem 9rem;
-  background: var(--paper);
 }
 
 .sectionWave {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  z-index: 3;
   line-height: 0;
+  margin-top: 1rem;
 }
 
 .contactHeroImg {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  object-position: 98% 85%;
-  transform: scale(1.035);
-  transform-origin: -19% 50%;
+  top: 8%;
+  right: -10%;
+  width: 27%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  opacity: 0.4;
+  -webkit-mask-image: radial-gradient(ellipse 65% 65% at 50% 50%, black 35%, transparent 90%);
+  mask-image: radial-gradient(ellipse 65% 65% at 50% 50%, black 35%, transparent 90%);
   z-index: 0;
 }
 
-.contactHeroFade {
-  position: absolute;
-  top: calc(100vh - 180px);
-  left: 0;
-  right: 0;
-  height: 210px;
-  background: linear-gradient(to bottom, transparent 0%, var(--paper) 85%);
-  z-index: 0;
-}
-
-.contactCardWrap {
+/* ── INTRO ── */
+.introBlock {
   position: relative;
   z-index: 1;
-  width: 760px;
-  max-width: 92vw;
-  margin-left: 4vw;
-  margin-top: 11.3rem;
-}
-
-.amberPanel {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  box-sizing: border-box;
-  transform: translate(-26px, -150px);
-  background: linear-gradient(135deg, var(--amber-light) 0%, var(--gold-deep) 100%);
-  padding: 2rem 2.6rem 0;
-}
-
-.eyebrowLight {
-  font-size: 0.68rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: #fff;
-  font-weight: 600;
-  margin-bottom: 0.6rem;
-}
-
-.card {
-  position: relative;
-  z-index: 1;
-  box-sizing: border-box;
-  background: var(--paper);
-  width: 100%;
-  padding: 1.8rem 2.4rem 2rem;
-  box-shadow: 0 40px 80px -30px rgba(43, 26, 13, 0.45);
-  max-height: calc(100vh - 220px);
-  overflow-y: auto;
+  max-width: 640px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+  text-align: center;
 }
 
 .contactHeading {
-  font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+  font-size: clamp(2.6rem, 5vw, 4rem);
   font-weight: 600;
   line-height: 1.15;
-  color: #fff;
+  color: var(--ink);
+  margin: 0.8rem 0 1.3rem;
 }
 
 .contactHeading em {
   font-style: italic;
-  color: var(--espresso);
+  color: var(--amber);
 }
 
-/* ── FORM (light card) ── */
+.contactLead {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+.divider {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  height: 1px;
+  background: rgba(200, 130, 26, 0.25);
+}
+
+/* ── FORM BLOCK ── */
+.formBlock {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.card {
+  box-sizing: border-box;
+  background: var(--paper);
+  border: 1px solid rgba(200, 130, 26, 0.2);
+  width: 100%;
+  max-width: 700px;
+  padding: 2.4rem 2.6rem 2.6rem;
+  border-radius: 8px;
+  box-shadow: 0 30px 65px -32px rgba(43, 26, 13, 0.35);
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -250,40 +239,75 @@
   color: var(--amber);
 }
 
-@media (max-width: 900px) {
-  .contactCardWrap {
-    margin-left: 0;
-    width: 100%;
-    max-width: 480px;
-    margin-top: 0;
-  }
+/* ── WHAT HAPPENS NEXT ── */
+.nextStepsBlock {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.nextStepsGrid {
+  max-width: 900px;
+  margin: 2.5rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.nextStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nextStepNumber {
+  font-size: clamp(1.8rem, 2.6vw, 2.3rem);
+  font-weight: 300;
+  color: var(--amber);
+  margin-bottom: 0.6rem;
+}
+
+.nextStepBody {
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 240px;
+}
+
+/* ── BOUTIQUE CLOSING PARAGRAPH ── */
+.boutiqueBlock {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+  text-align: center;
+}
+
+.boutiqueText {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--ink-muted);
+  line-height: 1.8;
 }
 
 @media (max-width: 700px) {
-  .contactHero {
-    padding: 10.5rem 1.25rem 3rem;
-    height: auto;
-    min-height: 100vh;
-    max-height: none;
+  .contactPage {
+    padding: 8rem 1.25rem 0;
   }
   .contactHeroImg {
-    object-position: 70% center;
-    transform: none;
+    top: 2%;
+    right: -30%;
+    width: 65%;
+    opacity: 0.3;
   }
-  .amberPanel {
-    transform: translate(-14px, -92px);
-    padding: 1rem 1.5rem 0;
-  }
-  .contactHeading {
-    font-size: 1.4rem;
-  }
-  .eyebrowLight {
-    margin-bottom: 0.3rem;
+  .introBlock {
+    padding-bottom: 2.5rem;
   }
   .card {
-    padding: 1.6rem 1.5rem 1.8rem;
-    max-height: none;
-    overflow-y: visible;
+    padding: 1.8rem 1.5rem 2rem;
   }
   .formRow {
     grid-template-columns: 1fr;
@@ -291,5 +315,13 @@
   .infoRow {
     flex-direction: column;
     gap: 0.9rem;
+  }
+  .nextStepsGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .nextStep {
+    max-width: 320px;
+    margin: 0 auto;
   }
 }

@@ -71,10 +71,10 @@ export default function ContactForm() {
         <label htmlFor="project-type">Project Type</label>
         <select id="project-type" name="project-type" defaultValue="">
           <option value="" disabled />
-          <option value="logo-brand">Logo &amp; Brand Identity</option>
-          <option value="website">Website Design &amp; Development</option>
-          <option value="social">Social Media Design</option>
-          <option value="maintenance">Website Maintenance</option>
+          <option value="logo-brand">Brand Identity</option>
+          <option value="website">Website Design</option>
+          <option value="social">Social Content</option>
+          <option value="maintenance">Website Care Plan</option>
           <option value="other">Other</option>
         </select>
       </div>
