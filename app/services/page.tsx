@@ -101,7 +101,7 @@ const services = [
     cta: 'Protect My Website',
     includes: [
       'Content Updates',
-      'Security Monitoring',
+      'Website Health Monitoring',
       'Hosting Management',
       'Priority Support',
     ],
