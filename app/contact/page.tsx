@@ -36,13 +36,6 @@ export default async function Contact({
 
   return (
     <section className={styles.contactPage}>
-      <img
-        src="/rise.png"
-        alt=""
-        aria-hidden="true"
-        className={styles.contactAccentBird}
-      />
-
       <div className={styles.introBlock}>
         <p className="section-label" style={{ textAlign: 'center' } as React.CSSProperties}>
           Get in Touch
