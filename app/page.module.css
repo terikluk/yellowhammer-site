@@ -93,6 +93,33 @@
   margin-bottom: 1.2rem;
 }
 
+.whyUsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2.2rem;
+}
+
+.whyUsItem {
+  border-left: 2px solid var(--amber);
+  padding: 0.1rem 0 0.1rem 1rem;
+}
+
+.whyUsItemTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+.whyUsItemBody {
+  font-size: 1rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
 .practiceDark {
   flex: 1;
   background: linear-gradient(155deg, var(--gold-deep) 0%, #8a4310 100%);

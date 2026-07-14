@@ -44,6 +44,27 @@ export default function Home() {
               branding, and creative content that help you earn trust from
               the very first impression.
             </p>
+            <div className={styles.whyUsList}>
+              {[
+                {
+                  title: 'Custom-Built',
+                  body: 'Every project designed from scratch — never templated, never reused.',
+                },
+                {
+                  title: 'Family-Owned',
+                  body: 'A mother-daughter team personally invested in your success.',
+                },
+                {
+                  title: 'Long-Term Partners',
+                  body: 'We’re here well after launch, not just for the handoff.',
+                },
+              ].map(({ title, body }) => (
+                <div key={title} className={styles.whyUsItem}>
+                  <h3 className={styles.whyUsItemTitle}>{title}</h3>
+                  <p className={styles.whyUsItemBody}>{body}</p>
+                </div>
+              ))}
+            </div>
             <Link href="/about" className={styles.practiceLightCta}>
               Read Our Story →
             </Link>
