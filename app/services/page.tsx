@@ -227,8 +227,11 @@ export default function Services() {
       <section className={styles.pricingSection}>
         <Reveal variant="text" className={styles.packagesIntro}>
           <p className="section-label">Website Design</p>
+          <p className={styles.packagesLead}>
+            Choose the website that fits your business today.
+          </p>
           <p className={styles.packagesSubtext}>
-            Three starting points, built around real differences in scope.
+            Three thoughtfully crafted packages. Every one custom designed.
           </p>
         </Reveal>
         <div className={styles.packagesGrid}>
@@ -239,8 +242,10 @@ export default function Services() {
               className={`${styles.packageCard} ${p.featured ? styles.packageCardFeatured : ''}`}
             >
               {p.featured && <p className={styles.packageKicker}>Most Popular</p>}
-              <h3 className={styles.packageTitle}>{p.title}</h3>
-              <p className={styles.packagePrice}>{p.price}</p>
+              <div className={styles.packageHeader}>
+                <h3 className={styles.packageTitle}>{p.title}</h3>
+                <p className={styles.packagePrice}>{p.price}</p>
+              </div>
               <p className={styles.packageTagline}>{p.tagline}</p>
               <div>
                 <p className={styles.packageBestForLabel}>Best For</p>
