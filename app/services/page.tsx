@@ -18,6 +18,7 @@ const packages = [
     title: 'Nest',
     tagline: 'Perfect for new or small businesses that need a professional online presence.',
     price: '$2,200',
+    careDays: 30,
     bestFor: ['New businesses', 'Solo entrepreneurs', 'Local service providers'],
     plus: 'What’s Included',
     includes: [
@@ -36,6 +37,7 @@ const packages = [
     title: 'Rise',
     tagline: 'Designed for growing businesses that need more room to expand.',
     price: '$2,800',
+    careDays: 60,
     bestFor: ['Growing companies', 'Businesses needing more content', 'Companies expanding online'],
     plus: 'Everything in Nest, plus',
     featured: true,
@@ -55,6 +57,7 @@ const packages = [
     title: 'Flight',
     tagline: 'Our most complete website package for businesses ready to scale.',
     price: '$3,400',
+    careDays: 90,
     bestFor: ['Established businesses', 'Larger websites', 'Companies needing advanced functionality'],
     plus: 'Everything in Rise, plus',
     includes: [
@@ -251,6 +254,9 @@ export default function Services() {
                 <p className={styles.packagePrice}>{p.price}</p>
               </div>
               <p className={styles.packageTagline}>{p.tagline}</p>
+              <p className={styles.packageCareIncluded}>
+                <span className={styles.packageCheck}>✓</span> Includes {p.careDays} Days of Website Care
+              </p>
               <div>
                 <p className={styles.packageBestForLabel}>Best For</p>
                 <ul className={styles.packageBestFor}>
@@ -273,6 +279,15 @@ export default function Services() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal variant="text" className={styles.careNote}>
+          <p className={styles.careNoteText}>
+            Every website includes complimentary Website Care after launch
+            because the weeks following a launch are when questions,
+            updates, and fine-tuning naturally happen. We don&rsquo;t
+            disappear the day your site goes live.
+          </p>
+        </Reveal>
 
         <Reveal variant="text" className={styles.servicesIntro}>
           <p className="section-label">More Ways We Can Help</p>

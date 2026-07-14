@@ -213,6 +213,7 @@
 }
 
 .pricingCard:hover {
+  border-color: var(--amber);
   box-shadow: 0 32px 65px -28px rgba(43, 26, 13, 0.5);
   transform: translateY(-4px);
 }
@@ -395,6 +396,7 @@
 
 .packageCard:hover {
   transform: translateY(-4px);
+  border-color: var(--amber);
   box-shadow: 0 24px 48px -24px rgba(200, 130, 26, 0.32);
 }
 
@@ -456,6 +458,20 @@
   color: var(--ink-muted);
   font-weight: 300;
   line-height: 1.7;
+}
+
+.packageCareIncluded {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.packageCheck {
+  color: var(--amber);
+  font-weight: 700;
 }
 
 .packageBestForLabel {
@@ -530,6 +546,19 @@
   border-width: 1.5px;
   font-size: 0.9rem;
   text-align: center;
+}
+
+.careNote {
+  max-width: 640px;
+  margin: 3.5rem auto 0;
+  text-align: center;
+}
+
+.careNoteText {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--ink-muted);
+  line-height: 1.75;
 }
 
 .servicesIntro {
