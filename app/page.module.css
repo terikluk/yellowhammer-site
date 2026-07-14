@@ -1,5 +1,5 @@
 .h2 {
-  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
   font-weight: 600;
   line-height: 1.2;
   color: var(--ink);
@@ -12,7 +12,7 @@
 }
 
 .body {
-  font-size: 22px;
+  font-size: 19px;
   color: var(--ink-muted);
   max-width: 640px;
   font-weight: 400;
@@ -202,7 +202,7 @@
 }
 
 .reviewQuote {
-  font-size: 22px;
+  font-size: 19px;
   color: var(--ink-muted);
   font-weight: 400;
   line-height: 1.85;
@@ -252,7 +252,7 @@
 }
 
 .collageH2 {
-  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
   font-weight: 600;
   line-height: 1.2;
   color: var(--cream);
@@ -266,7 +266,7 @@
 
 .collageBody {
   color: var(--amber-pale);
-  font-size: 22px;
+  font-size: 19px;
   line-height: 1.85;
   max-width: 680px;
   margin: 0 auto 2.2rem;
@@ -358,7 +358,7 @@
 }
 
 .contactH2 {
-  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
   font-weight: 600;
   line-height: 1.2;
   color: var(--ink);
@@ -372,7 +372,7 @@
 
 .contactBody {
   color: var(--ink-muted);
-  font-size: 22px;
+  font-size: 19px;
   line-height: 1.8;
   margin-bottom: 2.5rem;
   font-style: italic;

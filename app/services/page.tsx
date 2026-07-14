@@ -351,17 +351,17 @@ export default function Services() {
         <div className={styles.stepsGrid}>
           {[
             {
-              n: 'Step 01',
+              n: '01',
               title: 'Reach Out',
               body: 'Tell us about your project through our contact form or give us a call.',
             },
             {
-              n: 'Step 02',
+              n: '02',
               title: 'Get the Questionnaire',
               body: 'We’ll send you our brand questionnaire so every detail is tailored to your vision.',
             },
             {
-              n: 'Step 03',
+              n: '03',
               title: 'We Get to Work',
               body: 'Once we understand your brand, we build with intention and keep you involved every step of the way.',
             },

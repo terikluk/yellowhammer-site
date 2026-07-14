@@ -44,7 +44,7 @@
 }
 
 .portHeroH1 {
-  font-size: clamp(3.4rem, 7vw, 6.2rem);
+  font-size: clamp(3rem, 6.2vw, 5.4rem);
   font-weight: 600;
   line-height: 1.05;
   color: var(--ink);
@@ -58,7 +58,7 @@
 }
 
 .portHeroTagline {
-  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
   font-style: italic;
   color: var(--ink-muted);
   max-width: 460px;
@@ -131,7 +131,7 @@
 }
 
 .portH2 {
-  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
   font-weight: 300;
   line-height: 1.15;
   color: var(--ink);
@@ -370,7 +370,7 @@
 }
 
 .cardDesc {
-  font-size: 1.375rem;
+  font-size: 1.1875rem;
   color: var(--ink-muted);
   font-weight: 400;
   margin-top: 0.4rem;
@@ -467,7 +467,7 @@
 }
 
 .ctaH2 {
-  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
   font-weight: 300;
   line-height: 1.15;
   margin-bottom: 1rem;
