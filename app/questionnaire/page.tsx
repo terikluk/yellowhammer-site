@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Hero from '@/components/Hero'
+import WaveDivider from '@/components/WaveDivider'
 import styles from './page.module.css'
 import { submitQuestionnaire } from './actions'
 
@@ -7,13 +7,20 @@ export const metadata: Metadata = { title: 'Start Your Project' }
 
 export default function Questionnaire() {
   return (
-    <>
-      <Hero
-        eyebrow="Start Your Project"
-        h1Line1="Tell us about"
-        h1Em="your brand."
-        tagline="Every great brand starts with the right questions."
-      />
+    <section className={styles.qPage}>
+      <div className={styles.introBlock}>
+        <p className="section-label" style={{ textAlign: 'center' } as React.CSSProperties}>
+          Start Your Project
+        </p>
+        <h1 className={styles.qHeading}>
+          Tell us about <em>your brand.</em>
+        </h1>
+        <p className={styles.qLead}>
+          Every great brand starts with the right questions.
+        </p>
+      </div>
+
+      <div className={styles.divider} />
 
       <div className={styles.wrap}>
         <p className={styles.intro}>
@@ -249,6 +256,10 @@ export default function Questionnaire() {
           </div>
         </form>
       </div>
-    </>
+
+      <div className={styles.sectionWave}>
+        <WaveDivider fill="var(--espresso)" />
+      </div>
+    </section>
   )
 }

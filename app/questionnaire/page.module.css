@@ -1,12 +1,71 @@
+/* ── PAGE ── */
+.qPage {
+  position: relative;
+  padding: 11.5rem 2rem 0;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.sectionWave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 3;
+  line-height: 0;
+}
+
+/* ── INTRO ── */
+.introBlock {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+.qHeading {
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0.8rem 0 1.3rem;
+}
+
+.qHeading em {
+  font-style: italic;
+  color: var(--amber);
+}
+
+.qLead {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+.divider {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  height: 1px;
+  background: rgba(200, 130, 26, 0.25);
+}
+
+/* ── FORM WRAP ── */
 .wrap {
+  position: relative;
+  z-index: 1;
   max-width: 780px;
   margin: 0 auto;
-  padding: 6rem 2rem 8rem;
+  padding: 4rem 2rem 6rem;
 }
 
 .intro {
   font-size: 18px;
-  color: var(--text-muted);
+  color: var(--ink-muted);
   font-weight: 300;
   font-style: italic;
   line-height: 1.9;
@@ -16,7 +75,7 @@
 .qSection {
   margin-bottom: 4rem;
   padding-bottom: 4rem;
-  border-bottom: 1px solid var(--espresso-light);
+  border-bottom: 1px solid rgba(200, 130, 26, 0.2);
 }
 
 .qSectionLast {
@@ -36,7 +95,7 @@
   font-size: 1.4rem;
   font-weight: 300;
   letter-spacing: 0.06em;
-  color: var(--cream);
+  color: var(--ink);
   margin-bottom: 2.5rem;
   line-height: 1.3;
 }
@@ -60,15 +119,16 @@
 
 .formGroup label {
   font-size: 0.72rem;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--ink-muted);
   margin-bottom: 0.6rem;
+  font-weight: 400;
 }
 
 .optional {
   font-size: 0.85em;
-  opacity: 0.6;
+  opacity: 0.7;
   letter-spacing: 0.1em;
   text-transform: none;
 }
@@ -77,15 +137,19 @@
 .formGroup input[type='url'],
 .formGroup textarea,
 .formGroup select {
-  background: var(--espresso-mid);
-  border: 1px solid var(--espresso-light);
-  color: var(--cream);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(200, 130, 26, 0.35);
+  border-radius: 0;
+  color: var(--ink);
   font-family: inherit;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 300;
-  padding: 0.75rem 1rem;
+  padding: 0.5em 0 0.6em;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-bottom-color 0.25s;
+  appearance: none;
+  -webkit-appearance: none;
   width: 100%;
 }
 
@@ -93,29 +157,29 @@
 .formGroup input[type='url']:focus,
 .formGroup textarea:focus,
 .formGroup select:focus {
-  border-color: var(--amber);
+  border-bottom-color: var(--amber);
 }
 
 .formGroup input[type='text']::placeholder,
 .formGroup input[type='url']::placeholder,
 .formGroup textarea::placeholder {
-  color: var(--text-muted);
-  opacity: 0.75;
+  color: var(--ink-muted);
+  opacity: 0.6;
 }
 
 .formGroup select {
   appearance: none;
   -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239a7a5a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23c8821a'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 1rem center;
-  padding-right: 2.5rem;
+  background-position: right 0.2em center;
+  padding-right: 1.4em;
   cursor: pointer;
 }
 
 .formGroup select option {
-  background: var(--espresso-mid);
-  color: var(--cream);
+  background: var(--paper);
+  color: var(--ink);
 }
 
 .formGroup textarea {
@@ -136,8 +200,8 @@
   align-items: center;
   gap: 0.9rem;
   cursor: pointer;
-  font-size: 18px;
-  color: var(--text-muted);
+  font-size: 16px;
+  color: var(--ink-muted);
   font-weight: 300;
   line-height: 1.4;
   transition: color 0.2s;
@@ -147,7 +211,7 @@
 }
 
 .checkboxLabel:hover {
-  color: var(--cream);
+  color: var(--ink);
 }
 
 .checkboxLabel input[type='checkbox'] {
@@ -174,7 +238,7 @@
   top: 1px;
   width: 6px;
   height: 10px;
-  border: 2px solid var(--espresso);
+  border: 2px solid var(--ink);
   border-top: none;
   border-left: none;
   transform: rotate(45deg);
@@ -186,13 +250,14 @@
 }
 
 .submit {
-  background: transparent;
-  color: var(--amber-light);
+  display: inline-block;
+  background: var(--amber);
+  color: #fff;
   border: 1px solid var(--amber);
   font-family: inherit;
-  font-size: 0.82rem;
+  font-size: 0.75rem;
   font-weight: 400;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   padding: 0.9em 3em;
   cursor: pointer;
@@ -200,13 +265,21 @@
 }
 
 .submit:hover {
-  background: var(--amber);
-  color: var(--espresso);
+  background: var(--gold-deep);
+  border-color: var(--gold-deep);
 }
 
 @media (max-width: 700px) {
+  .qPage {
+    padding: 9.5rem 1.25rem 0;
+  }
+
+  .introBlock {
+    padding-bottom: 2.5rem;
+  }
+
   .wrap {
-    padding: 3rem 1.5rem 5rem;
+    padding: 3rem 1.25rem 5rem;
   }
 
   .intro {

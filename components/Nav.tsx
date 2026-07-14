@@ -15,7 +15,7 @@ const navLinks = [
 
 // Pages using the bright/paper theme — nav should read dark-on-light there
 // instead of the site-wide dark-espresso/cream-text default.
-const LIGHT_PAGES = ['/', '/portfolio', '/services', '/about', '/contact', '/thankyou']
+const LIGHT_PAGES = ['/', '/portfolio', '/services', '/about', '/contact', '/thankyou', '/questionnaire']
 
 export default function Nav() {
   const pathname = usePathname()
