@@ -169,7 +169,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <Link href="/portfolio" className={styles.btnAmber}>
+          <Link href="/portfolio" className="btn">
             Explore Our Portfolio
           </Link>
         </Reveal>
@@ -188,7 +188,7 @@ export default function Home() {
             brand, or simply looking for a creative partner you can count on,
             we&rsquo;d love to hear your story and help bring it to life.
           </p>
-          <Link href="/contact" className={styles.btnAmber}>
+          <Link href="/contact" className="btn">
             Let&rsquo;s Talk
           </Link>
         </Reveal>

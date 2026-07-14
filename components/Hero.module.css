@@ -271,32 +271,10 @@
   animation: heroFadeUp 0.7s ease-out 0.4s both;
 }
 
-.btnLight {
-  display: inline-block;
-  background: var(--amber);
-  color: var(--paper);
-  text-decoration: none;
-  font-family: inherit;
-  animation: heroFadeUp 0.7s ease-out 0.55s both;
-  font-size: 0.95rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-weight: 600;
-  padding: 1em 2.6em;
-  border-radius: 2px;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.btnLight:hover {
-  background: var(--gold-deep);
-  transform: translateY(-2px);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .eyebrowLight,
   .h1Light,
-  .taglineLight,
-  .btnLight {
+  .taglineLight {
     animation: none;
   }
 }
