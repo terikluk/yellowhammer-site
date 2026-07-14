@@ -23,7 +23,7 @@ export default function Footer() {
 
   return (
     <footer className={`${styles.footer} ${noBorder ? styles.noBorder : ''}`}>
-      <div className={styles.footerColumns}>
+      <div className={styles.footerMain}>
         <nav className={styles.footerNav} aria-label="Footer">
           {navLinks.map(({ href, label }) => (
             <Link
@@ -36,6 +36,7 @@ export default function Footer() {
             </Link>
           ))}
         </nav>
+        <span className={styles.tagline}>Craft &amp; Intention. Always.</span>
         <div className={styles.footerContact}>
           <a href="mailto:tkluk@yellowhammerstudios.com" className={styles.footerContactLink}>
             tkluk@yellowhammerstudios.com
@@ -48,7 +49,6 @@ export default function Footer() {
       </div>
       <div className={styles.footerBottom}>
         <span>&copy; 2026 Yellowhammer Studios</span>
-        <span className={styles.center}>Craft &amp; Intention. Always.</span>
         <div className={styles.right}>
         <div className={styles.social}>
           <a
