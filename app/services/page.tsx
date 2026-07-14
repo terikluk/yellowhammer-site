@@ -146,7 +146,7 @@ const faqs = [
   },
   {
     q: 'Do you work with businesses outside Huntsville and Montgomery?',
-    a: 'Not at all — we work with businesses anywhere in the U.S. Since our whole process is designed around flexible communication (email, text, phone, video call), it works just as smoothly whether you’re local or across the country.',
+    a: 'Yes — we work with businesses anywhere in the U.S. Since our whole process is designed around flexible communication (email, text, phone, video call), it works just as smoothly whether you’re local or across the country.',
   },
   {
     q: 'What platform do you build on?',
