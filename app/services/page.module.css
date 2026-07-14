@@ -367,8 +367,8 @@
   max-width: 1160px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1.06fr 1fr;
-  align-items: end;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
   gap: 1.5rem;
 }
 
@@ -377,7 +377,7 @@
   background: var(--paper);
   border: 1px solid rgba(200, 130, 26, 0.14);
   border-radius: 8px;
-  padding: 2rem 1.75rem;
+  padding: 2.2rem 1.85rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -393,16 +393,24 @@
 .packageCardFeatured {
   background: var(--amber-wash);
   border-color: transparent;
-  padding: 2.5rem 2.1rem 2.3rem;
   box-shadow: 0 26px 55px -26px rgba(168, 87, 15, 0.35);
 }
 
 .packageKicker {
-  font-size: 0.68rem;
-  letter-spacing: 0.22em;
+  position: absolute;
+  top: -0.85rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--amber);
+  color: var(--paper);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--gold-deep);
   font-weight: 600;
+  white-space: nowrap;
+  padding: 0.45em 1em;
+  border-radius: 999px;
+  box-shadow: 0 8px 18px -8px rgba(168, 87, 15, 0.5);
 }
 
 .packageTitle {
@@ -411,20 +419,12 @@
   color: var(--ink);
 }
 
-.packageCardFeatured .packageTitle {
-  font-size: 1.6rem;
-}
-
 .packagePrice {
   font-size: 2.6rem;
   font-weight: 600;
   line-height: 1;
   color: var(--amber);
   letter-spacing: -0.01em;
-}
-
-.packageCardFeatured .packagePrice {
-  font-size: 3.2rem;
 }
 
 .packageTagline {
@@ -514,20 +514,7 @@
 @media (max-width: 900px) {
   .packagesGrid {
     grid-template-columns: 1fr;
-    align-items: stretch;
     max-width: 480px;
-  }
-
-  .packageCardFeatured {
-    padding: 2.2rem 1.9rem;
-  }
-
-  .packageCardFeatured .packageTitle {
-    font-size: 1.5rem;
-  }
-
-  .packageCardFeatured .packagePrice {
-    font-size: 2.6rem;
   }
 }
 
