@@ -290,11 +290,17 @@
   }
 
   .heroLightGradient {
-    background: linear-gradient(180deg, rgba(251, 246, 236, 0.88) 0%, rgba(251, 246, 236, 0.6) 45%, rgba(200, 130, 26, 0.35) 100%);
+    background: linear-gradient(180deg, rgba(251, 246, 236, 0.92) 0%, rgba(251, 246, 236, 0.85) 62%, rgba(200, 130, 26, 0.4) 100%);
   }
 
   .heroLightContent {
     max-width: 82%;
+  }
+
+  /* Scrim still thins out toward the photo by the tagline's position —
+     darken it a touch on mobile so it holds up against the photo. */
+  .taglineLight {
+    color: var(--ink);
   }
 
   /* Scrim has faded out by the button's position, leaving amber-on-amber
