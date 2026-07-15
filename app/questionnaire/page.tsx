@@ -28,7 +28,12 @@ export default function Questionnaire() {
           better we can serve you.
         </p>
 
-        <QuestionnaireForm />
+        <div className={styles.cardWrap}>
+          <div className={styles.cardAccent} aria-hidden="true" />
+          <div className={styles.card}>
+            <QuestionnaireForm />
+          </div>
+        </div>
       </div>
 
       <div className={styles.sectionWave}>

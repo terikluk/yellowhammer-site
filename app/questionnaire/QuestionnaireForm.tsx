@@ -8,6 +8,7 @@ const deliverableOptions = [
   'Logo & Brand Identity',
   'Website Design',
   'Social Media Design',
+  'Ongoing Social Media Management',
   'All of the Above',
 ]
 
@@ -25,7 +26,9 @@ export default function QuestionnaireForm() {
   const wantsWebsite =
     selectedTypes.includes('Website Design') || selectedTypes.includes('All of the Above')
   const wantsSocial =
-    selectedTypes.includes('Social Media Design') || selectedTypes.includes('All of the Above')
+    selectedTypes.includes('Social Media Design') ||
+    selectedTypes.includes('Ongoing Social Media Management') ||
+    selectedTypes.includes('All of the Above')
 
   let sectionCount = 0
   const nextSection = () => String(++sectionCount).padStart(2, '0')
@@ -147,6 +150,19 @@ export default function QuestionnaireForm() {
         <div className={styles.qSection}>
           <p className={styles.qLabel}>Section {nextSection()}</p>
           <h2 className={styles.qTitle}>Your Brand Personality</h2>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="brand-materials">
+              Any specific brand materials you need?{' '}
+              <span className={styles.optional}>(optional)</span>
+            </label>
+            <textarea
+              id="brand-materials"
+              name="brand-materials"
+              rows={3}
+              placeholder="e.g. Business cards, letterhead, signage, social media templates..."
+            />
+          </div>
 
           <div className={styles.formGroup}>
             <label htmlFor="brand-words">3–5 words that describe your brand</label>
