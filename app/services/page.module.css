@@ -886,7 +886,7 @@
 
 @media (max-width: 800px) {
   .pricingSection {
-    padding: 3rem 1.25rem;
+    padding: 3rem 1.25rem 5rem;
   }
   .stepsGrid {
     grid-template-columns: 1fr;

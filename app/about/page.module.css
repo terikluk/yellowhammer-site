@@ -107,6 +107,13 @@
     max-width: 280px;
     opacity: 0.45;
   }
+
+  /* Short mobile hero means this text sits over the gradient's darker
+     gold-deep end almost the whole time — ink-muted is too low-contrast there. */
+  .aboutHeroTagline,
+  .aboutHeroIntro {
+    color: var(--ink);
+  }
 }
 
 /* ── STORY ── */
