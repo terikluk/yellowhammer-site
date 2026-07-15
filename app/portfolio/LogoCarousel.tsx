@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import Reveal from '@/components/Reveal'
 import styles from './page.module.css'
 
@@ -39,7 +40,7 @@ export default function LogoCarousel({ items }: { items: LogoItem[] }) {
               className={styles.logoImgWrap}
               style={p.extraPad ? { padding: '8%' } : undefined}
             >
-              <img src={p.src} alt={p.alt} className={styles.logoImg} />
+              <Image src={p.src} alt={p.alt} fill sizes="(max-width: 700px) 45vw, 22vw" className={styles.logoImg} />
             </div>
             <div className={`${styles.meta} ${styles.logoMeta}`}>
               <span className={styles.cat}>Logo Design</span>

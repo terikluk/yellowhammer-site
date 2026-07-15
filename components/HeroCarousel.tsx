@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import styles from './HeroCarousel.module.css'
 
 export interface HeroCarouselItem {
@@ -35,10 +36,12 @@ export default function HeroCarousel({ items, interval = 4800 }: HeroCarouselPro
         {items.map((item, i) => {
           const diff = (i - active + items.length) % items.length
           return (
-            <img
+            <Image
               key={item.src}
               src={item.src}
               alt=""
+              fill
+              sizes="320px"
               className={`${styles.img} ${positionClass(diff)}`}
             />
           )

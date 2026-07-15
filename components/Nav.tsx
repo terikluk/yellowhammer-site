@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import styles from './Nav.module.css'
@@ -47,7 +48,7 @@ export default function Nav() {
     <>
       <nav className={`${styles.nav} ${scrolled ? (isLightPage ? styles.scrolledLight : styles.scrolled) : ''} ${menuOpen ? styles.menuActive : ''} ${lightText ? styles.onLight : ''}`}>
         <Link href="/" className={styles.logoLink} aria-label="Yellowhammer Studios">
-          <img src="/bird.png" alt="" className={styles.logo} />
+          <Image src="/bird.png" alt="" className={styles.logo} width={500} height={500} priority />
         </Link>
 
         {/* Desktop nav */}

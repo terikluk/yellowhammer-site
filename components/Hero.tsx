@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from './Hero.module.css'
 
 interface HeroProps {
@@ -29,11 +30,14 @@ export default function Hero({ eyebrow, h1Line1, h1Em, tagline, cta, theme = 'da
             aria-hidden="true"
           />
         ) : (
-          <img
+          <Image
             className={styles.heroLightImage}
             src={image}
             alt=""
             aria-hidden="true"
+            fill
+            sizes="100vw"
+            priority
           />
         )}
         <div className={styles.heroLightGradient} aria-hidden="true" />
@@ -59,11 +63,14 @@ export default function Hero({ eyebrow, h1Line1, h1Em, tagline, cta, theme = 'da
 
   return (
     <section className={styles.hero}>
-      <img
+      <Image
         src="/Gold_Circle.png"
         alt=""
         className={styles.agateImg}
         aria-hidden="true"
+        width={800}
+        height={800}
+        priority
       />
       <div className={styles.content}>
         <p className={styles.eyebrow}>{eyebrow}</p>

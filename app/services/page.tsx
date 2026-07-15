@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import HeroCarousel from '@/components/HeroCarousel'
 import WaveDivider from '@/components/WaveDivider'
 import Reveal from '@/components/Reveal'
@@ -285,7 +286,7 @@ export default function Services() {
               className={`${styles.packageCard} ${p.featured ? styles.packageCardFeatured : ''}`}
             >
               {p.featured && <p className={styles.packageKicker}>Most Popular</p>}
-              <img src={p.image} alt="" className={styles.packageImage} />
+              <Image src={p.image} alt="" width={60} height={60} className={styles.packageImage} />
               <div className={styles.packageHeader}>
                 <h3 className={styles.packageTitle}>{p.title}</h3>
                 <p className={styles.packagePrice}>{p.price}</p>

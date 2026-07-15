@@ -15,10 +15,13 @@ export default function About() {
   return (
     <>
       <section className={styles.aboutHero}>
-        <img
+        <Image
           src="/yellowhammer_about.png"
           alt=""
           aria-hidden="true"
+          width={1400}
+          height={1250}
+          priority
           className={styles.aboutHeroBgImg}
         />
         <div className={styles.aboutHeroInner}>

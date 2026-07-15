@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 type Ring = [number, string, string, number, number, number]
@@ -31,18 +32,18 @@ export default function RingBackground({ rings = DEFAULT_RINGS }: { rings?: Ring
       }}
     >
       {rings.map((r, i) => (
-        <img
+        <Image
           key={i}
           src="/Gold_Circle.png"
           alt=""
+          width={r[0]}
+          height={r[0]}
           style={
             {
               position: 'absolute',
               pointerEvents: 'none',
               objectFit: 'contain',
               '--ring-opacity': r[5],
-              width: r[0],
-              height: r[0],
               top: r[1],
               left: r[2],
               animation: `ring-fade ${r[3]}s ease-in-out ${r[4]}s infinite both, ring-spin-bg ${Math.round(r[3] * 2.5)}s linear infinite`,

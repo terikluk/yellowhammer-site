@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import Reveal from '@/components/Reveal'
 import styles from './page.module.css'
 
@@ -36,7 +37,7 @@ export default function SocialCarousel({ items }: { items: SocialItem[] }) {
           <Reveal key={p.src} className={styles.card} delay={i * 120}>
             <div className={styles.squareFrame}>
               <div className={styles.squareImgWrap}>
-                <img src={p.src} alt={p.alt} className={styles.fillImg} />
+                <Image src={p.src} alt={p.alt} fill sizes="(max-width: 700px) 45vw, 30vw" className={styles.fillImg} />
               </div>
             </div>
             <div className={styles.meta}>
