@@ -12,6 +12,12 @@ const deliverableOptions = [
   'All of the Above',
 ]
 
+const noGrammarly = {
+  'data-gramm': 'false',
+  'data-gramm_editor': 'false',
+  'data-enable-grammarly': 'false',
+}
+
 export default function QuestionnaireForm() {
   const [selectedTypes, setSelectedTypes] = useState<string[]>([])
 
@@ -43,7 +49,7 @@ export default function QuestionnaireForm() {
         <div className={styles.formRow}>
           <div className={styles.formGroup}>
             <label htmlFor="business-name">Business Name</label>
-            <input type="text" id="business-name" name="business-name" required />
+            <input type="text" id="business-name" name="business-name" required {...noGrammarly} />
           </div>
           <div className={styles.formGroup}>
             <label htmlFor="your-name">Your Name &amp; Role</label>
@@ -53,6 +59,7 @@ export default function QuestionnaireForm() {
               name="your-name"
               placeholder="e.g. Jane Smith, Owner"
               required
+              {...noGrammarly}
             />
           </div>
         </div>
@@ -61,7 +68,7 @@ export default function QuestionnaireForm() {
           <label htmlFor="current-website">
             Current Website <span className={styles.optional}>(optional)</span>
           </label>
-          <input type="url" id="current-website" name="current-website" placeholder="https://" />
+          <input type="url" id="current-website" name="current-website" placeholder="https://" {...noGrammarly} />
         </div>
 
         <div className={styles.formGroup}>
@@ -71,6 +78,7 @@ export default function QuestionnaireForm() {
             name="business-description"
             rows={4}
             placeholder="Describe your products, services, and what makes you different..."
+            {...noGrammarly}
           />
         </div>
 
@@ -81,6 +89,7 @@ export default function QuestionnaireForm() {
             name="ideal-customer"
             rows={4}
             placeholder="Describe their age, lifestyle, values, and what they're looking for..."
+            {...noGrammarly}
           />
         </div>
       </div>
@@ -125,6 +134,7 @@ export default function QuestionnaireForm() {
             name="existing-branding"
             rows={3}
             placeholder="e.g. Yes — we have a logo but need everything else. Or: Starting from scratch..."
+            {...noGrammarly}
           />
         </div>
 
@@ -161,6 +171,7 @@ export default function QuestionnaireForm() {
               name="brand-materials"
               rows={3}
               placeholder="e.g. Business cards, letterhead, signage, social media templates..."
+              {...noGrammarly}
             />
           </div>
 
@@ -171,6 +182,7 @@ export default function QuestionnaireForm() {
               name="brand-words"
               rows={3}
               placeholder="e.g. Warm, Trustworthy, Artisan, Modern, Approachable..."
+              {...noGrammarly}
             />
           </div>
 
@@ -181,6 +193,7 @@ export default function QuestionnaireForm() {
               name="avoid-words"
               rows={3}
               placeholder="e.g. Corporate, Cheap, Busy, Loud..."
+              {...noGrammarly}
             />
           </div>
 
@@ -193,6 +206,7 @@ export default function QuestionnaireForm() {
               name="brand-feeling"
               rows={4}
               placeholder="e.g. Inspired, confident, at ease, excited to work with you..."
+              {...noGrammarly}
             />
           </div>
         </div>
@@ -211,6 +225,7 @@ export default function QuestionnaireForm() {
               name="colors-love"
               rows={3}
               placeholder="e.g. Deep greens — they feel grounded and natural..."
+              {...noGrammarly}
             />
           </div>
 
@@ -221,6 +236,7 @@ export default function QuestionnaireForm() {
               name="colors-avoid"
               rows={3}
               placeholder="e.g. Neon, overly bright colors, or anything that feels clinical..."
+              {...noGrammarly}
             />
           </div>
 
@@ -231,6 +247,7 @@ export default function QuestionnaireForm() {
               name="admired-brands"
               rows={4}
               placeholder="e.g. Aesop — clean, minimal, sophisticated. Magnolia — warm and handcrafted..."
+              {...noGrammarly}
             />
           </div>
 
@@ -263,6 +280,7 @@ export default function QuestionnaireForm() {
               name="website-features"
               rows={4}
               placeholder="e.g. Online booking, e-commerce, blog, portfolio gallery, contact form..."
+              {...noGrammarly}
             />
           </div>
         </div>
@@ -281,6 +299,7 @@ export default function QuestionnaireForm() {
               name="social-platforms"
               rows={3}
               placeholder="e.g. Instagram, TikTok, Facebook, LinkedIn..."
+              {...noGrammarly}
             />
           </div>
         </div>
@@ -299,6 +318,7 @@ export default function QuestionnaireForm() {
               id="timeline"
               name="timeline"
               placeholder="e.g. 6 weeks, end of Q3, ASAP..."
+              {...noGrammarly}
             />
           </div>
           <div className={styles.formGroup}>
@@ -327,6 +347,7 @@ export default function QuestionnaireForm() {
             name="anything-else"
             rows={5}
             placeholder="Inspiration, concerns, links to mood boards, specific requests — anything goes..."
+            {...noGrammarly}
           />
         </div>
       </div>

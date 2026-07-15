@@ -273,7 +273,7 @@
 }
 
 .reviewSource {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--amber);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -369,7 +369,7 @@
 }
 
 .previewCaptionMeta {
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--amber-pale);

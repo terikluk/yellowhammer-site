@@ -2,7 +2,7 @@
   border-top: 1px solid var(--espresso-light);
   padding: 2.2rem 3rem 1.8rem;
   position: relative;
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   letter-spacing: 0.1em;
   color: var(--text-muted);
 }
@@ -48,8 +48,8 @@
   color: var(--text-muted);
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  font-size: 0.88rem;
   transition: color 0.2s;
 }
 
@@ -68,7 +68,7 @@
 .footerContactLink {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   letter-spacing: 0.05em;
   transition: color 0.2s;
 }

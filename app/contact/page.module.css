@@ -107,8 +107,8 @@
 
 .formGroup label {
   display: block;
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-muted);
   margin-bottom: 0.4rem;
@@ -138,7 +138,7 @@
   padding: 0.4em 0 0.5em;
   color: var(--ink);
   font-family: inherit;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 300;
   text-align: left;
   cursor: pointer;
@@ -188,7 +188,7 @@
   padding: 0.55em 0.6em;
   margin-bottom: 0;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   font-weight: 300;
   letter-spacing: normal;
   text-transform: none;
@@ -225,7 +225,7 @@
   padding: 0.4em 0 0.5em;
   color: var(--ink);
   font-family: inherit;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 300;
   outline: none;
   transition: border-bottom-color 0.25s;
@@ -271,7 +271,7 @@
   color: #fff;
   border: 1px solid var(--amber);
   font-family: inherit;
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -293,7 +293,7 @@
 }
 
 .formError {
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   color: #b3492f;
   margin-bottom: 0.8rem;
   font-style: italic;

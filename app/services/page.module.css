@@ -272,14 +272,14 @@
 }
 
 .priceStarting {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--ink-muted);
   font-weight: 300;
   font-style: italic;
 }
 
 .pricePeriod {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--ink-muted);
   font-weight: 300;
 }
@@ -328,7 +328,7 @@
   align-items: baseline;
   gap: 0.6rem;
   color: var(--ink-muted);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 300;
   line-height: 1.5;
 }
@@ -465,7 +465,7 @@
   display: flex;
   align-items: center;
   gap: 0.45rem;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--ink);
   font-weight: 700;
 }
@@ -493,7 +493,7 @@
 }
 
 .packageBestFor li {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--ink-muted);
   border: 1px solid rgba(200, 130, 26, 0.28);
   border-radius: 4px;
@@ -529,7 +529,7 @@
   align-items: baseline;
   gap: 0.55rem;
   color: var(--ink-muted);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 300;
   line-height: 1.6;
 }
