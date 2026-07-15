@@ -41,6 +41,14 @@ export default function QuestionnaireForm() {
 
   return (
     <form action={submitQuestionnaire} encType="multipart/form-data">
+      <div
+        style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}
+        aria-hidden="true"
+      >
+        <label htmlFor="website-url">Leave this field blank</label>
+        <input type="text" id="website-url" name="website-url" tabIndex={-1} autoComplete="off" />
+      </div>
+
       {/* ABOUT YOUR BUSINESS — always shown */}
       <div className={styles.qSection}>
         <p className={styles.qLabel}>Section {nextSection()}</p>

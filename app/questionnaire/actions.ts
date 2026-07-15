@@ -11,6 +11,10 @@ function escapeHtml(str: string) {
 }
 
 export async function submitQuestionnaire(formData: FormData) {
+  if (formData.get('website-url')) {
+    redirect('/thankyou')
+  }
+
   const fields: Record<string, string> = {}
   const attachments: { filename: string; content: Buffer }[] = []
 
