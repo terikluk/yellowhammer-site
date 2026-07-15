@@ -97,15 +97,7 @@
   }
 
   .aboutHeroBgImg {
-    right: -8%;
-    top: auto;
-    bottom: 0;
-    left: auto;
-    transform: none;
-    height: auto;
-    width: 55vw;
-    max-width: 280px;
-    opacity: 0.45;
+    display: none;
   }
 
   /* Short mobile hero means this text sits over the gradient's darker
@@ -113,6 +105,15 @@
   .aboutHeroTagline,
   .aboutHeroIntro {
     color: var(--ink);
+  }
+}
+
+/* Phone landscape — width-based breakpoint above doesn't catch this,
+   so the bird was falling back to the desktop rule and floating oddly
+   against the short viewport. */
+@media (orientation: landscape) and (max-height: 500px) {
+  .aboutHeroBgImg {
+    display: none;
   }
 }
 
