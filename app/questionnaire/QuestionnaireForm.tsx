@@ -56,11 +56,15 @@ export default function QuestionnaireForm() {
 
         <div className={styles.formRow}>
           <div className={styles.formGroup}>
-            <label htmlFor="business-name">Business Name</label>
+            <label htmlFor="business-name">
+              Business Name <span className={styles.required}>*</span>
+            </label>
             <input type="text" id="business-name" name="business-name" required {...noGrammarly} />
           </div>
           <div className={styles.formGroup}>
-            <label htmlFor="your-name">Your Name &amp; Role</label>
+            <label htmlFor="your-name">
+              Your Name &amp; Role <span className={styles.required}>*</span>
+            </label>
             <input
               type="text"
               id="your-name"

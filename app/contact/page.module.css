@@ -122,6 +122,10 @@
   text-transform: none;
 }
 
+.required {
+  color: #b3492f;
+}
+
 .dropdownWrap {
   position: relative;
 }

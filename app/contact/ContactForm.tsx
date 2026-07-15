@@ -75,7 +75,9 @@ export default function ContactForm({ initialTypes = [] }: { initialTypes?: stri
     <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.formRow}>
         <div className={styles.formGroup}>
-          <label htmlFor="name">Full Name</label>
+          <label htmlFor="name">
+            Full Name <span className={styles.required}>*</span>
+          </label>
           <input type="text" id="name" name="name" autoComplete="name" required />
         </div>
         <div className={styles.formGroup}>
@@ -86,7 +88,9 @@ export default function ContactForm({ initialTypes = [] }: { initialTypes?: stri
 
       <div className={styles.formRow}>
         <div className={styles.formGroup}>
-          <label htmlFor="email">Email Address</label>
+          <label htmlFor="email">
+            Email Address <span className={styles.required}>*</span>
+          </label>
           <input type="email" id="email" name="email" autoComplete="email" required />
         </div>
         <div className={styles.formGroup}>

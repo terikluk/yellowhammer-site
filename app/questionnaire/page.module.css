@@ -161,6 +161,10 @@
   text-transform: none;
 }
 
+.required {
+  color: #b3492f;
+}
+
 .formGroup input[type='text'],
 .formGroup input[type='url'],
 .formGroup textarea,
