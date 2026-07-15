@@ -27,6 +27,11 @@ export default function Footer() {
         <div className={styles.brand}>
           <span className={styles.tagline}>Craft &amp; Intention. Always.</span>
           <span className={styles.copyright}>&copy; 2026 Yellowhammer Studios</span>
+          <div className={styles.legalLinks}>
+            <Link href="/privacy" className={styles.legalLink}>Privacy Policy</Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/terms" className={styles.legalLink}>Terms of Service</Link>
+          </div>
         </div>
         <nav className={styles.footerNav} aria-label="Footer">
           {navLinks.map(({ href, label }) => (

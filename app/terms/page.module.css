@@ -1,0 +1,103 @@
+.legalPage {
+  position: relative;
+  padding: 11.5rem 2rem 0;
+  background: var(--paper);
+}
+
+.introBlock {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.heading {
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0.8rem 0 1rem;
+}
+
+.lastUpdated {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--ink-muted);
+}
+
+.divider {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  height: 1px;
+  background: rgba(200, 130, 26, 0.25);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+}
+
+.section {
+  margin-bottom: 2.8rem;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+.section p {
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 1.1rem;
+}
+
+.section p:last-child {
+  margin-bottom: 0;
+}
+
+.section ul {
+  margin: 0 0 1.1rem;
+  padding-left: 1.4rem;
+}
+
+.section li {
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.section a {
+  color: var(--amber);
+  text-decoration: underline;
+}
+
+.section a:hover {
+  color: var(--gold-deep);
+}
+
+@media (max-width: 700px) {
+  .legalPage {
+    padding: 9.5rem 1.25rem 0;
+  }
+  .content {
+    padding: 3rem 1.25rem 5rem;
+  }
+}

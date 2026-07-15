@@ -36,6 +36,25 @@
   white-space: nowrap;
 }
 
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  opacity: 0.6;
+  margin-top: 0.1rem;
+}
+
+.legalLink {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.legalLink:hover {
+  color: var(--amber-light);
+}
+
 .footerNav {
   flex: 1;
   display: flex;
