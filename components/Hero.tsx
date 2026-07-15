@@ -52,7 +52,7 @@ export default function Hero({ eyebrow, h1Line1, h1Em, tagline, cta, theme = 'da
           </h1>
           {tagline && <p className={styles.taglineLight}>{tagline}</p>}
           {cta && (
-            <Link href={cta.href} className="btn">
+            <Link href={cta.href} className={`btn ${styles.heroLightCta}`}>
               {cta.label}
             </Link>
           )}

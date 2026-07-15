@@ -296,4 +296,18 @@
   .heroLightContent {
     max-width: 82%;
   }
+
+  /* Scrim has faded out by the button's position, leaving amber-on-amber
+     against the photo. Give it its own solid backdrop on mobile only. */
+  .heroLightCta {
+    background: var(--paper);
+    color: var(--espresso);
+    border-color: var(--amber);
+    box-shadow: 0 8px 24px -10px rgba(43, 26, 13, 0.4);
+  }
+
+  .heroLightCta:hover {
+    background: var(--amber);
+    color: var(--espresso);
+  }
 }

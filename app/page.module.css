@@ -458,7 +458,24 @@
   }
 
   .reviewsGrid {
-    grid-template-columns: 1fr;
+    display: flex;
+    grid-template-columns: unset;
+    gap: 1.1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 0 -2rem;
+    padding: 0.25rem 2rem 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .reviewsGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .reviewCard {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
   }
 
   .collageSection {

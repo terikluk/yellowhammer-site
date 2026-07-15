@@ -815,6 +815,9 @@
   .rightFit {
     padding: 4.5rem 1.25rem 6rem;
   }
+  .process {
+    padding: calc(4rem + 20px) 1.25rem calc(4rem + 40px);
+  }
 }
 
 /* ── FINAL CTA (full-bleed bird photo + gradient, same treatment as the homepage hero) ── */

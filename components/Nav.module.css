@@ -74,7 +74,7 @@
   text-underline-offset: 6px;
 }
 
-.barOnLight {
+.bar.barOnLight {
   background: var(--ink);
 }
 
