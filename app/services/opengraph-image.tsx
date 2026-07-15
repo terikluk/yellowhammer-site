@@ -15,10 +15,13 @@ export default async function OgImage() {
     (
       <div
         style={{
-          background: '#1a0f08',
+          background: '#fbf6ec',
           width: '100%',
           height: '100%',
           display: 'flex',
+          boxSizing: 'border-box',
+          border: '14px solid #fbf6ec',
+          borderTop: '14px solid #c8821a',
           alignItems: 'center',
           justifyContent: 'space-between',
           padding: '0 100px',
@@ -41,7 +44,7 @@ export default async function OgImage() {
             style={{
               fontSize: 82,
               fontWeight: 300,
-              color: '#f5f0e8',
+              color: '#2b1a0d',
               lineHeight: 1.1,
               marginBottom: 30,
             }}
@@ -51,7 +54,7 @@ export default async function OgImage() {
           <div
             style={{
               fontSize: 22,
-              color: '#6a5040',
+              color: '#6b5a45',
               letterSpacing: '0.08em',
             }}
           >
