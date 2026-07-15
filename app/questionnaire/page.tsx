@@ -3,7 +3,11 @@ import WaveDivider from '@/components/WaveDivider'
 import styles from './page.module.css'
 import QuestionnaireForm from './QuestionnaireForm'
 
-export const metadata: Metadata = { title: 'Start Your Project' }
+export const metadata: Metadata = {
+  title: 'Start Your Project',
+  description:
+    'Tell us about your business and your project — our questionnaire helps Yellowhammer Studios put together the right plan for your website, brand, or social media.',
+}
 
 export default function Questionnaire() {
   return (
