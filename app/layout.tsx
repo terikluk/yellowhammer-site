@@ -14,6 +14,32 @@ const cormorant = Cormorant_Garamond({
 
 const siteUrl = 'https://yellowhammerstudios.com'
 
+const businessJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Yellowhammer Studios',
+  image: `${siteUrl}/bird.png`,
+  logo: `${siteUrl}/bird.png`,
+  url: siteUrl,
+  telephone: '+1-832-425-0224',
+  email: 'tkluk@yellowhammerstudios.com',
+  description:
+    'A creative studio specializing in website design, social media, and brand identity — made with craft and intention.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Huntsville',
+    addressRegion: 'AL',
+    addressCountry: 'US',
+  },
+  areaServed: ['Huntsville, AL', 'Montgomery, TX', 'United States'],
+  priceRange: '$150-$3400',
+  sameAs: [
+    'https://www.linkedin.com/in/yellowhammer-studios',
+    'https://www.instagram.com/yellowhammer_studios/',
+    'https://www.tiktok.com/@yellowhammer_studios',
+  ],
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -60,6 +86,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cormorant.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+        />
         <Nav />
         <RingBackground />
         <main>{children}</main>
