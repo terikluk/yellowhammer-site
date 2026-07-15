@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond } from 'next/font/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -64,6 +65,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-7MZKCP4KSQ" />
     </html>
   )
 }
