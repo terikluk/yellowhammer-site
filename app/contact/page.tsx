@@ -47,6 +47,9 @@ export default async function Contact({
           Tell us a bit about your project below, and we&rsquo;ll be in
           touch soon to talk through the details.
         </p>
+        <p className={styles.contactPhone}>
+          Prefer to call or text? <a href="tel:+18324250224">(832) 425-0224</a>
+        </p>
       </div>
 
       <div className={styles.divider} />

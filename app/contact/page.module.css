@@ -45,6 +45,23 @@
   line-height: 1.6;
 }
 
+.contactPhone {
+  font-size: 1rem;
+  color: var(--ink-muted);
+  margin-top: 1rem;
+}
+
+.contactPhone a {
+  color: var(--amber);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(200, 130, 26, 0.4);
+}
+
+.contactPhone a:hover {
+  color: var(--espresso);
+}
+
 .divider {
   position: relative;
   z-index: 1;
