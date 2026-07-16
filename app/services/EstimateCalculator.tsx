@@ -16,7 +16,7 @@ const ADD_ONS = [
   { key: 'blog', label: 'Blog setup', price: 200 },
   { key: 'ecommerce', label: 'E-commerce setup (up to 10 products)', price: 500 },
   { key: 'products', label: 'Additional products (per 10)', price: 100 },
-  { key: 'booking', label: 'Booking/scheduling integration', price: 250 },
+  { key: 'booking', label: 'Booking/scheduling integration', price: 300 },
   { key: 'integration', label: 'Third-party integration (each)', price: 200 },
   { key: 'newsletter', label: 'Email newsletter setup', price: 150 },
   { key: 'logo-refresh', label: 'Logo refresh', price: 300 },
