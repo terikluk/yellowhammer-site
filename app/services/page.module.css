@@ -374,15 +374,21 @@
 }
 
 .foundingBanner {
-  display: inline-block;
-  margin-top: 1.4rem;
-  padding: 0.7em 1.6em;
-  background: var(--amber-wash);
-  border: 1px solid rgba(200, 130, 26, 0.35);
-  border-radius: 999px;
-  color: var(--espresso);
-  font-size: 0.92rem;
-  font-weight: 600;
+  margin: -2.75rem -2rem 3rem;
+  padding: 1.1rem 2rem;
+  background: linear-gradient(120deg, var(--espresso) 0%, var(--espresso-mid) 100%);
+  text-align: center;
+}
+
+.foundingBanner p {
+  color: var(--amber-pale);
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+}
+
+.foundingBanner strong {
+  color: var(--amber-light);
+  font-weight: 700;
 }
 
 .packagesGrid {
@@ -915,6 +921,13 @@
 @media (max-width: 800px) {
   .pricingSection {
     padding: 3rem 1.25rem 5rem;
+  }
+  .foundingBanner {
+    margin: -3rem -1.25rem 2rem;
+    padding: 1rem 1.25rem;
+  }
+  .foundingBanner p {
+    font-size: 0.95rem;
   }
   .stepsGrid {
     grid-template-columns: 1fr;

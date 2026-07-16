@@ -275,6 +275,13 @@ export default function Services() {
       </section>
 
       <section className={styles.pricingSection}>
+        {FOUNDING_OFFER_ACTIVE && (
+          <div className={styles.foundingBanner}>
+            <p>
+              <strong>Now booking founding clients</strong> — {FOUNDING_DISCOUNT_TEXT} any website package for a limited time.
+            </p>
+          </div>
+        )}
         <Reveal variant="text" className={styles.packagesIntro}>
           <p className="section-label">Website Design</p>
           <p className={styles.packagesLead}>
@@ -285,11 +292,6 @@ export default function Services() {
             package is the amount of content, functionality, and ongoing
             support included.
           </p>
-          {FOUNDING_OFFER_ACTIVE && (
-            <p className={styles.foundingBanner}>
-              Now booking founding clients — {FOUNDING_DISCOUNT_TEXT} any website package for a limited time.
-            </p>
-          )}
         </Reveal>
         <div className={styles.packagesGrid}>
           {packages.map((p, i) => (
