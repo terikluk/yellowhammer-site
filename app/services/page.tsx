@@ -340,6 +340,9 @@ export default function Services() {
               <p className={styles.packageCareIncluded}>
                 <span className={styles.packageCheck}>✓</span> Includes {p.careDays} Days of Website Care
               </p>
+              <p className={styles.packageHostingNote}>
+                After {p.careDays} days, hosting continues at $25/month until your site is closed.
+              </p>
               <div>
                 <p className={styles.packageBestForLabel}>Best For</p>
                 <ul className={styles.packageBestFor}>

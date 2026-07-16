@@ -520,6 +520,13 @@
   font-weight: 700;
 }
 
+.packageHostingNote {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  font-style: italic;
+  margin-top: -0.6rem;
+}
+
 .packageCheck {
   color: var(--amber);
   font-weight: 700;
