@@ -11,7 +11,14 @@ type PackageOption = {
   price: number
 }
 
-const ADD_ONS = [
+type AddOn = {
+  key: string
+  label: string
+  price: number
+  details?: string[]
+}
+
+const ADD_ONS: AddOn[] = [
   { key: 'page', label: 'Additional page', price: 200 },
   { key: 'blog', label: 'Blog setup', price: 200 },
   { key: 'ecommerce', label: 'E-commerce setup (up to 10 products)', price: 500 },
@@ -20,7 +27,17 @@ const ADD_ONS = [
   { key: 'integration', label: 'Third-party integration (each)', price: 200 },
   { key: 'newsletter', label: 'Email newsletter setup', price: 150 },
   { key: 'logo-refresh', label: 'Logo refresh', price: 300 },
-  { key: 'social-kit', label: 'Social media starter kit', price: 250 },
+  {
+    key: 'social-kit',
+    label: 'Social media starter kit',
+    price: 300,
+    details: [
+      '5 branded Canva post templates (announcement, quote/testimonial, promo, tip, event)',
+      '2 story templates',
+      'Instagram highlight covers',
+      'Brand reference card (hex codes, fonts, quick usage notes)',
+    ],
+  },
 ]
 
 // Add-ons that duplicate what a package already includes — hidden (and
@@ -42,6 +59,7 @@ export default function EstimateCalculator({ packages }: { packages: PackageOpti
   const [packageKey, setPackageKey] = useState(packages[0].key)
   const [selectedAddOns, setSelectedAddOns] = useState<string[]>([])
   const [rush, setRush] = useState(false)
+  const [expandedInfo, setExpandedInfo] = useState<string | null>(null)
 
   const pkg = packages.find((p) => p.key === packageKey) ?? packages[0]
   const includedKeys = INCLUDED_BY_PACKAGE[packageKey] ?? []
@@ -61,6 +79,10 @@ export default function EstimateCalculator({ packages }: { packages: PackageOpti
     setSelectedAddOns((prev) =>
       prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]
     )
+  }
+
+  function toggleInfo(key: string) {
+    setExpandedInfo((prev) => (prev === key ? null : key))
   }
 
   const summaryLines = [
@@ -97,17 +119,37 @@ export default function EstimateCalculator({ packages }: { packages: PackageOpti
 
       <div className={styles.calcAddOnList}>
         {visibleAddOns.map((a) => (
-          <label key={a.key} className={styles.calcAddOnRow}>
-            <span className={styles.calcAddOnLabel}>
-              <input
-                type="checkbox"
-                checked={selectedAddOns.includes(a.key)}
-                onChange={() => toggleAddOn(a.key)}
-              />
-              {a.label}
-            </span>
-            <span className={styles.calcAddOnPrice}>+{money(a.price)}</span>
-          </label>
+          <div key={a.key} className={styles.calcAddOnGroup}>
+            <div className={styles.calcAddOnRow}>
+              <label className={styles.calcAddOnLabel}>
+                <input
+                  type="checkbox"
+                  checked={selectedAddOns.includes(a.key)}
+                  onChange={() => toggleAddOn(a.key)}
+                />
+                {a.label}
+              </label>
+              <span className={styles.calcAddOnRight}>
+                {a.details && (
+                  <button
+                    type="button"
+                    className={styles.calcInfoToggle}
+                    onClick={() => toggleInfo(a.key)}
+                  >
+                    {expandedInfo === a.key ? 'Hide details' : "What's included?"}
+                  </button>
+                )}
+                <span className={styles.calcAddOnPrice}>+{money(a.price)}</span>
+              </span>
+            </div>
+            {a.details && expandedInfo === a.key && (
+              <ul className={styles.calcInfoPanel}>
+                {a.details.map((d) => (
+                  <li key={d}>{d}</li>
+                ))}
+              </ul>
+            )}
+          </div>
         ))}
         <label className={styles.calcAddOnRow}>
           <span className={styles.calcAddOnLabel}>
