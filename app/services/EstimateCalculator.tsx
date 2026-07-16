@@ -23,6 +23,15 @@ const ADD_ONS = [
   { key: 'social-kit', label: 'Social media starter kit', price: 250 },
 ]
 
+// Add-ons that duplicate what a package already includes — hidden (and
+// auto-deselected) whenever that package is chosen. Rise includes a blog;
+// Flight includes everything Rise does, plus booking and e-commerce.
+const INCLUDED_BY_PACKAGE: Record<string, string[]> = {
+  nest: [],
+  rise: ['blog'],
+  flight: ['blog', 'booking', 'ecommerce'],
+}
+
 const RUSH_RATE = 0.25
 
 function money(n: number) {
@@ -35,10 +44,18 @@ export default function EstimateCalculator({ packages }: { packages: PackageOpti
   const [rush, setRush] = useState(false)
 
   const pkg = packages.find((p) => p.key === packageKey) ?? packages[0]
-  const chosenAddOns = ADD_ONS.filter((a) => selectedAddOns.includes(a.key))
+  const includedKeys = INCLUDED_BY_PACKAGE[packageKey] ?? []
+  const visibleAddOns = ADD_ONS.filter((a) => !includedKeys.includes(a.key))
+  const chosenAddOns = visibleAddOns.filter((a) => selectedAddOns.includes(a.key))
   const addOnsTotal = chosenAddOns.reduce((sum, a) => sum + a.price, 0)
   const subtotal = pkg.price + addOnsTotal
   const total = rush ? subtotal * (1 + RUSH_RATE) : subtotal
+
+  function selectPackage(key: string) {
+    setPackageKey(key)
+    const excluded = INCLUDED_BY_PACKAGE[key] ?? []
+    setSelectedAddOns((prev) => prev.filter((k) => !excluded.includes(k)))
+  }
 
   function toggleAddOn(key: string) {
     setSelectedAddOns((prev) =>
@@ -61,6 +78,7 @@ export default function EstimateCalculator({ packages }: { packages: PackageOpti
       </p>
       <p className={styles.calculatorLead}>
         Pick a package and add exactly what you need — the total updates as you go.
+        Add-ons already included in your selected package won&rsquo;t show up twice.
       </p>
 
       <div className={styles.calcPackageRow}>
@@ -69,7 +87,7 @@ export default function EstimateCalculator({ packages }: { packages: PackageOpti
             key={p.key}
             type="button"
             className={`${styles.calcPackageBtn} ${packageKey === p.key ? styles.calcPackageBtnActive : ''}`}
-            onClick={() => setPackageKey(p.key)}
+            onClick={() => selectPackage(p.key)}
           >
             <span>{p.title}</span>
             <span className={styles.calcPackageBtnPrice}>{money(p.price)}</span>
@@ -78,7 +96,7 @@ export default function EstimateCalculator({ packages }: { packages: PackageOpti
       </div>
 
       <div className={styles.calcAddOnList}>
-        {ADD_ONS.map((a) => (
+        {visibleAddOns.map((a) => (
           <label key={a.key} className={styles.calcAddOnRow}>
             <span className={styles.calcAddOnLabel}>
               <input
