@@ -373,6 +373,18 @@
   line-height: 1.6;
 }
 
+.foundingBanner {
+  display: inline-block;
+  margin-top: 1.4rem;
+  padding: 0.7em 1.6em;
+  background: var(--amber-wash);
+  border: 1px solid rgba(200, 130, 26, 0.35);
+  border-radius: 999px;
+  color: var(--espresso);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
 .packagesGrid {
   max-width: 1160px;
   margin: 0 auto;
@@ -452,6 +464,22 @@
   line-height: 1;
   color: var(--amber);
   letter-spacing: -0.02em;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.packagePriceOriginal {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+  text-decoration: line-through;
+  text-decoration-color: rgba(200, 130, 26, 0.6);
+}
+
+.packagePriceNow {
+  color: var(--amber);
 }
 
 .packageTagline {

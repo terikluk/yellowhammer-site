@@ -13,6 +13,11 @@ export const metadata: Metadata = {
     'Website design, social media management, and brand identity services from Yellowhammer Studios — Huntsville, AL.',
 }
 
+// Launch-phase discount for early clients. Flip to false to end the offer —
+// every price and the banner revert automatically, nothing else to touch.
+const FOUNDING_OFFER_ACTIVE = true
+const FOUNDING_DISCOUNT_TEXT = '15% off'
+
 const packages = [
   {
     key: 'nest',
@@ -20,6 +25,7 @@ const packages = [
     title: 'Nest',
     tagline: 'Perfect for new or small businesses that need a professional online presence.',
     price: '$2,200',
+    foundingPrice: '$1,870',
     careDays: 30,
     bestFor: ['New businesses', 'Solo entrepreneurs', 'Local service providers'],
     plus: 'What’s Included',
@@ -39,6 +45,7 @@ const packages = [
     title: 'Rise',
     tagline: 'Designed for growing businesses that need more room to expand.',
     price: '$2,800',
+    foundingPrice: '$2,380',
     careDays: 60,
     bestFor: ['Growing companies', 'Businesses needing more content', 'Companies expanding online'],
     plus: 'Everything in Nest, plus',
@@ -59,6 +66,7 @@ const packages = [
     title: 'Flight',
     tagline: 'Our most complete website package for businesses ready to scale.',
     price: '$3,400',
+    foundingPrice: '$2,890',
     careDays: 90,
     bestFor: ['Established businesses', 'Larger websites', 'Companies needing advanced functionality'],
     plus: 'Everything in Rise, plus',
@@ -277,6 +285,11 @@ export default function Services() {
             package is the amount of content, functionality, and ongoing
             support included.
           </p>
+          {FOUNDING_OFFER_ACTIVE && (
+            <p className={styles.foundingBanner}>
+              Now booking founding clients — {FOUNDING_DISCOUNT_TEXT} any website package for a limited time.
+            </p>
+          )}
         </Reveal>
         <div className={styles.packagesGrid}>
           {packages.map((p, i) => (
@@ -289,7 +302,14 @@ export default function Services() {
               <Image src={p.image} alt="" width={60} height={60} className={styles.packageImage} />
               <div className={styles.packageHeader}>
                 <h3 className={styles.packageTitle}>{p.title}</h3>
-                <p className={styles.packagePrice}>{p.price}</p>
+                {FOUNDING_OFFER_ACTIVE ? (
+                  <p className={styles.packagePrice}>
+                    <span className={styles.packagePriceOriginal}>{p.price}</span>
+                    <span className={styles.packagePriceNow}>{p.foundingPrice}</span>
+                  </p>
+                ) : (
+                  <p className={styles.packagePrice}>{p.price}</p>
+                )}
               </div>
               <p className={styles.packageTagline}>{p.tagline}</p>
               <p className={styles.packageCareIncluded}>
