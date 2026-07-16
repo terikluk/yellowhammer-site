@@ -21,6 +21,8 @@ type AddOn = {
 const ADD_ONS: AddOn[] = [
   { key: 'page', label: 'Additional page', price: 200 },
   { key: 'blog', label: 'Blog setup', price: 200 },
+  { key: 'testimonials', label: 'Testimonials section', price: 150 },
+  { key: 'faq', label: 'FAQ section', price: 150 },
   { key: 'ecommerce', label: 'E-commerce setup (up to 10 products)', price: 500 },
   { key: 'products', label: 'Additional products (per 10)', price: 100 },
   { key: 'booking', label: 'Booking/scheduling integration', price: 300 },
@@ -41,12 +43,13 @@ const ADD_ONS: AddOn[] = [
 ]
 
 // Add-ons that duplicate what a package already includes — hidden (and
-// auto-deselected) whenever that package is chosen. Rise includes a blog;
-// Flight includes everything Rise does, plus booking and e-commerce.
+// auto-deselected) whenever that package is chosen. Rise includes a blog,
+// testimonials, and an FAQ section; Flight includes everything Rise does,
+// plus booking and e-commerce.
 const INCLUDED_BY_PACKAGE: Record<string, string[]> = {
   nest: [],
-  rise: ['blog'],
-  flight: ['blog', 'booking', 'ecommerce'],
+  rise: ['blog', 'testimonials', 'faq'],
+  flight: ['blog', 'testimonials', 'faq', 'booking', 'ecommerce'],
 }
 
 const RUSH_RATE = 0.25
