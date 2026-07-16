@@ -12,7 +12,7 @@ type PackageOption = {
 }
 
 const ADD_ONS = [
-  { key: 'page', label: 'Additional page', price: 100 },
+  { key: 'page', label: 'Additional page', price: 200 },
   { key: 'blog', label: 'Blog setup', price: 200 },
   { key: 'ecommerce', label: 'E-commerce setup (up to 10 products)', price: 500 },
   { key: 'products', label: 'Additional products (per 10)', price: 100 },
