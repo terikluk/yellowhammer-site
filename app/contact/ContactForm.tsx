@@ -11,6 +11,7 @@ const projectTypes = [
   { value: 'logo-brand', label: 'Brand Identity' },
   { value: 'social', label: 'Social Content' },
   { value: 'maintenance', label: 'Website Care Plan' },
+  { value: 'hosting', label: 'Hosting Only' },
   { value: 'other', label: 'Other' },
 ]
 

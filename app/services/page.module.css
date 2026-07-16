@@ -194,10 +194,10 @@
 }
 
 .pricingGrid {
-  max-width: 1300px;
+  max-width: 1000px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.75rem;
   align-items: stretch;
 }
@@ -1111,12 +1111,6 @@
   font-style: italic;
   margin-bottom: 2.2rem;
   line-height: 1.8;
-}
-
-@media (max-width: 1000px) {
-  .pricingGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 800px) {

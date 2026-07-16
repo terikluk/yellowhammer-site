@@ -92,6 +92,43 @@ const packages = [
 const services = [
   {
     num: '01',
+    label: 'Hosting',
+    type: 'hosting',
+    title: 'Hosting Only',
+    desc: 'Keeps your site online and technically sound after your included Website Care ends — without ongoing content updates.',
+    price: '$25',
+    period: '/mo',
+    startingAt: false,
+    cta: 'Keep My Site Live',
+    includes: [
+      'Site stays online and accessible',
+      'Domain & SSL connection maintained',
+      'Uptime monitoring',
+      'Technical fixes if something breaks',
+      'No content updates included',
+      'Cancel anytime, 30 days notice',
+    ],
+  },
+  {
+    num: '02',
+    label: 'Website Care',
+    type: 'maintenance',
+    title: 'Website Care Plan',
+    desc: 'We handle the technical side so you can focus on running your business.',
+    price: '$150',
+    period: '/mo',
+    startingAt: true,
+    cta: 'Maintain My Website',
+    includes: [
+      'Up to 2 hours of content updates/revisions per month',
+      'Website Health Monitoring',
+      'Hosting Management',
+      'Priority Support',
+      'Cancel anytime, 30 days notice',
+    ],
+  },
+  {
+    num: '03',
     label: 'Identity',
     type: 'logo-brand',
     title: 'Brand Identity',
@@ -109,25 +146,7 @@ const services = [
     ],
   },
   {
-    num: '02',
-    label: 'Website Care',
-    type: 'maintenance',
-    title: 'Website Care Plan',
-    desc: 'We handle the technical side so you can focus on running your business.',
-    price: '$150',
-    period: '/mo',
-    startingAt: true,
-    cta: 'Maintain My Website',
-    includes: [
-      'Content Updates',
-      'Website Health Monitoring',
-      'Hosting Management',
-      'Priority Support',
-      'Cancel anytime, 30 days notice',
-    ],
-  },
-  {
-    num: '03',
+    num: '04',
     label: 'Social',
     type: 'social',
     title: 'Social Content',
@@ -355,6 +374,18 @@ export default function Services() {
             Not sure which package fits? We&rsquo;ll help you choose. If
             your needs change during planning, we&rsquo;ll adjust before
             any work begins.
+          </p>
+          <p className={styles.careNoteText}>
+            After your included Care period ends, keeping your site online
+            requires at least our Hosting plan ($25/month). Most clients
+            continue with full Website Care ($150/month, including up to 2
+            hours of updates monthly) — but Hosting alone is always
+            available if that&rsquo;s all you need.
+          </p>
+          <p className={styles.careNoteText}>
+            Only need an occasional edit instead of an ongoing plan? One-off
+            changes are available at $60/hour, billed in 30-minute
+            increments ($30 minimum) — no monthly commitment required.
           </p>
         </Reveal>
 

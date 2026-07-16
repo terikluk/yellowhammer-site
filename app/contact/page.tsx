@@ -24,7 +24,7 @@ const nextSteps = [
   },
 ]
 
-const validTypes = ['nest', 'rise', 'flight', 'logo-brand', 'social', 'maintenance', 'other']
+const validTypes = ['nest', 'rise', 'flight', 'logo-brand', 'social', 'maintenance', 'hosting', 'other']
 
 export default async function Contact({
   searchParams,
