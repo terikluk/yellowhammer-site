@@ -338,7 +338,7 @@ export default function Services() {
               </div>
               <p className={styles.packageTagline}>{p.tagline}</p>
               <p className={styles.packageCareIncluded}>
-                <span className={styles.packageCheck}>✓</span> Includes {p.careDays} Days of Website Care
+                <span className={styles.packageCheck}>✓</span> Includes {p.careDays} Days of Website Care (including hosting)
               </p>
               <p className={styles.packageHostingNote}>
                 After {p.careDays} days, hosting continues at $25/month until your site is closed.
