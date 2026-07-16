@@ -376,18 +376,18 @@
 .foundingBanner {
   margin: -2.75rem -2rem 3rem;
   padding: 1.1rem 2rem;
-  background: linear-gradient(120deg, var(--espresso) 0%, var(--espresso-mid) 100%);
+  background: linear-gradient(120deg, var(--gold-deep) 0%, var(--amber) 100%);
   text-align: center;
 }
 
 .foundingBanner p {
-  color: var(--amber-pale);
+  color: var(--espresso);
   font-size: 1.1rem;
   letter-spacing: 0.01em;
 }
 
 .foundingBanner strong {
-  color: var(--amber-light);
+  color: var(--espresso);
   font-weight: 700;
 }
 

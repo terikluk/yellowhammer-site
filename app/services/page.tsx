@@ -276,9 +276,6 @@ export default function Services() {
             </Reveal>
           ))}
         </div>
-        <div className={styles.whySectionWave}>
-          <WaveDivider fill="var(--cream)" />
-        </div>
       </section>
 
       <section className={styles.pricingSection}>
