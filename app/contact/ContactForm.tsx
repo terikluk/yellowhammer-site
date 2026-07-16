@@ -14,7 +14,13 @@ const projectTypes = [
   { value: 'other', label: 'Other' },
 ]
 
-export default function ContactForm({ initialTypes = [] }: { initialTypes?: string[] }) {
+export default function ContactForm({
+  initialTypes = [],
+  initialMessage = '',
+}: {
+  initialTypes?: string[]
+  initialMessage?: string
+}) {
   const router = useRouter()
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
@@ -153,6 +159,7 @@ export default function ContactForm({ initialTypes = [] }: { initialTypes?: stri
           name="message"
           rows={5}
           placeholder="Tell us about your project..."
+          defaultValue={initialMessage}
         />
       </div>
 

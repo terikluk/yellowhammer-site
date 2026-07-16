@@ -29,9 +29,9 @@ const validTypes = ['nest', 'rise', 'flight', 'logo-brand', 'social', 'maintenan
 export default async function Contact({
   searchParams,
 }: {
-  searchParams: Promise<{ type?: string }>
+  searchParams: Promise<{ type?: string; message?: string }>
 }) {
-  const { type } = await searchParams
+  const { type, message } = await searchParams
   const initialTypes = type && validTypes.includes(type) ? [type] : []
 
   return (
@@ -58,7 +58,7 @@ export default async function Contact({
         <div className={styles.cardWrap}>
           <div className={styles.cardAccent} aria-hidden="true" />
           <div className={styles.card}>
-            <ContactForm initialTypes={initialTypes} />
+            <ContactForm initialTypes={initialTypes} initialMessage={message} />
           </div>
         </div>
       </div>

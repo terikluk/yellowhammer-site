@@ -5,6 +5,7 @@ import HeroCarousel from '@/components/HeroCarousel'
 import WaveDivider from '@/components/WaveDivider'
 import Reveal from '@/components/Reveal'
 import FaqAccordionItem from '@/components/FaqAccordionItem'
+import EstimateCalculator from './EstimateCalculator'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -25,7 +26,9 @@ const packages = [
     title: 'Nest',
     tagline: 'Perfect for new or small businesses that need a professional online presence.',
     price: '$2,200',
+    priceNum: 2200,
     foundingPrice: '$1,870',
+    foundingPriceNum: 1870,
     careDays: 30,
     bestFor: ['New businesses', 'Solo entrepreneurs', 'Local service providers'],
     plus: 'What’s Included',
@@ -45,7 +48,9 @@ const packages = [
     title: 'Rise',
     tagline: 'Designed for growing businesses that need more room to expand.',
     price: '$2,800',
+    priceNum: 2800,
     foundingPrice: '$2,380',
+    foundingPriceNum: 2380,
     careDays: 60,
     bestFor: ['Growing companies', 'Businesses needing more content', 'Companies expanding online'],
     plus: 'Everything in Nest, plus',
@@ -66,7 +71,9 @@ const packages = [
     title: 'Flight',
     tagline: 'Our most complete website package for businesses ready to scale.',
     price: '$3,400',
+    priceNum: 3400,
     foundingPrice: '$2,890',
+    foundingPriceNum: 2890,
     careDays: 90,
     bestFor: ['Established businesses', 'Larger websites', 'Companies needing advanced functionality'],
     plus: 'Everything in Rise, plus',
@@ -353,6 +360,14 @@ export default function Services() {
             any work begins.
           </p>
         </Reveal>
+
+        <EstimateCalculator
+          packages={packages.map((p) => ({
+            key: p.key,
+            title: p.title,
+            price: FOUNDING_OFFER_ACTIVE ? p.foundingPriceNum : p.priceNum,
+          }))}
+        />
 
         <Reveal variant="text" className={styles.servicesIntro}>
           <p className="section-label">Continue Building Your Brand</p>
