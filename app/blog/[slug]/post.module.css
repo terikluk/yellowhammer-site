@@ -1,0 +1,74 @@
+.postSection {
+  background: var(--paper);
+  padding: 2rem 2rem 6rem;
+}
+
+.postCoverWrap {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 25px 55px -30px rgba(43, 26, 13, 0.4);
+}
+
+.postCover {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.postBody {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--ink);
+  font-size: 1.15rem;
+  line-height: 1.85;
+}
+
+.postBody :global(p) {
+  margin-bottom: 1.5rem;
+}
+
+.postBody :global(h2) {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 2.5rem 0 1rem;
+}
+
+.postBody :global(h3) {
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 2rem 0 0.9rem;
+}
+
+.postBody :global(a) {
+  color: var(--gold-deep);
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 130, 26, 0.4);
+}
+
+.postBody :global(ul),
+.postBody :global(ol) {
+  margin: 0 0 1.5rem 1.5rem;
+}
+
+.postBody :global(blockquote) {
+  border-left: 3px solid var(--amber);
+  padding-left: 1.25rem;
+  margin: 1.75rem 0;
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+.postBody :global(img) {
+  max-width: 100%;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+}
+
+.postBack {
+  max-width: 700px;
+  margin: 3rem auto 0;
+}

@@ -2,14 +2,14 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-interface RevealProps {
+interface RevealProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
   className?: string
   delay?: number
   variant?: 'scale' | 'text'
 }
 
-export default function Reveal({ children, className = '', delay = 0, variant = 'scale' }: RevealProps) {
+export default function Reveal({ children, className = '', delay = 0, variant = 'scale', ...rest }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
@@ -37,6 +37,7 @@ export default function Reveal({ children, className = '', delay = 0, variant = 
       ref={ref}
       className={`${className} ${visible ? visibleClass : hiddenClass}`}
       style={{ transitionDelay: `${delay}ms` }}
+      {...rest}
     >
       {children}
     </div>

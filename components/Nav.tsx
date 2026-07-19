@@ -10,19 +10,20 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/portfolio', label: 'Portfolio' },
   { href: '/services', label: 'Services' },
+  { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ]
 
 // Pages using the bright/paper theme — nav should read dark-on-light there
 // instead of the site-wide dark-espresso/cream-text default.
-const LIGHT_PAGES = ['/', '/portfolio', '/services', '/about', '/contact', '/thankyou', '/questionnaire', '/privacy', '/terms']
+const LIGHT_PAGES = ['/', '/portfolio', '/services', '/blog', '/about', '/contact', '/thankyou', '/questionnaire', '/privacy', '/terms']
 
 export default function Nav() {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const isLightPage = LIGHT_PAGES.includes(pathname)
+  const isLightPage = LIGHT_PAGES.includes(pathname) || pathname.startsWith('/blog/')
   const lightText = isLightPage
 
   useEffect(() => {
