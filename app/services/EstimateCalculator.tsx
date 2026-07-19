@@ -53,6 +53,8 @@ const INCLUDED_BY_PACKAGE: Record<string, string[]> = {
 }
 
 const RUSH_RATE = 0.25
+const INSTALLMENT_MONTHS = 12
+const INSTALLMENT_CARE_ADDON = 125
 
 function money(n: number) {
   return `$${Math.round(n).toLocaleString()}`
@@ -63,6 +65,7 @@ export default function EstimateCalculator({ packages }: { packages: PackageOpti
   const [selectedAddOns, setSelectedAddOns] = useState<string[]>([])
   const [rush, setRush] = useState(false)
   const [expandedInfo, setExpandedInfo] = useState<string | null>(null)
+  const [billing, setBilling] = useState<'full' | 'monthly'>('full')
 
   const pkg = packages.find((p) => p.key === packageKey) ?? packages[0]
   const includedKeys = INCLUDED_BY_PACKAGE[packageKey] ?? []
@@ -71,6 +74,7 @@ export default function EstimateCalculator({ packages }: { packages: PackageOpti
   const addOnsTotal = chosenAddOns.reduce((sum, a) => sum + a.price, 0)
   const subtotal = pkg.price + addOnsTotal
   const total = rush ? subtotal * (1 + RUSH_RATE) : subtotal
+  const monthlyPayment = Math.round(total / INSTALLMENT_MONTHS) + INSTALLMENT_CARE_ADDON
 
   function selectPackage(key: string) {
     setPackageKey(key)
@@ -92,7 +96,9 @@ export default function EstimateCalculator({ packages }: { packages: PackageOpti
     `${pkg.title} package — ${money(pkg.price)}`,
     ...chosenAddOns.map((a) => `${a.label} — ${money(a.price)}`),
     ...(rush ? ['Rush delivery — +25%'] : []),
-    `Estimated total: ${money(total)}`,
+    billing === 'monthly'
+      ? `12-month plan: ${money(monthlyPayment)}/mo (includes Website Care), then $150/mo Care or full handoff`
+      : `Estimated total: ${money(total)}`,
   ]
   const message = `I'm interested in building an estimate:\n\n${summaryLines.join('\n')}\n\nPlease confirm this estimate and next steps.`
 
@@ -105,6 +111,23 @@ export default function EstimateCalculator({ packages }: { packages: PackageOpti
         Pick a package and add exactly what you need — the total updates as you go.
         Add-ons already included in your selected package won&rsquo;t show up twice.
       </p>
+
+      <div className={styles.calcBillingRow}>
+        <button
+          type="button"
+          className={`${styles.calcBillingBtn} ${billing === 'full' ? styles.calcBillingBtnActive : ''}`}
+          onClick={() => setBilling('full')}
+        >
+          Pay in Full
+        </button>
+        <button
+          type="button"
+          className={`${styles.calcBillingBtn} ${billing === 'monthly' ? styles.calcBillingBtnActive : ''}`}
+          onClick={() => setBilling('monthly')}
+        >
+          12-Month Plan
+        </button>
+      </div>
 
       <div className={styles.calcPackageRow}>
         {packages.map((p) => (
@@ -163,10 +186,24 @@ export default function EstimateCalculator({ packages }: { packages: PackageOpti
         </label>
       </div>
 
-      <div className={styles.calcTotalBar}>
-        <span>Estimated Total</span>
-        <span className={styles.calcTotalAmount}>{money(total)}</span>
-      </div>
+      {billing === 'monthly' ? (
+        <>
+          <div className={styles.calcTotalBar}>
+            <span>Estimated Monthly Payment</span>
+            <span className={styles.calcTotalAmount}>{money(monthlyPayment)}/mo</span>
+          </div>
+          <p className={styles.calcMonthlyNote}>
+            {INSTALLMENT_MONTHS} monthly payments (includes Website Care). After that, it drops to
+            our standard $150/mo Care Plan — or a full handoff if you&rsquo;d rather take it from
+            there.
+          </p>
+        </>
+      ) : (
+        <div className={styles.calcTotalBar}>
+          <span>Estimated Total</span>
+          <span className={styles.calcTotalAmount}>{money(total)}</span>
+        </div>
+      )}
 
       <Link
         href={`/contact?type=${pkg.key}&message=${encodeURIComponent(message)}`}

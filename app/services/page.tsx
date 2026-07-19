@@ -214,7 +214,7 @@ const faqs = [
   },
   {
     q: 'Do you offer payment plans?',
-    a: 'Yes — flexible payment options are available to help make your project more accessible.',
+    a: 'Yes — every website package can be paid in full or spread over a 12-month plan. The monthly plan includes Website Care for that full year, so there’s nothing extra to add on; after 12 months, it simply continues at our standard $150/mo Care Plan, or we’ll do a full handoff if you’d rather take it from there.',
   },
   {
     q: 'How do you get paid?',
@@ -314,6 +314,11 @@ export default function Services() {
             Every website is custom designed. The difference between each
             package is the amount of content, functionality, and ongoing
             support included.
+          </p>
+          <p className={styles.packagesSubtext}>
+            Prefer to spread out the cost? Every package can also be paid as
+            a 12-month plan — build your price below and toggle to see the
+            monthly option.
           </p>
         </Reveal>
         <div className={styles.packagesGrid}>

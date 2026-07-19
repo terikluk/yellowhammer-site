@@ -640,6 +640,43 @@
   margin: 0.4rem 0 2rem;
 }
 
+.calcBillingRow {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.75rem;
+}
+
+.calcBillingBtn {
+  padding: 0.55rem 1.4rem;
+  background: transparent;
+  border: 1px solid rgba(200, 130, 26, 0.35);
+  border-radius: 999px;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.calcBillingBtn:hover {
+  border-color: var(--amber);
+}
+
+.calcBillingBtnActive {
+  background: var(--espresso);
+  border-color: var(--espresso);
+  color: var(--cream);
+}
+
+.calcMonthlyNote {
+  text-align: center;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+}
+
 .calcPackageRow {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
