@@ -122,7 +122,8 @@ const services = [
     cta: 'Maintain My Website',
     includes: [
       'Up to 2 hours of content updates/revisions per month',
-      'Website Health Monitoring',
+      'Website health monitoring & monthly link testing',
+      'Monthly Google Analytics & Search Console review',
       'Hosting Management',
       'Priority Support',
       'Cancel anytime, 30 days notice',
