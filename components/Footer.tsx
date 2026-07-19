@@ -7,7 +7,7 @@ import styles from './Footer.module.css'
 // Pages whose final section ends in a WaveDivider flowing into the
 // footer's own dark background — the border-top would just double
 // that transition, so it's dropped there.
-const WAVE_PAGES = ['/', '/portfolio', '/services', '/about', '/contact', '/thankyou', '/questionnaire']
+const WAVE_PAGES = ['/', '/portfolio', '/services', '/blog', '/about', '/contact', '/thankyou', '/questionnaire']
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -19,7 +19,7 @@ const navLinks = [
 
 export default function Footer() {
   const pathname = usePathname()
-  const noBorder = WAVE_PAGES.includes(pathname)
+  const noBorder = WAVE_PAGES.includes(pathname) || pathname.startsWith('/blog/')
 
   return (
     <footer className={`${styles.footer} ${noBorder ? styles.noBorder : ''}`}>
