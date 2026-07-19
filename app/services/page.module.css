@@ -505,9 +505,14 @@
 }
 
 .packagePriceMonthly {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--ink-muted);
   margin-top: 0.35rem;
+}
+
+.packagePriceMonthlyAmount {
+  font-weight: 700;
+  color: var(--amber);
 }
 
 .packageTagline {

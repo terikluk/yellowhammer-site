@@ -342,7 +342,10 @@ export default function Services() {
                   <p className={styles.packagePrice}>{p.price}</p>
                 )}
                 <p className={styles.packagePriceMonthly}>
-                  or {money(monthlyPaymentFor(FOUNDING_OFFER_ACTIVE ? p.foundingPriceNum : p.priceNum))}/mo
+                  or{' '}
+                  <span className={styles.packagePriceMonthlyAmount}>
+                    {money(monthlyPaymentFor(FOUNDING_OFFER_ACTIVE ? p.foundingPriceNum : p.priceNum))}/mo
+                  </span>{' '}
                   for 12 mo. (Care included)
                 </p>
               </div>
