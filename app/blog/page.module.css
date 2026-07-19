@@ -1,12 +1,22 @@
 .blogHero {
-  background: var(--paper);
-  padding: 10rem 2rem 5rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(125deg, var(--paper) 0%, var(--amber-pale) 26%, var(--amber-light) 64%, var(--gold-deep) 115%);
+  padding: 10rem 2rem 6rem;
   text-align: center;
 }
 
 .blogHeroInner {
+  position: relative;
+  z-index: 1;
   max-width: 720px;
   margin: 0 auto;
+}
+
+.blogHeroInner :global(.section-label) {
+  color: var(--espresso);
+  opacity: 0.62;
+  font-weight: 600;
 }
 
 .blogHeroH1 {
