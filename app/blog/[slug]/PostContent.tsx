@@ -71,7 +71,7 @@ export default function PostContent(props: {
           </Link>
         </Reveal>
         <div className={styles.postsWave}>
-          <WaveDivider fill="var(--ink)" />
+          <WaveDivider fill="var(--espresso)" />
         </div>
       </section>
     </>

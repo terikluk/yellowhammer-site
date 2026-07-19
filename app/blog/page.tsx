@@ -77,7 +77,7 @@ export default async function Blog() {
           </div>
         )}
         <div className={styles.postsWave}>
-          <WaveDivider fill="var(--ink)" />
+          <WaveDivider fill="var(--espresso)" />
         </div>
       </section>
     </>
