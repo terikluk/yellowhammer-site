@@ -31,18 +31,30 @@ export default async function Blog() {
 
   return (
     <>
-      <section className={styles.blogHero}>
-        <div className={styles.blogHeroInner}>
-          <p className="section-label">The Blog</p>
-          <h1 className={styles.blogHeroH1}>
-            Notes from
-            <br />
-            <em>the Studio</em>
-          </h1>
-          <p className={styles.blogHeroTagline}>
-            Behind-the-scenes updates, design thinking, and stories from
-            projects we&rsquo;re proud of.
-          </p>
+      <section className={styles.blogListHero}>
+        <div className={styles.blogListHeroInner}>
+          <div className={styles.blogListHeroText}>
+            <p className="section-label">The Blog</p>
+            <h1 className={styles.blogHeroH1}>
+              Notes from
+              <br />
+              <em>the Studio</em>
+            </h1>
+            <p className={styles.blogHeroTagline}>
+              Behind-the-scenes updates, design thinking, and stories from
+              projects we&rsquo;re proud of.
+            </p>
+          </div>
+          <div className={styles.blogListHeroImgWrap}>
+            <Image
+              src="/blog-hero.jpg"
+              alt=""
+              fill
+              sizes="(max-width: 900px) 100vw, 480px"
+              className={styles.blogListHeroImg}
+              priority
+            />
+          </div>
         </div>
       </section>
 

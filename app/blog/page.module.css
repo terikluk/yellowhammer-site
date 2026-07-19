@@ -19,6 +19,69 @@
   font-weight: 600;
 }
 
+.blogListHero {
+  position: relative;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 9rem 2rem 7.5rem;
+  background: linear-gradient(125deg, var(--paper) 0%, var(--amber-pale) 26%, var(--amber-light) 64%, var(--gold-deep) 115%);
+}
+
+.blogListHeroInner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.blogListHeroText {
+  max-width: 580px;
+}
+
+.blogListHeroText :global(.section-label) {
+  color: var(--espresso);
+  opacity: 0.62;
+  font-weight: 600;
+}
+
+.blogListHeroImgWrap {
+  position: relative;
+  height: 420px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--amber-pale);
+  box-shadow: 0 30px 70px -18px rgba(43, 26, 13, 0.5);
+}
+
+.blogListHeroImg {
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .blogListHeroInner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .blogListHeroImgWrap {
+    height: 320px;
+  }
+}
+
+@media (max-width: 700px) {
+  .blogListHero {
+    padding: 8rem 1.5rem 4rem;
+    min-height: auto;
+  }
+}
+
 .blogHeroH1 {
   font-size: clamp(2.6rem, 5vw, 4.2rem);
   font-weight: 500;
