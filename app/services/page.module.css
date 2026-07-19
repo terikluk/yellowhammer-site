@@ -504,6 +504,12 @@
   color: var(--amber);
 }
 
+.packagePriceMonthly {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  margin-top: 0.35rem;
+}
+
 .packageTagline {
   font-size: 1.1875rem;
   color: var(--ink-muted);

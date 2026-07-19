@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Reveal from '@/components/Reveal'
 import styles from './page.module.css'
+import { INSTALLMENT_MONTHS, monthlyPaymentFor, money } from './pricing'
 
 type PackageOption = {
   key: string
@@ -53,12 +54,6 @@ const INCLUDED_BY_PACKAGE: Record<string, string[]> = {
 }
 
 const RUSH_RATE = 0.25
-const INSTALLMENT_MONTHS = 12
-const INSTALLMENT_CARE_ADDON = 125
-
-function money(n: number) {
-  return `$${Math.round(n).toLocaleString()}`
-}
 
 export default function EstimateCalculator({ packages }: { packages: PackageOption[] }) {
   const [packageKey, setPackageKey] = useState(packages[0].key)
@@ -74,7 +69,7 @@ export default function EstimateCalculator({ packages }: { packages: PackageOpti
   const addOnsTotal = chosenAddOns.reduce((sum, a) => sum + a.price, 0)
   const subtotal = pkg.price + addOnsTotal
   const total = rush ? subtotal * (1 + RUSH_RATE) : subtotal
-  const monthlyPayment = Math.round(total / INSTALLMENT_MONTHS) + INSTALLMENT_CARE_ADDON
+  const monthlyPayment = monthlyPaymentFor(total)
 
   function selectPackage(key: string) {
     setPackageKey(key)

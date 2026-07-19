@@ -6,6 +6,7 @@ import WaveDivider from '@/components/WaveDivider'
 import Reveal from '@/components/Reveal'
 import FaqAccordionItem from '@/components/FaqAccordionItem'
 import EstimateCalculator from './EstimateCalculator'
+import { monthlyPaymentFor, money } from './pricing'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -340,6 +341,10 @@ export default function Services() {
                 ) : (
                   <p className={styles.packagePrice}>{p.price}</p>
                 )}
+                <p className={styles.packagePriceMonthly}>
+                  or {money(monthlyPaymentFor(FOUNDING_OFFER_ACTIVE ? p.foundingPriceNum : p.priceNum))}/mo
+                  for 12 mo. (Care included)
+                </p>
               </div>
               <p className={styles.packageTagline}>{p.tagline}</p>
               <p className={styles.packageCareIncluded}>
