@@ -138,8 +138,8 @@
 .postCardImageWrap {
   aspect-ratio: 3 / 2;
   overflow: hidden;
-  background: var(--amber-wash);
-  padding: 10px;
+  background: var(--white);
+  padding: 18px;
 }
 
 .postCardImage {
@@ -150,7 +150,7 @@
 }
 
 .postCardBody {
-  padding: 1.75rem;
+  padding: 2rem;
 }
 
 .postCardDate {
