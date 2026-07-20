@@ -1,6 +1,7 @@
 ---
 title: Is SEO Dead? What AI Search Means for Your Small Business Website
 excerpt: 'Is SEO dead? Not quite — but the rules have changed. Here''s what AI search means for your small business website, and why honest content is winning.'
+coverImage: '/blog-uploads/ChatGPT-Image-Jul-19,-2026,-09_44_09-PM.png'
 date: 2026-08-04T02:29:25.842Z
 author: Theresa Klk
 ---
