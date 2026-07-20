@@ -21,7 +21,7 @@
 
 .blogListHero {
   position: relative;
-  min-height: 880px;
+  min-height: 700px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -32,9 +32,8 @@
 .blogListHeroImg {
   position: absolute;
   right: 0;
-  top: 50%;
-  transform: translateY(calc(-50% + 10px));
-  height: 102%;
+  bottom: 10px;
+  height: 560px;
   width: auto;
   max-width: 56vw;
   object-fit: contain;
