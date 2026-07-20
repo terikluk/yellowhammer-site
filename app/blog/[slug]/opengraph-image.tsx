@@ -1,6 +1,4 @@
 import { ImageResponse } from 'next/og'
-import { readFileSync } from 'fs'
-import { join } from 'path'
 import client from '@/tina/__generated__/client'
 
 export const alt = 'Yellowhammer Studios Blog Post'
@@ -9,9 +7,9 @@ export const contentType = 'image/png'
 
 export default async function OgImage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const fontData = readFileSync(
-    join(process.cwd(), 'public/fonts/CormorantGaramond-Light.ttf')
-  )
+  const fontData = await fetch(
+    'https://yellowhammerstudios.com/fonts/CormorantGaramond-Light.ttf'
+  ).then((res) => res.arrayBuffer())
 
   let title = 'Yellowhammer Studios'
   try {
