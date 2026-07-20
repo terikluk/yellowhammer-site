@@ -32,29 +32,26 @@ export default async function Blog() {
   return (
     <>
       <section className={styles.blogListHero}>
+        <Image
+          src="/blog-hero.png"
+          alt=""
+          aria-hidden="true"
+          width={1382}
+          height={732}
+          priority
+          className={styles.blogListHeroImg}
+        />
         <div className={styles.blogListHeroInner}>
-          <div className={styles.blogListHeroText}>
-            <p className="section-label">The Blog</p>
-            <h1 className={styles.blogHeroH1}>
-              Notes from
-              <br />
-              <em>the Studio</em>
-            </h1>
-            <p className={styles.blogHeroTagline}>
-              Behind-the-scenes updates, design thinking, and stories from
-              projects we&rsquo;re proud of.
-            </p>
-          </div>
-          <div className={styles.blogListHeroImgWrap}>
-            <Image
-              src="/blog-hero.jpg"
-              alt=""
-              fill
-              sizes="(max-width: 900px) 100vw, 480px"
-              className={styles.blogListHeroImg}
-              priority
-            />
-          </div>
+          <p className="section-label">The Blog</p>
+          <h1 className={styles.blogHeroH1}>
+            Notes from
+            <br />
+            <em>the Studio</em>
+          </h1>
+          <p className={styles.blogHeroTagline}>
+            Behind-the-scenes updates, design thinking, and stories from
+            projects we&rsquo;re proud of.
+          </p>
         </div>
       </section>
 
