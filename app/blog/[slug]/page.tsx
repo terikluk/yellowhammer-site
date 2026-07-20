@@ -24,6 +24,13 @@ export async function generateMetadata({
     return {
       title: data.post.title,
       description: data.post.excerpt || undefined,
+      openGraph: {
+        type: 'article',
+        title: data.post.title,
+        description: data.post.excerpt || undefined,
+        publishedTime: data.post.date,
+        authors: data.post.author ? [data.post.author] : undefined,
+      },
     }
   } catch {
     return {}
