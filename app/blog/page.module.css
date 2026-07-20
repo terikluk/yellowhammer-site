@@ -106,12 +106,72 @@
   padding: 3rem 0;
 }
 
-.postsGrid {
+.postsCarousel {
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.postsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
+}
+
+.carouselControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.arrowBtn {
+  background: none;
+  border: 1px solid var(--amber);
+  color: var(--amber);
+  font-size: 1.1rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+}
+
+.arrowBtn:hover:not(:disabled) {
+  background: var(--amber);
+  color: var(--white);
+}
+
+.arrowBtn:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.dots {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(43, 26, 13, 0.2);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dotActive {
+  background: var(--amber);
+  transform: scale(1.4);
 }
 
 .postCard {
