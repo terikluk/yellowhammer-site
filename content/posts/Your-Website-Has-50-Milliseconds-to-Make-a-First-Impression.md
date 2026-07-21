@@ -14,7 +14,7 @@ Your website does the same thing. It just does it faster than you'd believe.
 
 ####
 
-#### Fifty milliseconds
+## Fifty milliseconds
 
 There's a well-known study by Gitte Lindgaard and colleagues, published in Behaviour & Information Technology, that gets cited constantly in the design world. Researchers showed people web pages for extremely short flashes of time and asked them to rate the visual appeal. Then they cut the exposure time down to fifty milliseconds — five hundredths of a second — and the ratings held steady.
 
@@ -22,7 +22,7 @@ In other words, people form an opinion about a website in less time than it take
 
 Read that again, because it's the part that matters: the first impression tends to stick.
 
-#### Why this isn't as shallow as it sounds
+## Why this isn't as shallow as it sounds
 
 The instinct is to be a little offended by this. Shouldn't people judge a business by the quality of its work, not by how its homepage looks?
 
@@ -34,7 +34,7 @@ That's not vanity. That's evidence.
 
 And here's the encouraging part: Nielsen Norman Group's research has consistently found that while design trends change constantly, human behavior doesn't. What makes people trust a website is remarkably stable over time. You're not chasing a moving target. You're doing a few fundamental things well.
 
-#### What visitors are actually looking for
+## What visitors are actually looking for
 
 Once that instant impression is made, people start scanning — and they're fast. Nielsen Norman Group's eye-tracking work documented what's called the F-pattern: eyes sweep across the top of the page, then drop down the left side. Anything buried in the bottom right or at the end of a long paragraph tends to get missed entirely. Their research also found that the majority of viewing time happens above the fold, before anyone scrolls.
 
@@ -46,7 +46,7 @@ So the top of your homepage is carrying almost the entire weight of the first im
 
 If your homepage doesn't answer those three things clearly, no amount of beautiful photography will save it.
 
-#### A test you can run tonight
+## A test you can run tonight
 
 ![](/blog-uploads/le-buzz-studio-tVnm9I9jb8I-unsplash.jpg)
 
@@ -60,7 +60,7 @@ If they can't answer, you've found your problem. And it's almost always fixable 
 
 Most of the homepages we redesign don't need more. They need less, arranged better.
 
-#### The front porch
+## The front porch
 
 We keep coming back to hospitality when we talk about this at Yellowhammer, because we think that's genuinely what's going on.
 
@@ -72,7 +72,7 @@ So the question isn't really "does my website look modern." It's "does my websit
 
 That's not marketing strategy. That's just treating people the way you'd want to be treated — which happens to be the oldest advice there is, and still the best.
 
-#### If you're not sure how yours holds up
+## If you're not sure how yours holds up
 
 We'd be glad to look at it with you. No pressure and no jargon — just an honest read on what a first-time visitor sees in those first few seconds, and what would actually make a difference.
 
