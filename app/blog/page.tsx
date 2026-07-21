@@ -15,9 +15,11 @@ export const revalidate = 60
 
 export default async function Blog() {
   const { data } = await client.queries.postConnection({ sort: 'date' })
+  const now = Date.now()
   const posts = (data.postConnection.edges ?? [])
     .map((edge) => edge?.node)
     .filter((node): node is NonNullable<typeof node> => Boolean(node))
+    .filter((post) => new Date(post.date).getTime() <= now)
     .reverse()
 
   return (

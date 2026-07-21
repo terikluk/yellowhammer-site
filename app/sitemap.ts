@@ -18,9 +18,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let postRoutes: MetadataRoute.Sitemap = []
   try {
     const { data } = await client.queries.postConnection()
+    const now = Date.now()
     postRoutes = (data.postConnection.edges ?? [])
       .map((edge) => edge?.node)
       .filter((node): node is NonNullable<typeof node> => Boolean(node))
+      .filter((post) => new Date(post.date).getTime() <= now)
       .map((post) => ({
         url: `${base}/blog/${post._sys.filename}`,
         lastModified: new Date(post.date),
